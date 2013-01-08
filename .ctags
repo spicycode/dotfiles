@@ -1,0 +1,47 @@
+-R
+--exclude=.svn
+--exclude=.git
+--exclude=vendor
+--exclude=*.min.js
+--c++-kinds=+p
+--fields=+iaS
+--extra=+qf
+--totals=yes
+--tag-relative=yes
+--langdef=js
+--langmap=js:.js
+--regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
+--regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
+--regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/,function/
+--regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
+--regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
+--regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
+--langdef=coffee
+--langmap=coffee:.coffee
+--regex-coffee=/(^|=[ \t])*class ([A-Za-z.]+)( extends [A-Za-z.]+)?$/\2/c,class/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?@?([A-Za-z.]+):.*[-=]>.*$/\3/f,function/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?([A-Za-z.]+)[ \t]+=.*[-=]>.*$/\3/f,function/
+--regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]+=[^->\n]*$/\1/v,variable/
+--langdef=css
+--langmap=css:.css
+--regex-css=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/\1/d,definition/
+--langdef=scss
+--langmap=scss:.scss
+--regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/| \1/d,definition/
+--langdef=sass
+--langmap=sass:.scss
+--regex-sass=/@mixin[ ]*([^ ({]+)/\1/m,mixin/
+--langdef=Clojure
+--langmap=Clojure:.clj
+--regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\([ \t]*def[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/d,definition/
+--regex-clojure=/\([ \t]*defn-?[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/f,function/
+--regex-clojure=/\([ \t]*defmacro[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/m,macro/
+--regex-clojure=/\([ \t]*definline[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/i,inline/
+--regex-clojure=/\([ \t]*defmulti[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/a,multimethod definition/
+--regex-clojure=/\([ \t]*defmethod[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/b,multimethod instance/
+--regex-clojure=/\([ \t]*defonce[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/c,definition (once)/
+--regex-clojure=/\([ \t]*defstruct[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/s,struct/
+--regex-clojure=/\([ \t]*intern[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/v,intern/
+--regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+

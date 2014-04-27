@@ -1,7 +1,6 @@
 -R
 --exclude=.svn
 --exclude=.git
---exclude=public/assets
 --exclude=vendor
 --exclude=*.min.js
 --c++-kinds=+p

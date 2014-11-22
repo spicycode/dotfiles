@@ -3,10 +3,11 @@ tmp/
 log/
 logs/
 images/
+public/themes
+public/assets
 *.png
 *.ttf
 *.svg
 *.woff
 *.eot
 *.ico
-

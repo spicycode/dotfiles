@@ -43,6 +43,8 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
 
+" Buffers:
+Plug 'jlanzarotta/bufexplorer'
 
 " Fuzzy Finding:
 Plug 'ctrlpvim/ctrlp.vim'

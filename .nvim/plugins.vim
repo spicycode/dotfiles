@@ -12,6 +12,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'wting/rust.vim'
 
 " NetRW extensions:
 Plug 'tpope/vim-vinegar'

@@ -8,10 +8,17 @@
 
 (defvar spicycode/packages '(auto-complete
 			     ac-slime
+			     base16-theme 
                              coffee-mode
+			     markdown-mode
+			     nyan-mode
                              evil
 			     evil-leader
-			     smex)
+			     rainbow-delimiters
+			     sass-mode
+			     scss-mode
+			     smex
+			     yaml-mode)
   "Default packages")
 
 (defun spicycode/packages-installed-p ()
@@ -34,17 +41,23 @@
 (tool-bar-mode -1)
 
 ; Get rid of the butt ugly OSX scrollbars in GUI
-(when (display-graphic-p) (set-scroll-bar-mode nil))
+(set-scroll-bar-mode nil)
 
 ; Use Source Code Pro 14pt in GUI
-(when (display-graphic-p) (set-face-attribute 'default nil :font "Source Code Pro for Powerline-15"))
+(set-face-attribute 'default nil :font "Source Code Pro for Powerline-18")
+
+;; Use fonts everywhere
+(setq global-font-lock-mode 1)
 
 ; Echo keystrokes fast
 ; don't use dialog boxes, and turn off beeping
 (setq echo-keystrokes 0.1
       use-dialog-box nil
-      visible-bell t)
+      visible-bell nil)
 (show-paren-mode t)
+
+;; Visually show region
+(setq transient-mark-mode t)
 
 ; autocomplete
 (require 'auto-complete)
@@ -72,14 +85,12 @@
 
 
 ; Set cursor colors depending on mode
-(when (display-graphic-p)
-  (setq evil-emacs-state-cursor '("red" box))
-  (setq evil-normal-state-cursor '("green" box))
-  (setq evil-visual-state-cursor '("orange" box))
-  (setq evil-insert-state-cursor '("red" bar))
-  (setq evil-replace-state-cursor '("red" bar))
-  (setq evil-operator-state-cursor '("red" hollow))
-)
+(setq evil-emacs-state-cursor '("red" box))
+(setq evil-normal-state-cursor '("green" box))
+(setq evil-visual-state-cursor '("orange" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
 
 ; Allow using esc to exit menu modes
 (defun minibuffer-keyboard-quit ()
@@ -108,3 +119,82 @@
 
 (require 'evil)
 (evil-mode t)
+
+(load-theme `base16-ocean-dark t)
+
+
+(setq teach-extended-commands-p t)
+(defalias 'qrr 'query-replace-regexp)
+(defalias 'qr 'query-replace)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; do not confirm file creation
+(setq confirm-nonexistent-file-or-buffer nil)
+
+;; Debug on error
+(setq debug-on-error t)
+
+;; Do not confirm killing emacs
+(setq confirm-kill-emacs nil)
+
+;; Custom file
+(setq custom-file "~/.emacs.d/elisp/custom.el")
+(load custom-file 'noerror)
+
+;; Auto-revert any buffers if file on disk changes
+(global-auto-revert-mode t)
+
+;; Don't truncate lines
+(setq-default word-wrap nil)
+(setq default-truncate-lines t)
+(setq truncate-lines t)
+(setq truncate-partial-width-windows nil)
+
+;; Don't make backup files
+(setq make-backup-files nil)
+
+;; Disable VCS backends
+(setq vc-handled-backends nil)
+
+
+;; UTF-8
+;;;;;;;;;;;;;;;;;;;;
+
+;; set up unicode
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
+(ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-auto-merge-work-directories-length nil
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-use-virtual-buffers t
+      ido-everywhere t
+      ido-handle-duplicate-virtual-buffers 2
+      ido-max-prospects 10)
+
+
+;; uniquify changes conflicting buffer names from file<2> etc
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
+
+;; Remember where I was
+(require 'saveplace)
+(setq-default save-place t)
+
+;; Dired
+(require 'dired)
+;; - is `cd ..` (like vim)
+(define-key dired-mode-map "-" 'dired-up-directory)
+
+;; Nyan MODE!!!!!
+(require 'nyan-mode)
+(nyan-mode)
+(nyan-start-animation)

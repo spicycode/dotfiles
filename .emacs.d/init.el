@@ -10,11 +10,13 @@
 			     ac-slime
 			     base16-theme 
                              coffee-mode
+			     ido-vertical-mode
 			     markdown-mode
 			     nyan-mode
                              evil
 			     evil-leader
 			     rainbow-delimiters
+			     ruby-mode
 			     sass-mode
 			     scss-mode
 			     smex
@@ -167,6 +169,9 @@
 (set-keyboard-coding-system 'utf-8)
 
 (ido-mode t)
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-auto-merge-work-directories-length nil

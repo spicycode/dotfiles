@@ -9,11 +9,11 @@
 (defvar spicycode/packages '(auto-complete
 			     ac-slime
 			     base16-theme 
-                             coffee-mode
+           coffee-mode
 			     ido-vertical-mode
 			     markdown-mode
 			     nyan-mode
-                             evil
+           evil
 			     evil-leader
 			     rainbow-delimiters
 			     ruby-mode

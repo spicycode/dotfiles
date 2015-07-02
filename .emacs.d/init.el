@@ -12,6 +12,7 @@
            coffee-mode
 			     ido-vertical-mode
 			     markdown-mode
+           minitest
 			     nyan-mode
            evil
 			     evil-leader

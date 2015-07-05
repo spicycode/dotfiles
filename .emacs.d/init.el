@@ -12,6 +12,7 @@
 			     base16-theme 
 			     coffee-mode
 			     ido-vertical-mode
+			     magit
 			     markdown-mode
 			     minitest
 			     nyan-mode

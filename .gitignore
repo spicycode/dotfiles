@@ -1,3 +1,5 @@
 .nvim/plugged
 .vim/plugged
 .emacs.d/elpa
+.DS_Store
+*.zwc

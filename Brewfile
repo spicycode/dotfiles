@@ -16,10 +16,12 @@ brew 'leiningen'
 
 # Utilities
 brew 'ack'
+brew 'ctags'
 brew 'htop-osx'
 brew 'most'
 brew 'reattach-to-user-namespace'
 brew 'the_silver_searcher'
+brew 'tig'
 brew 'tmux'
 brew 'wget'
 brew 'vimpager'

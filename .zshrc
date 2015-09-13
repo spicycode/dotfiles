@@ -10,6 +10,10 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/src/zaw/zaw.zsh
 
+# Setup rbenv autocomplete
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
 precmd() {
   if [[ -n "$TMUX" ]]; then
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"

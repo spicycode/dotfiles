@@ -13,6 +13,7 @@ brew 'libav'
 # Languages
 brew 'elixir'
 brew 'leiningen'
+brew 'objective-caml'
 
 # Utilities
 brew 'ack'

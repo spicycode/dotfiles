@@ -14,6 +14,7 @@ brew 'libav'
 brew 'elixir'
 brew 'leiningen'
 brew 'objective-caml'
+brew 'rust'
 
 # Utilities
 brew 'ack'

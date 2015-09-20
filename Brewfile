@@ -13,11 +13,9 @@ brew 'libav'
 # Languages
 brew 'elixir'
 brew 'leiningen'
-brew 'objective-caml'
 brew 'rust'
 
 # Utilities
-brew 'opam'
 brew 'ack'
 brew 'ctags'
 brew 'htop-osx'

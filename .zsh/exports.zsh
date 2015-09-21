@@ -3,7 +3,6 @@ export PATH=bin:script:~/.rbenv/bin:~/.bin:node_modules/.bin:/usr/local/sbin:/us
 export PATH=$PATH:/usr/local/opt/go13/libexec/bin
 export RBENV_ROOT=/usr/local/var/rbenv
 
-
 # Setup terminal, and turn on colors
 export TERM=xterm-256color
 export CLICOLOR=1

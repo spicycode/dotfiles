@@ -9,17 +9,18 @@ brew 'vim'
 
 # Libraries
 brew 'libav'
+brew 'npm'
 
 # Languages
 brew 'elixir'
 brew 'leiningen'
+brew 'node'
 brew 'rust'
 
 # Utilities
 brew 'ack'
 brew 'ctags'
 brew 'htop-osx'
-brew 'mathomatic'
 brew 'most'
 brew 'reattach-to-user-namespace'
 brew 'the_silver_searcher'

@@ -1,6 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=bin:script:~/.rbenv/bin:~/.bin:node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.cabal/bin:$HOME/Library/Haskell/bin:$PATH
-export PATH=$PATH:/usr/local/opt/go13/libexec/bin
+export PATH=node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.cabal/bin:$HOME/Library/Haskell/bin:$PATH
 export RBENV_ROOT=/usr/local/var/rbenv
 
 # Setup terminal, and turn on colors
@@ -20,3 +19,4 @@ export PAGER='most'
 export EDITOR='vim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
+#export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)

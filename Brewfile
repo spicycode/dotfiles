@@ -1,4 +1,6 @@
 tap 'caskroom/cask'
+tap 'universal-ctags/universal-ctags'
+
 
 # Base install
 brew 'zsh'
@@ -19,7 +21,7 @@ brew 'rust'
 
 # Utilities
 brew 'ack'
-brew 'ctags'
+brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'
 brew 'most'
 brew 'reattach-to-user-namespace'

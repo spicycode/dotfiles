@@ -9,16 +9,6 @@
 --regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*\{/\2/,object/
 --regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*function[ \t]*\(/\2/,function/
 
---langdef=coffee
---langmap=coffee:.coffee
---regex-coffee=/[ \t]*class ([A-Za-z.]+)( extends [A-Za-z.]+)?$/\1/c,class/
---regex-coffee=/[ \t]*@?([A-Za-z.]+):.*[-=]>.*$/\1/f,function/
---regex-coffee=/[ \t]*([A-Za-z.]+)[ \t]+=.*[-=]>.*$/\1/f,function/
-
---langdef=css
---langmap=css:.css
---regex-css=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/\1/d,definition/
-
 --langdef=scss
 --langmap=scss:.scss
 --regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/| \1/d,definition/

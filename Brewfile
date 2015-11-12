@@ -1,7 +1,8 @@
 tap 'caskroom/cask'
 tap 'universal-ctags/universal-ctags'
 tap 'railwaycat/emacsmacport'
-
+tap 'neovim/neovim'
+tap 'rogual/neovim-dot-app'
 
 # Base install
 brew 'zsh'
@@ -10,6 +11,8 @@ brew 'git'
 brew 'hub'
 brew 'vim'
 brew 'emacs-mac', args: ['--with-spacemacs-icon']
+brew 'neovim', args: ['HEAD']
+brew 'neovim-dot-app', args: ['HEAD']
 
 # Libraries
 brew 'libav'

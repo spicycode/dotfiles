@@ -39,5 +39,3 @@ brew 'tree'
 brew 'wget'
 brew 'vimpager'
 brew 'youtube-dl'
-
-

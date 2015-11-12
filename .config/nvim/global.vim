@@ -1,8 +1,5 @@
 " General Settings:
 
-" Vim not vi
-set nocompatible
-
 " We use UTF8 by default
 scriptencoding utf-8
 
@@ -29,9 +26,6 @@ set vb t_vb=
 
 " Set to auto read when a file is changed from the outside
 set autoread                            
-
-" We're on the fastest TTY ever
-set ttyfast
 
 " Also match angle brackets
 set matchpairs+=<:>       
@@ -100,9 +94,6 @@ set gdefault
 set fo-=o " Do not automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set fo-=r " Do not automatically insert a comment leader after an enter
 set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
-
-" We use all the colors, all 256 of the possible colors in the universe
-set t_Co=256
 
 " Buffers become hidden when unloaded
 set hidden

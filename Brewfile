@@ -1,6 +1,9 @@
 tap 'caskroom/cask'
 tap 'universal-ctags/universal-ctags'
-
+# Base neovim
+tap 'neovim/neovim'
+# Neovim dot app
+tap 'rogual/neovim-dot-app'
 
 # Base install
 brew 'zsh'
@@ -8,6 +11,8 @@ brew 'zsh-completions'
 brew 'git'
 brew 'hub'
 brew 'vim'
+brew 'neovim', args: ['HEAD']
+brew 'neovim-dot-app', args: ['HEAD']
 
 # Libraries
 brew 'libav'

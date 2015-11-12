@@ -1,5 +1,6 @@
 tap 'caskroom/cask'
 tap 'universal-ctags/universal-ctags'
+tap 'railwaycat/emacsmacport'
 
 
 # Base install
@@ -8,6 +9,7 @@ brew 'zsh-completions'
 brew 'git'
 brew 'hub'
 brew 'vim'
+brew 'emacs-mac', args: ['--with-spacemacs-icon']
 
 # Libraries
 brew 'libav'

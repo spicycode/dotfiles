@@ -1,4 +1,4 @@
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " NetRW Extensions:
 Plug 'tpope/vim-vinegar'

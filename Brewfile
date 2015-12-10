@@ -4,6 +4,8 @@ tap 'railwaycat/emacsmacport'
 tap 'neovim/neovim'
 tap 'rogual/neovim-dot-app'
 
+cask 'java'
+
 # Base install
 brew 'zsh'
 brew 'zsh-completions'

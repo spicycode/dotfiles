@@ -8,7 +8,6 @@ alias git='hub'
 alias rake='noglob rake'
 alias bower='noglob bower'
 alias git='hub'
-alias vim='nvim'
 
 # Launch chrome with remote debugging port on
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'

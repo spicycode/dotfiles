@@ -1,5 +1,5 @@
 # add in zsh-completions
-fpath=(/opt/boxen/homebrew/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -U compinit && compinit                                                                                       
 zmodload -i zsh/complist

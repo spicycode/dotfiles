@@ -14,6 +14,9 @@ source ~/src/zaw/zaw.zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=bin:script:~/.bin:$PATH;
 
+# Enable autocomplete and shims for node
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
 precmd() {
   if [[ -n "$TMUX" ]]; then
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"

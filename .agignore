@@ -11,3 +11,4 @@ public/assets
 *.woff
 *.eot
 *.ico
+.keep

@@ -31,6 +31,7 @@ brew 'rust'
 brew 'ack'
 brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'
+brew 'lnav'
 brew 'most'
 brew 'reattach-to-user-namespace'
 brew 'rbenv'

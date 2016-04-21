@@ -16,6 +16,7 @@ brew 'emacs-mac', args: ['--with-spacemacs-icon']
 brew 'neovim', args: ['HEAD']
 brew 'neovim-dot-app', args: ['HEAD']
 brew 'weechat', args: ['--with-lua --with-perl --with-python --with-ruby']
+brew 'coreutils'
 
 # Libraries
 brew 'libav'

@@ -30,6 +30,7 @@ brew 'rust'
 
 # Utilities
 brew 'ack'
+brew 'diff-so-fancy'
 brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'
 brew 'lnav'

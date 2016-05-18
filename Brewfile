@@ -27,9 +27,11 @@ brew 'elixir'
 brew 'leiningen'
 brew 'node'
 brew 'rust'
+brew 'opam'
 
 # Utilities
 brew 'ack'
+brew 'direnv'
 brew 'diff-so-fancy'
 brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'

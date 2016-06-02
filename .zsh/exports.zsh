@@ -23,3 +23,5 @@ export EDITOR='vim'
 export LC_COLLATE=C
 export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)
 export HOMEBREW_NO_ANALYTICS=1
+# Silence direnv
+export DIRENV_LOG_FORMAT=

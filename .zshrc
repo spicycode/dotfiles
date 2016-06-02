@@ -10,9 +10,11 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/src/zaw/zaw.zsh
 
+# Setup direnv
+eval "$(direnv hook zsh)"
+
 # Setup rbenv autocomplete
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH=bin:script:~/.bin:$PATH;
 
 # Enable autocomplete and shims for node
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
@@ -22,3 +24,4 @@ precmd() {
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
+

@@ -5,9 +5,6 @@ alias ls='ls -GFh'
 alias ll='ls -GFhl'
 
 alias git='hub'
-alias rake='noglob rake'
-alias bower='noglob bower'
-alias git='hub'
 
 # Launch chrome with remote debugging port on
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'

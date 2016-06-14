@@ -9,10 +9,15 @@ Plug 'noahfrederick/vim-hemisu'
 Plug 'whatyouhide/vim-gotham'
 
 " Syntax Extensions:
+Plug 'rust-lang/rust.vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'fatih/vim-nginx'
 Plug 'vim-ruby/vim-ruby'
+Plug 'JulesWang/css.vim'
+Plug 'ap/vim-css-color'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'
@@ -22,12 +27,6 @@ Plug 'sjl/gundo.vim'
 
 " The Silver Surfer: 
 Plug 'rking/ag.vim'
-
-" Close Buffers Keeping Panes Open:
-Plug 'vadimr/bclose.vim'
-
-" Change 1.8 -> 1.9 Hash Syntax:
-Plug 'ck3g/vim-change-hash-syntax'
 
 " RuboCop -> Quickfix (I like this better than always on syntastic):
 Plug 'ngmy/vim-rubocop'
@@ -43,6 +42,7 @@ Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 Plug 'Shougo/neocomplcache.vim'
 
 " The Tim Pope section of the VIM config:
+Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
@@ -53,8 +53,11 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-jdaddy'
 
 Plug 'gerw/vim-HiLinkTrace'
+Plug 'godlygeek/tabular'
 
 " Fix autoread 
 Plug 'tmux-plugins/vim-tmux-focus-events'

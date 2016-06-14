@@ -80,3 +80,15 @@ let g:neocomplcache_include_suffixes = {
   \ 'haskell' : '.hs'
   \ }
 
+
+" Clojure config
+let g:clojure_syntax_keywords = {
+    \ 'clojureMacro': ["defproject", "defspout", "defbolt"]
+    \ }
+
+" RubyFold:
+let g:ruby_fold_lines_limit = 500
+
+" Use stylelint, not scss_lint
+let g:syntastic_scss_checkers = ['stylelint']
+let g:syntastic_sass_checkers = ['stylelint']

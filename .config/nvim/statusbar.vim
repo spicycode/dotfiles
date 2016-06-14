@@ -42,5 +42,4 @@ if has("statusline") && !&cp
   set statusline+=%=      "left/right separator
   set statusline+=%c,     "cursor column
   set statusline+=%l      "cursor line
-  set statusline+=\ %P    "percent through file
 endif

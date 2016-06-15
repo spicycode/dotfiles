@@ -32,6 +32,11 @@ let g:ctrlp_user_command = {
     \ }
 \ }
 
+" CtrlP pymatcher because it's crazy more accurate
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" Jump to the tag directly if only 1 found
+let g:ctrlp_tjump_only_silent = 1
 
 " TabCompletion:
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
@@ -45,3 +50,4 @@ let g:ruby_fold_lines_limit = 500
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+

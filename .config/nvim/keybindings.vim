@@ -44,3 +44,7 @@ nnoremap <leader>gr :Dispatch testrb %<CR>
 
 " Let us use jj to esc
 imap jj <Esc>
+
+" Use ctrlptjump for tags
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>

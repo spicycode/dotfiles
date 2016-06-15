@@ -25,21 +25,23 @@ Plug 'christoomey/vim-tmux-navigator'
 " Graphical Undo Visualization:
 Plug 'sjl/gundo.vim'
 
+" Enable neomake
+Plug 'neomake/neomake'
+
 " The Silver Surfer: 
 Plug 'rking/ag.vim'
-
-" RuboCop -> Quickfix (I like this better than always on syntastic):
-Plug 'ngmy/vim-rubocop'
 
 " Current function info for status bar
 Plug 'vim-scripts/current-func-info.vim'
 
 " Fuzzy Finding:
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 
 " AutoCompletion:
-Plug 'Shougo/neocomplcache.vim'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " The Tim Pope section of the VIM config:
 Plug 'tpope/vim-rsi'

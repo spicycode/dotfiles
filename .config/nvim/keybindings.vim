@@ -1,6 +1,9 @@
 " Map Leader: Reset from \ to ,
 let mapleader = ","
 
+" Fix ctrl-h neovim https://github.com/christoomey/vim-tmux-navigator#tmux
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 

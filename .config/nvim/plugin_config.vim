@@ -48,6 +48,11 @@ endfunction"}}
 " RubyFold:
 let g:ruby_fold_lines_limit = 500
 
-" Use deoplete.
+" Use Deoplete:
 let g:deoplete#enable_at_startup = 1
 
+" Only use stylelint:
+let g:neomake_css_enabled_makers = ['stylelint']
+let g:neomake_error_sign = {
+      \ 'text': '👺'
+      \ }

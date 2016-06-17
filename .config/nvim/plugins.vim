@@ -11,6 +11,7 @@ Plug 'whatyouhide/vim-gotham'
 " Syntax Extensions:
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
 Plug 'cakebaker/scss-syntax.vim'
@@ -25,7 +26,10 @@ Plug 'christoomey/vim-tmux-navigator'
 " Graphical Undo Visualization:
 Plug 'sjl/gundo.vim'
 
-" Enable neomake
+" Show ANSI color coded and hide escape sequences:
+Plug 'powerman/vim-plugin-AnsiEsc'
+
+" Enable Neomake:
 Plug 'neomake/neomake'
 
 " The Silver Surfer: 

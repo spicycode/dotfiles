@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.cabal/bin:$HOME/Library/Haskell/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.cabal/bin:$HOME/Library/Haskell/bin:$PATH
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:/usr/local/MacGPG2/bin
 export GOPATH=$HOME/src/gopath

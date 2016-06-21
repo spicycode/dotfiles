@@ -12,8 +12,12 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
 nmap <leader>te :tabedit 
 
-" Ag <leader>f to search
-map <leader>f :Ag<Space>
+nnoremap <leader>f :CtrlPag<cr>
+vnoremap <leader>f :CtrlPagVisual<cr>
+" nnoremap <c-f> :CtrlPag<cr>
+" vnoremap <c-f> :CtrlPagVisual<cr>
+" nnoremap <leader>ca :CtrlPagLocate
+" nnoremap <leader>cp :CtrlPagPrevious<cr>
 
 " Close buffers
 nmap <leader>q :Bclose<CR>

@@ -1,2 +1,2 @@
 set background=dark
-colorscheme hemisu
+colorscheme base16-ocean

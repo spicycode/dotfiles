@@ -3,3 +3,4 @@
 .emacs.d/elpa
 .DS_Store
 *.zwc
+.config/nvim/.init.vim-rplugin~

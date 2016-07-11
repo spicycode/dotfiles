@@ -1,8 +1,6 @@
 tap 'caskroom/cask'
 tap 'universal-ctags/universal-ctags'
-tap 'railwaycat/emacsmacport'
 tap 'neovim/neovim'
-tap 'rogual/neovim-dot-app'
 
 cask 'java'
 
@@ -12,9 +10,7 @@ brew 'zsh-completions'
 brew 'git'
 brew 'hub'
 brew 'vim'
-brew 'emacs-mac', args: ['--with-spacemacs-icon']
 brew 'neovim', args: ['HEAD']
-brew 'neovim-dot-app', args: ['HEAD']
 brew 'weechat', args: ['--with-lua --with-perl --with-python --with-ruby']
 brew 'coreutils'
 
@@ -24,6 +20,8 @@ brew 'npm'
 
 # Languages
 brew 'elixir'
+brew 'haskell-stack'
+brew 'cabal-install'
 brew 'leiningen'
 brew 'node'
 brew 'rust'

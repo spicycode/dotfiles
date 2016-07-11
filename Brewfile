@@ -13,6 +13,7 @@ brew 'vim'
 brew 'neovim', args: ['HEAD']
 brew 'weechat', args: ['--with-lua --with-perl --with-python --with-ruby']
 brew 'coreutils'
+brew 'exercism'
 
 # Libraries
 brew 'libav'

@@ -3,6 +3,9 @@
 " We use UTF8 by default
 scriptencoding utf-8
 
+" Use the whole true color space
+set termguicolors
+
 " Enable filetype-specific indenting and plugins
 filetype plugin indent on
 

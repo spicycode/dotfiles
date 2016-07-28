@@ -53,6 +53,15 @@ let g:deoplete#enable_at_startup = 1
 
 " Only use stylelint:
 let g:neomake_css_enabled_makers = ['stylelint']
+let g:neomake_scss_enabled_makers = ['stylelint']
+let g:neomake_scss_stylelint_maker = {
+      \ 'exe': 'stylelint',
+      \ 'args': ['--syntax', 'scss'],
+      \ 'errorformat': 
+            \ '%+P%f,' . 
+                \ '%*\s%l:%c  %t  %m,' .
+            \ '%-Q'
+            \ }
 let g:neomake_error_sign = {
       \ 'text': '👺'
       \ }

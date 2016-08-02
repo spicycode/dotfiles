@@ -32,6 +32,7 @@ brew 'opam'
 brew 'ack'
 brew 'direnv'
 brew 'diff-so-fancy'
+brew 'grc'
 brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'
 brew 'lnav'

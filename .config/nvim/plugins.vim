@@ -11,6 +11,7 @@ Plug 'whatyouhide/vim-gotham'
 " Syntax Extensions:
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'avdgaag/vim-phoenix'
 Plug 'slashmili/alchemist.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'

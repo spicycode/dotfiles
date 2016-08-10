@@ -37,6 +37,7 @@ brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'
 brew 'lnav'
 brew 'most'
+brew 'parallel'
 brew 'reattach-to-user-namespace'
 brew 'rbenv'
 brew 'ruby-build'

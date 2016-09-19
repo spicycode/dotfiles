@@ -21,12 +21,8 @@ brew 'npm'
 
 # Languages
 brew 'elixir'
-brew 'haskell-stack'
-brew 'cabal-install'
 brew 'leiningen'
 brew 'node'
-brew 'rust'
-brew 'opam'
 
 # Utilities
 brew 'ack'

@@ -26,7 +26,6 @@ brew 'node'
 
 # Utilities
 brew 'ack'
-brew 'direnv'
 brew 'diff-so-fancy'
 brew 'grc'
 brew 'universal-ctags', args: ['HEAD']

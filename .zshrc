@@ -10,9 +10,6 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/src/zaw/zaw.zsh
 
-# Setup direnv
-eval "$(direnv hook zsh)"
-
 # Setup GRC for auto colors
 source /usr/local/etc/grc.bashrc
 

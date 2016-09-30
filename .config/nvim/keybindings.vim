@@ -12,12 +12,7 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
 nmap <leader>te :tabedit 
 
-nnoremap <leader>f :CtrlPagLocate 
-vnoremap <leader>f :CtrlPagVisual<cr>
-" nnoremap <c-f> :CtrlPag<cr>
-" vnoremap <c-f> :CtrlPagVisual<cr>
-" nnoremap <leader>ca :CtrlPagLocate
-" nnoremap <leader>cp :CtrlPagPrevious<cr>
+nnoremap <leader>f :Ag<space>
 
 " Close buffers
 nmap <leader>q :Bclose<CR>
@@ -29,7 +24,7 @@ nnoremap <leader>lb :CtrlPBuffer<cr>
 nnoremap <leader>lt :CtrlPTag<cr>
 nnoremap <C-l> :CtrlPMRUFiles<CR>
 
-nnoremap K :CtrlPag <C-R><C-W><CR>
+nnoremap K :Ag <C-R><C-W><CR>
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>

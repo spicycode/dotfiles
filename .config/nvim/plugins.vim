@@ -43,8 +43,6 @@ Plug 'vim-scripts/current-func-info.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'ivalkeen/vim-ctrlp-tjump'
-Plug 'lokikl/vim-ctrlp-ag'
-
 
 " AutoCompletion:
 function! DoRemote(arg)

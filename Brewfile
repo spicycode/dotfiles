@@ -31,6 +31,7 @@ brew 'grc'
 brew 'universal-ctags', args: ['HEAD']
 brew 'htop-osx'
 brew 'lnav'
+brew 'mas'
 brew 'most'
 brew 'parallel'
 brew 'reattach-to-user-namespace'

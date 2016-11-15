@@ -4,3 +4,4 @@
 .DS_Store
 *.zwc
 .config/nvim/.init.vim-rplugin~
+.config/nvim/tags

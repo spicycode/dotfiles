@@ -3,6 +3,7 @@ tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim'
 
 cask 'java'
+cask 'screenhero'
 
 # Base install
 brew 'zsh'

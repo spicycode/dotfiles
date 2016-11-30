@@ -4,6 +4,7 @@ tap 'neovim/neovim'
 
 cask 'java'
 cask 'screenhero'
+cask 'flux'
 
 # Base install
 brew 'zsh'

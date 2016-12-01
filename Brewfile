@@ -25,6 +25,7 @@ brew 'npm'
 brew 'elixir'
 brew 'leiningen'
 brew 'node'
+brew 'python3'
 
 # Utilities
 brew 'ack'

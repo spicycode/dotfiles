@@ -44,6 +44,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'ivalkeen/vim-ctrlp-tjump'
 
+" VimWiki:
+Plug 'vimwiki/vimwiki'
+
 " AutoCompletion:
 function! DoRemote(arg)
   UpdateRemotePlugins

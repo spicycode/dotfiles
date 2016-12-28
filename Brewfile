@@ -47,3 +47,11 @@ brew 'tree'
 brew 'wget'
 brew 'vimpager'
 brew 'youtube-dl'
+
+
+# Mac Apps
+mas 'Xcode', id: 497799835
+mas 'Keynote', id: 409183694
+mas '1Password', id: 443987910
+mas 'Slack', id: 803453959
+mas 'Reeder', id: 880001334

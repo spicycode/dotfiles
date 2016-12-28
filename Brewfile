@@ -50,8 +50,13 @@ brew 'youtube-dl'
 
 
 # Mac Apps
-mas 'Xcode', id: 497799835
-mas 'Keynote', id: 409183694
 mas '1Password', id: 443987910
-mas 'Slack', id: 803453959
+mas 'Keynote', id: 409183694
+mas 'Logitech Camera Settings', id: 638332853
+mas 'Monosnap', id: 540348655
+mas 'Paprika Recipe Manager', id: 451907568
 mas 'Reeder', id: 880001334
+mas 'Slack', id: 803453959
+mas 'Todoist: To Do List | Task List', id: 585829637
+mas 'Tweetbot for Twitter', id: 557168941
+mas 'Xcode', id: 497799835

@@ -1,10 +1,10 @@
 tap 'caskroom/cask'
 tap 'universal-ctags/universal-ctags'
-tap 'neovim/neovim'
-
+tap 'neovim/neovim' 
 cask 'java'
 cask 'screenhero'
 cask 'flux'
+cask 'licecap'
 
 # Base install
 brew 'zsh'

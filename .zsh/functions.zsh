@@ -85,3 +85,17 @@ function strip_diff_leading_symbols {
 ## Print a horizontal rule
 rule () {
   printf "%$(tput cols)s\n"|tr " " "─"}}
+
+
+function 5k() {
+  SwitchAudioSource -t output -s "Audioengine D1   "
+  SwitchAudioSource -t input -s "LG UltraFine Display Audio"
+}
+
+function add_keys() {
+  ssh-add -k && ssh-add -k github/ssh/id_github
+}
+
+function homebrew() {
+  brew update && brew outdated && brew upgrade && brew cleanup
+}

@@ -5,3 +5,5 @@ alias ls='ls -GFh'
 alias ll='ls -GFhl'
 
 alias git='hub'
+
+alias vim='nvim'

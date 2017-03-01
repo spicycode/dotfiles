@@ -15,11 +15,15 @@ Plug 'avdgaag/vim-phoenix'
 Plug 'slashmili/alchemist.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'fatih/vim-nginx'
 Plug 'vim-ruby/vim-ruby'
 Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
+Plug 'flowtype/vim-flow'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'
@@ -32,6 +36,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 
 " Enable Neomake:
 Plug 'neomake/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
 
 " The Silver Surfer: 
 Plug 'rking/ag.vim'

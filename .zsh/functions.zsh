@@ -97,5 +97,16 @@ function add_keys() {
 }
 
 function homebrew() {
-  brew update && brew outdated && brew upgrade && brew cleanup
+  clear && echo "==> Running 'brew update'" && brew update &&
+  echo "==> Running 'brew outdated'" && brew outdated &&
+  echo "==> Running 'brew upgrade'" && brew upgrade &&
+  echo "==> Running 'brew cleanup'" && brew cleanup &&
 }
+
+function 2016mbp() {
+  # Restart CoreAudio because 👎
+  sudo killall coreaudiod
+  # Restart control strip because 🔥
+  killall ControlStrip
+}
+

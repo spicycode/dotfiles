@@ -6,6 +6,8 @@ cask 'screenhero'
 cask 'flux'
 cask 'licecap'
 cask 'sizeup'
+cask 'atom'
+cask 'visual-studio-code'
 
 # Base install
 brew 'zsh'

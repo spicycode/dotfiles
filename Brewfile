@@ -1,13 +1,6 @@
 tap 'caskroom/cask'
 tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim' 
-cask 'java'
-cask 'screenhero'
-cask 'flux'
-cask 'licecap'
-cask 'sizeup'
-cask 'atom'
-cask 'visual-studio-code'
 
 # Base install
 brew 'zsh'
@@ -54,7 +47,27 @@ brew 'youtube-dl'
 
 
 # Mac Apps
+cask 'atom'
+cask 'bartender'
+cask 'caffeine'
+cask 'dropbox'
+cask 'flux'
+cask 'hyper'
+cask 'istat-menus'
+cask 'java'
+cask 'launchbar'
+cask 'licecap'
+cask 'little-snitch'
+cask 'mailplane'
+cask 'omnifocus'
+cask 'screenhero'
+cask 'sizeup'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'zoomus'
+
 mas '1Password', id: 443987910
+mas 'Boxy', id: 1053031090
 mas 'Keynote', id: 409183694
 mas 'Logitech Camera Settings', id: 638332853
 mas 'Monosnap', id: 540348655

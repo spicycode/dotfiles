@@ -5,3 +5,4 @@
 *.zwc
 .config/nvim/.init.vim-rplugin~
 .config/nvim/tags
+.config/hub

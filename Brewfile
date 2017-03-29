@@ -5,6 +5,7 @@ cask 'java'
 cask 'screenhero'
 cask 'flux'
 cask 'licecap'
+cask 'sizeup'
 
 # Base install
 brew 'zsh'

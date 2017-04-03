@@ -51,6 +51,8 @@ let g:ruby_fold_lines_limit = 500
 " Use Deoplete:
 let g:deoplete#enable_at_startup = 1
 
+let g:neosnippet#enable_completed_snippet = 1
+
 " Only use stylelint:
 let g:neomake_css_enabled_makers = ['stylelint']
 let g:neomake_scss_enabled_makers = ['stylelint']

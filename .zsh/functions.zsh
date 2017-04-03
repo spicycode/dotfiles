@@ -106,6 +106,10 @@ function homebrew() {
 function 2016mbp() {
   # Restart CoreAudio because 👎
   sudo killall coreaudiod
+
+  # Restart webcam process
+  sudo killall VDCAssistant
+
   # Restart control strip because 🔥
   killall ControlStrip
 }

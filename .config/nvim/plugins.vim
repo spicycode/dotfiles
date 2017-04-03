@@ -63,6 +63,7 @@ function! DoRemote(arg)
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'wokalski/autocomplete-flow'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 " The Tim Pope section of the VIM config:
 Plug 'tpope/vim-rsi'

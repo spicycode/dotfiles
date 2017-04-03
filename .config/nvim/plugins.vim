@@ -50,6 +50,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'ivalkeen/vim-ctrlp-tjump'
 
+" Snippets:
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
 " VimWiki:
 Plug 'vimwiki/vimwiki'
 
@@ -58,6 +62,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'wokalski/autocomplete-flow'
 
 " The Tim Pope section of the VIM config:
 Plug 'tpope/vim-rsi'

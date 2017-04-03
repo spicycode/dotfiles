@@ -1,4 +1,5 @@
 tap 'caskroom/cask'
+tap 'caskroom/fonts' 
 tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim' 
 
@@ -47,6 +48,9 @@ brew 'wget'
 brew 'vimpager'
 brew 'youtube-dl'
 
+# Fonts
+cask 'font-fira-code'
+cask 'font-input'
 
 # Mac Apps
 cask 'atom'

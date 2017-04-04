@@ -45,11 +45,6 @@ Plug 'rking/ag.vim'
 " Current function info for status bar
 Plug 'vim-scripts/current-func-info.vim'
 
-" Fuzzy Finding:
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'ivalkeen/vim-ctrlp-tjump'
-
 " Snippets:
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'

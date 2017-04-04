@@ -12,13 +12,13 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
 nmap <leader>te :tabedit 
 
-nnoremap <leader>f :Ag<space>
+nnoremap <leader>f :Rg<space>
 
 " Close buffers
 nmap <leader>q :Bclose<CR>
 nmap <leader>b :bd<CR>
 
-nnoremap K :Ag <C-R><C-W><CR>
+nnoremap K :Rg <C-R><C-W><CR>
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>

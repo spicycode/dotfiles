@@ -39,8 +39,8 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'neomake/neomake'
 Plug 'benjie/neomake-local-eslint.vim'
 
-" The Silver Surfer: 
-Plug 'rking/ag.vim'
+" Finding: 
+Plug 'jremmen/vim-ripgrep'
 
 " Current function info for status bar
 Plug 'vim-scripts/current-func-info.vim'

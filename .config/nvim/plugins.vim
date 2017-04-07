@@ -25,6 +25,7 @@ Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
 Plug 'flowtype/vim-flow'
 Plug 'othree/html5.vim'
+Plug 'slim-template/vim-slim'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'
@@ -57,7 +58,6 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'wokalski/autocomplete-flow'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 " The Tim Pope section of the VIM config:

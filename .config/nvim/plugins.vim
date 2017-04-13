@@ -26,6 +26,7 @@ Plug 'ap/vim-css-color'
 Plug 'flowtype/vim-flow'
 Plug 'othree/html5.vim'
 Plug 'slim-template/vim-slim'
+Plug 'leafgarland/typescript-vim'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'

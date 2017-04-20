@@ -18,6 +18,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'kewah/vim-stylefmt'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'fatih/vim-nginx'
 Plug 'vim-ruby/vim-ruby'

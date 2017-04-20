@@ -57,7 +57,7 @@ let g:neosnippet#enable_completed_snippet = 1
 let g:neomake_css_enabled_makers = ['stylelint']
 let g:neomake_scss_enabled_makers = ['stylelint']
 let g:neomake_scss_stylelint_maker = {
-      \ 'exe': 'stylelint',
+      \ 'exe': './node_modules/.bin/stylelint',
       \ 'args': ['--syntax', 'scss'],
       \ 'errorformat': 
             \ '%+P%f,' . 

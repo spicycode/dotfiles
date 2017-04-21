@@ -1,0 +1,2 @@
+#!/bin/sh
+git branch | fzf --multi --preview 'git log {+1}..master' --bind "enter:execute(git checkout {+1})+accept"

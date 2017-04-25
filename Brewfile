@@ -23,6 +23,7 @@ brew 'elixir'
 brew 'leiningen'
 brew 'node'
 brew 'python3'
+brew 'crystal-lang'
 
 # Utilities
 brew 'ack'

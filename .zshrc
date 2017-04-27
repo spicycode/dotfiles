@@ -22,6 +22,9 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 # OPAM configuration
 source /Users/spicycode/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# Tiny Terminal
+source /Users/spicycode/.config/tiny-terminal-env > /dev/null 2> /dev/null || true
+
 precmd() {
   if [[ -n "$TMUX" ]]; then
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"

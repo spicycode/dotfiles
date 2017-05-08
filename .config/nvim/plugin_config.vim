@@ -67,3 +67,6 @@ let g:neomake_scss_stylelint_maker = {
 let g:neomake_error_sign = {
       \ 'text': '👺'
       \ }
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+let b:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'

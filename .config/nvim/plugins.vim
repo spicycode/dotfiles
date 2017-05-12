@@ -29,6 +29,7 @@ Plug 'othree/html5.vim'
 Plug 'slim-template/vim-slim'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'ElmCast/elm-vim'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'

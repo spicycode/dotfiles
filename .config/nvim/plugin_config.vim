@@ -70,3 +70,6 @@ let g:neomake_error_sign = {
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 let b:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
+
+let g:elm_format_autosave = 1
+

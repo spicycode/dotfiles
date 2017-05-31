@@ -13,13 +13,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'avdgaag/vim-phoenix'
 Plug 'slashmili/alchemist.vim'
-Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'kewah/vim-stylefmt'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'fatih/vim-nginx'
 Plug 'vim-ruby/vim-ruby'
 Plug 'JulesWang/css.vim'
@@ -28,14 +26,11 @@ Plug 'flowtype/vim-flow'
 Plug 'othree/html5.vim'
 Plug 'slim-template/vim-slim'
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
 Plug 'ElmCast/elm-vim'
+Plug 'mhartington/nvim-typescript'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'
-
-" Graphical Undo Visualization:
-Plug 'sjl/gundo.vim'
 
 " Show ANSI color coded and hide escape sequences:
 Plug 'powerman/vim-plugin-AnsiEsc'
@@ -53,9 +48,6 @@ Plug 'vim-scripts/current-func-info.vim'
 " Snippets:
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-
-" VimWiki:
-Plug 'vimwiki/vimwiki'
 
 " AutoCompletion:
 function! DoRemote(arg)

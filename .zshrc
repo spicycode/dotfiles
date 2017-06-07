@@ -11,19 +11,13 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
 # Setup GRC for auto colors
-source /usr/local/etc/grc.bashrc
+source /usr/local/etc/grc.zsh
 
 # Setup rbenv autocomplete
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Enable autocomplete and shims for node
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
-# OPAM configuration
-source /Users/spicycode/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# Tiny Terminal
-source /Users/spicycode/.config/tiny-terminal-env > /dev/null 2> /dev/null || true
 
 precmd() {
   if [[ -n "$TMUX" ]]; then

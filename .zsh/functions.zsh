@@ -38,10 +38,10 @@ function extract {
 }
 
 function ss {
-  if [ -e mix.exs ]; then
-    mix phoenix.server $@
-  elif [ -e script/server ]; then
+  if [ -e script/server ]; then
     script/server $@
+  elif [ -e mix.exs ]; then
+    mix phoenix.server $@
   else
     script/rails server $@
   fi

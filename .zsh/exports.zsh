@@ -1,5 +1,6 @@
 # Currently this path is appendend to dynamically when picking a ruby version
 export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.cabal/bin:$HOME/Library/Haskell/bin:$PATH
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:/usr/local/MacGPG2/bin
 export GOPATH=$HOME/src/gopath
@@ -25,3 +26,5 @@ export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)
 export HOMEBREW_NO_ANALYTICS=1
 # Silence direnv
 export DIRENV_LOG_FORMAT=
+
+export PKG_CONFIG_PATH="/usr/local/opt/pkg-config"

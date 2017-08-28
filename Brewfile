@@ -73,6 +73,7 @@ cask 'paw'
 cask 'omnifocus'
 cask 'screenhero'
 cask 'sizeup'
+cask 'stay'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
 cask 'vlc'
@@ -86,6 +87,7 @@ mas 'Monosnap', id: 540348655
 mas 'Paprika Recipe Manager', id: 451907568
 mas 'Reeder', id: 880001334
 mas 'Slack', id: 803453959
+mas 'Things 3', id: 904280696
 mas 'Todoist: To Do List | Task List', id: 585829637
 mas 'Tweetbot for Twitter', id: 557168941
 mas 'Xcode', id: 497799835

@@ -78,4 +78,7 @@ Plug 'godlygeek/tabular'
 " Fix autoread 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+
+" TaskWarrior:
+Plug 'blindFS/vim-taskwarrior'
 call plug#end()

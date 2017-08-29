@@ -41,6 +41,7 @@ brew 'rbenv'
 brew 'ripgrep'
 brew 'ruby-build'
 brew 'switchaudio-osx'
+brew 'task' # TaskWarrior
 brew 'the_silver_searcher'
 brew 'tig'
 brew 'tmux'

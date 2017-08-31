@@ -4,7 +4,6 @@ tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim' 
 tap 'buo/cask-upgrade'
 
-
 # Base install
 brew 'zsh'
 brew 'zsh-completions'

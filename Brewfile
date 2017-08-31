@@ -4,7 +4,6 @@ tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim' 
 tap 'buo/cask-upgrade'
 
-
 # Base install
 brew 'zsh'
 brew 'zsh-completions'
@@ -44,6 +43,7 @@ brew 'rbenv'
 brew 'ripgrep'
 brew 'ruby-build'
 brew 'switchaudio-osx'
+brew 'task' # TaskWarrior
 brew 'the_silver_searcher'
 brew 'tig'
 brew 'tmux'

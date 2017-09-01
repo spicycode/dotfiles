@@ -9,6 +9,7 @@ tap 'neomutt/homebrew-neomutt'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'git'
+brew 'git-lfs'
 brew 'hub'
 brew 'vim'
 brew 'neovim', args: ['HEAD']

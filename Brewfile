@@ -3,7 +3,7 @@ tap 'caskroom/fonts'
 tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim' 
 tap 'buo/cask-upgrade'
-
+tap 'neomutt/homebrew-neomutt'
 
 # Base install
 brew 'zsh'
@@ -33,6 +33,7 @@ brew 'diff-so-fancy'
 brew 'fzf'
 brew 'grc'
 brew 'universal-ctags', args: ['HEAD']
+brew 'neomutt', args: ['HEAD']
 brew 'htop-osx'
 brew 'lnav'
 brew 'mas'

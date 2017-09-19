@@ -8,3 +8,7 @@
 .config/hub
 .config/heroku
 .config/configstore
+.config/NuGet/
+.config/stetic/
+.config/xbuild/
+.config/yarn/

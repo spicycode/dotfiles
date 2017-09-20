@@ -83,6 +83,7 @@ cask 'vlc'
 cask 'zoomus'
 
 mas '1Password', id: 443987910
+mas '1Blocker - Better Than Just an Adblock', id: 1107421413
 mas 'Boxy', id: 1053031090
 mas 'Keynote', id: 409183694
 mas 'Logitech Camera Settings', id: 638332853

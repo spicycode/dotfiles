@@ -45,6 +45,7 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <c-]> :Tags <c-r><c-w><cr>
 
 nnoremap <leader>lb :call fzf#run({'source': map(range(1, bufnr('$')), 'bufname(v:val)'), 'sink': 'e', 'down': '30%'})<CR>
+nnoremap <leader>lt :Tags<CR>
 
 " Create a search command that uses Ripgrep and offers previews
 command! -bang -complete=file -nargs=* Search

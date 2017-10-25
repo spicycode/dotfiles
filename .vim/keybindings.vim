@@ -12,19 +12,13 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
 nmap <leader>te :tabedit 
 
-nnoremap <leader>f :Ag<space>
+nnoremap <leader>f :Rg<space>
 
 " Close buffers
 nmap <leader>q :Bclose<CR>
 nmap <leader>b :bd<CR>
 
-nnoremap <leader>lc :CtrlP<cr>
-nnoremap <leader>lf :CtrlP<cr>
-nnoremap <leader>lb :CtrlPBuffer<cr>
-nnoremap <leader>lt :CtrlPTag<cr>
-nnoremap <C-l> :CtrlPMRUFiles<CR>
-
-nnoremap K :Ag <C-R><C-W><CR>
+nnoremap K :Rg <C-R><C-W><CR>
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>
@@ -44,6 +38,18 @@ nnoremap <leader>gr :Dispatch testrb %<CR>
 " Let us use jj to esc
 imap jj <Esc>
 
-" Use ctrlptjump for tags
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
+" Map CtrlP to FZF
+nnoremap <C-p> :FZF<CR>
+
+" Make jump to tag open up FZF
+nnoremap <c-]> :Tags <c-r><c-w><cr>
+
+nnoremap <leader>lb :call fzf#run({'source': map(range(1, bufnr('$')), 'bufname(v:val)'), 'sink': 'e', 'down': '30%'})<CR>
+
+" Create a search command that uses Ripgrep and offers previews
+command! -bang -complete=file -nargs=* Search
+  \ call fzf#vim#grep(
+  \   'rg --smart-case --vimgrep --no-heading --color=always '.<q-args>, 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)

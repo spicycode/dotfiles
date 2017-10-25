@@ -12,7 +12,7 @@ brew 'git-lfs'
 brew 'hub'
 brew 'vim'
 brew 'neovim', args: ['HEAD']
-brew 'weechat', args: ['--with-lua --with-perl --with-python --with-ruby']
+brew 'weechat', args: ['--with-aspell --with-curl --with-lua --with-perl --with-python --with-ruby']
 brew 'coreutils'
 brew 'exercism'
 
@@ -55,6 +55,7 @@ brew 'youtube-dl'
 # Fonts
 cask 'font-fira-code'
 cask 'font-input'
+cask 'font-iosevka'
 
 # Mac Apps
 cask 'atom'

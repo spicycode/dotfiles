@@ -52,7 +52,7 @@ let g:ruby_fold_lines_limit = 500
 let g:neomake_css_enabled_makers = ['stylelint']
 let g:neomake_scss_enabled_makers = ['stylelint']
 let g:neomake_scss_stylelint_maker = {
-      \ 'exe': 'stylelint',
+      \ 'exe': './node_modules/.bin/stylelint',
       \ 'args': ['--syntax', 'scss'],
       \ 'errorformat': 
             \ '%+P%f,' . 
@@ -62,3 +62,9 @@ let g:neomake_scss_stylelint_maker = {
 let g:neomake_error_sign = {
       \ 'text': '👺'
       \ }
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+let b:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
+
+let g:elm_format_autosave = 1
+

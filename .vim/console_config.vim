@@ -1,2 +1,2 @@
 set background=dark
-colorscheme base16-ir-black
+colorscheme base16-irblack

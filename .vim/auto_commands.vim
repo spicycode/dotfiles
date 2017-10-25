@@ -12,7 +12,7 @@ autocmd BufRead,BufNewFile {Brewfile,Guardfile,Gemfile,Rakefile,Capfile,*.rake,c
 autocmd BufRead,BufNewFile {*.coffee.erb}                                                         set ft=coffee
 autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                                set ft=markdown
 autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set ft=gitcommit
-autocmd BufRead,BufNewFile {*.json}                                                               set ft=javascript
+autocmd BufRead,BufNewFile {*.json,.babelrc}                                                      set ft=javascript
 autocmd BufRead,BufNewFile {*.clj,*.cljs}                                                         RainbowParenthesesToggle
 autocmd BufRead,BufNewFile {*.re}                                                                 set ft=reason
 autocmd BufWritePost       *                                                                      Neomake

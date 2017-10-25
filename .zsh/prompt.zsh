@@ -1,4 +1,8 @@
-function git_prompt_info {
+function git_prompt_simple_info {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\/\1/'
+}
+
+function git_prompt_deluxe_info {
   local ref=$(=git symbolic-ref HEAD 2> /dev/null)
   local gitst="$(=git status 2> /dev/null)"
 
@@ -23,4 +27,4 @@ function git_prompt_info {
   fi
 }
 
-PROMPT='%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '
+PROMPT='%~%<<$fg_bold[green]%}$(git_prompt_deluxe_info)${PR_BOLD_WHITE}>%{${reset_color}%} '

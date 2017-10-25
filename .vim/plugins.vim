@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " NetRW Extensions:
 Plug 'tpope/vim-vinegar'
@@ -31,8 +31,8 @@ Plug 'othree/html5.vim'
 Plug 'othree/html5-syntax.vim'
 Plug 'slim-template/vim-slim'
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 Plug 'ElmCast/elm-vim'
-Plug 'mhartington/nvim-typescript'
 Plug 'vim-scripts/bash-support.vim'
 Plug 'fatih/vim-go'
 Plug 'godoctor/godoctor.vim'

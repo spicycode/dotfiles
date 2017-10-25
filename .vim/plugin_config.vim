@@ -1,6 +1,12 @@
 " RubyAndRails:
 " Highlight ruby operators
 let ruby_operators = 1
+let g:ruby_heredoc_syntax_filetypes = {
+        \ "graphql" : {
+        \   "start" : "GRAPHQL",
+        \},
+  \}
+
 
 " Turn off rails bits of statusbar
 let g:rails_statusline=0
@@ -68,3 +74,41 @@ let b:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
 
 let g:elm_format_autosave = 1
 
+""" Bgtags:
+" Allow vendor/internal-gems but not anything else in vendor.
+" Generate ctags in parallel. Sorting doesn't matter, since this is
+" shuffling the tags file anyway and I've set notagbsearch.
+" Use ripper-tags for ruby, gotags for go.
+let g:bgtags_user_commands = {
+  \ 'directories': {
+    \ '.git': [
+      \ 'git ls-files -c -o --exclude-standard '':^*.rb'' '':^*.rake'' '':^*.go'' '':^*.git'' | ' .
+        \ 'egrep -v ''^vendor/[^i][^n][^t]'' | ' .
+        \ 'parallel -j200\% -N 500 --pipe ''ctags -L - -f -'' > tags',
+      \ 'eval "$(rbenv init -)" && rbenv shell $(rbenv global) && ' .
+        \ 'git ls-files -c -o --exclude-standard ''*.rb'' ''*.rake'' | ' .
+        \ 'egrep -v ''^vendor/[^i][^n][^t]'' | ' .
+        \ 'parallel -X -L200 ''ripper-tags -f - {}'' >> tags',
+      \ 'git ls-files -c -o --exclude-standard ''*.go'' | ' .
+        \ 'parallel -X -L200 ''gotags -f - {}'' >> tags'
+      \ ],
+    \ 'default': 'ctags -R'
+    \ },
+  \ 'filetypes': {
+    \ 'ruby': 'eval "$(rbenv init -)" && rbenv shell $(rbenv global) && ' .
+        \ 'ripper-tags -f -',
+    \ 'go': 'gotags -f -',
+    \ 'default': 'ctags -f-'
+    \}
+\ }
+
+
+""" Vim-markdown:
+let g:markdown_fenced_languages=['coffee', 'css', 'sass', 'ruby', 'erb=eruby', 'javascript', 'html', 'sh', 'xml', 'sql']
+
+""" Go:
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+let g:go_autodetect_gopath = 1
+let g:go_auto_type_info = 1
+let g:go_addtags_transform = "snakecase"

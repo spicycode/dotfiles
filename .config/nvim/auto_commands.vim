@@ -15,7 +15,6 @@ autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                     
 autocmd BufRead,BufNewFile {*.json,.babelrc}                                                      set ft=javascript
 autocmd BufRead,BufNewFile {*.clj,*.cljs}                                                         RainbowParenthesesToggle
 autocmd BufRead,BufNewFile {*.re}                                                                 set ft=reason
-autocmd BufWritePost       *                                                                      Neomake
 " Resize splits when the window is resized
 autocmd VimResized         *                                                                      exe "normal! \<c-w>="
 

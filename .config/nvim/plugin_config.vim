@@ -51,25 +51,53 @@ let g:ruby_fold_lines_limit = 500
 " Use Deoplete:
 let g:deoplete#enable_at_startup = 1
 
-let g:neosnippet#enable_completed_snippet = 1
-
-" Only use stylelint:
-let g:neomake_css_enabled_makers = ['stylelint']
-let g:neomake_scss_enabled_makers = ['stylelint']
-let g:neomake_scss_stylelint_maker = {
-      \ 'exe': './node_modules/.bin/stylelint',
-      \ 'args': ['--syntax', 'scss'],
-      \ 'errorformat': 
-            \ '%+P%f,' . 
-                \ '%*\s%l:%c  %t  %m,' .
-            \ '%-Q'
-            \ }
-let g:neomake_error_sign = {
-      \ 'text': '👺'
-      \ }
-
-let g:neomake_javascript_enabled_makers = ['eslint']
-let b:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
-
 let g:elm_format_autosave = 1
 
+" Markdown:
+let g:markdown_fenced_languages=['css', 'sass', 'ruby', 'erb=eruby', 'javascript', 'html', 'sh', 'xml', 'sql']
+
+" Go:
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+let g:go_autodetect_gopath = 1
+let g:go_auto_type_info = 1
+let g:go_addtags_transform = "snakecase"
+
+" LightLine:
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ 
+      \              [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \              [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype'
+      \ },
+      \ }
+
+let g:lightline.component_expand = {
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \ }

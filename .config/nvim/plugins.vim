@@ -9,10 +9,16 @@ Plug 'noahfrederick/vim-hemisu'
 Plug 'whatyouhide/vim-gotham'
 
 " Syntax Extensions:
-Plug 'rust-lang/rust.vim'
+
+" Erlang And Elixir:
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'elixir-lang/vim-elixir'
-Plug 'avdgaag/vim-phoenix'
 Plug 'slashmili/alchemist.vim'
+Plug 'avdgaag/vim-phoenix'
+
+Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
@@ -24,10 +30,14 @@ Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
 Plug 'flowtype/vim-flow'
 Plug 'othree/html5.vim'
-Plug 'slim-template/vim-slim'
+Plug 'othree/html5-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ElmCast/elm-vim'
 Plug 'mhartington/nvim-typescript'
+Plug 'fatih/vim-go'
+Plug 'godoctor/godoctor.vim'
+
+Plug 'airblade/vim-gitgutter'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'
@@ -35,19 +45,18 @@ Plug 'christoomey/vim-tmux-navigator'
 " Show ANSI color coded and hide escape sequences:
 Plug 'powerman/vim-plugin-AnsiEsc'
 
-" Enable Neomake:
-Plug 'neomake/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
+" Linter:
+Plug 'w0rp/ale'
+
+" StatusBar:
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 
 " Finding: 
 Plug 'jremmen/vim-ripgrep'
 
 " Current function info for status bar
 Plug 'vim-scripts/current-func-info.vim'
-
-" Snippets:
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 
 " AutoCompletion:
 function! DoRemote(arg)
@@ -78,7 +87,4 @@ Plug 'godlygeek/tabular'
 " Fix autoread 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-
-" TaskWarrior:
-Plug 'blindFS/vim-taskwarrior'
 call plug#end()

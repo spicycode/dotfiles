@@ -19,7 +19,7 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='most'
-export EDITOR='vim'
+export EDITOR='nvim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
 export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)

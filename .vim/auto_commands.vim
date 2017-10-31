@@ -9,7 +9,6 @@ endfun
 " Delete trailing whitespace on save
 autocmd BufWritePre        {*.rb,*.js,*.coffee}                                                   :call <SID>StripTrailingWhitespaces()
 autocmd BufRead,BufNewFile {Brewfile,Guardfile,Gemfile,Rakefile,Capfile,*.rake,config.ru}         set ft=ruby
-autocmd BufRead,BufNewFile {*.coffee.erb}                                                         set ft=coffee
 autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                                set ft=markdown
 autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set ft=gitcommit
 autocmd BufRead,BufNewFile {*.json,.babelrc}                                                      set ft=javascript

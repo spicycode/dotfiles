@@ -104,7 +104,7 @@ let g:bgtags_user_commands = {
 
 
 """ Vim-markdown:
-let g:markdown_fenced_languages=['coffee', 'css', 'sass', 'ruby', 'erb=eruby', 'javascript', 'html', 'sh', 'xml', 'sql']
+let g:markdown_fenced_languages=['css', 'sass', 'ruby', 'erb=eruby', 'javascript', 'html', 'sh', 'xml', 'sql']
 
 """ Go:
 let g:go_fmt_command = "goimports"

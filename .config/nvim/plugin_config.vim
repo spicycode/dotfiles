@@ -80,7 +80,6 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ 
       \              [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \              [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
       \ },

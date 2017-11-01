@@ -30,3 +30,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export DIRENV_LOG_FORMAT=
 
 export PKG_CONFIG_PATH="/usr/local/opt/pkg-config"
+
+export SKETCHBOOK_DIR=$HOME/Documents/Arduino
+

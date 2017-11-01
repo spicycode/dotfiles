@@ -59,7 +59,6 @@ cask 'font-iosevka'
 
 # Mac Apps
 cask 'atom'
-cask 'bartender'
 cask 'caffeine'
 cask 'dropbox'
 cask 'fantastical'

@@ -58,6 +58,8 @@ Plug 'jremmen/vim-ripgrep'
 " Current function info for status bar
 Plug 'vim-scripts/current-func-info.vim'
 
+Plug 'maralla/completor.vim'
+
 " AutoCompletion:
 function! DoRemote(arg)
   UpdateRemotePlugins

@@ -118,5 +118,3 @@ set laststatus=2
 set backspace=indent,eol,start
 
 " set tags=./.tags;,./tags
-
-colorscheme onedark

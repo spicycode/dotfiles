@@ -17,7 +17,7 @@ function! UpdatePowerSaving(timerId)
   endif
 endfunction
 
-call timer_start(10000, 'UpdatePowerSaving')
+" call timer_start(10000, 'UpdatePowerSaving')
 
 " Delete trailing whitespace on save
 autocmd BufWritePre        {*.rb,*.js,*.coffee}                                                   :call <SID>StripTrailingWhitespaces()
@@ -28,5 +28,4 @@ autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                     
 autocmd BufRead,BufNewFile {*.json,.babelrc}                                                      set ft=javascript
 " Resize splits when the window is resized
 autocmd VimResized         *                                                                      exe "normal! \<c-w>="
-
 

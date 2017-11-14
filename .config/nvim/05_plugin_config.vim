@@ -5,8 +5,9 @@ let ruby_operators = 1
 " Turn off rails bits of statusbar
 let g:rails_statusline=0
 
-" Screen IMPL
+" Screen Implementation:
 let g:ScreenImpl = 'Tmux'
 
-" RubyFold:
-let g:ruby_fold_lines_limit = 500
+" Use Deoplete:
+let g:deoplete#enable_at_startup = 1
+

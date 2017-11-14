@@ -12,13 +12,13 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
 nmap <leader>te :tabedit 
 
-nnoremap <leader>f :Rg<space>
+nnoremap <leader>f :Search<space>
 
 " Close buffers
-nmap <leader>q :Bclose<CR>
 nmap <leader>b :bd<CR>
 
-nnoremap K :Rg <C-R><C-W><CR>
+" Make Shift-K run RipGrep on the current word
+nnoremap K :Search <C-R><C-W><CR>
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>
@@ -30,20 +30,13 @@ map <leader>y "*y
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
 
-" Apple+R to run spec in Dispatch
-nnoremap <leader>r :Dispatch<CR>
-" Run GitHub tests
-nnoremap <leader>gr :Dispatch testrb %<CR>
-
-" Let us use jj to esc
-imap jj <Esc>
-
 " Map CtrlP to FZF
 nnoremap <C-p> :FZF<CR>
 
 " Make jump to tag open up FZF
 nnoremap <c-]> :Tags <c-r><c-w><cr>
 
+nnoremap <leader>lf :FZF<CR>
 nnoremap <leader>lb :Buffers<CR>
 nnoremap <leader>lt :Tags<CR>
 

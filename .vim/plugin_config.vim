@@ -14,13 +14,9 @@ let g:rails_statusline=0
 " Screen IMPL
 let g:ScreenImpl = 'Tmux'
 
-" " <TAB>: completion.
-" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-" function! s:check_back_space()"{{{
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1] =~ '\s'
-" endfunction"}}
-
+" Ale:
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_open_list = 1
 
 " CtrlP:
 " ctrl-t opens in new tab

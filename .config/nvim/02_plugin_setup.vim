@@ -47,24 +47,23 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
  
 " Linter:
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
  
 " StatusBar:
-" Plug 'itchyny/lightline.vim'
-" Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 
 " Finding: 
 Plug 'jremmen/vim-ripgrep'
- 
-" Plug 'maralla/completor.vim'
  
 " AutoCompletion:
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
  
 " The Tim Pope section of the VIM config:
-" Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-git'
+Plug 'tpope/vim-sensible'
 " Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
@@ -74,11 +73,6 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 " Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-rsi'
-" Plug 'tpope/vim-jdaddy'
- 
-" Plug 'gerw/vim-HiLinkTrace'
-" Plug 'godlygeek/tabular'
  
 " Fix autoread 
 Plug 'tmux-plugins/vim-tmux-focus-events'

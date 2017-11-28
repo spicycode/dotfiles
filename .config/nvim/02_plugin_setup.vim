@@ -22,7 +22,6 @@ Plug 'ap/vim-css-color'
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
 
 " GoLang:
 Plug 'fatih/vim-go'

@@ -29,3 +29,6 @@ autocmd BufRead,BufNewFile {*.json,.babelrc}                                    
 " Resize splits when the window is resized
 autocmd VimResized         *                                                                      exe "normal! \<c-w>="
 
+augroup TerminalStuff
+  autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END

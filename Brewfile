@@ -7,6 +7,7 @@ tap 'buo/cask-upgrade'
 # Base install
 brew 'zsh'
 brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 brew 'git'
 brew 'git-lfs'
 brew 'hub'

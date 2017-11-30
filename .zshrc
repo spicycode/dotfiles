@@ -24,3 +24,5 @@ precmd() {
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

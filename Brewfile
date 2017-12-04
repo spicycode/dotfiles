@@ -28,6 +28,7 @@ brew 'python3'
 
 # Utilities
 brew 'kube-tail'
+brew 'jq'
 brew 'diff-so-fancy'
 brew 'fzf'
 brew 'grc'

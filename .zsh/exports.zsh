@@ -32,4 +32,7 @@ export DIRENV_LOG_FORMAT=
 export PKG_CONFIG_PATH="/usr/local/opt/pkg-config"
 
 export SKETCHBOOK_DIR=$HOME/Documents/Arduino
+# Enable erl/iex history in Erlang 20
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 

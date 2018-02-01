@@ -53,3 +53,9 @@ let g:lightline.component_type = {
       \     'linter_errors': 'error',
       \ }
 
+" RubyHereDoc:
+let g:ruby_heredoc_syntax_filetypes = {
+  \ "graphql" : {
+  \   "start" : "GRAPHQL",
+  \},
+  \}

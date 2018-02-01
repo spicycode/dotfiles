@@ -19,6 +19,9 @@ Plug 'othree/html5.vim'
 Plug 'othree/html5-syntax.vim'
 Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
+Plug 'uarun/vim-protobuf'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'jparise/vim-graphql'
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'
@@ -28,15 +31,15 @@ Plug 'fatih/vim-go'
 Plug 'godoctor/godoctor.vim'
 
 " Erlang And Elixir:
-" Plug 'vim-erlang/vim-erlang-runtime'
-" Plug 'vim-erlang/vim-erlang-compiler'
-" Plug 'vim-erlang/vim-erlang-omnicomplete'
-" Plug 'elixir-lang/vim-elixir'
-" Plug 'slashmili/alchemist.vim'
-" Plug 'avdgaag/vim-phoenix'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'avdgaag/vim-phoenix'
 
 " Plug 'rust-lang/rust.vim'
-" Plug 'flowtype/vim-flow'
+Plug 'flowtype/vim-flow'
 " Plug 'ElmCast/elm-vim'
 
 " Show Git Status In Gutter:

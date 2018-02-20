@@ -20,7 +20,6 @@ Plug 'othree/html5-syntax.vim'
 Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
 Plug 'uarun/vim-protobuf'
-Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'jparise/vim-graphql'
 
 " TypeScript:

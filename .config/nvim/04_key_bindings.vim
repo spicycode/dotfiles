@@ -12,7 +12,8 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
 nmap <leader>te :tabedit 
 
-nnoremap <leader>f :Search<space>
+nnoremap <leader>F :Search<space>
+nnoremap <leader>f :Rg<space>
 
 " Close buffers
 nmap <leader>b :bd<CR>

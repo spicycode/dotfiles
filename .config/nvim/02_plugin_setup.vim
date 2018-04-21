@@ -24,7 +24,6 @@ Plug 'jparise/vim-graphql'
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
 
 " GoLang:
 Plug 'fatih/vim-go'

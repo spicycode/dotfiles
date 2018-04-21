@@ -24,6 +24,7 @@ Plug 'jparise/vim-graphql'
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 
 " GoLang:
 Plug 'fatih/vim-go'
@@ -38,7 +39,7 @@ Plug 'slashmili/alchemist.vim'
 Plug 'avdgaag/vim-phoenix'
 
 " Plug 'rust-lang/rust.vim'
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
 " Plug 'ElmCast/elm-vim'
 
 " Show Git Status In Gutter:

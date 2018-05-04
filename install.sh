@@ -6,9 +6,6 @@ else
   brew bundle
   echo "Installing pure-prompt for ZSH"
   npm install --global pure-prompt
-
-  echo "Installing n node manager"
-  npm install -g n
 fi
 
 source ./setup_launchbar_extras.sh

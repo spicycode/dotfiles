@@ -18,7 +18,7 @@ brew 'neovim', args: ['HEAD']
 brew 'weechat', args: ['--with-aspell --with-curl --with-lua --with-perl --with-python --with-ruby']
 brew 'coreutils'
 brew 'exercism'
-brew 'asdf'
+brew 'nodenv'
 
 # Libraries
 brew 'libav'

@@ -7,6 +7,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'fenetikm/falcon'
 
 " Syntax Extensions:
 Plug 'Shougo/echodoc.vim'

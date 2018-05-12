@@ -90,4 +90,6 @@ Plug 'tpope/vim-rails'
 " Fix autoread 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()

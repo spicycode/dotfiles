@@ -15,6 +15,10 @@ nmap <leader>te :tabedit
 nnoremap <leader>F :Search<space>
 nnoremap <leader>f :Rg<space>
 
+" TYPESCRIPT BIZ: 
+nmap <leader>ts :TS<C-Tab> 
+map <leader>tdp :TSDefPreview<CR>
+
 " Close buffers
 nmap <leader>b :bd<CR>
 

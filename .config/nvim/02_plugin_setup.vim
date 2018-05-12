@@ -6,6 +6,7 @@ Plug 'tpope/vim-vinegar'
 " Color Schemes:
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Syntax Extensions:
 Plug 'pangloss/vim-javascript'
@@ -24,6 +25,16 @@ Plug 'jparise/vim-graphql'
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript']}
+
+" https://github.com/autozimu/LanguageClient-neovim
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
+Plug 'peitalin/vim-jsx-typescript'
 
 " GoLang:
 Plug 'fatih/vim-go'

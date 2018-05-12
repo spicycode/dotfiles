@@ -59,3 +59,12 @@ let g:ruby_heredoc_syntax_filetypes = {
   \   "start" : "GRAPHQL",
   \},
   \}
+
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ }
+

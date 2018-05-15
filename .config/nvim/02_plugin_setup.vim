@@ -65,6 +65,7 @@ Plug 'w0rp/ale'
  
 " StatusBar:
 Plug 'itchyny/lightline.vim'
+Plug 'yarisgutierrez/ayu-lightline'
 Plug 'maximbaz/lightline-ale'
 
 " Finding: 

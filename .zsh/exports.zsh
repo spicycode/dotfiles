@@ -35,5 +35,7 @@ export SKETCHBOOK_DIR=$HOME/Documents/Arduino
 # Enable erl/iex history in Erlang 20
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Ruby + Zeus + High Sierra
-# export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# SpaceShip prompt options
+# https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md#package-version-package
+export SPACESHIP_PACKAGE_SHOW=false

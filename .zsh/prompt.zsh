@@ -1,2 +1,3 @@
 autoload -U promptinit; promptinit
-prompt pure
+# prompt pure
+prompt spaceship

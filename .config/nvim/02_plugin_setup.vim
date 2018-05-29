@@ -24,6 +24,7 @@ Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
 Plug 'uarun/vim-protobuf'
 Plug 'jparise/vim-graphql'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'

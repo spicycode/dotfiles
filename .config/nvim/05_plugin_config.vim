@@ -69,3 +69,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
     \ }
 
+
+" PythonLand:
+let g:pymode_python = 'python3'
+

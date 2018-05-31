@@ -30,6 +30,7 @@ brew 'node'
 brew 'python3'
 
 # Utilities
+brew 'ghi'
 brew 'chunkwm', args: ['HEAD']
 brew 'kube-tail'
 brew 'jq'

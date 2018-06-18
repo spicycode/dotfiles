@@ -21,7 +21,7 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
-let g:lightline#ale#indicator_warnings = '⚠️ '
+let g:lightline#ale#indicator_warnings = '⚠️  '
 let g:lightline#ale#indicator_errors = '🚫 '
 let g:lightline#ale#indicator_ok = '👌 '
 

@@ -19,6 +19,9 @@ brew 'weechat', args: ['--with-aspell --with-curl --with-lua --with-perl --with-
 brew 'coreutils'
 brew 'exercism'
 brew 'nodenv'
+brew 'docker'
+brew 'docker-machine'
+brew 'docker-compose'
 
 # Libraries
 brew 'libav'

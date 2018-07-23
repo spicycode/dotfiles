@@ -28,3 +28,4 @@ precmd() {
 eval "$(nodenv init -)"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"' >> ~/.zshrc'

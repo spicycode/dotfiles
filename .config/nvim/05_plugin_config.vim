@@ -22,7 +22,7 @@ function! LightlineFiletype()
 endfunction
 
 " ALE:
-let g:ale_open_list = 1
+" let g:ale_open_list = 1
 
 let g:lightline#ale#indicator_warnings = '⚠️  '
 let g:lightline#ale#indicator_errors = '🚫 '

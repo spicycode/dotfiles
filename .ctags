@@ -1,5 +1,4 @@
---exclude=vendor
---exclude=*.min.js
+--exclude=vendor,node_modules
 
 --langdef=scss
 --langmap=scss:.scss

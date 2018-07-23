@@ -21,11 +21,12 @@ endfunction
 
 " Delete trailing whitespace on save
 autocmd BufWritePre        {*.rb,*.js,*.coffee}                                                   :call <SID>StripTrailingWhitespaces()
-autocmd BufRead,BufNewFile {Brewfile,Guardfile,Gemfile,Rakefile,Capfile,*.rake,config.ru}         set ft=ruby
-autocmd BufRead,BufNewFile {*.ex}                                                                 set ft=elixir
-autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                                set ft=markdown
-autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set ft=gitcommit
-autocmd BufRead,BufNewFile {*.json,.babelrc}                                                      set ft=javascript
+autocmd BufRead,BufNewFile {Brewfile,Guardfile,Gemfile,Rakefile,Capfile,*.rake,config.ru}         set filetype=ruby
+autocmd BufRead,BufNewFile {*.ex}                                                                 set filetype=elixir
+autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                                set filetype=markdown
+autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set filetype=gitcommit
+autocmd BufRead,BufNewFile {*.json,.babelrc}                                                      set filetype=javascript
+autocmd BufNewFile,BufRead *.tsx 																																	set filetype=typescript
 " Resize splits when the window is resized
 autocmd VimResized         *                                                                      exe "normal! \<c-w>="
 

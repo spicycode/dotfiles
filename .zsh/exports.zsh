@@ -14,16 +14,14 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export GREP_COLOR='3;33'
 
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
-export ARCHFLAGS='-arch x86_64'
+# export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='most'
 export EDITOR='nvim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
-export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)
-# For issuesync
-export GITHUB_TOKEN=$(cat ~/.gh_api_token)
+
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_API_TOKEN=$(cat ~/.gh_homebrew_api_token)
 # Silence direnv
@@ -31,10 +29,8 @@ export DIRENV_LOG_FORMAT=
 
 export PKG_CONFIG_PATH="/usr/local/opt/pkg-config"
 
-export SKETCHBOOK_DIR=$HOME/Documents/Arduino
 # Enable erl/iex history in Erlang 20
 export ERL_AFLAGS="-kernel shell_history enabled"
-
 
 # SpaceShip prompt options
 # https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md#package-version-package

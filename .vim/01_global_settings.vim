@@ -112,5 +112,3 @@ set laststatus=2
 
 " Make backspace work over indents, eol, and at start of line
 set backspace=indent,eol,start
-
-set tags=./.tags;,./tags

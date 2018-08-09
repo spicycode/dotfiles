@@ -6,4 +6,4 @@ alias ll='ls -GFhl'
 
 alias git='hub'
 
-alias vim='nvim'
+# alias vim='nvim'

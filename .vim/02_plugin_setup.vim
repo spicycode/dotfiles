@@ -62,7 +62,10 @@ Plug 'christoomey/vim-tmux-navigator' " Make Ctrl-jkl; navigate tmux panes as we
 Plug 'tmux-plugins/vim-tmux-focus-events' " Fix autoread in tmux
 
 " Finding: 
-Plug 'jremmen/vim-ripgrep'
+Plug 'watsoncj/vim-ripgrep' 
+" Replace with below  when https://github.com/jremmen/vim-ripgrep/pull/28
+" merges
+" Plug 'jremmen/vim-ripgrep'
  
 " AutoCompletion:
 Plug 'Shougo/deoplete.nvim'

@@ -14,7 +14,7 @@ brew 'git-lfs'
 brew 'hub'
 brew 'vim'
 brew 'neovim', args: ['HEAD']
-brew 'weechat', args: ['--with-aspell', '--with-curl', '--with-lua', '--with-perl', '--with-python', '--with-ruby']
+brew 'weechat', args: ['--with-aspell', '--with-curl', '--with-lua', '--with-perl', '--with-python@2', '--with-ruby']
 brew 'coreutils'
 brew 'exercism'
 brew 'nodenv'

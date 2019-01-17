@@ -5,7 +5,6 @@ tap 'neovim/neovim'
 tap 'buo/cask-upgrade'
 tap 'crisidev/homebrew-chunkwm'
 
-
 # Base install
 brew 'zsh'
 brew 'zsh-completions'
@@ -15,7 +14,7 @@ brew 'git-lfs'
 brew 'hub'
 brew 'vim'
 brew 'neovim', args: ['HEAD']
-brew 'weechat', args: ['--with-aspell --with-curl --with-lua --with-perl --with-python --with-ruby']
+brew 'weechat', args: ['--with-aspell', '--with-curl', '--with-lua', '--with-perl', '--with-python', '--with-ruby']
 brew 'coreutils'
 brew 'exercism'
 brew 'nodenv'

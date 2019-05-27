@@ -73,6 +73,7 @@ Plug 'jremmen/vim-ripgrep'
  
 " AutoCompletion:
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
  
 " The Tim Pope section of the VIM config:

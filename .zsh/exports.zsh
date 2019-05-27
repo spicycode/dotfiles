@@ -18,7 +18,7 @@ export GREP_COLOR='3;33'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='most'
-export EDITOR='vim'
+export EDITOR='nvim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
 

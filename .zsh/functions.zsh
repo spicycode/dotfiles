@@ -107,7 +107,7 @@ function homebrew() {
   echo "==> Running 'brew cleanup'" && brew cleanup
 }
 
-function 2016mbp() {
+function mpb_reboot_av() {
   # Restart CoreAudio because 👎
   sudo killall coreaudiod
 
@@ -116,5 +116,9 @@ function 2016mbp() {
 
   # Restart control strip because 🔥
   killall ControlStrip
+}
+
+function icloud_drive() {
+  cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
 }
 

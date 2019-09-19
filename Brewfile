@@ -1,9 +1,10 @@
 tap 'caskroom/cask'
-tap 'caskroom/fonts' 
+tap 'caskroom/fonts'
 tap 'universal-ctags/universal-ctags'
-tap 'neovim/neovim' 
+tap 'neovim/neovim'
 tap 'buo/cask-upgrade'
 tap 'crisidev/homebrew-chunkwm'
+tap 'wtfutil/wtfutil'
 
 # Base install
 brew 'zsh'
@@ -32,6 +33,7 @@ brew 'node'
 brew 'python3'
 
 # Utilities
+brew 'wtfutil'
 brew 'ghi'
 brew 'chunkwm', args: ['HEAD']
 brew 'jq'

@@ -16,15 +16,12 @@ source /usr/local/etc/grc.zsh
 # Setup rbenv autocomplete
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Enable autocomplete and shims for node
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
 precmd() {
   if [[ -n "$TMUX" ]]; then
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
 
-eval "$(nodenv init -)"
-
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/asdf/asdf.sh
+source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

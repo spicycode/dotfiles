@@ -118,3 +118,9 @@ set laststatus=2
 set backspace=indent,eol,start
 
 " set tags=./.tags;,./tags
+
+" Enable transparency on floating windows
+set winblend=10
+
+" If lightline/airline is enabled, don't show mode under it
+set noshowmode

@@ -21,7 +21,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'othree/html5.vim'
 Plug 'othree/html5-syntax.vim'
 Plug 'JulesWang/css.vim'
-Plug 'ap/vim-css-color'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'uarun/vim-protobuf'
 Plug 'jparise/vim-graphql'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }

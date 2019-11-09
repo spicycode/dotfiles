@@ -24,7 +24,6 @@ export EDITOR='nvim'
 export LC_COLLATE=C
 
 export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_API_TOKEN=$(cat ~/.gh_homebrew_api_token)
 # Silence direnv
 export DIRENV_LOG_FORMAT=
 

@@ -1,3 +1,6 @@
+" NvimColourizer
+lua require'colorizer'.setup()
+
 " RubyAndRails:
 " Highlight ruby operators
 let ruby_operators = 1

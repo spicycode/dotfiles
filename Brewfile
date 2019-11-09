@@ -1,9 +1,9 @@
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
 tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim'
 tap 'buo/cask-upgrade'
-tap 'crisidev/homebrew-chunkwm'
+tap 'koekeishiya/formulae'
 tap 'wtfutil/wtfutil'
 
 # Base install
@@ -15,7 +15,7 @@ brew 'git-lfs'
 brew 'hub'
 brew 'vim'
 brew 'neovim', args: ['HEAD']
-brew 'weechat', args: ['--with-aspell', '--with-curl', '--with-lua', '--with-perl', '--with-python@2', '--with-ruby']
+brew 'weechat', args: ['--with-python@2', '--with-ruby']
 brew 'coreutils'
 brew 'exercism'
 brew 'nodenv'
@@ -28,11 +28,13 @@ brew 'libav'
 brew 'npm'
 
 # Languages
+brew 'asdf'
 brew 'elixir'
 brew 'node'
 brew 'python3'
 
 # Utilities
+brew 'bat'
 brew 'wtfutil'
 brew 'ghi'
 brew 'chunkwm', args: ['HEAD']
@@ -64,14 +66,13 @@ cask 'font-input'
 cask 'font-iosevka'
 
 # Mac Apps
-cask 'atom'
 cask 'caffeine'
 cask 'fantastical'
 cask 'istat-menus'
 cask 'java'
 cask 'launchbar'
 cask 'licecap'
-cask 'little-snitch'
+# cask 'little-snitch'
 cask 'paw'
 cask 'sizeup'
 cask 'stay'
@@ -80,7 +81,7 @@ cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoomus'
 
-mas '1Password', id: 443987910
+#mas '1Password', id: 443987910
 mas 'Logitech Camera Settings', id: 638332853
 mas 'Monosnap', id: 540348655
 mas 'Paprika Recipe Manager', id: 451907568
@@ -88,4 +89,4 @@ mas 'Reeder', id: 880001334
 mas 'Slack', id: 803453959
 mas 'Things 3', id: 904280696
 mas 'Tweetbot for Twitter', id: 557168941
-mas 'Xcode', id: 497799835
+#mas 'Xcode', id: 497799835

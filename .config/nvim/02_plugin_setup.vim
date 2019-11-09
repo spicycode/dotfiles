@@ -73,6 +73,7 @@ Plug 'jremmen/vim-ripgrep'
  
 " AutoCompletion:
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+" :CocInstall coc-tsserver coc-json coc-html coc-css
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'ncm2/float-preview.nvim'
  

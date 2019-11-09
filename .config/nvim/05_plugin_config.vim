@@ -79,25 +79,25 @@ let g:pymode_python = 'python3'
 " FZF:
 
 let g:fzf_buffers_jump = 1
-let g:height = float2nr(&lines * 0.9)
-let g:width = float2nr(&columns * 0.95)
-let g:preview_width = float2nr(&columns * 0.5)
-let $FZF_DEFAULT_OPTS=" --layout=reverse  --margin=1,4 --preview 'if file -i {}|grep -q binary; then file -b {}; else bat --style=changes --color always --line-range :40 {}; fi' --preview-window right:" . g:preview_width
-let g:fzf_layout = { 'window': 'call FloatingFZF(' . g:width . ',' . g:height . ')' }
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
-function! FloatingFZF(width, height)
+let $FZF_DEFAULT_OPTS=' --layout=reverse --margin=1,4'
+
+function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
 
-  let horizontal = float2nr((&columns - a:width) / 2)
+  let height = float2nr(10)
+  let width = float2nr(80)
+  let horizontal = float2nr((&columns - width) / 2)
   let vertical = 1
 
   let opts = {
         \ 'relative': 'editor',
         \ 'row': vertical,
         \ 'col': horizontal,
-        \ 'width': a:width,
-        \ 'height': a:height,
+        \ 'width': width,
+        \ 'height': height,
         \ 'style': 'minimal'
         \ }
 

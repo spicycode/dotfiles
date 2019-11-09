@@ -75,21 +75,14 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " :CocInstall coc-tsserver coc-json coc-html coc-css
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'ncm2/float-preview.nvim'
  
 " The Tim Pope section of the VIM config:
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-sensible'
-" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rhubarb'
-" Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
-" Plug 'tpope/vim-surround'
  
 " Fix autoread 
 Plug 'tmux-plugins/vim-tmux-focus-events'

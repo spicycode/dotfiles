@@ -124,3 +124,8 @@ set winblend=10
 
 " If lightline/airline is enabled, don't show mode under it
 set noshowmode
+
+" Substitute live preview
+if exists('&inccommand')
+  set inccommand=split
+endif

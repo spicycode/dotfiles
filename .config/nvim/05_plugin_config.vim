@@ -11,9 +11,6 @@ let g:rails_statusline=0
 " Screen Implementation:
 let g:ScreenImpl = 'Tmux'
 
-" Use Deoplete:
-let g:deoplete#enable_at_startup = 1
-
 " LightLine:
 
 function! LightlineFileformat()
@@ -33,19 +30,21 @@ let g:lightline#ale#indicator_ok = '✓ '
 
 let g:lightline = {
       \ 'colorscheme': 'ayu',
-      \ 'active': {
+      \ }
+
+let g:lightline.active = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ 
       \              [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
       \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
+      \              [ 'filetype' ] ]
+      \ }
+
+let g:lightline.component_function = {
       \   'gitbranch': 'fugitive#head',
       \   'fileformat': 'LightlineFileformat',
       \   'filetype': 'LightlineFiletype'
-      \ },
       \ }
 
 let g:lightline.component_expand = {

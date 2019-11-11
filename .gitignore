@@ -13,3 +13,4 @@
 .config/xbuild/
 .config/yarn/
 tags
+.config/coc/extensions/db.json

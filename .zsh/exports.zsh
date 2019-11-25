@@ -1,7 +1,6 @@
 # Currently this path is appendend to dynamically when picking a ruby version
 export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export RBENV_ROOT=/usr/local/var/rbenv
 export GOPATH=$HOME/src/gopath
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin

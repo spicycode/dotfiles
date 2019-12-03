@@ -68,7 +68,6 @@ cask 'font-iosevka'
 # Mac Apps
 cask 'caffeine'
 cask 'fantastical'
-cask 'istat-menus'
 cask 'java'
 cask 'launchbar'
 cask 'licecap'
@@ -78,14 +77,11 @@ cask 'sizeup'
 cask 'stay'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
-cask 'vlc'
 cask 'zoomus'
 
 #mas '1Password', id: 443987910
 mas 'Logitech Camera Settings', id: 638332853
 mas 'Monosnap', id: 540348655
-mas 'Paprika Recipe Manager', id: 451907568
-mas 'Reeder', id: 880001334
 mas 'Slack', id: 803453959
 mas 'Things 3', id: 904280696
 mas 'Tweetbot for Twitter', id: 557168941

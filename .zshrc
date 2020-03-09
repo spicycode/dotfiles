@@ -24,4 +24,3 @@ precmd() {
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/opt/asdf/asdf.sh
-source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

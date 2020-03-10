@@ -1,1 +1,6 @@
 coc/extensions/node_modules
+fisher
+fish/fishd.*
+fish/fish_variables
+fish_history
+fish_read_history

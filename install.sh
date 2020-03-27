@@ -10,3 +10,4 @@ else
 fi
 
 source ./setup_launchbar_extras.sh
+source ./perform_default_writes.sh

@@ -35,6 +35,7 @@ brew 'python3'
 
 # Utilities
 brew 'bat'
+brew 'gh'
 brew 'wtfutil'
 brew 'ghi'
 brew 'chunkwm', args: ['HEAD']

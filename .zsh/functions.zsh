@@ -41,7 +41,7 @@ function ss {
   if [ -e script/server ]; then
     script/server $@
   elif [ -e mix.exs ]; then
-    mix phoenix.server $@
+    iex -S mix phx.server $@
   else
     script/rails server $@
   fi

@@ -14,7 +14,7 @@ source ~/.zsh/zsh_hooks.zsh
 source /usr/local/etc/grc.zsh
 
 # Setup rbenv autocomplete
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 precmd() {
   if [[ -n "$TMUX" ]]; then

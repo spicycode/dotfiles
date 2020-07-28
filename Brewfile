@@ -41,6 +41,7 @@ brew 'ghi'
 brew 'chunkwm', args: ['HEAD']
 brew 'jq'
 brew 'diff-so-fancy'
+brew 'git-delta'
 brew 'fzf'
 brew 'grc'
 brew 'universal-ctags', args: ['HEAD']

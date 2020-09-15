@@ -19,9 +19,6 @@ brew 'weechat', args: ['--with-python@2', '--with-ruby']
 brew 'coreutils'
 brew 'exercism'
 brew 'nodenv'
-brew 'docker'
-brew 'docker-machine'
-brew 'docker-compose'
 
 # Libraries
 brew 'libav'
@@ -32,6 +29,7 @@ brew 'asdf'
 brew 'elixir'
 brew 'node'
 brew 'python3'
+brew 'java'
 
 # Utilities
 brew 'bat'
@@ -70,7 +68,6 @@ cask 'font-iosevka'
 # Mac Apps
 cask 'caffeine'
 cask 'fantastical'
-cask 'java'
 cask 'launchbar'
 cask 'paw'
 cask 'sizeup'

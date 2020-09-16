@@ -72,7 +72,8 @@ Plug 'maximbaz/lightline-ale'
 Plug 'jremmen/vim-ripgrep'
  
 " AutoCompletion:
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
 " :CocInstall coc-tsserver coc-json coc-html coc-css
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
  

@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-
 " Language Server Support:
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',

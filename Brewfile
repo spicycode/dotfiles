@@ -66,10 +66,8 @@ cask 'font-input'
 cask 'font-iosevka'
 
 # Mac Apps
-cask 'caffeine'
 cask 'fantastical'
 cask 'launchbar'
-cask 'paw'
 cask 'sizeup'
 cask 'stay'
 cask 'the-unarchiver'

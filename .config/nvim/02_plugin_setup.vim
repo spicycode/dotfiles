@@ -38,10 +38,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'peitalin/vim-jsx-typescript'
 
-" GoLang:
-Plug 'fatih/vim-go'
-Plug 'godoctor/godoctor.vim'
-
 " Erlang And Elixir:
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-compiler'

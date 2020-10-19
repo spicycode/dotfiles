@@ -33,13 +33,12 @@ brew 'java'
 
 # Utilities
 brew 'bat'
+brew 'git-delta' # bat required for git-delta
 brew 'gh'
 brew 'wtfutil'
 brew 'ghi'
 brew 'chunkwm', args: ['HEAD']
 brew 'jq'
-brew 'diff-so-fancy'
-brew 'git-delta'
 brew 'fzf'
 brew 'grc'
 brew 'universal-ctags', args: ['HEAD']

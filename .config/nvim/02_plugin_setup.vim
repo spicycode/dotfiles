@@ -50,9 +50,6 @@ Plug 'avdgaag/vim-phoenix'
 " Plug 'flowtype/vim-flow'
 " Plug 'ElmCast/elm-vim'
 
-" Show Git Status In Gutter:
-Plug 'airblade/vim-gitgutter'
- 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator'
  

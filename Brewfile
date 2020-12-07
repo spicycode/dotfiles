@@ -4,7 +4,6 @@ tap 'universal-ctags/universal-ctags'
 tap 'neovim/neovim'
 tap 'buo/cask-upgrade'
 tap 'koekeishiya/formulae'
-tap 'wtfutil/wtfutil'
 
 # Base install
 brew 'zsh'
@@ -35,7 +34,6 @@ brew 'java'
 brew 'bat'
 brew 'git-delta' # bat required for git-delta
 brew 'gh'
-brew 'wtfutil'
 brew 'ghi'
 brew 'chunkwm', args: ['HEAD']
 brew 'jq'
@@ -67,11 +65,12 @@ cask 'font-iosevka'
 # Mac Apps
 cask 'fantastical'
 cask 'launchbar'
+cask 'alfred'
 cask 'sizeup'
 cask 'stay'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
-cask 'zoomus'
+cask 'zoom'
 
 mas 'Logitech Camera Settings', id: 638332853
 mas 'Monosnap', id: 540348655

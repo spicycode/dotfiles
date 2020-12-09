@@ -1,22 +1,22 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == *$(brew --prefix)/opt/fzf/bin* ]]; then
-  export PATH="$PATH:$(brew --prefix)/opt/fzf/bin"
+if [[ ! "$PATH" == *$HOMEBREW_PATH/opt/fzf/bin* ]]; then
+  export PATH="$PATH:$HOMEBREW_PATH/opt/fzf/bin"
 fi
 
 # Man path
 # --------
-if [[ ! "$MANPATH" == *$(brew --prefix)/opt/fzf/man* && -d "$(brew --prefix)/opt/fzf/man" ]]; then
-  export MANPATH="$MANPATH:$(brew --prefix)/opt/fzf/man"
+if [[ ! "$MANPATH" == *$HOMEBREW_PATH/opt/fzf/man* && -d "$HOMEBREW_PATH/opt/fzf/man" ]]; then
+  export MANPATH="$MANPATH:$HOMEBREW_PATH/opt/fzf/man"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOMEBREW_PATH/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+source "$HOMEBREW_PATH/opt/fzf/shell/key-bindings.zsh"
 
 # Configuration Options
 # ---------------------

@@ -1,8 +1,7 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=~/.bin:$HOMEBREW_PATH/sbin:$HOMEBREW_PATH/bin:$HOMEBREW_PATH/share/npm/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
-export RBENV_ROOT=/usr/local/var/rbenv
+export RBENV_ROOT=$HOMEBREW_PATH/var/rbenv
 export GOPATH=$HOME/src/gopath
 
 # Setup terminal, and turn on colors
@@ -26,7 +25,7 @@ export HOMEBREW_NO_ANALYTICS=1
 # Silence direnv
 export DIRENV_LOG_FORMAT=
 
-export PKG_CONFIG_PATH="/usr/local/opt/pkg-config"
+export PKG_CONFIG_PATH="$HOMEBREW_PATH/opt/pkg-config"
 
 # Enable erl/iex history in Erlang 20
 export ERL_AFLAGS="-kernel shell_history enabled"

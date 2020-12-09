@@ -1,5 +1,5 @@
 # add in zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=($HOMEBREW_PATH/share/zsh-completions $fpath)
 fpath=(~/.zsh/completions $fpath)
 
 autoload -U compinit && compinit                                                                                       

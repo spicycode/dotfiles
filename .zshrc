@@ -1,3 +1,4 @@
+export HOMEBREW_PATH="$(brew --prefix)"
 source ~/.zsh/colors.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/exports.zsh
@@ -11,7 +12,7 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
 # Setup GRC for auto colors
-source /usr/local/etc/grc.zsh
+source $HOMEBREW_PATH/etc/grc.zsh
 
 # Setup rbenv autocomplete
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -22,5 +23,5 @@ precmd() {
   fi
 }
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/opt/asdf/asdf.sh
+source $HOMEBREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $HOMEBREW_PATH/opt/asdf/asdf.sh

@@ -97,7 +97,7 @@ function 5k() {
 }
 
 function add_keys() {
-  ssh-add -k && ssh-add -k ~/.ssh/id_github
+  ssh-add -k 
 }
 
 function homebrew() {

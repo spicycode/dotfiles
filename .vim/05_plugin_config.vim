@@ -42,8 +42,6 @@ let g:lightline.component_type = {
       \     'linter_errors': 'error',
       \ }
 
-" Use Deoplete:
-let g:deoplete#enable_at_startup = 1
 
 " Screen Implementation:
 let g:ScreenImpl = 'Tmux'

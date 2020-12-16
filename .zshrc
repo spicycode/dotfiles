@@ -7,7 +7,9 @@ source ~/.zsh/completion.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
 source ~/.zsh/functions.zsh
-source ~/.zsh/fzf.zsh
+if [ ! -d "/opt/homebrew" ]; then
+  source ~/.zsh/fzf.zsh
+fi
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
@@ -25,3 +27,7 @@ precmd() {
 
 source $HOMEBREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source $HOMEBREW_PATH/opt/asdf/asdf.sh
+fpath=($fpath "/Users/spicycode/.zfunctions")
+
+source $HOME/.cargo/env
+fpath=($fpath "/Users/spicycode/.zfunctions")

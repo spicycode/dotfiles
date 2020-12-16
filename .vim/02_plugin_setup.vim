@@ -1,9 +1,4 @@
 call plug#begin('~/.vim/plugged')
-" Language Server Support:
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 " Syntax: Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -67,9 +62,7 @@ Plug 'watsoncj/vim-ripgrep'
 " Plug 'jremmen/vim-ripgrep'
  
 " AutoCompletion:
-Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 " Linting:

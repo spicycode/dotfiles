@@ -1,4 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
+export PATH="$HOMEBREW_PATH/opt/ruby/bin:$PATH"
 export PATH=~/.bin:$HOMEBREW_PATH/sbin:$HOMEBREW_PATH/bin:$HOMEBREW_PATH/share/npm/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
 export RBENV_ROOT=$HOMEBREW_PATH/var/rbenv

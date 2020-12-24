@@ -4,8 +4,9 @@ alias ls='ls -GFh'
 # Same as above, but in long listing format
 alias ll='ls -GFhl'
 
+# TODO: Consider converting to `gh` at some point
+alias git='hub'
 
 if [ ! -d "/opt/homebrew" ]; then
-  alias git='hub'
   alias vim='nvim'
 fi

@@ -19,20 +19,16 @@ fi
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
+# External files to source
+
 # Setup GRC for auto colors
 source $HOMEBREW_PATH/etc/grc.zsh
-
-# Setup rbenv autocomplete
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+source $HOMEBREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PATH/opt/asdf/asdf.sh
+source $HOME/.cargo/env
 
 precmd() {
   if [[ -n "$TMUX" ]]; then
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
-
-source $HOMEBREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $HOMEBREW_PATH/opt/asdf/asdf.sh
-
-source $HOME/.cargo/env
-

@@ -122,3 +122,10 @@ function icloud_drive() {
   cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
 }
 
+function pg_start() {
+  pg_ctl -D /opt/homebrew/var/postgres start
+}
+
+function pg_stop() {
+  pg_ctl -D /opt/homebrew/var/postgres stop
+}

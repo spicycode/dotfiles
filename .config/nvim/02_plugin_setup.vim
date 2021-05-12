@@ -49,6 +49,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'avdgaag/vim-phoenix'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'rust-lang/rust.vim'
 " Plug 'flowtype/vim-flow'
 " Plug 'ElmCast/elm-vim'

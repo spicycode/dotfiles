@@ -24,7 +24,10 @@ Plug 'JulesWang/css.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'uarun/vim-protobuf'
 Plug 'jparise/vim-graphql'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+
+" Python:
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " TypeScript:
 Plug 'leafgarland/typescript-vim'
@@ -83,4 +86,9 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 
 Plug 'editorconfig/editorconfig-vim'
 
+
+Plug 'liuchengxu/vista.vim'
+
+
 call plug#end()
+

@@ -23,6 +23,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'othree/html5-syntax.vim'
+Plug 'posva/vim-vue'
+
 
 " Syntax: TypeScript:
 Plug 'leafgarland/typescript-vim'

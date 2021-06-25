@@ -93,11 +93,8 @@ return require('packer').startup(function()
   --   }, {'TimUntersberger/neogit', opt = true}
   -- }
 
-  -- Pretty symbols
-  -- use 'kyazdani42/nvim-web-devicons'
-
   -- Terminal
-  -- use 'voldikss/vim-floaterm'
+  use 'voldikss/vim-floaterm'
 
   -- REPLs
   --  use {

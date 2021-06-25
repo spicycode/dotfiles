@@ -5,11 +5,23 @@ local o, wo, bo = vim.o, vim.wo, vim.bo
 local utils = require('config.utils')
 local opt = utils.opt
 local autocmd = utils.autocmd
-local map = utils.map
+local map, nmap = utils.map, utils.nmap
 
+require('plugins') -- Install/Update plugins
 -- Leader/local leader
-g.mapleader = [[,]]
--- g.maplocalleader = [[ ]]
+g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
+
+-- Telescope
+nmap('<C-p>', ':Telescope find_files<CR>', {silent = true})
+nmap('<C-]>', ':Telescope tags<CR>', {silent = true})
+nmap('<leader>lb', ':Telescope buffers<CR>', {silent = true})
+nmap('<leader>lt', ':Telescope help_tags<CR>', {silent = true})
+nmap('<leader>f', '<cmd>Telescope live_grep<cr>', {silent = true})
+
+-- TABS: Navigation
+nmap('<leader>tp', ':tabprevious<CR>', {silent = true})
+nmap('<leader>tn', ':tabnext<CR>', {silent = true})
+nmap('<leader>te', ':tabedit<space>')
 
 -- Settings
 local buffer = {o, bo}
@@ -28,6 +40,7 @@ opt('shiftwidth', 2, buffer)
 -- Colorscheme
 opt('termguicolors', true)
 opt('background', 'dark')
+cmd [[colorscheme ayu]]
 
 -- Numbers
 opt('number', true)
@@ -47,3 +60,39 @@ opt('splitright', true)
 
 -- Buffers become hidden when unloaded
 opt('hidden', true)
+
+
+-- Always show status bar
+opt('laststatus', 2)
+
+-- Enable transparency on floating windows
+opt('winblend', 10)
+
+-- Search:
+-- show the `best match so far' as search strings are typed:
+opt('incsearch', true)
+
+-- Don't highlight search result.
+opt('hlsearch', false)
+--set nohlsearch
+
+-- Searches wrap around the end of the file
+opt('wrapscan', true)
+
+
+-- Ignore case on insert completion
+opt('infercase', true)
+
+-- Stylin:
+-- Enable transparency on floating windows
+opt('winblend', 10)
+
+-- If lightline/airline is enabled, don't show mode under it
+opt('showmode', false)
+
+-- Commands
+cmd [[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]]
+cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]]
+cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]]
+cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
+cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]

@@ -23,4 +23,8 @@ local function map(modes, lhs, rhs, opts)
   for _, mode in ipairs(modes) do map_key(mode, lhs, rhs, opts) end
 end
 
-return {opt = opt, autocmd = autocmd, map = map}
+local function nmap(lhs, rhs, opts)
+  map('n', lhs, rhs, opts)
+end
+
+return {opt = opt, autocmd = autocmd, map = map, nmap = nmap}

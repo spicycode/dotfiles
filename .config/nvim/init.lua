@@ -96,3 +96,15 @@ cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').update(
 cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]]
 cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
 cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
+
+
+
+require('gitsigns').setup {
+  signs = {
+    add = {hl = 'GreenSign', text = '│', numhl = 'GitSignsAddNr'},
+    change = {hl = 'BlueSign', text = '│', numhl = 'GitSignsChangeNr'},
+    delete = {hl = 'RedSign', text = '│', numhl = 'GitSignsDeleteNr'},
+    topdelete = {hl = 'RedSign', text = '│', numhl = 'GitSignsDeleteNr'},
+    changedelete = {hl = 'PurpleSign', text = '│', numhl = 'GitSignsChangeNr'}
+  }
+}

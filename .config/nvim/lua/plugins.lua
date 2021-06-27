@@ -16,6 +16,13 @@ return require('packer').startup(function()
   -- Async building & commands
   use {'tpope/vim-dispatch', cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
+  use {'tpope/vim-rsi'}
+  use {'tpope/vim-git'}
+  use {'tpope/vim-sensible'}
+  use {'tpope/vim-commentary'}
+  use {'tpope/vim-fugitive'}
+  use {'tpope/vim-rails'}
+  
   -- PACKAGES: 
 
   -- LSP

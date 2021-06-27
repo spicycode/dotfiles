@@ -11,6 +11,9 @@ require('plugins') -- Install/Update plugins
 -- Leader/local leader
 g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
 
+
+local telescope = require('telescope')
+telescope.setup {defaults = {layout_strategy = 'flex', scroll_strategy = 'cycle'}}
 -- Telescope
 nmap('<C-p>', ':Telescope find_files<CR>', {silent = true})
 nmap('<C-]>', ':Telescope tags<CR>', {silent = true})
@@ -108,3 +111,25 @@ require('gitsigns').setup {
     changedelete = {hl = 'PurpleSign', text = '│', numhl = 'GitSignsChangeNr'}
   }
 }
+
+-- Compe config
+require('compe').setup {
+  enabled = true,
+  autocomplete = true,
+  debug = false, 
+  min_length = 1,
+  preselect = 'always',
+  documentation = true,
+  source = {
+    calc = false,
+    path = true, 
+    buffer = true, 
+    nvim_lsp = true, 
+    vsnip = false
+  }
+}
+
+local opts = {noremap = true, silent = true, expr = true}
+map('i', '<c-c>', [[compe#complete()]], opts)
+map('i', '<cr>', [[compe#confirm('<cr>')]], opts)
+map('i', '<c-e>', [[compe#close('<c-e>')]], opts)

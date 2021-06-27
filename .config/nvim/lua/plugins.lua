@@ -113,11 +113,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- Just for tracking progess until this is ready for use
     -- use 'mfussenegger/nvim-lint'
 
-    --use {'hrsh7th/nvim-compe', config = [[require('config.compe')]], event = 'InsertEnter *'}
+    use {
+      'hrsh7th/nvim-compe' 
+    }
     --use {'hrsh7th/vim-vsnip', config = [[require('config.vsnip')]], event = 'InsertEnter *'}
 
     -- Debugger
-    --use {'mfussenegger/nvim-dap', opt = true}
+    use {'mfussenegger/nvim-dap', opt = true}
     --use {
     --'puremourning/vimspector',
     --setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],

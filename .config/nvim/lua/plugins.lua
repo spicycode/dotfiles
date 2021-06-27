@@ -42,6 +42,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
 
     -- Language Syntax/etc support
     use 'euclidianAce/BetterLua.vim'
+    use 'vim-ruby/vim-ruby'
+
+    use 'vim-erlang/vim-erlang-runtime'
+    use 'vim-erlang/vim-erlang-compiler'
+    use 'vim-erlang/vim-erlang-omnicomplete'
+    use 'elixir-lang/vim-elixir'
+    use 'slashmili/alchemist.vim'
+    use 'avdgaag/vim-phoenix'
+
     -- Registers
     -- use 'junegunn/vim-peekaboo'
 

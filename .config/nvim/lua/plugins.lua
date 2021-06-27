@@ -31,6 +31,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
     use 'nvim-lua/lsp_extensions.nvim'
+    use 'onsails/lspkind-nvim'
+    use 'glepnir/lspsaga.nvim'
+    use 'folke/trouble.nvim'
 
     -- Color and Themes
     -- Highlight CSS Colors
@@ -95,11 +98,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- Terminal
     use 'voldikss/vim-floaterm'
 
-    -- Completion and linting
-    --use {
-    -- 'onsails/lspkind-nvim', 'neovim/nvim-lspconfig', '~/projects/personal/lsp-status.nvim',
-    --'glepnir/lspsaga.nvim', 'folke/trouble.nvim'
-    --  }
 
     -- Highlights
     use {
@@ -120,11 +118,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 
     -- Debugger
     use {'mfussenegger/nvim-dap', opt = true}
-    --use {
-    --'puremourning/vimspector',
-    --setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],
-    -- disable = true
-    --}
+
+    use {
+      'puremourning/vimspector',
+      setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],
+      disable = true
+    }
 
     -- Path navigation
 
@@ -134,5 +133,3 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- Plugin development
     -- use 'folke/lua-dev.nvim'
   end)
-
-

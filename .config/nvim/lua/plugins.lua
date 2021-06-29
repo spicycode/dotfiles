@@ -14,7 +14,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'tpope/vim-vinegar'
 
     -- Async building & commands
-    use {'tpope/vim-dispatch', cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+    use {'tpope/vim-dispatch'}
 
     use {'tpope/vim-fugitive'}
     use {'tpope/vim-rsi'}

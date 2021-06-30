@@ -112,6 +112,13 @@ require('gitsigns').setup {
   }
 }
 
+local lspconfig = require("lspconfig")
+
+-- Neovim doesn't support snippets out of the box, so we need to mutate the
+-- capabilities we send to the language server to let them know we want snippets.
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- Compe config
 require('compe').setup {
   enabled = true,
@@ -125,7 +132,11 @@ require('compe').setup {
     path = true, 
     buffer = true, 
     nvim_lsp = true, 
-    vsnip = false
+    vsnip = false,
+    nvim_lua = true,
+    spell = false,
+    tags = true,
+    treesitter = true
   }
 }
 

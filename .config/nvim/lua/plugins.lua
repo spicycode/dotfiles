@@ -120,9 +120,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- Just for tracking progess until this is ready for use
     -- use 'mfussenegger/nvim-lint'
 
-    use {
-      'hrsh7th/nvim-compe' 
-    }
+    use "hrsh7th/nvim-compe"
+    use "hrsh7th/vim-vsnip"
+    use "hrsh7th/vim-vsnip-integ"
     --use {'hrsh7th/vim-vsnip', config = [[require('config.vsnip')]], event = 'InsertEnter *'}
 
     -- Debugger

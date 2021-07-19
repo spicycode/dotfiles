@@ -12,5 +12,6 @@
 .config/stetic/
 .config/xbuild/
 .config/yarn/
+.config/iTerm2
 tags
 .config/coc/extensions/db.json

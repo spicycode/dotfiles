@@ -22,9 +22,6 @@ map <leader>tdp :TSDefPreview<CR>
 " Close buffers
 nmap <leader>b :bd<CR>
 
-" Make Shift-K run RipGrep on the current word
-nnoremap K :Search <C-R><C-W><CR>
-
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>
 
@@ -59,3 +56,18 @@ function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+
+" COC Config:
+nmap <silent> gd <Plug>(coc-definition)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nmap <leader>rn <Plug>(coc-rename)

@@ -6,7 +6,4 @@ alias ll='ls -GFhl'
 
 # TODO: Consider converting to `gh` at some point
 alias git='hub'
-
-if [ ! -d "/opt/homebrew" ]; then
-  alias vim='nvim'
-fi
+alias vim='nvim'

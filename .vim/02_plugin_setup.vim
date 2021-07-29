@@ -36,6 +36,9 @@ Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 
+" Syntax: Kotlin:
+Plug 'udalov/kotlin-vim'
+
 " Syntax: Protobuf:
 Plug 'uarun/vim-protobuf'
 

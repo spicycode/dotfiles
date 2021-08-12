@@ -14,17 +14,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'tpope/vim-vinegar'
 
     -- Async building & commands
-    use {'tpope/vim-dispatch'}
+    use 'tpope/vim-dispatch'
 
-    use {'tpope/vim-fugitive'}
-    use {'tpope/vim-rsi'}
-    use {'tpope/vim-git'}
-    use {'tpope/vim-sensible'}
-    use {'tpope/vim-commentary'}
-    use {'tpope/vim-rails'}
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-rsi'
+    use 'tpope/vim-git'
+    use 'tpope/vim-sensible'
+    use 'tpope/vim-commentary'
+    use 'tpope/vim-rails'
 
-
-    use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     -- PACKAGES: 
 
     -- LSP
@@ -133,6 +131,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
       setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],
       disable = true
     }
+
+    use "jparise/vim-graphql"
 
     -- Path navigation
 

@@ -13,7 +13,23 @@ g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
 
 
 local telescope = require('telescope')
-telescope.setup {defaults = {layout_strategy = 'flex', scroll_strategy = 'cycle'}}
+telescope.setup {
+  defaults = {
+    layout_strategy = 'flex', 
+    scroll_strategy = 'cycle'
+  },
+  pickers = {
+    find_files = {
+      disable_devicons = true,
+      previewer = false,
+    },
+    file_browser = {
+      disable_devicons = true,
+      previewer = false,
+    }
+  }
+}
+
 -- Telescope
 nmap('<C-p>', ':Telescope find_files<CR>', {silent = true})
 nmap('<C-]>', ':Telescope tags<CR>', {silent = true})

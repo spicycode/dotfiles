@@ -50,25 +50,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'avdgaag/vim-phoenix'
 
     -- Registers
-    -- use 'junegunn/vim-peekaboo'
-
-    -- use {'camspiers/snap', rocks = 'fzy'}
-
-    -- Marks
-    -- use {'kshenoy/vim-signature', config = [[require('config.signature')]], disable = true}
-
-    -- Buffer management
-    -- use {'mhinz/vim-sayonara', cmd = 'Sayonara'}
-
-    -- Movement
-    -- use {'chaoren/vim-wordmotion', 'justinmk/vim-sneak'}
+    use 'junegunn/vim-peekaboo'
 
     -- Quickfix
     -- use {'Olical/vim-enmasse', cmd = 'EnMasse'}
-    -- use 'kevinhwang91/nvim-bqf'
-
-    -- Indentation tracking
-    -- use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+    use 'kevinhwang91/nvim-bqf'
 
     -- Commenting
     -- use 'tomtom/tcomment_vim'
@@ -79,15 +65,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
     --   {'andymass/vim-matchup', setup = [[require('config.matchup')]], event = 'BufEnter'}
     -- }
 
-    -- Search
-    -- use 'romainl/vim-cool'
-
     -- Prettification
     -- use 'junegunn/vim-easy-align'
     -- use 'mhartington/formatter.nvim'
-
-    -- Text objects
-    -- use 'wellle/targets.vim'
 
     -- Search
     use {
@@ -105,7 +85,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- Terminal
     use 'voldikss/vim-floaterm'
 
-
     -- Highlights
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -121,7 +100,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use "hrsh7th/nvim-compe"
     use "hrsh7th/vim-vsnip"
     use "hrsh7th/vim-vsnip-integ"
-    --use {'hrsh7th/vim-vsnip', config = [[require('config.vsnip')]], event = 'InsertEnter *'}
 
     -- Debugger
     use {'mfussenegger/nvim-dap', opt = true}
@@ -133,8 +111,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     }
 
     use "jparise/vim-graphql"
-
-    -- Path navigation
 
     -- Profiling
     -- use {'dstein64/vim-startuptime', cmd = 'StartupTime', config = [[vim.g.startuptime_tries = 10]]}

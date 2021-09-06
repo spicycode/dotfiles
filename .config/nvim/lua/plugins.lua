@@ -56,31 +56,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- use {'Olical/vim-enmasse', cmd = 'EnMasse'}
     use 'kevinhwang91/nvim-bqf'
 
-    -- Commenting
-    -- use 'tomtom/tcomment_vim'
-
-    -- Wrapping/delimiters
-    -- use {
-    --   'machakann/vim-sandwich',
-    --   {'andymass/vim-matchup', setup = [[require('config.matchup')]], event = 'BufEnter'}
-    -- }
-
-    -- Prettification
-    -- use 'junegunn/vim-easy-align'
-    -- use 'mhartington/formatter.nvim'
-
     -- Search
     use {
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
-
-    -- Undo tree
-    --  use {
-    --    'mbbill/undotree',
-    --    cmd = 'UndotreeToggle',
-    --    config = [[vim.g.undotree_SetFocusWhenToggle = 1]]
-    --  }
 
     -- Terminal
     use 'voldikss/vim-floaterm'
@@ -111,10 +91,4 @@ if fn.empty(fn.glob(install_path)) > 0 then
     }
 
     use "jparise/vim-graphql"
-
-    -- Profiling
-    -- use {'dstein64/vim-startuptime', cmd = 'StartupTime', config = [[vim.g.startuptime_tries = 10]]}
-
-    -- Plugin development
-    -- use 'folke/lua-dev.nvim'
   end)

@@ -25,6 +25,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
 
     -- PACKAGES: 
 
+    use 'cespare/vim-toml'
+
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
@@ -48,6 +50,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'elixir-lang/vim-elixir'
     use 'slashmili/alchemist.vim'
     use 'avdgaag/vim-phoenix'
+    use 'rust-lang/rust.vim'
 
     -- Registers
     use 'junegunn/vim-peekaboo'

@@ -9,5 +9,4 @@ else
   npm install --global spaceship-prompt
 fi
 
-source ./setup_launchbar_extras.sh
 source ./perform_default_writes.sh

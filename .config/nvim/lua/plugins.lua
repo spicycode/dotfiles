@@ -10,8 +10,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
   return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'christoomey/vim-tmux-navigator'
+    use 'tmux-plugins/vim-tmux-focus-events'
 
     use 'tpope/vim-vinegar'
+    use 'watsoncj/vim-ripgrep' 
 
     -- Async building & commands
     use 'tpope/vim-dispatch'
@@ -21,7 +24,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'tpope/vim-git'
     use 'tpope/vim-sensible'
     use 'tpope/vim-commentary'
-    use 'tpope/vim-rails'
 
     -- PACKAGES: 
 
@@ -43,13 +45,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
     -- Language Syntax/etc support
     use 'euclidianAce/BetterLua.vim'
     use 'vim-ruby/vim-ruby'
+    use 'tpope/vim-rails'
 
+    -- elixir
     use 'vim-erlang/vim-erlang-runtime'
     use 'vim-erlang/vim-erlang-compiler'
     use 'vim-erlang/vim-erlang-omnicomplete'
     use 'elixir-lang/vim-elixir'
     use 'slashmili/alchemist.vim'
     use 'avdgaag/vim-phoenix'
+
+    -- rust
     use 'rust-lang/rust.vim'
 
     -- Registers

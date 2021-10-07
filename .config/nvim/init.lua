@@ -30,17 +30,6 @@ telescope.setup {
   }
 }
 
--- Telescope
-nmap('<C-p>', ':Telescope find_files<CR>', {silent = true})
-nmap('<C-]>', ':Telescope tags<CR>', {silent = true})
-nmap('<leader>lb', ':Telescope buffers<CR>', {silent = true})
-nmap('<leader>lt', ':Telescope help_tags<CR>', {silent = true})
-nmap('<leader>f', '<cmd>Telescope live_grep<cr>', {silent = true})
-
--- TABS: Navigation
-nmap('<leader>tp', ':tabprevious<CR>', {silent = true})
-nmap('<leader>tn', ':tabnext<CR>', {silent = true})
-nmap('<leader>te', ':tabedit<space>')
 
 -- Settings
 local buffer = {o, bo}
@@ -144,7 +133,22 @@ require('compe').setup {
   }
 }
 
-local opts = {noremap = true, silent = true, expr = true}
-map('i', '<c-c>', [[compe#complete()]], opts)
-map('i', '<cr>', [[compe#confirm('<cr>')]], opts)
-map('i', '<c-e>', [[compe#close('<c-e>')]], opts)
+local compeOpts = {noremap = true, silent = true, expr = true}
+map('i', '<c-c>', [[compe#complete()]], compeOpts)
+map('i', '<cr>', [[compe#confirm('<cr>')]], compeOpts)
+map('i', '<c-e>', [[compe#close('<c-e>')]], compeOpts)
+
+-- Telescope
+nmap('<C-p>', ':Telescope find_files<CR>', {silent = true})
+nmap('<C-]>', ':Telescope tags<CR>', {silent = true})
+nmap('<leader>lb', ':Telescope buffers<CR>', {silent = true})
+nmap('<leader>lt', ':Telescope help_tags<CR>', {silent = true})
+nmap('<leader>f', '<cmd>Telescope live_grep<cr>', {silent = true})
+
+-- TABS: Navigation
+nmap('<leader>tp', ':tabprevious<CR>', {silent = true})
+nmap('<leader>tn', ':tabnext<CR>', {silent = true})
+nmap('<leader>te', ':tabedit<space>')
+
+-- Close buffers
+nmap('<leader>b', ':bd<CR>')

@@ -25,10 +25,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'tpope/vim-sensible'
     use 'tpope/vim-commentary'
 
-    -- PACKAGES: 
-
-    use 'cespare/vim-toml'
-
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'

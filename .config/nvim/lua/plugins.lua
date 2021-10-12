@@ -38,6 +38,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
     use 'norcalli/nvim-colorizer.lua'
     use 'ayu-theme/ayu-vim'
 
+    -- Make Quickfix nice
+    use 'https://gitlab.com/yorickpeterse/nvim-pqf.git'
+
     -- Language Syntax/etc support
     use 'euclidianAce/BetterLua.vim'
     use 'vim-ruby/vim-ruby'

@@ -6,7 +6,6 @@ local utils = require('config.utils')
 local opt = utils.opt
 local autocmd = utils.autocmd
 local map, nmap = utils.map, utils.nmap
-
 require('plugins') -- Install/Update plugins
 -- Leader/local leader
 g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
@@ -106,6 +105,10 @@ cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]
 cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
 
 local lspconfig = require("lspconfig")
+
+
+-- Pretty QuickFix
+require('pqf').setup()
 
 -- Neovim doesn't support snippets out of the box, so we need to mutate the
 -- capabilities we send to the language server to let them know we want snippets.

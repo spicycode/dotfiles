@@ -60,13 +60,9 @@ brew 'youtube-dl'
 
 # Fonts
 cask 'font-fira-code'
-cask 'font-input'
-cask 'font-iosevka'
 
 # Mac Apps
 cask 'fantastical'
-cask 'launchbar'
-cask 'alfred'
 cask 'sizeup'
 cask 'stay'
 cask 'the-unarchiver'
@@ -76,5 +72,4 @@ cask 'zoom'
 mas 'Logitech Camera Settings', id: 638332853
 mas 'Monosnap', id: 540348655
 mas 'Slack', id: 803453959
-mas 'Things 3', id: 904280696
 mas 'Tweetbot for Twitter', id: 557168941

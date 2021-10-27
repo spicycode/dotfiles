@@ -8,18 +8,18 @@ tap 'koekeishiya/formulae'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
+brew 'spaceship' # zsh theme
 brew 'git'
 brew 'git-lfs'
 brew 'hub'
 brew 'vim'
 brew 'neovim'
-brew 'weechat', args: ['--with-python@2', '--with-ruby']
+brew 'weechat'
 brew 'coreutils'
 brew 'exercism'
 brew 'nodenv'
 
 # Libraries
-brew 'libav'
 brew 'npm'
 
 # Languages
@@ -27,32 +27,27 @@ brew 'asdf'
 brew 'elixir'
 brew 'node'
 brew 'python3'
-brew 'java'
 
 # Utilities
 brew 'bat'
 brew 'git-delta' # bat required for git-delta
 brew 'gh'
-brew 'ghi'
 brew 'jq'
 brew 'fzf'
 brew 'grc'
-brew 'universal-ctags', args: ['HEAD']
+brew 'universal-ctags'
 brew 'htop-osx'
 brew 'lnav'
 brew 'mas'
-brew 'most'
 brew 'parallel'
 brew 'reattach-to-user-namespace'
 brew 'rbenv'
 brew 'ripgrep'
 brew 'fd'
 brew 'ruby-build'
-brew 'switchaudio-osx'
 brew 'tmux'
 brew 'tree'
 brew 'wget'
-brew 'vimpager'
 brew 'youtube-dl'
 
 # Fonts

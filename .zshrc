@@ -32,3 +32,4 @@ precmd() {
   fi
 }
 
+fpath=($fpath "/Users/chad/.zfunctions")

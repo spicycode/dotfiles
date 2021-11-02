@@ -14,7 +14,6 @@ source ~/.zsh/zsh_hooks.zsh
 
 # Setup GRC for auto colors
 if [ -d "/opt/homebrew" ]; then
-  export HOMEBREW_PATH="/opt/homebrew"
   source /opt/homebrew/etc/grc.zsh
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /opt/homebrew/opt/asdf/asdf.sh
@@ -31,5 +30,3 @@ precmd() {
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
-
-fpath=($fpath "/Users/chad/.zfunctions")

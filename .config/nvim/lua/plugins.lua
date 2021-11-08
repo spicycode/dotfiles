@@ -28,6 +28,7 @@ return require("packer").startup(function()
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
+	use("ckipp01/stylua-nvim")
 	use("nvim-lua/completion-nvim")
 	use("nvim-lua/lsp_extensions.nvim")
 	use("onsails/lspkind-nvim")

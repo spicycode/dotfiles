@@ -7,6 +7,7 @@ local opt = utils.opt
 local autocmd = utils.autocmd
 local map, nmap = utils.map, utils.nmap
 require("plugins") -- Install/Update plugins
+
 -- Leader/local leader
 g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
 

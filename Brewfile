@@ -1,57 +1,64 @@
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'universal-ctags/universal-ctags'
-tap 'neovim/neovim'
-tap 'koekeishiya/formulae'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "koekeishiya/formulae"
+tap "neovim/neovim"
+tap "universal-ctags/universal-ctags"
 
-# Base install
-brew 'zsh'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
-brew 'spaceship' # zsh theme
-brew 'git'
-brew 'git-lfs'
-brew 'hub'
-brew 'vim'
-brew 'neovim'
-brew 'weechat'
-brew 'coreutils'
-brew 'exercism'
-brew 'nodenv'
+brew "asdf"
+brew "bat"
+brew "cmake"
+brew "diff-so-fancy"
+brew "elixir"
+brew "exercism"
+brew "fd"
+brew "fzf"
+brew "gh"
+brew "ghi"
+brew "git"
+brew "git-delta"
+brew "grc"
+brew "htop"
+brew "hub"
+brew "jq"
+brew "lnav"
+brew "mas"
+brew "neovim"
+brew "node"
+brew "nodenv"
+brew "openjdk"
+brew "parallel"
+brew "postgresql", restart_service: true
+brew "rbenv"
+brew "reattach-to-user-namespace"
+brew "ripgrep"
+brew "rust"
+brew "semgrep"
+brew "spaceship"
+brew "stylua"
+brew "subversion"
+brew "switchaudio-osx"
+brew "tmux"
+brew "tree"
+brew "universal-ctags"
+brew "vim"
+brew "vimpager"
+brew "wget"
+brew "youtube-dl"
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
 
-# Libraries
-brew 'npm'
+cask "font-fira-code"
+cask "font-source-sans-pro"
 
-# Languages
-brew 'asdf'
-brew 'elixir'
-brew 'node'
-brew 'python3'
-
-# Utilities
-brew 'bat'
-brew 'git-delta' # bat required for git-delta
-brew 'gh'
-brew 'jq'
-brew 'fzf'
-brew 'grc'
-brew 'universal-ctags'
-brew 'htop-osx'
-brew 'lnav'
-brew 'mas'
-brew 'parallel'
-brew 'reattach-to-user-namespace'
-brew 'rbenv'
-brew 'ripgrep'
-brew 'fd'
-brew 'ruby-build'
-brew 'tmux'
-brew 'tree'
-brew 'wget'
-brew 'youtube-dl'
-
-# Fonts
-cask 'font-fira-code'
-
-mas 'Logitech Camera Settings', id: 638332853
-mas 'Monosnap', id: 540348655
+mas "Amphetamine", id: 937984704
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Reeder", id: 1529448980
+mas "Wipr", id: 1320666476

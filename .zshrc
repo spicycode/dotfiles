@@ -11,18 +11,9 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
 # External files to source
-
-# Setup GRC for auto colors
-if [ -d "/opt/homebrew" ]; then
-  source /opt/homebrew/etc/grc.zsh
-  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /opt/homebrew/opt/asdf/asdf.sh
-else
-  source /usr/local/etc/grc.zsh
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/local/opt/asdf/asdf.sh
-fi
-
+source /opt/homebrew/etc/grc.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/opt/asdf/asdf.sh
 source $HOME/.cargo/env
 
 precmd() {

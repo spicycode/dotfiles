@@ -1,11 +1,5 @@
-if [ -d "/opt/homebrew" ]; then
-  export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
-else
-  export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
-fi
-
+export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
-export RBENV_ROOT=$HOMEBREW_PATH/var/rbenv
 export GOPATH=$HOME/src/gopath
 
 # Setup terminal, and turn on colors

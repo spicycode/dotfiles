@@ -21,3 +21,9 @@ precmd() {
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
+
+
+# For Kitty integration
+if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then 
+  source "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; 
+fi

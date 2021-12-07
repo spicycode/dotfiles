@@ -100,4 +100,6 @@ return require("packer").startup(function()
 	})
 
 	use("jparise/vim-graphql")
+
+	use("fladson/vim-kitty")
 end)

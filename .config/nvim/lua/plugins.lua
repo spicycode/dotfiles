@@ -15,11 +15,9 @@ return require("packer").startup(function()
 	use("tmux-plugins/vim-tmux-focus-events")
 
 	use("tpope/vim-vinegar")
-	use("watsoncj/vim-ripgrep")
 
 	-- Async building & commands
 	use("tpope/vim-dispatch")
-
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rsi")
 	use("tpope/vim-git")

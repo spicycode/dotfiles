@@ -27,8 +27,3 @@ export PKG_CONFIG_PATH="$HOMEBREW_PATH/opt/pkg-config"
 
 # Enable erl/iex history in Erlang 20
 export ERL_AFLAGS="-kernel shell_history enabled"
-
-# SpaceShip prompt options
-# https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md#package-version-package
-export SPACESHIP_PACKAGE_SHOW=false
-export SPACESHIP_DOCKER_SHOW=false

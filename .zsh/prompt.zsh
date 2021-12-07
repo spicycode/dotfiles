@@ -1,2 +1,1 @@
-autoload -U promptinit; promptinit
-prompt spaceship
+eval "$(starship init zsh)"

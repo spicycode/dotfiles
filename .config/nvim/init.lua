@@ -148,3 +148,5 @@ nmap("<leader>te", ":tabedit<space>")
 
 -- Close buffers
 nmap("<leader>b", ":bd<CR>")
+
+opt("infercase", true)

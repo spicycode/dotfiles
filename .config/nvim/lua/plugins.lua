@@ -102,4 +102,5 @@ return require("packer").startup(function()
 	use("jparise/vim-graphql")
 
 	use("fladson/vim-kitty")
+	use({ "knubie/vim-kitty-navigator"})
 end)

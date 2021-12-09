@@ -33,6 +33,14 @@ telescope.setup({
 local buffer = { o, bo }
 local window = { o, wo }
 
+-- Disable backups
+opt("backup", false)
+
+-- Enable undofile
+opt("undofile", true)
+-- Set undodir to tmp directory
+opt('undodir', vim.fn.stdpath('config') .. '/undo')
+
 opt("wildmode", "longest,full")
 
 opt("inccommand", "nosplit")

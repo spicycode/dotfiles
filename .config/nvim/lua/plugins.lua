@@ -70,6 +70,8 @@ return require("packer").startup(function()
 		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 	})
 
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+
 	-- Terminal
 	use("voldikss/vim-floaterm")
 
@@ -102,5 +104,5 @@ return require("packer").startup(function()
 	use("jparise/vim-graphql")
 
 	use("fladson/vim-kitty")
-	use({ "knubie/vim-kitty-navigator"})
+	use({ "knubie/vim-kitty-navigator" })
 end)

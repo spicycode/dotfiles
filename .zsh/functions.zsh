@@ -43,7 +43,7 @@ function ss {
   elif [ -e mix.exs ]; then
     iex -S mix phx.server $@
   else
-    script/rails server $@
+    bin/rails server $@
   fi
 }
 

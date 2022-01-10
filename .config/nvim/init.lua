@@ -26,20 +26,20 @@ require("telescope").setup({
 			previewer = false,
 		},
 	},
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  }
+	extensions = {
+		fzf = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+			-- the default case_mode is "smart_case"
+		},
+	},
 })
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+require("telescope").load_extension("fzf")
 
 -- Settings
 local buffer = { o, bo }
@@ -51,7 +51,7 @@ opt("backup", false)
 -- Enable undofile
 opt("undofile", true)
 -- Set undodir to tmp directory
-opt('undodir', vim.fn.stdpath('config') .. '/undo')
+opt("undodir", vim.fn.stdpath("config") .. "/undo")
 
 opt("wildmode", "longest,full")
 
@@ -118,15 +118,92 @@ cmd([[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]])
 cmd([[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
 cmd([[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
 
-local lspconfig = require("lspconfig")
-
--- Pretty QuickFix
-require("pqf").setup()
+local nvim_lsp = require("lspconfig")
 
 -- Neovim doesn't support snippets out of the box, so we need to mutate the
 -- capabilities we send to the language server to let them know we want snippets.
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local lsp_installer = require("nvim-lsp-installer")
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+-- local servers = { "solargraph" }
+-- for _, lsp in ipairs(servers) do
+-- 	nvim_lsp[lsp].setup({
+-- 		on_attach = on_attach,
+-- 		flags = {
+-- 			debounce_text_changes = 150,
+-- 		},
+-- 	})
+-- end
+
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+	-- Use an on_attach function to only map the following keys
+	-- after the language server attaches to the current buffer
+	local on_attach = function(client, bufnr)
+		local function buf_set_keymap(...)
+			vim.api.nvim_buf_set_keymap(bufnr, ...)
+		end
+		local function buf_set_option(...)
+			vim.api.nvim_buf_set_option(bufnr, ...)
+		end
+
+		--Enable completion triggered by <c-x><c-o>
+		buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+
+		-- Mappings.
+		local mappingOpts = { noremap = true, silent = true }
+
+		-- See `:help vim.lsp.*` for documentation on any of the below functions
+		buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", mappingOpts)
+		buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", mappingOpts)
+		buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", mappingOpts)
+		buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", mappingOpts)
+		buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", mappingOpts)
+		buf_set_keymap(
+			"n",
+			"<space>wl",
+			"<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+			mappingOpts
+		)
+		buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", mappingOpts)
+		buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", mappingOpts)
+		buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", mappingOpts)
+		buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", mappingOpts)
+		buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", mappingOpts)
+	end
+
+	local opts = {
+		-- on_attach: on_attach,
+	}
+
+	-- (optional) Customize the options passed to the server
+	-- if server.name == "tsserver" then
+	--     opts.root_dir = function() ... end
+	-- end
+	if server.name == "solargraph" then
+		opts.flags = {
+			debounce_text_changes = 150,
+		}
+	end
+
+	-- This setup() function is exactly the same as lspconfig's setup function.
+	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+	server:setup(opts)
+end)
+
+-- Pretty QuickFix
+require("pqf").setup()
 
 -- Compe config
 require("compe").setup({

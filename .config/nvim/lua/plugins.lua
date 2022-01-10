@@ -26,6 +26,8 @@ return require("packer").startup(function()
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
+	use("williamboman/nvim-lsp-installer")
+
 	use("ckipp01/stylua-nvim")
 	use("nvim-lua/completion-nvim")
 	use("nvim-lua/lsp_extensions.nvim")
@@ -104,5 +106,5 @@ return require("packer").startup(function()
 	use("jparise/vim-graphql")
 
 	use("fladson/vim-kitty")
-	use({ "knubie/vim-kitty-navigator" })
+	use("knubie/vim-kitty-navigator")
 end)

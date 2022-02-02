@@ -96,6 +96,9 @@ return require("packer").startup(function()
 
 	-- Debugger
 	use({ "mfussenegger/nvim-dap", opt = true })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "Pocco81/DAPInstall.nvim" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
 
 	use({
 		"puremourning/vimspector",

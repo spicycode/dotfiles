@@ -1,6 +1,6 @@
 export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
-export GOPATH=$HOME/src/gopath
+export GOPATH=~/src/gopath
 
 # Setup terminal, and turn on colors
 export TERM=xterm-256color

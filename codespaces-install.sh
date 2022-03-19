@@ -3,6 +3,7 @@
 # Basing off of https://github.com/dcreager/dotfiles/blob/main/install
 
 cd $HOME
+mkdir $HOME/bin
 
 # Run symlink of all files
 

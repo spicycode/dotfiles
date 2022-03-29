@@ -27,7 +27,7 @@ return require("packer").startup(function()
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
-  use("j-hui/fidget.nvim")
+	use("j-hui/fidget.nvim")
 
 	use("ckipp01/stylua-nvim")
 	use("nvim-lua/completion-nvim")
@@ -102,6 +102,18 @@ return require("packer").startup(function()
 	use({ "theHamsta/nvim-dap-virtual-text" })
 
 	use({
+		"pwntester/octo.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"kyazdani42/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	})
+
+	use({
 		"puremourning/vimspector",
 		setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],
 		disable = true,
@@ -111,4 +123,6 @@ return require("packer").startup(function()
 
 	use("fladson/vim-kitty")
 	use("knubie/vim-kitty-navigator")
+
+	use("kyazdani42/nvim-web-devicons")
 end)

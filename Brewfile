@@ -52,6 +52,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 
 cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "font-source-sans-pro"
 
 mas "Amphetamine", id: 937984704

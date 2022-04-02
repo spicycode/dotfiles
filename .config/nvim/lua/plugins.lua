@@ -125,4 +125,6 @@ return require("packer").startup(function()
 	use("knubie/vim-kitty-navigator")
 
 	use("kyazdani42/nvim-web-devicons")
+
+  use("jremmen/vim-ripgrep")
 end)

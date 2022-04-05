@@ -1,5 +1,5 @@
 " Map Leader: Reset from \ to ,
-let mapleader = ","
+let mapleader = "\<Space>"
 
 nmap 0 ^
 

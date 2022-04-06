@@ -45,6 +45,8 @@ require("telescope").load_extension("fzf")
 local buffer = { o, bo }
 local window = { o, wo }
 
+opt("infercase", true)
+
 -- Disable backups
 opt("backup", false)
 
@@ -238,7 +240,8 @@ nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
 nmap("<C-]>", ":Telescope tags<CR>", { silent = true })
 nmap("<leader>lb", ":Telescope buffers<CR>", { silent = true })
 nmap("<leader>lt", ":Telescope help_tags<CR>", { silent = true })
-nmap("<leader>f", "<cmd>Telescope live_grep<cr>", { silent = true })
+nmap("<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
+nmap("<leader>f", ":Rg ")
 
 -- TABS: Navigation
 nmap("<leader>tp", ":tabprevious<CR>", { silent = true })
@@ -248,4 +251,3 @@ nmap("<leader>te", ":tabedit<space>")
 -- Close buffers
 nmap("<leader>b", ":bd<CR>")
 
-opt("infercase", true)

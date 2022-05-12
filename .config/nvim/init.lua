@@ -1,63 +1,32 @@
 -- Based on: https://github.com/wbthomason/dotfiles
 local g = vim.g
 local cmd = vim.cmd
-local o, wo, bo = vim.o, vim.wo, vim.bo
+local o, bo = vim.o, vim.bo
 local utils = require("config.utils")
 local opt = utils.opt
 local map, nmap = utils.map, utils.nmap
 
 require("plugins") -- Install/Update plugins
+require("config.telescope")
 
 -- Leader/local leader
 g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
 
-require("telescope").setup({
-	defaults = {
-		layout_strategy = "flex",
-		scroll_strategy = "cycle",
-	},
-	pickers = {
-		find_files = {
-			disable_devicons = true,
-			previewer = false,
-		},
-		file_browser = {
-			disable_devicons = true,
-			previewer = false,
-		},
-	},
-	extensions = {
-		fzf = {
-			fuzzy = true, -- false will only do exact matching
-			override_generic_sorter = true, -- override the generic sorter
-			override_file_sorter = true, -- override the file sorter
-			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
-		},
-	},
-})
-
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require("telescope").load_extension("fzf")
-
 -- Settings
 local buffer = { o, bo }
-local window = { o, wo }
-
-opt("infercase", true)
 
 -- Disable backups
-opt("backup", false)
+vim.opt.backup = false
 
 -- Enable undofile
-opt("undofile", true)
+vim.opt.undofile = true
+
 -- Set undodir to tmp directory
 opt("undodir", vim.fn.stdpath("config") .. "/undo")
 
 opt("wildmode", "longest,full")
 
-opt("inccommand", "nosplit")
+vim.opt.inccommand = "nosplit"
 
 opt("tabstop", 2, buffer)
 opt("softtabstop", 2, buffer)
@@ -65,56 +34,60 @@ opt("expandtab", true, buffer)
 opt("shiftwidth", 2, buffer)
 
 -- Colorscheme
-opt("termguicolors", true)
-opt("background", "dark")
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+
 cmd([[colorscheme ayu]])
 
 -- Numbers
-opt("number", true)
-opt("numberwidth", 3)
+vim.opt.number = true
+vim.opt.numberwidth = 3
 
 -- Window Management
 
 -- Open new horizontal split windows below current
-opt("splitbelow", true)
+vim.opt.splitbelow = true
 
 -- Open new vertical split windows to the right
-opt("splitright", true)
+vim.opt.splitright = true
 
 -- Buffers
 
 -- Buffers become hidden when unloaded
-opt("hidden", true)
+vim.opt.hidden = true
 
 -- Always show status bar
-opt("laststatus", 2)
+vim.opt.laststatus = 2
 
 -- Enable transparency on floating windows
-opt("winblend", 10)
+vim.opt.winblend = 10
 
 -- Search:
 -- show the `best match so far' as search strings are typed:
-opt("incsearch", true)
+vim.opt.incsearch = true
 
 -- Don't highlight search result.
-opt("hlsearch", false)
---set nohlsearch
-
+vim.opt.hlsearch = false
 -- Searches wrap around the end of the file
-opt("wrapscan", true)
+vim.opt.wrapscan = true
 
 -- Ignore case on insert completion
-opt("infercase", true)
+vim.opt.infercase = true
 
--- Stylin:
--- Enable transparency on floating windows
-opt("winblend", 10)
+-- Transparency on floating windows
+vim.opt.winblend = 10
 
+-- If lightline/airline is enabled, don't show mode under it
+vim.opt.showmode = false
 
-vim.opt.showmode       = false                             -- If lightline/airline is enabled, don't show mode under it
-vim.opt.completeopt    = 'menu'                            -- show completion menu (for nvim-cmp)
-vim.opt.completeopt    = vim.opt.completeopt + 'menuone'   -- show menu even if there is only one candidate (for nvim-cmp)
-vim.opt.completeopt    = vim.opt.completeopt + 'noselect'  -- don't automatically select candidate (for nvim-cmp)
+-- show completion menu (for nvim-cmp)
+vim.opt.completeopt = 'menu'
+
+-- show menu even if there is only one candidate (for nvim-cmp)
+vim.opt.completeopt = vim.opt.completeopt + 'menuone'
+
+-- don't automatically select candidate (for nvim-cmp)
+vim.opt.completeopt = vim.opt.completeopt + 'noselect'
 
 -- Commands
 cmd([[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]])
@@ -123,18 +96,9 @@ cmd([[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]])
 cmd([[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
 cmd([[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
 
-
--- Neovim doesn't support snippets out of the box, so we need to mutate the
--- capabilities we send to the language server to let them know we want snippets.
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 require"fidget".setup{}
 
-
-require("nvim-lsp-installer").setup {}
-local lspconfig = require("lspconfig")
-require("lsp").init{}
+require("config.lsp").init()
 
 
 -- Pretty QuickFix

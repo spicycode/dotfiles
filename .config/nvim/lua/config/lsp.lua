@@ -1,3 +1,6 @@
+require("nvim-lsp-installer").setup {}
+require("lspconfig")
+
 local lsp = {}
 
 local on_attach = function ()

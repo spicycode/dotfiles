@@ -29,6 +29,15 @@ return require("packer").startup(function()
 	use("williamboman/nvim-lsp-installer")
 	use("j-hui/fidget.nvim")
 
+	use('hrsh7th/nvim-cmp')
+	use('hrsh7th/cmp-buffer')
+  use('hrsh7th/cmp-cmdline')
+  use('hrsh7th/cmp-emoji')
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lua')
+  use('hrsh7th/cmp-path')
+  
+
 	use("ckipp01/stylua-nvim")
 	use("nvim-lua/completion-nvim")
 	use("nvim-lua/lsp_extensions.nvim")
@@ -67,14 +76,6 @@ return require("packer").startup(function()
 	-- use {'Olical/vim-enmasse', cmd = 'EnMasse'}
 	use("kevinhwang91/nvim-bqf")
 
-	-- Search
-	use({
-		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
-	})
-
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
 	-- Terminal
 	use("voldikss/vim-floaterm")
 
@@ -102,18 +103,6 @@ return require("packer").startup(function()
 	use({ "theHamsta/nvim-dap-virtual-text" })
 
 	use({
-		"pwntester/octo.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = function()
-			require("octo").setup()
-		end,
-	})
-
-	use({
 		"puremourning/vimspector",
 		setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],
 		disable = true,
@@ -127,4 +116,6 @@ return require("packer").startup(function()
 	use("kyazdani42/nvim-web-devicons")
 
   use("jremmen/vim-ripgrep")
+
+	use("wincent/pinnacle")
 end)

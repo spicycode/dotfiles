@@ -69,6 +69,26 @@ return require("packer").startup(function()
 	-- rust
 	use("rust-lang/rust.vim")
 
+  -- Search
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+	})
+
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({
+		"pwntester/octo.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"kyazdani42/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	})
+
+
 	-- Registers
 	use("junegunn/vim-peekaboo")
 

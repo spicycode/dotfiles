@@ -4,13 +4,42 @@ local cmd = vim.cmd
 local o, wo, bo = vim.o, vim.wo, vim.bo
 local utils = require("config.utils")
 local opt = utils.opt
-local autocmd = utils.autocmd
 local map, nmap = utils.map, utils.nmap
 
 require("plugins") -- Install/Update plugins
 
 -- Leader/local leader
 g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
+
+require("telescope").setup({
+	defaults = {
+		layout_strategy = "flex",
+		scroll_strategy = "cycle",
+	},
+	pickers = {
+		find_files = {
+			disable_devicons = true,
+			previewer = false,
+		},
+		file_browser = {
+			disable_devicons = true,
+			previewer = false,
+		},
+	},
+	extensions = {
+		fzf = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+			-- the default case_mode is "smart_case"
+		},
+	},
+})
+
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require("telescope").load_extension("fzf")
 
 -- Settings
 local buffer = { o, bo }
@@ -138,12 +167,12 @@ map("i", "<cr>", [[compe#confirm('<cr>')]], compeOpts)
 map("i", "<c-e>", [[compe#close('<c-e>')]], compeOpts)
 
 -- Telescope
--- nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
--- nmap("<C-]>", ":Telescope tags<CR>", { silent = true })
--- nmap("<leader>lb", ":Telescope buffers<CR>", { silent = true })
--- nmap("<leader>lt", ":Telescope help_tags<CR>", { silent = true })
--- nmap("<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
--- nmap("<leader>f", ":Rg ")
+nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
+nmap("<C-]>", ":Telescope tags<CR>", { silent = true })
+nmap("<leader>lb", ":Telescope buffers<CR>", { silent = true })
+nmap("<leader>lt", ":Telescope help_tags<CR>", { silent = true })
+nmap("<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
+nmap("<leader>f", ":Rg ")
 
 -- TABS: Navigation
 nmap("<leader>tp", ":tabprevious<CR>", { silent = true })

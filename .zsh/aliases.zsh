@@ -1,8 +1,8 @@
 # Colorize output, add file type indicator, and put sizes in human readable format
-alias ls='ls -GFh'
+alias ls='ls -GFh --color'
 
 # Same as above, but in long listing format
-alias ll='ls -GFhl'
+alias ll='ls -GFhl --color'
 
 # alias ls='exa --icons'                                                         # ls
 # alias ll='exa --icons -l'                                             # long list

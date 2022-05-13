@@ -31,24 +31,24 @@ return require("packer").startup(function()
 
 	use('hrsh7th/nvim-cmp')
 	use('hrsh7th/cmp-buffer')
-  use('hrsh7th/cmp-cmdline')
-  use('hrsh7th/cmp-emoji')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('hrsh7th/cmp-nvim-lua')
-  use('hrsh7th/cmp-path')
-  
+	use('hrsh7th/cmp-cmdline')
+	use('hrsh7th/cmp-emoji')
+	use('hrsh7th/cmp-nvim-lsp')
+	use('hrsh7th/cmp-nvim-lua')
+	use('hrsh7th/cmp-path')
+
 
 	use("ckipp01/stylua-nvim")
 	use("nvim-lua/completion-nvim")
 	use("nvim-lua/lsp_extensions.nvim")
 	use("onsails/lspkind-nvim")
 	use("glepnir/lspsaga.nvim")
-	use("folke/trouble.nvim")
 
 	-- Color and Themes
 	-- Highlight CSS Colors
 	use("norcalli/nvim-colorizer.lua")
 	use("ayu-theme/ayu-vim")
+	use('rmehri01/onenord.nvim')
 
 	-- Make Quickfix nice
 	use("https://gitlab.com/yorickpeterse/nvim-pqf.git")
@@ -69,25 +69,13 @@ return require("packer").startup(function()
 	-- rust
 	use("rust-lang/rust.vim")
 
-  -- Search
+	-- Search
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 	})
 
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-  use({
-		"pwntester/octo.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = function()
-			require("octo").setup()
-		end,
-	})
-
 
 	-- Registers
 	use("junegunn/vim-peekaboo")
@@ -95,9 +83,6 @@ return require("packer").startup(function()
 	-- Quickfix
 	-- use {'Olical/vim-enmasse', cmd = 'EnMasse'}
 	use("kevinhwang91/nvim-bqf")
-
-	-- Terminal
-	use("voldikss/vim-floaterm")
 
 	-- Highlights
 	use({
@@ -108,13 +93,6 @@ return require("packer").startup(function()
 		},
 		run = ":TSUpdate",
 	})
-
-	-- Just for tracking progess until this is ready for use
-	-- use 'mfussenegger/nvim-lint'
-
-	use("hrsh7th/nvim-compe")
-	use("hrsh7th/vim-vsnip")
-	use("hrsh7th/vim-vsnip-integ")
 
 	-- Debugger
 	use({ "mfussenegger/nvim-dap", opt = true })
@@ -135,7 +113,28 @@ return require("packer").startup(function()
 
 	use("kyazdani42/nvim-web-devicons")
 
-  use("jremmen/vim-ripgrep")
+	use {
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
+
+	use("jremmen/vim-ripgrep")
 
 	use("wincent/pinnacle")
+
+	-- For luasnip users.
+	use('L3MON4D3/LuaSnip')
+	use('saadparwaiz1/cmp_luasnip')
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 end)

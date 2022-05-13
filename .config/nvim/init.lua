@@ -1,43 +1,177 @@
--- Based on: https://github.com/wbthomason/dotfiles
-local g = vim.g
-local cmd = vim.cmd
-local o, bo = vim.o, vim.bo
 local utils = require("config.utils")
-local opt = utils.opt
 local map, nmap = utils.map, utils.nmap
+local home = vim.env.HOME
 
 require("plugins") -- Install/Update plugins
 require("config.telescope")
+require('config.lualine')
 
--- Leader/local leader
-g.mapleader = [[,]] -- g.maplocalleader = [[ ]]
+-- Leader
+vim.g.mapleader = ','
 
 -- Settings
-local buffer = { o, bo }
 
 -- Disable backups
 vim.opt.backup = false
 
 -- Enable undofile
 vim.opt.undofile = true
+vim.opt.undodir  = home .. '/.config/nvim-undo' -- keep undo files out of the way
 
--- Set undodir to tmp directory
-opt("undodir", vim.fn.stdpath("config") .. "/undo")
-
-opt("wildmode", "longest,full")
+-- shell-like autocomplete to unambiguous portion
+vim.opt.wildmode = "longest:full,full"
 
 vim.opt.inccommand = "nosplit"
 
-opt("tabstop", 2, buffer)
-opt("softtabstop", 2, buffer)
-opt("expandtab", true, buffer)
-opt("shiftwidth", 2, buffer)
+-- spaces per tab
+vim.opt.tabstop = 2
+
+-- don't always indent by multiple of shiftwidth
+vim.opt.shiftround = false
+
+-- spaces per tab (when shifting)
+vim.opt.shiftwidth = 2
+
+-- ignore annoying swapfile messages
+vim.opt.shortmess = vim.opt.shortmess + 'A'
+
+-- no splash screen
+vim.opt.shortmess = vim.opt.shortmess + 'I'
+
+-- file-read message overwrites previous
+vim.opt.shortmess = vim.opt.shortmess + 'O'
+
+-- truncate non-file messages in middle
+vim.opt.shortmess = vim.opt.shortmess + 'T'
+
+-- don't echo "[w]"/"[written]" when writing
+vim.opt.shortmess = vim.opt.shortmess + 'W'
+
+-- use abbreviations in messages eg. `[RO]` instead of `[readonly]`
+vim.opt.shortmess = vim.opt.shortmess + 'a'
+
+-- completion messages
+vim.opt.shortmess = vim.opt.shortmess + 'c'
+
+-- overwrite file-written messages
+vim.opt.shortmess = vim.opt.shortmess + 'o'
+
+-- truncate file messages at start
+vim.opt.shortmess = vim.opt.shortmess + 't'
+
+-- DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+vim.opt.showbreak = '↳ '
+
+-- don't show extra info at end of command line
+vim.opt.showcmd = false
+
+-- sidescroll in jumps because terminals are slow
+vim.opt.sidescroll = 0
+
+-- same as scrolloff, but for columns
+vim.opt.sidescrolloff = 3
+
+-- <tab>/<BS> indent/dedent in leading whitespace
+vim.opt.smarttab = true
+
+-- try to reuse windows/tabs when switching buffers
+vim.opt.switchbuf = 'usetab'
+
+-- don't bother syntax highlighting long lines
+vim.opt.synmaxcol = 200
 
 -- Colorscheme
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
-cmd([[colorscheme ayu]])
+-- vim.cmd('colorscheme ayu')
+local _M = {}
+_M.colors = {
+	bg = "#2e3440",
+	fg = "#ECEFF4",
+	red = "#bf616a",
+	orange = "#d08770",
+	yellow = "#ebcb8b",
+	blue = "#5e81ac",
+	green = "#a3be8c",
+	cyan = "#88c0d0",
+	magenta = "#b48ead",
+	pink = "#FFA19F",
+	grey1 = "#f8fafc",
+	grey2 = "#f0f1f4",
+	grey3 = "#eaecf0",
+	grey4 = "#d9dce3",
+	grey5 = "#c4c9d4",
+	grey6 = "#b5bcc9",
+	grey7 = "#929cb0",
+	grey8 = "#8e99ae",
+	grey9 = "#74819a",
+	grey10 = "#616d85",
+	grey11 = "#464f62",
+	grey12 = "#3a4150",
+	grey13 = "#333a47",
+	grey14 = "#242932",
+	grey15 = "#1e222a",
+	grey16 = "#1c1f26",
+	grey17 = "#0f1115",
+	grey18 = "#0d0e11",
+	grey19 = "#020203",
+}
+
+require('onenord').setup({
+	borders = true,
+	fade_nc = false,
+	styles = {
+		comments = "italic",
+		strings = "NONE",
+		keywords = "NONE",
+		functions = "italic",
+		variables = "bold",
+		diagnostics = "underline",
+	},
+	disable = {
+		background = false,
+		cursorline = false,
+		eob_lines = true,
+	},
+	custom_highlights = {
+		VertSplit = { fg = _M.colors.grey14 },
+		BufferLineIndicatorSelected = { fg = _M.colors.cyan, bg = _M.colors.bg },
+		BufferLineFill = { fg = _M.colors.fg, bg = _M.colors.grey14 },
+		NvimTreeNormal = { fg = _M.colors.grey5, bg = _M.colors.grey14 },
+		WhichKeyFloat = { bg = _M.colors.grey14 },
+		GitSignsAdd = { fg = _M.colors.green },
+		GitSignsChange = { fg = _M.colors.orange },
+		GitSignsDelete = { fg = _M.colors.red },
+		NvimTreeFolderIcon = { fg = _M.colors.grey9 },
+		NvimTreeIndentMarker = { fg = _M.colors.grey12 },
+
+		NormalFloat = { bg = _M.colors.grey14 },
+		FloatBorder = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+
+		TelescopePromptPrefix = { bg = _M.colors.grey14 },
+		TelescopePromptNormal = { bg = _M.colors.grey14 },
+		TelescopeResultsNormal = { bg = _M.colors.grey15 },
+		TelescopePreviewNormal = { bg = _M.colors.grey16 },
+
+		TelescopePromptBorder = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+		TelescopeResultsBorder = { bg = _M.colors.grey15, fg = _M.colors.grey15 },
+		TelescopePreviewBorder = { bg = _M.colors.grey16, fg = _M.colors.grey16 },
+
+		TelescopePromptTitle = { fg = _M.colors.grey14 },
+		TelescopeResultsTitle = { fg = _M.colors.grey15 },
+		TelescopePreviewTitle = { fg = _M.colors.grey16 },
+
+		PmenuSel = { bg = _M.colors.grey12 },
+		Pmenu = { bg = _M.colors.grey14 },
+		PMenuThumb = { bg = _M.colors.grey16 },
+
+		LspFloatWinNormal = { fg = _M.colors.fg, bg = _M.colors.grey14 },
+		LspFloatWinBorder = { fg = _M.colors.grey14 },
+	},
+})
+
+vim.cmd('syntax on')
 
 -- Numbers
 vim.opt.number = true
@@ -90,45 +224,20 @@ vim.opt.completeopt = vim.opt.completeopt + 'menuone'
 vim.opt.completeopt = vim.opt.completeopt + 'noselect'
 
 -- Commands
-cmd([[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]])
-cmd([[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]])
-cmd([[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]])
-cmd([[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
-cmd([[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
+vim.cmd([[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]])
+vim.cmd([[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]])
+vim.cmd([[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]])
+vim.cmd([[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
+vim.cmd([[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
-require"fidget".setup{}
+require "fidget".setup {}
 
 require("config.lsp").init()
 
 
 -- Pretty QuickFix
 require("pqf").setup()
-
--- Compe config
-require("compe").setup({
-	enabled = true,
-	autocomplete = true,
-	debug = false,
-	min_length = 1,
-	preselect = "always",
-	documentation = true,
-	source = {
-		calc = false,
-		path = true,
-		buffer = true,
-		nvim_lsp = true,
-		vsnip = false,
-		nvim_lua = true,
-		spell = false,
-		tags = true,
-		treesitter = true,
-	},
-})
-
-local compeOpts = { noremap = true, silent = true, expr = true }
-map("i", "<c-c>", [[compe#complete()]], compeOpts)
-map("i", "<cr>", [[compe#confirm('<cr>')]], compeOpts)
-map("i", "<c-e>", [[compe#close('<c-e>')]], compeOpts)
 
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
@@ -145,4 +254,3 @@ nmap("<leader>te", ":tabedit<space>")
 
 -- Close buffers
 nmap("<leader>b", ":bd<CR>")
-

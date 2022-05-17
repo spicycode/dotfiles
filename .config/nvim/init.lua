@@ -229,11 +229,22 @@ vim.cmd([[command! PackerUpdate packadd packer.nvim | lua require('plugins').upd
 vim.cmd([[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]])
 vim.cmd([[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
 vim.cmd([[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync()]]
 
 require "fidget".setup {}
 
 require("config.lsp").init()
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+	sources = {
+		null_ls.builtins.code_actions.eslint,
+		null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.formatting.lua_format,
+		null_ls.builtins.diagnostics.actionlint,
+	},
+})
 
 -- Pretty QuickFix
 require("pqf").setup()

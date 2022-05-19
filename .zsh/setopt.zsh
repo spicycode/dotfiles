@@ -8,7 +8,7 @@ setopt AUTO_CD
 # Allow multiple terminal sessions to all append to one zsh command history
 setopt APPEND_HISTORY 
 
-# Add comamnds as they are typed, don't wait until shell exit
+# Add commands as they are typed, don't wait until shell exit
 setopt INC_APPEND_HISTORY 
 # Do not write events to history that are duplicates of previous events
 setopt HIST_IGNORE_DUPS

@@ -12,3 +12,6 @@ bindkey "^D"      delete-char                          # ctrl-d
 bindkey "^F"      forward-char                         # ctrl-f
 bindkey "^B"      backward-char                        # ctrl-b
 bindkey -e   # Default to standard emacs bindings, regardless of editor string
+
+bindkey "\e[1;3D" backward-word # ⌥←
+bindkey "\e[1;3C" forward-word # ⌥→

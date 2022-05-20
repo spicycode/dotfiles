@@ -57,9 +57,6 @@ return require("packer").startup(function()
   use("ayu-theme/ayu-vim")
   use('rmehri01/onenord.nvim')
 
-  -- Make Quickfix nice
-  use("https://gitlab.com/yorickpeterse/nvim-pqf.git")
-
   -- Language Syntax/etc support
   use("euclidianAce/BetterLua.vim")
   use("vim-ruby/vim-ruby")

@@ -86,7 +86,6 @@ vim.opt.synmaxcol = 200
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
--- vim.cmd('colorscheme ayu')
 local _M = {}
 _M.colors = {
   bg = "#2e3440",
@@ -247,9 +246,6 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint
   }
 })
-
--- Pretty QuickFix
-require("pqf").setup()
 
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })

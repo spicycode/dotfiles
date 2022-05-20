@@ -28,3 +28,4 @@ export PKG_CONFIG_PATH="$HOMEBREW_PATH/opt/pkg-config"
 # Enable erl/iex history in Erlang 20
 export ERL_AFLAGS="-kernel shell_history enabled"
 export WEECHAT_HOME=~/.weechat
+source ~/.github_pat

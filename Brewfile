@@ -50,6 +50,7 @@ brew "youtube-dl"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
+brew "luarocks"
 
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"

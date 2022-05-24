@@ -84,10 +84,6 @@ return require("packer").startup(function()
   -- Registers
   use("junegunn/vim-peekaboo")
 
-  -- Quickfix
-  -- use {'Olical/vim-enmasse', cmd = 'EnMasse'}
-  use("kevinhwang91/nvim-bqf")
-
   -- Highlights
   use({
     "nvim-treesitter/nvim-treesitter",

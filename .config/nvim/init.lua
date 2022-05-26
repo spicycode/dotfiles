@@ -237,16 +237,6 @@ require "fidget".setup {}
 
 require("config.lsp").init()
 
-local null_ls = require("null-ls")
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.code_actions.eslint,
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.formatting.eslint
-  }
-})
-
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
 nmap("<C-]>", ":Telescope tags<CR>", { silent = true })

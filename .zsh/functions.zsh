@@ -75,7 +75,7 @@ function trash () {
 
 
 function add_keys() {
-  ssh-add -k 
+  ssh-add -k
 }
 
 function homebrew() {
@@ -106,4 +106,9 @@ function pg_start() {
 
 function pg_stop() {
   pg_ctl -D /opt/homebrew/var/postgres stop
+}
+
+# Stolen from @rosston!
+function coauth() {
+  printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -5000 | awk '!visited[$0]++' | fzf --border=rounded)" | pbcopy
 }

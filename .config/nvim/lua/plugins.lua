@@ -133,6 +133,6 @@ return require("packer").startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use { "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
+  use { "mcauley-penney/tidy.nvim", event = "BufWritePre" }
 
 end)

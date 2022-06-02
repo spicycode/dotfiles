@@ -1,6 +1,5 @@
 require("nvim-lsp-installer").setup {}
 require("lspconfig")
-require "fidget".setup {}
 
 local lsp = {}
 

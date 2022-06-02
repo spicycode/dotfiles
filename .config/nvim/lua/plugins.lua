@@ -30,7 +30,7 @@ return require("packer").startup(function()
   -- LSP
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
-  use("j-hui/fidget.nvim")
+  use('arkav/lualine-lsp-progress')
 
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')

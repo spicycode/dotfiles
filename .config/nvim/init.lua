@@ -233,8 +233,6 @@ vim.cmd(
   [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
 vim.cmd [[autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync()]]
 
-require "fidget".setup {}
-
 require("config.lsp").init()
 
 -- Telescope

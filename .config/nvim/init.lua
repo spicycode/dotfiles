@@ -11,7 +11,6 @@ vim.g.mapleader = ','
 
 -- Settings
 
-
 -- Disable backups
 vim.opt.backup = false
 

@@ -135,4 +135,6 @@ return require("packer").startup(function()
 
   use { "mcauley-penney/tidy.nvim", event = "BufWritePre" }
 
+  use("ray-x/lsp_signature.nvim")
+
 end)

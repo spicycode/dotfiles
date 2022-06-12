@@ -249,3 +249,13 @@ nmap("<leader>te", ":tabedit<space>")
 
 -- Close buffers
 nmap("<leader>b", ":bd<CR>")
+
+-- nmap('<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+-- nmap('<space>;', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+nmap('<leader>lca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+nmap('<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>')
+nmap('<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+nmap('<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>')
+nmap('<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
+nmap('<leader>lw', '<cmd>lua vim.lsp.buf.references()<CR>')
+nmap('<leader>ls', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')

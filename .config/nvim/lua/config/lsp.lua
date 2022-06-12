@@ -103,11 +103,8 @@ lsp.set_up_highlights = function()
   }))
 end
 
-require "lsp_signature".setup({
-  bind = true, -- This is mandatory, otherwise border config won't get registered.
-  handler_opts = {
-    border = "rounded"
-  }
-})
+require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
+
+require "fidget".setup {}
 
 return lsp

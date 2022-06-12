@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -30,8 +31,7 @@ return require("packer").startup(function()
   -- LSP
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
-  use('arkav/lualine-lsp-progress')
-  use("ray-x/lsp_signature.nvim")
+  use('j-hui/fidget.nvim')
 
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')
@@ -45,7 +45,10 @@ return require("packer").startup(function()
   use("nvim-lua/completion-nvim")
   use("nvim-lua/lsp_extensions.nvim")
   use("onsails/lspkind-nvim")
-  use("glepnir/lspsaga.nvim")
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
 
   -- Color and Themes
   -- Highlight CSS Colors
@@ -77,6 +80,8 @@ return require("packer").startup(function()
 
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
+
   -- Registers
   use("junegunn/vim-peekaboo")
 
@@ -89,12 +94,6 @@ return require("packer").startup(function()
     },
     run = ":TSUpdate"
   })
-
-  -- Debugger
-  use({ "mfussenegger/nvim-dap", opt = true })
-  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-  use({ "Pocco81/DAPInstall.nvim" })
-  use({ "theHamsta/nvim-dap-virtual-text" })
 
   use({
     "puremourning/vimspector",

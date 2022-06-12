@@ -30,16 +30,4 @@ local config = {
 
 }
 
--- Inserts a component in lualine_c to right section
-local function ins_right(component)
-  table.insert(config.sections.lualine_c, component)
-end
-
-ins_right {
-  'lsp_progress',
-  display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' } },
-  timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
-  spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
-}
-
 require('lualine').setup(config)

@@ -31,6 +31,7 @@ return require("packer").startup(function()
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
   use('arkav/lualine-lsp-progress')
+  use("ray-x/lsp_signature.nvim")
 
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')
@@ -135,6 +136,5 @@ return require("packer").startup(function()
 
   use { "mcauley-penney/tidy.nvim", event = "BufWritePre" }
 
-  use("ray-x/lsp_signature.nvim")
 
 end)

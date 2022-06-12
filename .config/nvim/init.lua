@@ -4,7 +4,7 @@ local home = vim.env.HOME
 
 require("plugins") -- Install/Update plugins
 require("config.telescope")
-require('config.lualine')
+require("config.lualine")
 
 -- Leader
 vim.g.mapleader = ','

@@ -55,6 +55,7 @@ brew "luarocks"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-source-sans-pro"
+cask "font-jetbrains-mono"
 
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836

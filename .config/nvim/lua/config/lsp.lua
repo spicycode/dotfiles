@@ -71,6 +71,14 @@ lsp.init = function()
     handlers = handlers,
     on_attach = on_attach
   }
+
+  require 'lspconfig'.eslint.setup {
+    capabilities = capabilities,
+    handlers = handlers,
+    on_attach = on_attach
+  }
+
+  require 'lspconfig'.graphql.setup {}
 end
 
 lsp.set_up_highlights = function()

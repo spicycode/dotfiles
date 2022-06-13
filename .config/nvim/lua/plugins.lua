@@ -33,6 +33,7 @@ return require("packer").startup(function()
   use("williamboman/nvim-lsp-installer")
   use('j-hui/fidget.nvim')
 
+  use('https://github.com/weilbith/nvim-code-action-menu')
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')
   use('hrsh7th/cmp-cmdline')

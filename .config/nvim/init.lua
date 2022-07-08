@@ -234,6 +234,7 @@ vim.cmd [[autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync()]]
 
 require("config.lsp").init()
 
+
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
 nmap("<C-]>", ":Telescope tags<CR>", { silent = true })

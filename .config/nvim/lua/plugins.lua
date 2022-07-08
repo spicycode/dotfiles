@@ -136,5 +136,4 @@ return require("packer").startup(function()
 
   use { "mcauley-penney/tidy.nvim", event = "BufWritePre" }
 
-
 end)

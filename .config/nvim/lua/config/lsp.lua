@@ -15,31 +15,24 @@ vim.diagnostic.config({
 })
 
 local function lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true }
-
-  -- Declaration and definition
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-
-  -- Docs
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>od", "<cmd>lua vim.diagnostic.open_float({ border='single'})<CR>",
-    opts)
-
-  -- Diagnostic
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev({ float={ border='single' }})<CR>",
-    opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next({ float={ border='single' }})<CR>",
-    opts)
-
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
 local on_attach = function(client, bufnr)
@@ -60,10 +53,6 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = 'lsp_document_highlight',
       buffer = bufnr,
-      callback = vim.lsp.buf.document_highlight,
-    })
-    vim.api.nvim_create_autocmd("CursorHold", {
-      buffer = bufnr,
       callback = function()
         local opts = {
           focusable = false,
@@ -76,21 +65,13 @@ local on_attach = function(client, bufnr)
         vim.diagnostic.open_float(nil, opts)
       end
     })
+
     vim.api.nvim_create_autocmd('CursorMoved', {
       group = 'lsp_document_highlight',
       buffer = bufnr,
       callback = vim.lsp.buf.clear_references,
     })
   end
-  vim.keymap.set('n', '<Leader>ld',
-    "<cmd>lua vim.diagnostic.open_float()<CR>",
-    { buffer = true, silent = true })
-  vim.keymap.set('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>',
-    { buffer = true, silent = true })
-  vim.keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>",
-    { buffer = true, silent = true })
-  vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>',
-    { buffer = true, silent = true })
 
   vim.wo.signcolumn = 'yes'
 end
@@ -109,7 +90,16 @@ lsp.init = function()
       { border = border }),
     ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers
       .signature_help,
-      { border = border })
+      { border = border }),
+    ["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.goto_definition)
+    -- ["textDocument/codeAction"]
+    -- ["textDocument/definition"]
+    -- ["textDocument/declaration"]
+    -- ["textDocument/typeDefinition"]
+    -- ["textDocument/implementation"]
+    -- ["textDocument/references"]
+    -- ["textDocument/documentSymbol"]
+    -- ["workspace/symbol"]
   }
 
   local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
@@ -137,7 +127,6 @@ lsp.init = function()
     require 'lspconfig'.sumneko_lua.setup {
       capabilities = capabilities,
       cmd = cmd,
-      handlers = handlers,
       on_attach = on_attach,
       settings = {
         Lua = {
@@ -154,13 +143,11 @@ lsp.init = function()
 
   require 'lspconfig'.tsserver.setup {
     capabilities = capabilities,
-    handlers = handlers,
     on_attach = on_attach
   }
 
   require 'lspconfig'.eslint.setup {
     capabilities = capabilities,
-    handlers = handlers,
     on_attach = on_attach
   }
 

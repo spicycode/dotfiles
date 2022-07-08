@@ -115,6 +115,14 @@ lsp.init = function()
   local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
   if has_cmp_nvim_lsp then
     capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+    local cmp_capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+    cmp_capabilities.textDocument.semanticHighlighting = true
+    cmp_capabilities.offsetEncoding = "utf-8"
+    cmp_capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
   end
 
   local cmd = 'lua-language-server'

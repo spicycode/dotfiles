@@ -1,12 +1,15 @@
 " Map Leader: Reset from \ to ,
-let mapleader = ","
+let mapleader = "\<Space>"
+
+nmap 0 ^
 
 " Fix ctrl-h neovim https://github.com/christoomey/vim-tmux-navigator#tmux
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
-
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
+
+nmap <leader>at :ALEToggle<CR>
 
 " TABS: Navigation
 nmap <leader>tp :tabprevious<CR>

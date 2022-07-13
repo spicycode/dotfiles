@@ -23,6 +23,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'othree/html5-syntax.vim'
+Plug 'posva/vim-vue'
+
 
 " Syntax: TypeScript:
 Plug 'leafgarland/typescript-vim'
@@ -33,6 +35,9 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'JulesWang/css.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
+
+" Syntax: Kotlin:
+Plug 'udalov/kotlin-vim'
 
 " Syntax: Protobuf:
 Plug 'uarun/vim-protobuf'
@@ -50,13 +55,17 @@ Plug 'maximbaz/lightline-ale' " Show ALE status in lightline
 
 " Themes:
 Plug 'jacoborus/tender.vim'
+Plug 'nanotech/jellybeans.vim'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator' " Make Ctrl-jkl; navigate tmux panes as well
 Plug 'tmux-plugins/vim-tmux-focus-events' " Fix autoread in tmux
 
 " Finding: 
-Plug 'watsoncj/vim-ripgrep' 
+" Plug 'watsoncj/vim-ripgrep' 
+Plug 'miyase256/vim-ripgrep', {'branch': 'fix/remove-complete-from-RgRoot'}
+
+
 " Replace with below  when https://github.com/jremmen/vim-ripgrep/pull/28
 " merges
 " Plug 'jremmen/vim-ripgrep'

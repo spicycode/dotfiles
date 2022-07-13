@@ -112,3 +112,11 @@ set laststatus=2
 
 " Make backspace work over indents, eol, and at start of line
 set backspace=indent,eol,start
+
+
+" set shorter timeout so 
+set timeoutlen=1000 ttimeoutlen=0
+
+" print path of current file to the status line 
+" after write command
+set statusline+=%F

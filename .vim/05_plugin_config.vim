@@ -15,7 +15,7 @@ let g:lightline#ale#indicator_warnings = '⚠️  '
 let g:lightline#ale#indicator_errors = '🚫 '
 let g:lightline#ale#indicator_ok = ''
 let g:lightline = {
-      \ 'colorscheme': 'tenderplus',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],

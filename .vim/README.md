@@ -13,7 +13,8 @@ vim +PlugInstall +qall
 # For Terraform Syntax
 git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
 
-cd bundle/ctrlp-cmatcher && ./install.sh && cd - 
+# this command installs spicy code's entire dotfiles -- not just vim specific configuration
+# cd bundle/ctrlp-cmatcher && ./install.sh && cd - 
 ```
 
 ## Per user config

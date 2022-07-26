@@ -5,8 +5,8 @@ VIM was reborn like unto the noble phoenix.  And so it was as it always should b
 ## To install
 
 ```sh
-ln -s ~/whereveryouputit ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/whereveryouputit/.vim ~/.vim
+ln -s ~/whereveryouputit/.vimrc ~/.vimrc
 
 vim +PlugInstall +qall
 

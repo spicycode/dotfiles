@@ -53,6 +53,7 @@ brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "luarocks"
+brew "zk"
 
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"

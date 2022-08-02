@@ -30,4 +30,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export WEECHAT_HOME=~/.weechat
 # Remove / from WORDCHARS so name/repo is 'two words'
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+export ZK_NOTEBOOK_DIR=~/.notes
 source ~/.github_pat

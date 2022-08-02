@@ -233,6 +233,9 @@ vim.cmd(
 
 require("config.lsp").init()
 
+-- https://github.com/mickael-menu/zk-nvim
+require("zk").setup()
+
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
 nmap("<C-]>", ":Telescope tags<CR>", { silent = true })

@@ -231,10 +231,9 @@ vim.cmd(
 vim.cmd(
   [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
 
-require("config.lsp").init()
-
--- https://github.com/mickael-menu/zk-nvim
 require("zk").setup()
+
+require("config.lsp").init()
 
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })

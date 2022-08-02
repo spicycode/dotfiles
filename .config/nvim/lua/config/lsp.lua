@@ -154,6 +154,8 @@ lsp.init = function()
   }
 
   require 'lspconfig'.graphql.setup {}
+
+  require 'lspconfig'.gopls.setup {}
 end
 
 lsp.set_up_highlights = function()

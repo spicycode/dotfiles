@@ -4,6 +4,7 @@ require("telescope").setup({
       prompt_position = 'top',
     },
     sorting_strategy = 'ascending',
+    preview = false
   },
   pickers = {
     find_files = { 

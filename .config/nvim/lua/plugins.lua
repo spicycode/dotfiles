@@ -149,6 +149,9 @@ return require("packer").startup(function()
   }
 
   use("mickael-menu/zk-nvim")
-
+  use {
+    "nanozuki/tabby.nvim",
+    config = function() require("tabby").setup() end,
+  }
 
 end)

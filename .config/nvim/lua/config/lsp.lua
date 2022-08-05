@@ -117,31 +117,22 @@ lsp.init = function()
     }
   end
 
-  local cmd = 'lua-language-server'
-  if vim.fn.executable(cmd) == 1 then
-    cmd = { cmd }
-  else
-    cmd = nil
-  end
-
-  if cmd ~= nil then
-    -- Prerequisite: https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
-    require 'lspconfig'.sumneko_lua.setup {
-      capabilities = capabilities,
-      cmd = cmd,
-      on_attach = on_attach,
-      settings = {
-        Lua = {
-          diagnostics = { enable = true, globals = { 'vim' } },
-          filetypes = { 'lua' },
-          runtime = {
-            path = vim.split(package.path, ';'),
-            version = 'LuaJIT'
-          }
+  -- Prerequisite: https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
+  require 'lspconfig'.sumneko_lua.setup {
+    capabilities = capabilities,
+    cmd = cmd,
+    on_attach = on_attach,
+    settings = {
+      Lua = {
+        diagnostics = { enable = true, globals = { 'vim' } },
+        filetypes = { 'lua' },
+        runtime = {
+          path = vim.split(package.path, ';'),
+          version = 'LuaJIT'
         }
       }
     }
-  end
+  }
 
   require 'lspconfig'.tsserver.setup {
     capabilities = capabilities,
@@ -153,9 +144,15 @@ lsp.init = function()
     on_attach = on_attach
   }
 
-  require 'lspconfig'.graphql.setup {}
+  require 'lspconfig'.graphql.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
 
-  require 'lspconfig'.gopls.setup {}
+  require 'lspconfig'.gopls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
 end
 
 lsp.set_up_highlights = function()

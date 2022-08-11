@@ -1,4 +1,7 @@
-require("nvim-lsp-installer").setup {}
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "eslint", "gopls", "graphql", "sumneko_lua", "tsserver" }
+})
 require("lspconfig")
 
 local lsp = {}
@@ -86,22 +89,6 @@ lsp.init = function()
     { "╭", "FloatBorder" }, { "─", "FloatBorder" }, { "╮", "FloatBorder" },
     { "│", "FloatBorder" }, { "╯", "FloatBorder" }, { "─", "FloatBorder" },
     { "╰", "FloatBorder" }, { "│", "FloatBorder" }
-  }
-  local handlers = {
-    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
-      { border = border }),
-    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers
-      .signature_help,
-      { border = border }),
-    ["textDocument/definition"] = vim.lsp.with(vim.lsp.handlers.goto_definition)
-    -- ["textDocument/codeAction"]
-    -- ["textDocument/definition"]
-    -- ["textDocument/declaration"]
-    -- ["textDocument/typeDefinition"]
-    -- ["textDocument/implementation"]
-    -- ["textDocument/references"]
-    -- ["textDocument/documentSymbol"]
-    -- ["workspace/symbol"]
   }
 
   local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')

@@ -29,8 +29,12 @@ return require("packer").startup(function()
   use("tpope/vim-commentary")
 
   -- LSP
-  use("neovim/nvim-lspconfig")
-  use("williamboman/nvim-lsp-installer")
+   use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
   use('j-hui/fidget.nvim')
 
   use('weilbith/nvim-code-action-menu')

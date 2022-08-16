@@ -158,4 +158,5 @@ return require("packer").startup(function()
     config = function() require("tabby").setup() end,
   }
 
+  use("nicwest/vim-camelsnek")
 end)

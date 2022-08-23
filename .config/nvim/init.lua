@@ -81,11 +81,6 @@ vim.opt.switchbuf = 'usetab'
 -- don't bother syntax highlighting long lines
 vim.opt.synmaxcol = 200
 
--- Disable virtual_text since it's redundant due to lsp_lines.
-vim.diagnostic.config({
-  virtual_text = false,
-})
-
 -- Colorscheme
 vim.opt.termguicolors = true
 vim.opt.background = "dark"

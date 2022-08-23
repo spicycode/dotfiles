@@ -1,21 +1,21 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "eslint", "gopls", "graphql", "sumneko_lua", "tsserver" }
+  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver" }
 })
 require("lspconfig")
 
 local lsp = {}
 vim.g.cursorhold_updatetime = 100
 
--- Show source in diagnostics
-vim.diagnostic.config({
-  virtual_text = {
-    source = "always", -- Or "if_many"
-  },
-  float = {
-    source = "always", -- Or "if_many"
-  },
-})
+-- -- Show source in diagnostics
+-- vim.diagnostic.config({
+--   virtual_text = {
+--     source = "always", -- Or "if_many"
+--   },
+--   float = {
+--     source = "always", -- Or "if_many"
+--   },
+-- })
 
 local function lsp_keymaps(bufnr)
   -- Mappings.
@@ -41,6 +41,9 @@ local function lsp_keymaps(bufnr)
 end
 
 local on_attach = function(client, bufnr)
+  local navic = require("nvim-navic")
+  navic.attach(client, bufnr)
+
   lsp_keymaps(bufnr)
   if client.resolved_capabilities.document_highlight then
     vim.cmd [[
@@ -55,22 +58,6 @@ local on_attach = function(client, bufnr)
       buffer = bufnr,
       group = 'lsp_document_highlight',
     })
-    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-      group = 'lsp_document_highlight',
-      buffer = bufnr,
-      callback = function()
-        local opts = {
-          focusable = false,
-          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-          border = 'rounded',
-          source = 'always',
-          prefix = ' ',
-          scope = 'cursor',
-        }
-        vim.diagnostic.open_float(nil, opts)
-      end
-    })
-
     vim.api.nvim_create_autocmd('CursorMoved', {
       group = 'lsp_document_highlight',
       buffer = bufnr,
@@ -82,6 +69,7 @@ local on_attach = function(client, bufnr)
 end
 
 lsp.init = function()
+
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   -- UI tweaks from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
@@ -122,11 +110,6 @@ lsp.init = function()
   }
 
   require 'lspconfig'.tsserver.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.eslint.setup {
     capabilities = capabilities,
     on_attach = on_attach
   }

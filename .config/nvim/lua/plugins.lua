@@ -29,11 +29,23 @@ return require("packer").startup(function()
   use("tpope/vim-commentary")
 
   -- LSP
-   use {
+  use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+  }
+
+  use({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  })
 
   use('j-hui/fidget.nvim')
 

@@ -36,9 +36,12 @@ local function lsp_keymaps(bufnr)
 end
 
 local on_attach = function(client, bufnr)
+  local navic = require("nvim-navic")
+  navic.attach(client, bufnr)
+
   lsp_keymaps(bufnr)
 
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.cmd [[
       hi! LspReferenceRead cterm=bold ctermbg=black guibg=black
       hi! LspReferenceText cterm=bold ctermbg=black guibg=black
@@ -185,5 +188,7 @@ vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
 require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
 
 require "fidget".setup {}
+
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 return lsp

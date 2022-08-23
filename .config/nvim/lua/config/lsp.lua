@@ -7,15 +7,10 @@ require("lspconfig")
 local lsp = {}
 vim.g.cursorhold_updatetime = 100
 
--- -- Show source in diagnostics
--- vim.diagnostic.config({
---   virtual_text = {
---     source = "always", -- Or "if_many"
---   },
---   float = {
---     source = "always", -- Or "if_many"
---   },
--- })
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+})
 
 local function lsp_keymaps(bufnr)
   -- Mappings.
@@ -41,10 +36,8 @@ local function lsp_keymaps(bufnr)
 end
 
 local on_attach = function(client, bufnr)
-  local navic = require("nvim-navic")
-  navic.attach(client, bufnr)
-
   lsp_keymaps(bufnr)
+
   if client.resolved_capabilities.document_highlight then
     vim.cmd [[
       hi! LspReferenceRead cterm=bold ctermbg=black guibg=black

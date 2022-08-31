@@ -35,11 +35,6 @@ return require("packer").startup(function()
     "neovim/nvim-lspconfig",
   }
 
-  use {
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig"
-  }
-
   use({
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     config = function()

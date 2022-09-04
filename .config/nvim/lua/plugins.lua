@@ -15,8 +15,6 @@ end
 return require("packer").startup(function()
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
-  use("christoomey/vim-tmux-navigator")
-  use("tmux-plugins/vim-tmux-focus-events")
 
   use("tpope/vim-vinegar")
 
@@ -29,11 +27,11 @@ return require("packer").startup(function()
   use("tpope/vim-commentary")
 
   -- LSP
-  use {
+  use({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-  }
+  })
 
   use({
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -42,9 +40,15 @@ return require("packer").startup(function()
     end,
   })
 
-  use('j-hui/fidget.nvim')
+  use("onsails/lspkind-nvim")
+  use({
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  })
 
+  use('j-hui/fidget.nvim')
   use('weilbith/nvim-code-action-menu')
+
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')
   use('hrsh7th/cmp-cmdline')
@@ -54,13 +58,6 @@ return require("packer").startup(function()
   use('hrsh7th/cmp-path')
 
   use("ckipp01/stylua-nvim")
-  use("nvim-lua/completion-nvim")
-  use("nvim-lua/lsp_extensions.nvim")
-  use("onsails/lspkind-nvim")
-  use {
-    'kosayoda/nvim-lightbulb',
-    requires = 'antoinemadec/FixCursorHold.nvim',
-  }
 
   -- Color and Themes
   -- Highlight CSS Colors

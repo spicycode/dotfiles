@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 
 local icons = {
   Text = "",
@@ -152,13 +153,10 @@ end
 
 cmp.setup {
   formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(_, vim_item)
-      vim_item.menu = vim_item.kind
-      vim_item.kind = icons[vim_item.kind]
-
-      return vim_item
-    end
+    format = lspkind.cmp_format({
+      mode = 'symbol' -- show only symbol annotations
+      -- maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+    })
   },
 
   mapping = {

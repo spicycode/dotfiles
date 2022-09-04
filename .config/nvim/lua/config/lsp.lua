@@ -64,6 +64,7 @@ end
 lsp.init = function()
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
   -- UI tweaks from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
   local border = {

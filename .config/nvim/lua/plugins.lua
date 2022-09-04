@@ -54,6 +54,8 @@ return require("packer").startup(function()
   use('hrsh7th/cmp-cmdline')
   use('hrsh7th/cmp-emoji')
   use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lsp-signature-help')
+
   use('hrsh7th/cmp-nvim-lua')
   use('hrsh7th/cmp-path')
 
@@ -70,17 +72,6 @@ return require("packer").startup(function()
   use("vim-ruby/vim-ruby")
   use("tpope/vim-rails")
 
-  -- elixir
-  use("vim-erlang/vim-erlang-runtime")
-  use("vim-erlang/vim-erlang-compiler")
-  use("vim-erlang/vim-erlang-omnicomplete")
-  use("elixir-lang/vim-elixir")
-  use("slashmili/alchemist.vim")
-  use("avdgaag/vim-phoenix")
-
-  -- rust
-  use("rust-lang/rust.vim")
-
   -- Search
   use({
     "nvim-telescope/telescope.nvim",
@@ -88,8 +79,7 @@ return require("packer").startup(function()
   })
 
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
-  use { 'nvim-telescope/telescope-ui-select.nvim' }
+  use({ 'nvim-telescope/telescope-ui-select.nvim' })
 
   -- Registers
   use("junegunn/vim-peekaboo")
@@ -102,12 +92,6 @@ return require("packer").startup(function()
       "nvim-treesitter/nvim-treesitter-textobjects"
     },
     run = ":TSUpdate"
-  })
-
-  use({
-    "puremourning/vimspector",
-    setup = [[vim.g.vimspector_enable_mappings = 'HUMAN']],
-    disable = true
   })
 
   use("jparise/vim-graphql")

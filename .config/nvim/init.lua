@@ -5,6 +5,7 @@ local home = vim.env.HOME
 require("plugins") -- Install/Update plugins
 require("config.telescope")
 require("config.lualine")
+require("config.tabline")
 
 -- Leader
 vim.g.mapleader = ','
@@ -230,8 +231,6 @@ vim.cmd(
   [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]])
 vim.cmd(
   [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]])
-
-require("zk").setup()
 
 require("config.lsp").init()
 

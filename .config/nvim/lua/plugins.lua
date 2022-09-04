@@ -140,11 +140,8 @@ return require("packer").startup(function()
     end
   }
 
-  use("mickael-menu/zk-nvim")
-  use {
-    "nanozuki/tabby.nvim",
-    config = function() require("tabby").setup() end,
-  }
+  -- Tab Bar
+  use("nanozuki/tabby.nvim")
 
   use("nicwest/vim-camelsnek")
 end)

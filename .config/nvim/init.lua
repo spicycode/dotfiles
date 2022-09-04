@@ -250,3 +250,6 @@ nmap("<leader>te", ":tabedit<space>")
 
 -- Close buffers
 nmap("<leader>b", ":bd<CR>")
+
+-- LSP
+nmap("<leader>ca", ":CodeActionMenu<CR>", { silent = true })

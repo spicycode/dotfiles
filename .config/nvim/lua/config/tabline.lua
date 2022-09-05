@@ -8,7 +8,7 @@ local hl_tabline = util.extract_nvim_hl('lualine_b_normal')
 local hl_tabline_sel = util.extract_nvim_hl('lualine_a_normal')
 
 local function tab_label(tabid, active)
-  local icon = active and '➤' or ''
+  local icon = active and '➤' or ' '
   local name = util.get_tab_name(tabid)
   return string.format('%s %s', icon, name)
 end
@@ -17,8 +17,8 @@ local presets = {
   hl = 'lualine_c_normal',
   layout = 'tab_only',
   head = {
-    { '  ', hl = { fg = hl_tabline.fg, bg = hl_tabline.bg } },
-    { '', hl = { fg = hl_tabline.bg, bg = hl_tabline_fill.bg } },
+    { '', hl = {} },
+    { '', hl = {} },
   },
   active_tab = {
     label = function(tabid)

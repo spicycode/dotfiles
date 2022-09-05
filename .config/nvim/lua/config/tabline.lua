@@ -24,17 +24,17 @@ local presets = {
     label = function(tabid)
       return {
         tab_label(tabid, true),
-        hl = { fg = hl_tabline.fg, bg = hl_tabline_sel.bg, style = 'bold' },
+        hl = { fg = hl_tabline.fg, style = 'bold' },
       }
     end,
-    left_sep = { '', hl = { fg = hl_tabline_sel.bg, bg = hl_tabline_fill.bg } },
-    right_sep = { '', hl = { fg = hl_tabline_sel.bg, bg = hl_tabline_fill.bg } },
+    left_sep = { ' ', hl = { fg = hl_tabline.fg } },
+    right_sep = { ' ', hl = { fg = hl_tabline.fg } },
   },
   inactive_tab = {
     label = function(tabid)
       return {
         tab_label(tabid, false),
-        hl = { fg = hl_tabline.fg, bg = hl_tabline_fill.bg },
+        hl = { fg = hl_tabline_sel.bg },
       }
     end,
     left_sep = { ' ', hl = { fg = hl_tabline.bg, bg = hl_tabline_fill.bg } },

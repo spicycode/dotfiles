@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver" }
+  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby-lsp" }
 })
 require("lspconfig")
 
@@ -104,6 +104,11 @@ lsp.init = function()
   }
 
   require 'lspconfig'.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+
+  require 'lspconfig'.ruby_lsp.setup {
     capabilities = capabilities,
     on_attach = on_attach
   }

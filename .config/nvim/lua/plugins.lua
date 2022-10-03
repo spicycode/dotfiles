@@ -80,6 +80,8 @@ return require("packer").startup(function()
 
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
   use({ 'nvim-telescope/telescope-ui-select.nvim' })
+  -- Extension for telescope coauthor support
+  use('cwebster2/github-coauthors.nvim')
 
   -- Registers
   use("junegunn/vim-peekaboo")

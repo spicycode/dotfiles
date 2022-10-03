@@ -7,15 +7,15 @@ require("telescope").setup({
     preview = false
   },
   pickers = {
-    find_files = { 
-      find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
+    find_files = {
+      find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
       layout_config = {
         height = 0.70
       }
     },
-    file_browser = { 
-      disable_devicons = false, 
-      previewer = false 
+    file_browser = {
+      disable_devicons = false,
+      previewer = false
     }
   },
   buffers = {
@@ -42,3 +42,6 @@ require("telescope").load_extension("fzf")
 -- To get ui-select loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require("telescope").load_extension("ui-select")
+
+-- Load github coauthors extension
+require('telescope').load_extension('githubcoauthors')

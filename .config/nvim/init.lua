@@ -234,12 +234,15 @@ vim.cmd(
 
 require("config.lsp").init()
 
+local map = vim.api.nvim_set_keymap
+
 -- Telescope
 nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
 nmap("<C-]>", ":Telescope tags<CR>", { silent = true })
 nmap("<leader>lb", ":Telescope buffers<CR>", { silent = true })
 nmap("<leader>lt", ":Telescope help_tags<CR>", { silent = true })
 nmap("<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
+map("n", "<leader>co", "<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>", { noremap = true })
 nmap("<leader>f", ":Rg ")
 
 -- TABS: Navigation

@@ -63,8 +63,7 @@ end
 
 lsp.init = function()
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
   -- UI tweaks from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
   local border = {
@@ -75,12 +74,9 @@ lsp.init = function()
 
   local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
   if has_cmp_nvim_lsp then
-    capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-    local cmp_capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
-    cmp_capabilities.textDocument.semanticHighlighting = true
-    cmp_capabilities.offsetEncoding = "utf-8"
-    cmp_capabilities.textDocument.foldingRange = {
+    capabilities.textDocument.semanticHighlighting = true
+    capabilities.offsetEncoding = "utf-8"
+    capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
     }

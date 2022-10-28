@@ -224,10 +224,17 @@ cmp.setup {
   snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
 
   sources = cmp.config.sources({
-    { name = 'luasnip' }, { name = 'nvim_lsp' }, { name = 'nvim_lua' },
-    { name = 'buffer' }, { name = 'nvim_lsp_signature_help' }, { name = 'emoji' },
+    { name = 'git' },
+    { name = 'luasnip' },
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'buffer' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'emoji' },
     { name = 'path' }
   }),
 
   window = { documentation = cmp.config.window.bordered() }
 }
+
+require('cmp_git').setup()

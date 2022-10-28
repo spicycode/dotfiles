@@ -55,7 +55,7 @@ return require("packer").startup(function()
   use('hrsh7th/cmp-emoji')
   use('hrsh7th/cmp-nvim-lsp')
   use('hrsh7th/cmp-nvim-lsp-signature-help')
-
+  use('petertriho/cmp-git')
   use('hrsh7th/cmp-nvim-lua')
   use('hrsh7th/cmp-path')
 

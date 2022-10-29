@@ -1,0 +1,15 @@
+set colored-stats on
+set colored-completion-prefix on
+
+
+# Keybindings
+
+# meta-p
+"\ep": previous-history
+# meta-n
+"\en": next-history
+
+# ctrl-meta-f
+"\e\C-f": dump-functions
+# ctrl-meta-v
+"\e\C-v": dump-variables

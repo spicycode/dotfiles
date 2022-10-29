@@ -34,20 +34,13 @@ return require("packer").startup(function()
   })
 
   use({
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    config = function()
-      require("lsp_lines").setup()
-    end,
+    "glepnir/lspsaga.nvim",
+    branch = "main",
   })
 
   use("onsails/lspkind-nvim")
-  use({
-    'kosayoda/nvim-lightbulb',
-    requires = 'antoinemadec/FixCursorHold.nvim',
-  })
 
   use('j-hui/fidget.nvim')
-  use('weilbith/nvim-code-action-menu')
 
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')

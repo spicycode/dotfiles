@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver" }
+  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "solargraph" }
 })
 require("lspconfig")
 
@@ -122,6 +122,11 @@ lsp.init = function()
   }
 
   require 'lspconfig'.gopls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+
+  require 'lspconfig'.solargraph.setup {
     capabilities = capabilities,
     on_attach = on_attach
   }

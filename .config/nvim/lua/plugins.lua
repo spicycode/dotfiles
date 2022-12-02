@@ -58,7 +58,7 @@ return require("packer").startup(function()
   -- Highlight CSS Colors
   use("norcalli/nvim-colorizer.lua")
   use("ayu-theme/ayu-vim")
-  use('rmehri01/onenord.nvim')
+  use('gbprod/nord.nvim')
 
   -- Language Syntax/etc support
   use("euclidianAce/BetterLua.vim")

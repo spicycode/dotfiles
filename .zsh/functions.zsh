@@ -112,3 +112,9 @@ function pg_stop() {
 function coauth() {
   printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -5000 | awk '!visited[$0]++' | fzf --border=rounded)" | pbcopy
 }
+
+# From https://github.com/junegunn/fzf-git.sh
+function gco() {
+  local selected=$(_fzf_git_each_ref --no-multi)
+  [ -n "$selected" ] && git checkout "$selected"
+}

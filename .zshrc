@@ -9,6 +9,7 @@ source ~/.zsh/bindkeys.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
+source ~/.zsh/fzf-git.sh
 
 # External files to source
 source /opt/homebrew/etc/grc.zsh

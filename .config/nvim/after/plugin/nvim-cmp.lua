@@ -230,7 +230,6 @@ cmp.setup {
     { name = 'nvim_lua' },
     { name = 'buffer' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'emoji' },
     { name = 'path' }
   }),
 

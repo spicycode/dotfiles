@@ -17,7 +17,6 @@ return require("packer").startup(function()
   use("wbthomason/packer.nvim")
 
   use("tpope/vim-vinegar")
-
   use("tpope/vim-fugitive")
   use("tpope/vim-rsi")
   use("tpope/vim-git")
@@ -43,7 +42,6 @@ return require("packer").startup(function()
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-buffer')
   use('hrsh7th/cmp-cmdline')
-  use('hrsh7th/cmp-emoji')
   use('hrsh7th/cmp-nvim-lsp')
   use('hrsh7th/cmp-nvim-lsp-signature-help')
   use('petertriho/cmp-git')
@@ -55,7 +53,6 @@ return require("packer").startup(function()
   -- Color and Themes
   -- Highlight CSS Colors
   use("norcalli/nvim-colorizer.lua")
-  use("ayu-theme/ayu-vim")
   use('gbprod/nord.nvim')
 
   -- Language Syntax/etc support
@@ -91,8 +88,6 @@ return require("packer").startup(function()
 
   use("fladson/vim-kitty")
   use("knubie/vim-kitty-navigator")
-
-  use("kyazdani42/nvim-web-devicons")
 
   use {
     "folke/trouble.nvim",

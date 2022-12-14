@@ -18,8 +18,6 @@ return require("packer").startup(function()
 
   use("tpope/vim-vinegar")
 
-  -- Async building & commands
-  use("tpope/vim-dispatch")
   use("tpope/vim-fugitive")
   use("tpope/vim-rsi")
   use("tpope/vim-git")

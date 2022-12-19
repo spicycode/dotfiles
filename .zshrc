@@ -14,7 +14,7 @@ source ~/.zsh/fzf-git.sh
 # External files to source
 source /opt/homebrew/etc/grc.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/opt/asdf/asdf.sh
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 source $HOME/.cargo/env
 
 precmd() {

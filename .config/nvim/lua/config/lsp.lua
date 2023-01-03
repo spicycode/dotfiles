@@ -4,6 +4,8 @@ require("mason-lspconfig").setup({
 })
 require("lspconfig")
 
+require('import-cost').setup()
+
 local lsp = {}
 vim.g.cursorhold_updatetime = 100
 
@@ -62,8 +64,8 @@ local on_attach = function(client, bufnr)
 end
 
 lsp.init = function()
-
-  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+  local capabilities = cmp_nvim_lsp.default_capabilities()
 
   -- UI tweaks from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
   local border = {
@@ -72,7 +74,6 @@ lsp.init = function()
     { "╰", "FloatBorder" }, { "│", "FloatBorder" }
   }
 
-  local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
   if has_cmp_nvim_lsp then
     capabilities.textDocument.semanticHighlighting = true
     capabilities.offsetEncoding = "utf-8"
@@ -224,7 +225,7 @@ keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
--- Diagnsotic jump can use `<c-o>` to jump back
+-- Diagnostic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
@@ -237,7 +238,7 @@ keymap("n", "]E", function()
 end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })

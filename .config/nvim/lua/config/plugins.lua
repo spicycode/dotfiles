@@ -81,7 +81,7 @@ return require("lazy").setup({
 
   { "jparise/vim-graphql" },
   { "fladson/vim-kitty" },
-  { "knubie/vim-kitty-navigator" },
+  { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
 
   {
     "folke/trouble.nvim",

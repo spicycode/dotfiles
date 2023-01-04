@@ -1,11 +1,5 @@
-local utils = require("config.utils")
-local nmap = utils.nmap
 local home = vim.env.HOME
 
-require("plugins") -- Install/Update plugins
-require("config.telescope")
-require("config.lualine")
-require("config.tabline")
 
 -- Leader
 vim.g.mapleader = ','
@@ -85,6 +79,11 @@ vim.opt.synmaxcol = 200
 -- Colorscheme
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
+
+require("plugins") -- Install/Update plugins
+require("config.telescope")
+require("config.lualine")
+require("config.tabline")
 
 require("nord").setup({
   -- your configuration comes here
@@ -172,21 +171,4 @@ vim.cmd(
 
 require("config.lsp").init()
 
-local map = vim.api.nvim_set_keymap
-
--- Telescope
-nmap("<C-p>", ":Telescope find_files<CR>", { silent = true })
-nmap("<C-]>", ":Telescope tags<CR>", { silent = true })
-nmap("<leader>lb", ":Telescope buffers<CR>", { silent = true })
-nmap("<leader>lt", ":Telescope help_tags<CR>", { silent = true })
-nmap("<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
-map("n", "<leader>co", "<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>", { noremap = true })
-nmap("<leader>f", ":Rg ")
-
--- TABS: Navigation
-nmap("<leader>tp", ":tabprevious<CR>", { silent = true })
-nmap("<leader>tn", ":tabnext<CR>", { silent = true })
-nmap("<leader>te", ":tabedit<space>")
-
--- Close buffers
-nmap("<leader>b", ":bd<CR>")
+require("config.keybindings")

@@ -4,8 +4,6 @@ require("mason-lspconfig").setup({
 })
 require("lspconfig")
 
-require('import-cost').setup()
-
 local lsp = {}
 vim.g.cursorhold_updatetime = 100
 

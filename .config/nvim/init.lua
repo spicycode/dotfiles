@@ -32,5 +32,4 @@ vim.cmd('syntax on')
 
 require("config.lsp").init()
 
-require("config.autocommands")
 require("config.keybindings")

@@ -34,7 +34,7 @@ return require("lazy").setup({
   -- Color and Themes
   -- Highlight CSS Colors
   { "norcalli/nvim-colorizer.lua" },
-  { 'gbprod/nord.nvim' },
+  { "gbprod/nord.nvim" },
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
@@ -61,7 +61,7 @@ return require("lazy").setup({
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim" },
-  --{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   { "nvim-telescope/telescope-ui-select.nvim" },
   -- Extension for telescope coauthor support
   { "cwebster2/github-coauthors.nvim" },
@@ -101,24 +101,20 @@ return require("lazy").setup({
   -- For luasnip users.
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
-
+  { "kyazdani42/nvim-web-devicons" },
   {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true }
   },
 
   { "mcauley-penney/tidy.nvim", event = "BufWritePre" },
 
   {
-    'pwntester/octo.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'kyazdani42/nvim-web-devicons',
-    },
+    "pwntester/octo.nvim",
     config = function()
       require "octo".setup()
-    end
+    end,
+    cmd = "Octo"
   },
 
   -- Tab Bar

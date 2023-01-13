@@ -174,9 +174,5 @@ vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
 
 require "fidget".setup {}
 
-local saga = require('lspsaga')
-
-saga.init_lsp_saga()
-
 
 return lsp

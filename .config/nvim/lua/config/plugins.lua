@@ -39,7 +39,13 @@ return require("lazy").setup({
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
-  { "glepnir/lspsaga.nvim", branch = "main" },
+  {
+    'glepnir/lspsaga.nvim',
+    event = 'BufRead',
+    config = function()
+      require('lspsaga').setup({})
+    end
+  },
   { "onsails/lspkind-nvim" },
   { "j-hui/fidget.nvim" },
   { "hrsh7th/nvim-cmp" },

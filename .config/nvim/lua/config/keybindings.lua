@@ -56,6 +56,10 @@ keymap("n", "]E", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 
+-- Callhierarchy
+keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+
 -- Outline
 keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true })
 

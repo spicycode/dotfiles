@@ -122,3 +122,6 @@ vim.opt.completeopt = vim.opt.completeopt + 'menuone'
 
 -- don't automatically select candidate (for nvim-cmp)
 vim.opt.completeopt = vim.opt.completeopt + 'noselect'
+
+vim.o.statuscolumn = '%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }%*'
+

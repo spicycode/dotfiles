@@ -25,6 +25,7 @@ return require("lazy").setup({
       },
     },
   },
+  { "catppuccin/nvim", name = "catppuccin" },
   { "tpope/vim-vinegar" },
   { "tpope/vim-fugitive" },
   { "tpope/vim-rsi" },

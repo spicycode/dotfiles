@@ -215,7 +215,7 @@ return {
   pane_focus_follows_mouse = false,
   warn_about_missing_glyphs = false,
   show_update_window = false,
-  check_for_updates = false,
+  check_for_updates = true,
   line_height = 1.5,
   window_decorations = "RESIZE",
   window_close_confirmation = "NeverPrompt",

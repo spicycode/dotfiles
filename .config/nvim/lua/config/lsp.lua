@@ -77,7 +77,7 @@ lsp.init = function()
         },
         workspace = {
           -- Make the server aware of Neovim runtime files
-          library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+          library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
         },
         -- Do not send telemetry data containing a randomized but unique identifier
         telemetry = {
@@ -112,10 +112,10 @@ lsp.set_up_highlights = function()
   local pinnacle = require 'pinnacle'
 
   vim.cmd('highlight DiagnosticError ' ..
-  pinnacle.decorate('italic,underline', 'ModeMsg'))
+    pinnacle.decorate('italic,underline', 'ModeMsg'))
 
   vim.cmd('highlight DiagnosticHint ' ..
-  pinnacle.decorate('bold,italic,underline', 'Type'))
+    pinnacle.decorate('bold,italic,underline', 'Type'))
 
   vim.cmd('highlight DiagnosticSignHint ' .. pinnacle.highlight({
     bg = pinnacle.extract_bg('ColorColumn'),
@@ -172,7 +172,10 @@ end
 
 vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
 
-require "fidget".setup {}
-
+require "fidget".setup {
+  window = {
+    blend = 0,
+  },
+}
 
 return lsp

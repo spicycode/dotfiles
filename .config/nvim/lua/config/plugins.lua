@@ -44,7 +44,12 @@ return require("lazy").setup({
     'glepnir/lspsaga.nvim',
     event = 'BufRead',
     config = function()
-      require('lspsaga').setup({})
+      require('lspsaga').setup({
+        ui = {
+          colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
+          kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+        },
+      })
     end
   },
   { "onsails/lspkind-nvim" },

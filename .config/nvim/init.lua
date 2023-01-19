@@ -8,7 +8,17 @@ require("config.telescope")
 require("config.lualine")
 require("config.tabline")
 
-vim.cmd[[colorscheme catppuccin-mocha]]
+require("catppuccin").setup({
+  cmp = true,
+  fidget = true,
+  markdown = true,
+  mason = true,
+  native_lsp = true,
+  lsp_saga = true,
+  lsp_trouble = true,
+  treesitter = true
+})
+vim.cmd.colorscheme "catppuccin-mocha"
 
 vim.cmd('syntax on')
 

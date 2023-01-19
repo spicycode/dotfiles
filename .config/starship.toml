@@ -6,10 +6,26 @@ add_newline = true
 
 # Disable the package module, hiding it from the prompt completely
 [package]
-disabled = true
+symbol = " "
+
+[nodejs]
+symbol = " "
 
 [python]
-disabled = true
+symbol = " "
+
+[lua]
+symbol = " "
+
+[golang]
+symbol = "ﳑ "
+
+[rust]
+symbol = " "
 
 [docker_context]
 disabled = true
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch(:$remote_branch)]($style) "

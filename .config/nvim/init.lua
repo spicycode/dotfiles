@@ -8,7 +8,7 @@ require("config.telescope")
 require("config.lualine")
 require("config.tabline")
 
-vim.cmd[[colorscheme nord]]
+vim.cmd[[colorscheme catppuccin-mocha]]
 
 vim.cmd('syntax on')
 

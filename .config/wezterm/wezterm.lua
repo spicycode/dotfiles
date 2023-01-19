@@ -350,7 +350,6 @@ return {
     },
     { key = "q", mods = "ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
     { key = "z", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
-    { key = "F11", mods = "", action = wezterm.action.ToggleFullScreen },
     { key = "h", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Left", 1 }) },
     { key = "j", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Down", 1 }) },
     { key = "k", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 1 }) },
@@ -400,10 +399,6 @@ return {
     {
       regex = [[\b\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*\b]],
       format = "$0",
-    },
-    {
-      regex = [[\b[tT](\d+)\b]],
-      format = "https://example.com/tasks/?t=$1",
     },
   },
 }

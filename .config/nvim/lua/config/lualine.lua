@@ -7,7 +7,7 @@
 local config = {
   options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'catppuccin',
     component_separators = '',
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},

@@ -8,20 +8,17 @@ local config = {
   options = {
     icons_enabled = true,
     theme = 'catppuccin',
-    component_separators = '',
-    section_separators = { left = '', right = '' },
-    disabled_filetypes = {},
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode' },
     },
     lualine_b = { 'filename', 'branch' },
     lualine_c = { 'diagnostics' },
     lualine_x = {},
     lualine_y = { 'filetype' },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 'location' },
     },
   },
   inactive_sections = {
@@ -34,7 +31,6 @@ local config = {
   },
   tabline = {},
   extensions = {}
-
 }
 
 require('lualine').setup(config)

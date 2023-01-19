@@ -16,11 +16,6 @@ local on_attach = function(client, bufnr)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
   if client.server_capabilities.document_highlight then
-    vim.cmd [[
-    hi! LspReferenceRead cterm=bold ctermbg=black guibg=black
-    hi! LspReferenceText cterm=bold ctermbg=black guibg=black
-    hi! LspReferenceWrite cterm=bold ctermbg=black guibg=black
-    ]]
     vim.api.nvim_create_augroup('lsp_document_highlight', {
       clear = false
     })
@@ -41,13 +36,6 @@ end
 lsp.init = function()
   local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
   local capabilities = cmp_nvim_lsp.default_capabilities()
-
-  -- UI tweaks from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-  local border = {
-    { "╭", "FloatBorder" }, { "─", "FloatBorder" }, { "╮", "FloatBorder" },
-    { "│", "FloatBorder" }, { "╯", "FloatBorder" }, { "─", "FloatBorder" },
-    { "╰", "FloatBorder" }, { "│", "FloatBorder" }
-  }
 
   if has_cmp_nvim_lsp then
     capabilities.textDocument.semanticHighlighting = true

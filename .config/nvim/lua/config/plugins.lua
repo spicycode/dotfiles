@@ -108,7 +108,6 @@ return require("lazy").setup({
   },
 
   { "jremmen/vim-ripgrep" },
-  { "wincent/pinnacle" },
 
   -- For luasnip users.
   { "L3MON4D3/LuaSnip" },

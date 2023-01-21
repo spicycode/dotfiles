@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls" }
+  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls", "html", "json" }
 })
 require("lspconfig")
 
@@ -94,36 +94,16 @@ lsp.init = function()
     capabilities = capabilities,
     on_attach = on_attach
   }
-end
 
-lsp.set_up_highlights = function()
-  local pinnacle = require 'pinnacle'
+  require 'lspconfig'.html.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
 
-  vim.cmd('highlight DiagnosticError ' ..
-    pinnacle.decorate('italic,underline', 'ModeMsg'))
-
-  vim.cmd('highlight DiagnosticHint ' ..
-    pinnacle.decorate('bold,italic,underline', 'Type'))
-
-  vim.cmd('highlight DiagnosticSignHint ' .. pinnacle.highlight({
-    bg = pinnacle.extract_bg('ColorColumn'),
-    fg = pinnacle.extract_fg('Type')
-  }))
-
-  vim.cmd('highlight DiagnosticSignError ' .. pinnacle.highlight({
-    bg = pinnacle.extract_bg('ColorColumn'),
-    fg = pinnacle.extract_fg('ErrorMsg')
-  }))
-
-  vim.cmd('highlight DiagnosticSignInformation ' .. pinnacle.highlight({
-    bg = pinnacle.extract_bg('ColorColumn'),
-    fg = pinnacle.extract_fg('DiagnosticHint')
-  }))
-
-  vim.cmd('highlight DiagnosticSignWarning ' .. pinnacle.highlight({
-    bg = pinnacle.extract_bg('ColorColumn'),
-    fg = pinnacle.extract_fg('DiagnosticHint')
-  }))
+  require 'lspconfig'.jsonls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
 end
 
 local function goto_definition(split_cmd)

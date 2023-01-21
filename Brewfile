@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "universal-ctags/universal-ctags"
+tap "shaunsingh/SFMono-Nerd-Font-Ligaturized"
 
 brew "asdf"
 brew "bat"
@@ -60,6 +61,7 @@ cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-source-sans-pro"
 cask "font-jetbrains-mono"
+cask "font-sf-mono-nerd-font-ligaturized"
 
 mas "Amphetamine", id: 937984704
 mas "Reeder", id: 1529448980

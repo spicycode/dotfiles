@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls", "html", "json" }
+  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls", "html", "jsonls", "marksman", "yamlls" }
 })
 require("lspconfig")
 
@@ -104,6 +104,17 @@ lsp.init = function()
     capabilities = capabilities,
     on_attach = on_attach
   }
+
+  require 'lspconfig'.marksman.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+
+  require 'lspconfig'.yamlls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+
 end
 
 local function goto_definition(split_cmd)

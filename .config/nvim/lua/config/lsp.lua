@@ -13,7 +13,7 @@ vim.diagnostic.config({
 })
 
 local on_attach = function(client, bufnr)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
 
   if client.server_capabilities.document_highlight then
     vim.api.nvim_create_augroup('lsp_document_highlight', {

@@ -65,3 +65,9 @@ keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- Navigate from neovim to multiplexer
+keymap("n", "<A-h>", "<CMD>NavigatorLeft<CR>")
+keymap("n", "<A-l>", "<CMD>NavigatorRight<CR>")
+keymap("n", "<A-k>", "<CMD>NavigatorUp<CR>")
+keymap("n", "<A-j>", "<CMD>NavigatorDown<CR>")

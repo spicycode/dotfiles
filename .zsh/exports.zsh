@@ -1,5 +1,6 @@
 export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
-export PATH=~/.cargo/bin:$PATH
+export PATH=~/.cargo/bin:$PATH:/Applications/WezTerm.app/Contents/MacOS
+
 export GOPATH=~/src/gopath
 
 # Setup terminal, and turn on colors

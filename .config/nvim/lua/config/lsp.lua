@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls", "html", "jsonls", "marksman", "yamlls" }
+  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls", "html", "jsonls", "marksman", "yamlls", "eslint" }
 })
 require("lspconfig")
 
@@ -111,6 +111,11 @@ lsp.init = function()
   }
 
   require 'lspconfig'.yamlls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+
+  require 'lspconfig'.eslint.setup {
     capabilities = capabilities,
     on_attach = on_attach
   }

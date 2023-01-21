@@ -132,4 +132,11 @@ return require("lazy").setup({
   { "nanozuki/tabby.nvim" },
 
   { "nicwest/vim-camelsnek" },
+  -- Navigate between neovim and multiplexer
+  {
+    'numToStr/Navigator.nvim',
+    config = function()
+      require('Navigator').setup()
+    end
+  },
 })

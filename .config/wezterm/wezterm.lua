@@ -199,8 +199,8 @@ end)
 
 wezterm.on("update-right-status", function(window)
   window:set_right_status(wezterm.format({
-    { Attribute = { Intensity = "Bold" } },
-    { Text = wezterm.strftime(" %A, %d %B %Y %I:%M %p ") },
+    { Attribute = { Intensity = "Half" } },
+    { Text = wezterm.strftime(" %B %d %Y %H:%M %p ") },
   }))
 end)
 

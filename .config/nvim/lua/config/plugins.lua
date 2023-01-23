@@ -139,4 +139,5 @@ return require("lazy").setup({
       require('Navigator').setup()
     end
   },
+
 })

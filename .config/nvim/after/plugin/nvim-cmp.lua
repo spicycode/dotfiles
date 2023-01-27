@@ -2,34 +2,6 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
-local icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "⌘",
-  Field = "ﰠ",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "塞",
-  Value = "",
-  Enum = "",
-  Keyword = "廓",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "פּ",
-  Event = "",
-  Operator = "",
-  TypeParameter = ""
-}
-
 -- Returns the current column number.
 local column = function()
   local _line, col = unpack(vim.api.nvim_win_get_cursor(0))

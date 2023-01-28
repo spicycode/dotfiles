@@ -92,4 +92,8 @@ Plug 'tpope/vim-rsi' " Readline style insertion movements
 " Fancy Commenting:
 Plug 'tpope/vim-commentary'
 
+" Salesforce:
+Plug 'neowit/vim-force.com'
+
+
 call plug#end()

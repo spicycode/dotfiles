@@ -60,3 +60,11 @@ let g:ruby_heredoc_syntax_filetypes = {
 " PythonLand:
 let g:pymode_python = 'python3'
 
+
+" Salesforce:
+
+let g:apex_backup_folder = expand("$HOME/code/projects/sfdc/backup")
+let g:apex_temp_folder = expand("$HOME/code/projects/sfdc/temp")
+let g:apex_properties_folder = expand("$HOME/code/projects/sfdc/properties")
+let g:apex_tooling_force_dot_com_path = expand("$HOME/code/projects/sfdc/jar")
+

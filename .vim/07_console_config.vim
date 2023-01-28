@@ -2,8 +2,13 @@ set background=dark
 set linespace=3
 
 " colorscheme tender
-colorscheme jellybeans
+" colorscheme jellybeans
 
 " syntax enable
+
+" set termguicolors
 " set background=light
-" colorscheme solarized
+set background=dark
+colorscheme solarized8
+
+

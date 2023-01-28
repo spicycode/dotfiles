@@ -56,6 +56,7 @@ Plug 'maximbaz/lightline-ale' " Show ALE status in lightline
 " Themes:
 Plug 'jacoborus/tender.vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'lifepillar/vim-solarized8'
 
 " Enable Fancy TMUX Navigation:
 Plug 'christoomey/vim-tmux-navigator' " Make Ctrl-jkl; navigate tmux panes as well
@@ -90,5 +91,9 @@ Plug 'tpope/vim-rsi' " Readline style insertion movements
 
 " Fancy Commenting:
 Plug 'tpope/vim-commentary'
+
+" Salesforce:
+Plug 'neowit/vim-force.com'
+
 
 call plug#end()

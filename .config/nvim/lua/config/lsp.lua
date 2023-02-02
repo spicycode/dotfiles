@@ -1,10 +1,13 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "graphql", "sumneko_lua", "tsserver", "ruby_ls", "html", "jsonls", "marksman", "yamlls", "eslint" }
+  ensure_installed = {
+    "gopls", "graphql", "sumneko_lua", "tsserver",
+    "ruby_ls", "html", "jsonls", "marksman", "yamlls",
+    "eslint"
+  }
 })
-require("lspconfig")
+local lspconfig = require("lspconfig")
 
-local lsp = {}
 vim.g.cursorhold_updatetime = 100
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
@@ -33,97 +36,93 @@ local on_attach = function(client, bufnr)
   vim.wo.signcolumn = 'yes'
 end
 
-lsp.init = function()
-  local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-  local capabilities = cmp_nvim_lsp.default_capabilities()
-
-  if has_cmp_nvim_lsp then
-    capabilities.textDocument.semanticHighlighting = true
-    capabilities.offsetEncoding = "utf-8"
-    capabilities.textDocument.foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    }
-  end
-
-  require 'lspconfig'.sumneko_lua.setup {
-    capabilities = capabilities,
-    cmd = cmd,
-    on_attach = on_attach,
-    settings = {
-      Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = "LuaJIT",
-          -- Setup your lua path
-          path = runtime_path,
-        },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { "vim" },
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
-        },
-        -- Do not send telemetry data containing a randomized but unique identifier
-        telemetry = {
-          enable = false,
-        },
-      },
-    },
-  }
-
-  require 'lspconfig'.tsserver.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.graphql.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.gopls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.ruby_ls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.html.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.jsonls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.marksman.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.yamlls.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-
-  require 'lspconfig'.eslint.setup {
-    capabilities = capabilities,
-    on_attach = on_attach
-  }
-end
-
 require "fidget".setup {
   window = {
     blend = 0,
   },
 }
 
-return lsp
+local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+if has_cmp_nvim_lsp then
+  capabilities.textDocument.semanticHighlighting = true
+  capabilities.offsetEncoding = "utf-8"
+  capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  }
+end
+
+lspconfig.sumneko_lua.setup {
+  capabilities = capabilities,
+  cmd = cmd,
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = "LuaJIT",
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { "vim" },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+lspconfig.tsserver.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.graphql.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.gopls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.ruby_ls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.html.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.jsonls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.marksman.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.yamlls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.eslint.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}

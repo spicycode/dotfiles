@@ -132,7 +132,7 @@ cmp.setup {
   },
 
   mapping = {
-    ['<BS>'] = cmp.mapping(function(_fallback)
+    ['<BS>'] = cmp.mapping(function(_)
       local keys = smart_bs()
       vim.api.nvim_feedkeys(keys, 'nt', true)
     end, { 'i', 's' }),

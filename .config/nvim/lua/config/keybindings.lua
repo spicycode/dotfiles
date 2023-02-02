@@ -35,30 +35,8 @@ keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true 
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 
--- Peek Definition
--- you can edit the definition file in this flaotwindow
--- also support open/vsplit/etc operation check definition_action_keys
--- support tagstack C-t jump back
--- keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
-
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
-
--- Diagnostic jump can use `<c-o>` to jump back
--- keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
--- keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
-
--- Only jump to error
--- keymap("n", "[E", function()
---   require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
--- end, { silent = true })
--- keymap("n", "]E", function()
---   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
--- end, { silent = true })
-
--- Callhierarchy
--- keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
--- keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Outline
 keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true })

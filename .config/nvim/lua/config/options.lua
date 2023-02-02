@@ -115,13 +115,8 @@ vim.opt.winblend = 10
 vim.opt.showmode = false
 
 -- show completion menu (for nvim-cmp)
-vim.opt.completeopt = 'menu'
-
 -- show menu even if there is only one candidate (for nvim-cmp)
-vim.opt.completeopt = vim.opt.completeopt + 'menuone'
-
 -- don't automatically select candidate (for nvim-cmp)
-vim.opt.completeopt = vim.opt.completeopt + 'noselect'
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 vim.o.statuscolumn = '%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }%*'
-

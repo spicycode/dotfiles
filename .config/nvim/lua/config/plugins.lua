@@ -35,7 +35,6 @@ return require("lazy").setup({
   -- Color and Themes
   -- Highlight CSS Colors
   { "norcalli/nvim-colorizer.lua" },
-  { "shaunsingh/nord.nvim" },
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },

@@ -4,9 +4,5 @@ alias ls='ls -GFh --color'
 # Same as above, but in long listing format
 alias ll='ls -GFhl --color'
 
-# alias ls='exa --icons'                                                         # ls
-# alias ll='exa --icons -l'                                             # long list
-
-# TODO: Consider converting to `gh` at some point
 alias git='hub'
 alias vim='nvim'

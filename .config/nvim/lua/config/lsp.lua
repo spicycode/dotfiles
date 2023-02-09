@@ -112,6 +112,11 @@ lspconfig.jsonls.setup {
   on_attach = on_attach
 }
 
+lspconfig.actionlint.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
 lspconfig.marksman.setup {
   capabilities = capabilities,
   on_attach = on_attach

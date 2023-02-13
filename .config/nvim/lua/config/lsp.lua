@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "gopls", "graphql", "sumneko_lua", "tsserver",
+    "gopls", "graphql", "lua_ls", "tsserver",
     "ruby_ls", "html", "jsonls", "marksman", "yamlls",
     "eslint"
   }
@@ -54,7 +54,7 @@ if has_cmp_nvim_lsp then
   }
 end
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   capabilities = capabilities,
   cmd = cmd,
   on_attach = on_attach,
@@ -108,11 +108,6 @@ lspconfig.html.setup {
 }
 
 lspconfig.jsonls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.actionlint.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }

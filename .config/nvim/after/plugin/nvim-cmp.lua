@@ -1,24 +1,10 @@
 local cmp = require('cmp')
-local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
 -- Returns the current column number.
 local column = function()
   local _line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col
-end
-
--- Based on (private) function in LuaSnip/lua/luasnip/init.lua.
-local in_snippet = function()
-  local session = require('luasnip.session')
-  local node = session.current_nodes[vim.api.nvim_get_current_buf()]
-  if not node then return false end
-  local snippet = node.parent.snippet
-  local snip_begin_pos, snip_end_pos = snippet.mark:pos_begin_end()
-  local pos = vim.api.nvim_win_get_cursor(0)
-  if pos[1] - 1 >= snip_begin_pos[1] and pos[1] - 1 <= snip_end_pos[1] then
-    return true
-  end
 end
 
 -- Returns true if the cursor is in leftmost column or at a whitespace
@@ -137,16 +123,9 @@ cmp.setup {
       vim.api.nvim_feedkeys(keys, 'nt', true)
     end, { 'i', 's' }),
 
-    -- Choose a choice using vim.ui.select (ugh);
-    -- prettier would be a pop-up, but it will require a bit of config:
-    -- https://github.com/L3MON4D3/LuaSnip/wiki/Misc#choicenode-popup
-    -- ['<C-u>'] = require('luasnip.extras.select_choice'),
-
     ['<C-e>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.close()
-      elseif luasnip.choice_active() then
-        luasnip.jump(1)
       else
         fallback()
       end
@@ -166,8 +145,6 @@ cmp.setup {
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif in_snippet() and luasnip.jumpable(-1) then
-        luasnip.jump(-1)
       else
         fallback()
       end
@@ -181,8 +158,6 @@ cmp.setup {
         else
           cmp.select_next_item()
         end
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
       elseif in_whitespace() then
         smart_tab()
       else
@@ -193,11 +168,8 @@ cmp.setup {
 
   completion = { completeopt = 'menu,menuone,noinsert' },
 
-  snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
-
   sources = cmp.config.sources({
     { name = 'git' },
-    { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'buffer' },

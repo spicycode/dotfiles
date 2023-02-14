@@ -108,9 +108,6 @@ return require("lazy").setup({
 
   { "jremmen/vim-ripgrep" },
 
-  -- For luasnip users.
-  { "L3MON4D3/LuaSnip" },
-  { "saadparwaiz1/cmp_luasnip" },
   { "kyazdani42/nvim-web-devicons" },
   {
     "nvim-lualine/lualine.nvim",

@@ -21,7 +21,7 @@ keymap("n", "<leader>te", ":tabedit<space>")
 -- Close buffers
 keymap("n", "<leader>b", ":bd<CR>")
 
--- LSP 
+-- LSP
 --
 -- Lsp finder find the symbol definition implement reference
 -- if there is no implement it will hide
@@ -30,7 +30,7 @@ keymap("n", "<leader>b", ":bd<CR>")
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
@@ -39,7 +39,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true })
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })

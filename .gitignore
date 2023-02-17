@@ -13,5 +13,6 @@
 .config/xbuild/
 .config/yarn/
 .config/iTerm2
+.config/himalaya
 tags
 .config/coc/extensions/db.json

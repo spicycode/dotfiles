@@ -25,7 +25,7 @@ return require("lazy").setup({
       },
     },
   },
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",                  name = "catppuccin" },
   { "tpope/vim-vinegar" },
   { "tpope/vim-fugitive" },
   { "tpope/vim-rsi" },
@@ -62,12 +62,10 @@ return require("lazy").setup({
   { "hrsh7th/cmp-nvim-lua" },
   { "hrsh7th/cmp-path" },
   { "ckipp01/stylua-nvim" },
-
   -- Language Syntax/etc support
   { "euclidianAce/BetterLua.vim" },
   { "vim-ruby/vim-ruby" },
   { "tpope/vim-rails" },
-
   -- Search
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
@@ -76,10 +74,8 @@ return require("lazy").setup({
   { "nvim-telescope/telescope-ui-select.nvim" },
   -- Extension for telescope coauthor support
   { "cwebster2/github-coauthors.nvim" },
-
   -- Registers
   { "junegunn/vim-peekaboo" },
-
   -- Highlights
   {
     "nvim-treesitter/nvim-treesitter",
@@ -89,11 +85,9 @@ return require("lazy").setup({
     },
     build = ":TSUpdate"
   },
-
   { "jparise/vim-graphql" },
   { "fladson/vim-kitty" },
   { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
-
   {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -105,17 +99,13 @@ return require("lazy").setup({
       }
     end
   },
-
   { "jremmen/vim-ripgrep" },
-
   { "kyazdani42/nvim-web-devicons" },
   {
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true }
   },
-
   { "mcauley-penney/tidy.nvim", event = "BufWritePre" },
-
   {
     "pwntester/octo.nvim",
     config = function()
@@ -123,10 +113,8 @@ return require("lazy").setup({
     end,
     cmd = "Octo"
   },
-
   -- Tab Bar
   { "nanozuki/tabby.nvim" },
-
   { "nicwest/vim-camelsnek" },
   -- Navigate between neovim and multiplexer
   {
@@ -134,6 +122,5 @@ return require("lazy").setup({
     config = function()
       require('Navigator').setup()
     end
-  },
-
+  }
 })

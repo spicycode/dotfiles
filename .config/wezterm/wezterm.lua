@@ -122,10 +122,6 @@ local function get_process(tab)
       { Foreground = { Color = colors.subtext0 } },
       { Text = wezterm.nerdfonts.cod_terminal_bash },
     },
-    ["paru"] = {
-      { Foreground = { Color = colors.lavender } },
-      { Text = wezterm.nerdfonts.linux_archlinux },
-    },
     ["htop"] = {
       { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_chart_donut_variant },
@@ -137,10 +133,6 @@ local function get_process(tab)
     ["go"] = {
       { Foreground = { Color = colors.sapphire } },
       { Text = wezterm.nerdfonts.mdi_language_go },
-    },
-    ["lazydocker"] = {
-      { Foreground = { Color = colors.blue } },
-      { Text = wezterm.nerdfonts.linux_docker },
     },
     ["git"] = {
       { Foreground = { Color = colors.peach } },
@@ -233,7 +225,7 @@ return {
     brightness = is_dark and 0.85 or 0.95,
   },
   enable_scroll_bar = false,
-  tab_bar_at_bottom = true,
+  tab_bar_at_bottom = false,
   use_fancy_tab_bar = false,
   show_new_tab_button_in_tab_bar = false,
   window_background_opacity = 1.0,

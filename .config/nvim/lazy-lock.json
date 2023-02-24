@@ -16,11 +16,11 @@
   "lspsaga.nvim": { "branch": "main", "commit": "bd55b175a4546334a197821cd4bfc19ba94e1a82" },
   "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "93e58e100f37ef4fb0f897deeed20599dae9d128" },
-  "mason.nvim": { "branch": "main", "commit": "5b9fd3822d686092c7ee08adfcbd2c764def22c5" },
-  "nvim-cmp": { "branch": "main", "commit": "ba7a53478d0726683d1597ad1e814695033dcb4b" },
+  "mason.nvim": { "branch": "main", "commit": "01dfdfd36be77cb1195b60d580315bf4e2d8e62c" },
+  "nvim-cmp": { "branch": "main", "commit": "7cd39409e7378fa711624687d3b430b8a56c3af9" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" },
-  "nvim-lspconfig": { "branch": "master", "commit": "91998cef4b1ae3a624901d0f9c894409db24e760" },
-  "nvim-treesitter": { "branch": "master", "commit": "8b444f999759531470503d7e53c38365027b2e6e" },
+  "nvim-lspconfig": { "branch": "master", "commit": "69e2fe3d638566a812c39bc4ea1980f7b833e2fc" },
+  "nvim-treesitter": { "branch": "master", "commit": "f8595b13bff62d5c64d54840e16678b9ad843620" },
   "nvim-web-devicons": { "branch": "master", "commit": "4709a504d2cd2680fb511675e64ef2790d491d36" },
   "octo.nvim": { "branch": "master", "commit": "f336322f865cfa310ae15435c6bec337687b6b20" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
@@ -44,6 +44,6 @@
   "vim-ripgrep": { "branch": "master", "commit": "2bb2425387b449a0cd65a54ceb85e123d7a320b8" },
   "vim-rsi": { "branch": "master", "commit": "4c673fb6c70652a09682c50a0e308184731ca70b" },
   "vim-ruby": { "branch": "master", "commit": "d8ef4c3584d0403d26f69bfd0a8fc6bfe198aeee" },
-  "vim-sensible": { "branch": "master", "commit": "16283468becaa6985839f96fea212f8634fbd7d2" },
+  "vim-sensible": { "branch": "master", "commit": "a7eea09ba654a371a90ca77186bf10930b897e80" },
   "vim-vinegar": { "branch": "master", "commit": "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }
 }

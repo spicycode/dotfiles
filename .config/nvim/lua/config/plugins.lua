@@ -86,8 +86,6 @@ return require("lazy").setup({
     build = ":TSUpdate"
   },
   { "jparise/vim-graphql" },
-  { "fladson/vim-kitty" },
-  { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
   {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",

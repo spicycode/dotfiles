@@ -33,6 +33,6 @@ export WEECHAT_HOME=~/.weechat
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export BAT_THEME=Nord
-export ZK_NOTEBOOK_DIR=~/.notes
+export HOMEBREW_NO_ENV_HINTS=true
 source ~/.github_pat
 

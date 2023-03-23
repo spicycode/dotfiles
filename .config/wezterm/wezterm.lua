@@ -17,12 +17,15 @@ end
 wezterm.on("ActivatePaneDirection-right", function(window, pane)
   conditional_activate_pane(window, pane, "Right", "l")
 end)
+
 wezterm.on("ActivatePaneDirection-left", function(window, pane)
   conditional_activate_pane(window, pane, "Left", "h")
 end)
+
 wezterm.on("ActivatePaneDirection-up", function(window, pane)
   conditional_activate_pane(window, pane, "Up", "k")
 end)
+
 wezterm.on("ActivatePaneDirection-down", function(window, pane)
   conditional_activate_pane(window, pane, "Down", "j")
 end)
@@ -43,7 +46,6 @@ local catppuccin = {
     sapphire = "#74C7EC",
     blue = "#89B4FA",
     lavender = "#B4BEFE",
-
     text = "#CDD6F4",
     subtext1 = "#BAC2DE",
     subtext0 = "#A6ADC8",
@@ -53,7 +55,6 @@ local catppuccin = {
     surface2 = "#585B70",
     surface1 = "#45475A",
     surface0 = "#313244",
-
     base = "#1E1E2E",
     mantle = "#181825",
     crust = "#11111B",
@@ -73,7 +74,6 @@ local catppuccin = {
     sapphire = "#209FB5",
     blue = "#1e66f5",
     lavender = "#7287FD",
-
     text = "#4C4F69",
     subtext1 = "#5C5F77",
     subtext0 = "#6C6F85",
@@ -83,7 +83,6 @@ local catppuccin = {
     surface2 = "#ACB0BE",
     surface1 = "#BCC0CC",
     surface0 = "#CCD0DA",
-
     base = "#FFFFFF",
     mantle = "#E6E9EF",
     crust = "#DCE0E8",
@@ -340,36 +339,34 @@ return {
       mods = "ALT",
       action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
     },
-    { key = "q", mods = "ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
-    { key = "z", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
-    { key = "h", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Left", 1 }) },
-    { key = "j", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Down", 1 }) },
-    { key = "k", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 1 }) },
-    { key = "l", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 1 }) },
-
-    { key = "h", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-left") },
-    { key = "j", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-down") },
-    { key = "k", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-up") },
-    { key = "l", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-right") },
-
-    { key = "[", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-    { key = "]", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
-    { key = "{", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(-1) },
-    { key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
-    { key = "v", mods = "ALT", action = wezterm.action.ActivateCopyMode },
+    { key = "q", mods = "ALT",        action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+    { key = "z", mods = "ALT",        action = wezterm.action.TogglePaneZoomState },
+    { key = "h", mods = "ALT|SHIFT",  action = wezterm.action.AdjustPaneSize({ "Left", 1 }) },
+    { key = "j", mods = "ALT|SHIFT",  action = wezterm.action.AdjustPaneSize({ "Down", 1 }) },
+    { key = "k", mods = "ALT|SHIFT",  action = wezterm.action.AdjustPaneSize({ "Up", 1 }) },
+    { key = "l", mods = "ALT|SHIFT",  action = wezterm.action.AdjustPaneSize({ "Right", 1 }) },
+    { key = "h", mods = "ALT",        action = wezterm.action.EmitEvent("ActivatePaneDirection-left") },
+    { key = "j", mods = "ALT",        action = wezterm.action.EmitEvent("ActivatePaneDirection-down") },
+    { key = "k", mods = "ALT",        action = wezterm.action.EmitEvent("ActivatePaneDirection-up") },
+    { key = "l", mods = "ALT",        action = wezterm.action.EmitEvent("ActivatePaneDirection-right") },
+    { key = "[", mods = "ALT",        action = wezterm.action({ ActivateTabRelative = -1 }) },
+    { key = "]", mods = "ALT",        action = wezterm.action({ ActivateTabRelative = 1 }) },
+    { key = "{", mods = "SHIFT|ALT",  action = wezterm.action.MoveTabRelative(-1) },
+    { key = "}", mods = "SHIFT|ALT",  action = wezterm.action.MoveTabRelative(1) },
+    { key = "v", mods = "ALT",        action = wezterm.action.ActivateCopyMode },
     { key = "c", mods = "CTRL|SHIFT", action = wezterm.action({ CopyTo = "Clipboard" }) },
     { key = "v", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) },
-    { key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
-    { key = "1", mods = "ALT", action = wezterm.action({ ActivateTab = 0 }) },
-    { key = "2", mods = "ALT", action = wezterm.action({ ActivateTab = 1 }) },
-    { key = "3", mods = "ALT", action = wezterm.action({ ActivateTab = 2 }) },
-    { key = "4", mods = "ALT", action = wezterm.action({ ActivateTab = 3 }) },
-    { key = "5", mods = "ALT", action = wezterm.action({ ActivateTab = 4 }) },
-    { key = "6", mods = "ALT", action = wezterm.action({ ActivateTab = 5 }) },
-    { key = "7", mods = "ALT", action = wezterm.action({ ActivateTab = 6 }) },
-    { key = "8", mods = "ALT", action = wezterm.action({ ActivateTab = 7 }) },
-    { key = "9", mods = "ALT", action = wezterm.action({ ActivateTab = 8 }) },
+    { key = "=", mods = "CTRL",       action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "CTRL",       action = wezterm.action.DecreaseFontSize },
+    { key = "1", mods = "ALT",        action = wezterm.action({ ActivateTab = 0 }) },
+    { key = "2", mods = "ALT",        action = wezterm.action({ ActivateTab = 1 }) },
+    { key = "3", mods = "ALT",        action = wezterm.action({ ActivateTab = 2 }) },
+    { key = "4", mods = "ALT",        action = wezterm.action({ ActivateTab = 3 }) },
+    { key = "5", mods = "ALT",        action = wezterm.action({ ActivateTab = 4 }) },
+    { key = "6", mods = "ALT",        action = wezterm.action({ ActivateTab = 5 }) },
+    { key = "7", mods = "ALT",        action = wezterm.action({ ActivateTab = 6 }) },
+    { key = "8", mods = "ALT",        action = wezterm.action({ ActivateTab = 7 }) },
+    { key = "9", mods = "ALT",        action = wezterm.action({ ActivateTab = 8 }) },
   },
   hyperlink_rules = {
     {

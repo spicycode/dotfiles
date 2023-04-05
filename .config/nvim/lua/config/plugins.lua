@@ -77,14 +77,8 @@ return require("lazy").setup({
   -- Registers
   { "junegunn/vim-peekaboo" },
   -- Highlights
-  {
-    "nvim-treesitter/nvim-treesitter",
-    requires = {
-      "nvim-treesitter/nvim-treesitter-refactor",
-      "nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    build = ":TSUpdate"
-  },
+  { "nvim-treesitter/playground" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "jparise/vim-graphql" },
   {
     "folke/trouble.nvim",

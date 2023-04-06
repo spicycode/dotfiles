@@ -78,11 +78,13 @@ return require("lazy").setup({
   { "junegunn/vim-peekaboo" },
   -- Highlights
   { "nvim-treesitter/playground" },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
   { "jparise/vim-graphql" },
   {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    dependencies = {
+      "kyazdani42/nvim-web-devicons"
+    },
     config = function()
       require("trouble").setup {
         -- your configuration comes here
@@ -95,7 +97,9 @@ return require("lazy").setup({
   { "kyazdani42/nvim-web-devicons" },
   {
     "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    dependencies = {
+      "kyazdani42/nvim-web-devicons"
+    }
   },
   { "mcauley-penney/tidy.nvim", event = "BufWritePre" },
   {

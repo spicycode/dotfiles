@@ -23,11 +23,6 @@ precmd() {
   fi
 }
 
-
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then source "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; fi
-# END_KITTY_SHELL_INTEGRATION
-
 # bun completions
 [ -s "/Users/spicycode/.bun/_bun" ] && source "/Users/spicycode/.bun/_bun"
 

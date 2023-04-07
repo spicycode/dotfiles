@@ -79,9 +79,21 @@ function add_keys() {
 }
 
 function homebrew() {
-  echo "==> Running 'brew update'" && brew update &&
-  echo "==> Running 'brew outdated'" && brew outdated &&
-  echo "==> Running 'brew upgrade'" && brew upgrade 
+  brew update && brew outdated && brew upgrade 
+}
+
+function update_software() {
+  echo "==> Upgrading gh extensions"
+  gh extension upgrade --all
+  echo ""
+
+  echo "==> Upgrading asdf plugins"
+  asdf plugin-update --all
+  echo ""
+
+  echo "==> Upgrading homebrew"
+  homebrew
+  echo ""
 }
 
 function mpb_reboot_av() {

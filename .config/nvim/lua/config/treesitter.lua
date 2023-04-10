@@ -12,7 +12,7 @@ require 'nvim-treesitter.configs'.setup {
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = false,
+  auto_install = true,
 
   -- Attempting to fix  constant reinstalls https://www.reddit.com/r/neovim/comments/110x08m/treesitter_keeps_recompiling_parsers/
   version = nil,

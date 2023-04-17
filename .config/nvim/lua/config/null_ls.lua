@@ -4,7 +4,6 @@ require("mason-null-ls").setup({
     'vale',
     'stylua',
     'jq',
-    'markdownlint',
     'actionlint',
     'eslint_d'
     -- Opt to list sources here, when available in mason.

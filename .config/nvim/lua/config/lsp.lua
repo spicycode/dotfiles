@@ -129,3 +129,8 @@ lspconfig.eslint.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
+
+lspconfig.jsonls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}

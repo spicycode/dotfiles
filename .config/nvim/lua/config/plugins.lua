@@ -38,6 +38,14 @@ return require("lazy").setup({
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+  },
   { "neovim/nvim-lspconfig" },
   {
     'glepnir/lspsaga.nvim',
@@ -122,20 +130,19 @@ return require("lazy").setup({
   {
     "james1236/backseat.nvim",
     config = function()
-        require("backseat").setup({
-            openai_model_id = 'gpt-3.5-turbo', --gpt-4 (If you do not have access to a model, it says "The model does not exist")
-
-            split_threshold = 100,
-            -- additional_instruction = "Respond snarkily", -- (GPT-3 will probably deny this request, but GPT-4 complies)
-            highlight = {
-                icon = '', -- ''
-                group = 'Comment',
-            }
-        })
+      require("backseat").setup({
+        openai_model_id = 'gpt-3.5-turbo',     --gpt-4 (If you do not have access to a model, it says "The model does not exist")
+        split_threshold = 100,
+        -- additional_instruction = "Respond snarkily", -- (GPT-3 will probably deny this request, but GPT-4 complies)
+        highlight = {
+          icon = '',     -- ''
+          group = 'Comment',
+        }
+      })
     end
-},
-{
+  },
+  {
     'willothy/wezterm.nvim',
     config = true
-}
+  }
 })

@@ -49,3 +49,6 @@ keymap("n", "<A-h>", "<CMD>NavigatorLeft<CR>")
 keymap("n", "<A-l>", "<CMD>NavigatorRight<CR>")
 keymap("n", "<A-k>", "<CMD>NavigatorUp<CR>")
 keymap("n", "<A-j>", "<CMD>NavigatorDown<CR>")
+
+-- Switch tab by index using vim.v.count
+keymap("n", "<leader>wt", require('wezterm').switch_tab.index)

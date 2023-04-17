@@ -134,4 +134,8 @@ return require("lazy").setup({
         })
     end
 },
+{
+    'willothy/wezterm.nvim',
+    config = true
+}
 })

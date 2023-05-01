@@ -131,11 +131,11 @@ return require("lazy").setup({
     "james1236/backseat.nvim",
     config = function()
       require("backseat").setup({
-        openai_model_id = 'gpt-3.5-turbo',     --gpt-4 (If you do not have access to a model, it says "The model does not exist")
+        openai_model_id = 'gpt-3.5-turbo', --gpt-4 (If you do not have access to a model, it says "The model does not exist")
         split_threshold = 100,
         -- additional_instruction = "Respond snarkily", -- (GPT-3 will probably deny this request, but GPT-4 complies)
         highlight = {
-          icon = '',     -- ''
+          icon = '', -- ''
           group = 'Comment',
         }
       })
@@ -144,5 +144,11 @@ return require("lazy").setup({
   {
     'willothy/wezterm.nvim',
     config = true
+  },
+  {
+    "L3MON4D3/LuaSnip"
+  },
+  {
+    "saadparwaiz1/cmp_luasnip"
   }
 })

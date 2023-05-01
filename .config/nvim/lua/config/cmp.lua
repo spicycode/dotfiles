@@ -92,6 +92,3 @@ cmp.setup.cmdline(":", {
     { name = "cmdline" },
   }),
 })
-
-
-vim.keymap.set("n", "<C-k>", "<C-w>k")

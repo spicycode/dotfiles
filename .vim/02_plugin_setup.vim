@@ -95,5 +95,9 @@ Plug 'tpope/vim-commentary'
 " Salesforce:
 Plug 'neowit/vim-force.com'
 
+" C++:
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+
 
 call plug#end()

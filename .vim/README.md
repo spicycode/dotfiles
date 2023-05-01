@@ -15,6 +15,10 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/star
 
 # this command installs spicy code's entire dotfiles -- not just vim specific configuration
 # cd bundle/ctrlp-cmatcher && ./install.sh && cd - 
+
+# set up coc for auto complete
+cd .vim/plugged/coc.nvim/
+yarn install
 ```
 
 ## Per user config

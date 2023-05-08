@@ -148,11 +148,6 @@ cask "font-source-sans-pro"
 cask "viscosity"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 1529448980
 mas "Sequel Ace", id: 1518036000

@@ -150,5 +150,16 @@ return require("lazy").setup({
   },
   {
     "saadparwaiz1/cmp_luasnip"
+  },
+  {
+    "ntpeters/vim-better-whitespace",
+    config = function()
+      vim.api.nvim_exec(
+        [[
+          autocmd BufWritePre * StripWhitespace
+        ]],
+        false
+      )
+    end,
   }
 })

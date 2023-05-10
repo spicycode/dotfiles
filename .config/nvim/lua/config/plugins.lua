@@ -82,8 +82,6 @@ return require("lazy").setup({
   { "nvim-telescope/telescope-ui-select.nvim" },
   -- Extension for telescope coauthor support
   { "cwebster2/github-coauthors.nvim" },
-  -- Registers
-  { "junegunn/vim-peekaboo" },
   -- Highlights
   { "nvim-treesitter/playground" },
   { "nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },

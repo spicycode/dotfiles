@@ -94,9 +94,6 @@ function update_software() {
   echo "==> Upgrading homebrew"
   homebrew
   echo ""
-
-  echo "==> Upgrading Mac App Store apps"
-  mas upgrade
 }
 
 function mpb_reboot_av() {

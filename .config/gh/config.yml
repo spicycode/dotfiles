@@ -17,3 +17,6 @@ aliases:
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
 browser:
+extensions:
+    slack:
+        team: github

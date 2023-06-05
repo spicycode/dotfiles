@@ -3,5 +3,4 @@ alias ls='ls -GFh --color'
 # Same as above, but in long listing format
 alias ll='ls -GFhl --color'
 
-alias git='hub'
 alias vim='nvim'

@@ -46,6 +46,12 @@ return require("lazy").setup({
       "jose-elias-alvarez/null-ls.nvim",
     },
   },
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+  },
   { "neovim/nvim-lspconfig" },
   {
     'glepnir/lspsaga.nvim',

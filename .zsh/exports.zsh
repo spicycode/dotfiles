@@ -1,5 +1,5 @@
 export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
-export PATH=~/.cargo/bin:$PATH:/Applications/WezTerm.app/Contents/MacOS
+export PATH=~/.cargo/bin:$PATH:/Applications/WezTerm.app/Contents/MacOS:~/.config/emacs/bin
 
 export GOPATH=~/src/gopath
 

@@ -75,7 +75,7 @@ lspconfig.lua_ls.setup {
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true,[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
+        library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
@@ -137,5 +137,23 @@ lspconfig.jsonls.setup {
 
 lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true
+      },
+    }
+  }
 }

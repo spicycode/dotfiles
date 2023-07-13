@@ -66,7 +66,7 @@ return require("lazy").setup({
     end
   },
   { "onsails/lspkind-nvim" },
-  { "j-hui/fidget.nvim" },
+  { "j-hui/fidget.nvim", tag = 'legacy' },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-cmdline" },

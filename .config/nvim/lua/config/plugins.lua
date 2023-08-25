@@ -66,7 +66,7 @@ return require("lazy").setup({
     end
   },
   { "onsails/lspkind-nvim" },
-  { "j-hui/fidget.nvim", tag = 'legacy' },
+  { "j-hui/fidget.nvim",                        tag = 'legacy' },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-cmdline" },
@@ -129,20 +129,6 @@ return require("lazy").setup({
     'numToStr/Navigator.nvim',
     config = function()
       require('Navigator').setup()
-    end
-  },
-  {
-    "james1236/backseat.nvim",
-    config = function()
-      require("backseat").setup({
-        openai_model_id = 'gpt-3.5-turbo', --gpt-4 (If you do not have access to a model, it says "The model does not exist")
-        split_threshold = 100,
-        -- additional_instruction = "Respond snarkily", -- (GPT-3 will probably deny this request, but GPT-4 complies)
-        highlight = {
-          icon = '', -- ''
-          group = 'Comment',
-        }
-      })
     end
   },
   {

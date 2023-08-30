@@ -36,3 +36,5 @@ export BAT_THEME=Nord
 export HOMEBREW_NO_ENV_HINTS=true
 source ~/.github_pat
 
+export RUBY_CONFIGURE_OPTS=--enable-yjit
+export RUBY_YJIT_ENABLE=1

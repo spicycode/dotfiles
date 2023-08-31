@@ -125,6 +125,10 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.yellow } },
 			{ Text = wezterm.nerdfonts.mdi_chart_donut_variant },
 		},
+		["btop"] = {
+			{ Foreground = { Color = colors.yellow } },
+			{ Text = wezterm.nerdfonts.mdi_chart_donut_variant },
+		},
 		["cargo"] = {
 			{ Foreground = { Color = colors.peach } },
 			{ Text = wezterm.nerdfonts.dev_rust },
@@ -134,10 +138,6 @@ local function get_process(tab)
 			{ Text = wezterm.nerdfonts.mdi_language_go },
 		},
 		["git"] = {
-			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.dev_git },
-		},
-		["lazygit"] = {
 			{ Foreground = { Color = colors.peach } },
 			{ Text = wezterm.nerdfonts.dev_git },
 		},
@@ -163,7 +163,8 @@ local function get_process(tab)
 
 	return wezterm.format(
 		process_icons[process_name]
-			or { { Foreground = { Color = colors.sky } }, { Text = string.format("[%s]", process_name) } }
+			or { { Text = string.format("[%s]", process_name) } }
+			-- or { { Foreground = { Color = colors.sky } }, { Text = string.format("[%s]", process_name) } }
 	)
 end
 
@@ -183,7 +184,7 @@ wezterm.on("format-tab-title", function(tab)
 		{ Text = get_process(tab) },
 		{ Text = " " },
 		{ Text = get_current_working_dir(tab) },
-		{ Foreground = { Color = colors.base } },
+		-- { Foreground = { Color = colors.base } },
 		{ Text = "  ▕" },
 	})
 end)
@@ -232,42 +233,44 @@ return {
 	hide_tab_bar_if_only_one_tab = false,
 	disable_default_key_bindings = false,
 	front_end = "WebGpu",
+  color_scheme = 'Catppuccin Mocha',
+
 	colors = {
-		split = colors.surface0,
-		foreground = colors.text,
-		background = colors.base,
-		cursor_bg = colors.rosewater,
-		cursor_border = colors.rosewater,
-		cursor_fg = is_dark and colors.base or colors.crust,
-		selection_bg = colors.surface2,
-		selection_fg = colors.text,
-		visual_bell = colors.surface0,
-		indexed = {
-			[16] = colors.peach,
-			[17] = colors.rosewater,
-		},
-		scrollbar_thumb = colors.surface2,
-		compose_cursor = colors.flamingo,
-		ansi = {
-			is_dark and colors.subtext1 or colors.surface1,
-			colors.red,
-			colors.green,
-			colors.yellow,
-			colors.blue,
-			colors.pink,
-			colors.teal,
-			is_dark and colors.surface2 or colors.subtext1,
-		},
-		brights = {
-			is_dark and colors.subtext0 or colors.surface2,
-			colors.red,
-			colors.green,
-			colors.yellow,
-			colors.blue,
-			colors.pink,
-			colors.teal,
-			is_dark and colors.surface1 or colors.subtext0,
-		},
+	-- 	split = colors.surface0,
+	-- 	foreground = colors.text,
+	-- 	background = colors.base,
+	-- 	cursor_bg = colors.rosewater,
+	-- 	cursor_border = colors.rosewater,
+	-- 	cursor_fg = is_dark and colors.base or colors.crust,
+	-- 	selection_bg = colors.surface2,
+	-- 	selection_fg = colors.text,
+	-- 	visual_bell = colors.surface0,
+	-- 	indexed = {
+	-- 		[16] = colors.peach,
+	-- 		[17] = colors.rosewater,
+	-- 	},
+	-- 	scrollbar_thumb = colors.surface2,
+	-- 	compose_cursor = colors.flamingo,
+	-- 	ansi = {
+	-- 		is_dark and colors.subtext1 or colors.surface1,
+	-- 		colors.red,
+	-- 		colors.green,
+	-- 		colors.yellow,
+	-- 		colors.blue,
+	-- 		colors.pink,
+	-- 		colors.teal,
+	-- 		is_dark and colors.surface2 or colors.subtext1,
+	-- 	},
+	-- 	brights = {
+	-- 		is_dark and colors.subtext0 or colors.surface2,
+	-- 		colors.red,
+	-- 		colors.green,
+	-- 		colors.yellow,
+	-- 		colors.blue,
+	-- 		colors.pink,
+	-- 		colors.teal,
+	-- 		is_dark and colors.surface1 or colors.subtext0,
+	-- 	},
 		tab_bar = {
 			background = colors.crust,
 			active_tab = {

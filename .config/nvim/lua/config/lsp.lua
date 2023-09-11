@@ -2,7 +2,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "gopls", "graphql", "lua_ls", "tsserver",
-    "ruby_ls", "html", "jsonls", "marksman", "yamlls",
+    "html", "jsonls", "marksman", "yamlls",
     "eslint"
   }
 })

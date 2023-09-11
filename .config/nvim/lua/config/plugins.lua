@@ -39,14 +39,6 @@ return require("lazy").setup({
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   {
-    "jay-babu/mason-null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "williamboman/mason.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
-    },
-  },
-  {
     "mfussenegger/nvim-dap",
   },
   {

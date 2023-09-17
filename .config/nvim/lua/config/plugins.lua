@@ -25,7 +25,11 @@ return require("lazy").setup({
       },
     },
   },
+
+  -- Color themes
   { "catppuccin/nvim",                  name = "catppuccin" },
+  { 'projekt0n/caret.nvim' },
+
   { "tpope/vim-vinegar" },
   { "tpope/vim-fugitive" },
   { "tpope/vim-rsi" },
@@ -38,12 +42,9 @@ return require("lazy").setup({
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-  {
-    "mfussenegger/nvim-dap",
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-  },
+  { "mfussenegger/nvim-dap" },
+  { "jay-babu/mason-nvim-dap.nvim" },
+  { 'rcarriga/nvim-dap-ui' },
   { "neovim/nvim-lspconfig" },
   {
     'glepnir/lspsaga.nvim',
@@ -58,7 +59,7 @@ return require("lazy").setup({
     end
   },
   { "onsails/lspkind-nvim" },
-  { "j-hui/fidget.nvim",                        tag = 'legacy' },
+  { "j-hui/fidget.nvim",                  tag = 'legacy' },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-cmdline" },
@@ -72,6 +73,14 @@ return require("lazy").setup({
   { "euclidianAce/BetterLua.vim" },
   { "vim-ruby/vim-ruby" },
   { "tpope/vim-rails" },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end
+  },
+
   -- Search
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },

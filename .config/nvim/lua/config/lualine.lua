@@ -1,9 +1,3 @@
--- https://github.com/nvim-lualine/lualine.nvim/blob/master/examples/bubbles.lua
--- Bubbles config for lualine
--- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
-
--- Inserts a component in lualine_x ot right section
 local config = {
   options = {
     icons_enabled = true,

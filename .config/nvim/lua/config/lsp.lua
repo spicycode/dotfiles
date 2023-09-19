@@ -10,11 +10,6 @@ local lspconfig = require("lspconfig")
 
 vim.g.cursorhold_updatetime = 100
 
--- Disable virtual_text since it's redundant due to lsp_lines.
-vim.diagnostic.config({
-  virtual_text = false,
-})
-
 local on_attach = function(client, bufnr)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
 
@@ -111,6 +106,12 @@ lspconfig.html.setup {
 }
 
 lspconfig.jsonls.setup {
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
   capabilities = capabilities,
   on_attach = on_attach
 }
@@ -121,6 +122,18 @@ lspconfig.marksman.setup {
 }
 
 lspconfig.yamlls.setup {
+   settings = {
+    yaml = {
+      schemaStore = {
+        -- You must disable built-in schemaStore support if you want to use
+        -- this plugin and its advanced options like `ignore`.
+        enable = false,
+        -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+        url = "",
+      },
+      schemas = require('schemastore').yaml.schemas(),
+    },
+  },
   capabilities = capabilities,
   on_attach = on_attach
 }

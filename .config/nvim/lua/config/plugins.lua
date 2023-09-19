@@ -43,6 +43,8 @@ return require("lazy").setup({
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "lewis6991/hover.nvim" },
+  -- SchemaStore support for jsonls
+  { "b0o/schemastore.nvim" },
 
   { "mfussenegger/nvim-dap" },
   { "jay-babu/mason-nvim-dap.nvim" },

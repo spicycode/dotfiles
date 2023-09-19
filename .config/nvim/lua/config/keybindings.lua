@@ -42,7 +42,9 @@ keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = t
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+-- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+keymap("n", "K", require("hover").hover, { desc = "hover.nvim" })
+keymap("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 
 -- Navigate from neovim to multiplexer
 keymap("n", "<A-h>", "<CMD>NavigatorLeft<CR>")

@@ -42,6 +42,8 @@ return require("lazy").setup({
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
+  { "lewis6991/hover.nvim" },
+
   { "mfussenegger/nvim-dap" },
   { "jay-babu/mason-nvim-dap.nvim" },
   { 'rcarriga/nvim-dap-ui' },

@@ -271,33 +271,33 @@ return {
 	-- 		colors.teal,
 	-- 		is_dark and colors.surface1 or colors.subtext0,
 	-- 	},
-		tab_bar = {
-			background = colors.crust,
-			active_tab = {
-				bg_color = "none",
-				fg_color = colors.subtext1,
-				intensity = "Bold",
-				underline = "None",
-				italic = false,
-				strikethrough = false,
-			},
-			inactive_tab = {
-				bg_color = colors.crust,
-				fg_color = colors.surface2,
-			},
-			inactive_tab_hover = {
-				bg_color = colors.mantle,
-				fg_color = colors.subtext0,
-			},
-			new_tab = {
-				bg_color = colors.crust,
-				fg_color = colors.subtext0,
-			},
-			new_tab_hover = {
-				bg_color = colors.crust,
-				fg_color = colors.subtext0,
-			},
-		},
+	-- 	tab_bar = {
+	-- 		background = colors.crust,
+	-- 		active_tab = {
+	-- 			bg_color = "none",
+	-- 			fg_color = colors.subtext1,
+	-- 			intensity = "Bold",
+	-- 			underline = "None",
+	-- 			italic = false,
+	-- 			strikethrough = false,
+	-- 		},
+	-- 		inactive_tab = {
+	-- 			bg_color = colors.crust,
+	-- 			fg_color = colors.surface2,
+	-- 		},
+	-- 		inactive_tab_hover = {
+	-- 			bg_color = colors.mantle,
+	-- 			fg_color = colors.subtext0,
+	-- 		},
+	-- 		new_tab = {
+	-- 			bg_color = colors.crust,
+	-- 			fg_color = colors.subtext0,
+	-- 		},
+	-- 		new_tab_hover = {
+	-- 			bg_color = colors.crust,
+	-- 			fg_color = colors.subtext0,
+	-- 		},
+	-- 	},
 	},
 	keys = {
 		{

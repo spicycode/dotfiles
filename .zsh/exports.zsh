@@ -1,7 +1,6 @@
-export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
-export PATH=~/.cargo/bin:$PATH:/Applications/WezTerm.app/Contents/MacOS:~/.config/emacs/bin
-
 export GOPATH=~/src/gopath
+export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
+export PATH=~/.cargo/bin:$PATH:/Applications/WezTerm.app/Contents/MacOS:~/.config/emacs/bin:$GOPATH/bin
 
 # Setup terminal, and turn on colors
 export TERM=xterm-256color
@@ -38,3 +37,4 @@ source ~/.github_pat
 
 export RUBY_CONFIGURE_OPTS=--enable-yjit
 export RUBY_YJIT_ENABLE=1
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true

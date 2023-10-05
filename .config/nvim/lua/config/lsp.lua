@@ -122,7 +122,7 @@ lspconfig.marksman.setup {
 }
 
 lspconfig.yamlls.setup {
-   settings = {
+  settings = {
     yaml = {
       schemaStore = {
         -- You must disable built-in schemaStore support if you want to use

@@ -54,3 +54,8 @@ keymap("n", "<A-j>", "<CMD>NavigatorDown<CR>")
 
 -- Switch tab by index using vim.v.count
 keymap("n", "<leader>wt", require('wezterm').switch_tab.index)
+
+-- Run :Lazy update
+keymap("n", "lu", "<cmd>Lazy update<CR>", { silent = true })
+-- Run :Mason update
+keymap("n", "mu", "<cmd>Mason<CR>", { silent = true })

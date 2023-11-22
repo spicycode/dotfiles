@@ -73,8 +73,9 @@ return require("lazy").setup({
   { "hrsh7th/cmp-nvim-lua" },
   { "hrsh7th/cmp-path" },
   { "ckipp01/stylua-nvim" },
+
   -- Language Syntax/etc support
-  { "euclidianAce/BetterLua.vim" },
+  { "folke/neodev.nvim",                  opts = {} },
   { "vim-ruby/vim-ruby" },
   { "tpope/vim-rails" },
   {

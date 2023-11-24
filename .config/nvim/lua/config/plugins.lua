@@ -36,13 +36,17 @@ return require("lazy").setup({
   { "tpope/vim-git" },
   { "tpope/vim-sensible" },
   { "tpope/vim-commentary" },
+
   -- Color and Themes
+  --
   -- Highlight CSS Colors
   { "norcalli/nvim-colorizer.lua" },
+
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "lewis6991/hover.nvim" },
+
   -- SchemaStore support for jsonls
   { "b0o/schemastore.nvim" },
 

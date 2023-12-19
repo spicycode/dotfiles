@@ -4,3 +4,4 @@ alias ls='ls -GFh --color'
 alias ll='ls -GFhl --color'
 
 alias vim='nvim'
+alias code='code-insiders'

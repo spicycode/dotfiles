@@ -20,3 +20,4 @@ browser:
 extensions:
     slack:
         team: github
+version: "1"

@@ -1,12 +1,34 @@
 set -x GOPATH $HOME/src/gopath
-set -e fish_user_paths # Clear any set path 
-set -U fish_user_paths $HOME/.bin /opt/homebrew/sbin /opt/homebrew/bin /opt/homeberw/share/npm/bin $fish_user_paths
-set -U fish_user_paths $HOME/.cargo/bin /Applications/WezTerm.app/Contents/MacOS $HOME/.config/emacs/bin $GOPATH/bin $fish_user_paths
 
-### Config settings
-set fish_greeting                                 # Supresses fish's intro message
-set -x MANPAGER "nvim +Man!" # "nvim" as manpager
+fish_add_path "/opt/homebrew/sbin" 
+fish_add_path --append "/opt/homebrew/bin"
+fish_add_path --append "/opt/homebrew/bin"
+fish_add_path --append ~/.cargo/bin
+fish_add_path --append /Applications/WezTerm.app/Contents/MacOS
+fish_add_path --append ~/.dotfiles/bin
+fish_add_path --append $GOPATH/bin
 
+### Config settings 
+
+if type -q fd 
+  set -gx FZF_DEFAULT_COMMAND 'fd --type file --hidden --exclude .git'
+end
+
+if type -q asdf
+  source (brew --prefix asdf)"/libexec/asdf.fish"
+end
+
+if type -q nvim
+  set -gx EDITOR 'nvim'
+end
+
+## Supresses fish's intro message
+set fish_greeting            
+
+# "nvim" as manpager                    
+set -x MANPAGER "nvim +Man!" 
+
+### Init stuff
 starship init fish | source
 
 if status is-interactive

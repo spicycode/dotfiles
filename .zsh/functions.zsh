@@ -96,27 +96,8 @@ function update_software() {
   echo ""
 }
 
-function mpb_reboot_av() {
-  # Restart CoreAudio because 👎
-  sudo killall coreaudiod
-
-  # Restart webcam process
-  sudo killall VDCAssistant
-
-  # Restart control strip because 🔥
-  killall ControlStrip
-}
-
 function icloud_drive() {
   cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
-}
-
-function pg_start() {
-  pg_ctl -D /opt/homebrew/var/postgres start
-}
-
-function pg_stop() {
-  pg_ctl -D /opt/homebrew/var/postgres stop
 }
 
 # Stolen from @rosston!

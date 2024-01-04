@@ -66,7 +66,6 @@ return require("lazy").setup({
       })
     end
   },
-  { "onsails/lspkind-nvim" },
   { "j-hui/fidget.nvim",                  tag = 'legacy' },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-buffer" },
@@ -158,11 +157,5 @@ return require("lazy").setup({
   {
     'willothy/wezterm.nvim',
     config = true
-  },
-  {
-    "L3MON4D3/LuaSnip"
-  },
-  {
-    "saadparwaiz1/cmp_luasnip"
   },
 })

@@ -209,6 +209,10 @@ local function get_process(tab)
       { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_terminal },
     },
+    ["fish"] = {
+      { Foreground = { Color = colors.peach } },
+      { Text = wezterm.nerdfonts.dev_terminal },
+    },
     ["bash"] = {
       { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.cod_terminal_bash },

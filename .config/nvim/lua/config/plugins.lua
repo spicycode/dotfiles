@@ -28,7 +28,6 @@ return require("lazy").setup({
 
   -- Color themes
   { "catppuccin/nvim",                  name = "catppuccin" },
-  { 'projekt0n/caret.nvim' },
 
   { "tpope/vim-vinegar" },
   { "tpope/vim-fugitive" },
@@ -50,9 +49,6 @@ return require("lazy").setup({
   -- SchemaStore support for jsonls
   { "b0o/schemastore.nvim" },
 
-  { "mfussenegger/nvim-dap" },
-  { "jay-babu/mason-nvim-dap.nvim" },
-  { 'rcarriga/nvim-dap-ui' },
   { "neovim/nvim-lspconfig" },
   {
     'glepnir/lspsaga.nvim',
@@ -147,13 +143,6 @@ return require("lazy").setup({
   -- Tab Bar
   { "nanozuki/tabby.nvim" },
   { "nicwest/vim-camelsnek" },
-  -- Navigate between neovim and multiplexer
-  {
-    'numToStr/Navigator.nvim',
-    config = function()
-      require('Navigator').setup()
-    end
-  },
   {
     'willothy/wezterm.nvim',
     config = true

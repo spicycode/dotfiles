@@ -77,6 +77,7 @@ return require("lazy").setup({
   { "folke/neodev.nvim",                  opts = {} },
   { "vim-ruby/vim-ruby" },
   { "tpope/vim-rails" },
+  { "gleam-lang/gleam.vim" },
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages

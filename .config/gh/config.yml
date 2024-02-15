@@ -20,4 +20,5 @@ browser:
 extensions:
     slack:
         team: github
+        bot: Hubot
 version: "1"

@@ -3,7 +3,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "gopls", "graphql", "lua_ls", "tsserver",
     "html", "jsonls", "marksman", "yamlls",
-    "eslint"
+    "eslint", "pylsp"
   }
 })
 local lspconfig = require("lspconfig")
@@ -117,6 +117,11 @@ lspconfig.jsonls.setup {
 }
 
 lspconfig.marksman.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.pylsp.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }

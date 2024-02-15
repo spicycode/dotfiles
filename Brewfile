@@ -33,6 +33,7 @@ brew "exiftool"
 brew "fd"
 brew "ffmpeg"
 brew "fish"
+brew "foreman"
 brew "fzf"
 brew "gh"
 brew "ghi"
@@ -49,6 +50,7 @@ brew "hub"
 brew "jq"
 brew "libiconv"
 brew "librdkafka"
+brew "livekit"
 brew "lnav"
 brew "lpeg"
 brew "luarocks"
@@ -83,6 +85,7 @@ brew "tree"
 brew "universal-ctags"
 brew "vale"
 brew "vimpager"
+brew "vivid"
 brew "w3m"
 brew "watch"
 brew "weechat"
@@ -105,16 +108,17 @@ cask "font-hack-nerd-font"
 cask "font-jetbrains-mono"
 cask "font-sf-mono-nerd-font-ligaturized"
 cask "font-source-sans-pro"
+cask "ia-markdown-dictionary"
 cask "sf-symbols"
 cask "viscosity"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
+mas "com.kagimacOS.Kagi-Search", id: 1622835804
 mas "Craft", id: 1487937127
 mas "Developer", id: 640199958
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
-mas "Kagi Inc.", id: 1622835804
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541

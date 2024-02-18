@@ -28,7 +28,6 @@ config.max_fps = 120
 config.enable_wayland = false
 config.pane_focus_follows_mouse = false
 config.warn_about_missing_glyphs = false
-config.show_update_window = true
 config.check_for_updates = true
 config.line_height = 1.5
 config.window_decorations = "RESIZE"

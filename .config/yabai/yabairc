@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+
+# bar settings
+yabai -m config top_padding 5
+
+# global settings
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          off
+# yabai -m config focus_follows_mouse          autofocus
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement             second_child
+
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      0.0
+yabai -m config window_shadow                on
+
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+
+# Mouse support
+yabai -m config mouse_modifier               alt
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
+
+# float system preferences
+yabai -m rule --add app='^System Information$' manage=off
+yabai -m rule --add app='^System Preferences$' manage=off
+yabai -m rule --add title='Preferences$' manage=off
+
+# float settings windows
+yabai -m rule --add title='Settings$' manage=off
+
+# add 20 padding to the top and 0 padding to the bottom of every space located on the main display
+# yabai -m config external_bar main:20:0
+
+# add 20 padding to the top and 0 padding to the bottom of all spaces regardless of the display it belongs to
+# yabai -m config external_bar all:32:0
+
+# S K E T C H Y B A R  E V E N T S
+# yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
+# yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger title_change &> /dev/null"
+
+echo "yabai configuration loaded.."

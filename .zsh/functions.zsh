@@ -110,3 +110,13 @@ function gco() {
   local selected=$(_fzf_git_each_ref --no-multi)
   [ -n "$selected" ] && git checkout "$selected"
 }
+
+function start_wm() {
+  skhd --start-service
+  yabai --start-service
+}
+
+function stop_wm() {
+  skhd --stop-service
+  yabai --stop-service
+}

@@ -78,6 +78,7 @@ return require("lazy").setup({
   { "vim-ruby/vim-ruby" },
   { "tpope/vim-rails" },
   { "gleam-lang/gleam.vim" },
+  { 'dmmulroy/ts-error-translator.nvim' },
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages

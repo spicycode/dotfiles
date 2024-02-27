@@ -194,3 +194,6 @@ require("hover").setup {
   preview_window = false,
   title = true
 }
+
+require('ts-error-translator').setup()
+

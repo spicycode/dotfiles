@@ -46,6 +46,12 @@ return require("lazy").setup({
   { "williamboman/mason-lspconfig.nvim" },
   { "lewis6991/hover.nvim" },
 
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    ft = { 'rust' },
+  },
+
   -- SchemaStore support for jsonls
   { "b0o/schemastore.nvim" },
 

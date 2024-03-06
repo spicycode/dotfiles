@@ -3,7 +3,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "gopls", "graphql", "lua_ls", "tsserver",
     "html", "jsonls", "marksman", "yamlls",
-    "eslint", "pylsp"
+    "eslint", "pylsp", "rust_analyzer"
   }
 })
 local lspconfig = require("lspconfig")
@@ -156,24 +156,6 @@ lspconfig.jsonls.setup {
 lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  settings = {
-    ["rust-analyzer"] = {
-      imports = {
-        granularity = {
-          group = "module",
-        },
-        prefix = "self",
-      },
-      cargo = {
-        buildScripts = {
-          enable = true,
-        },
-      },
-      procMacro = {
-        enable = true
-      },
-    }
-  }
 }
 
 require("hover").setup {

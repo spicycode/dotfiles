@@ -275,10 +275,18 @@ wezterm.on("format-tab-title", function(tab)
 end)
 
 wezterm.on("update-right-status", function(window)
-  window:set_right_status(wezterm.format({
+  local date = wezterm.strftime '%Y-%m-%d %H:%M '
+
+  -- local bat = ''
+  -- for _, b in ipairs(wezterm.battery_info()) do
+  --   bat = '🔋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
+  -- end
+
+  window:set_right_status(wezterm.format {
+    -- { Text = bat .. '   ' .. date },
     { Attribute = { Intensity = "Half" } },
-    { Text = wezterm.strftime(" %B %d %Y %H:%M %p ") },
-  }))
+    { Text = date },
+  })
 end)
 
 return config

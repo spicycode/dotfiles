@@ -3,7 +3,8 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "gopls", "graphql", "lua_ls", "tsserver",
     "html", "jsonls", "marksman", "yamlls",
-    "eslint", "pylsp", "rust_analyzer"
+    "eslint", "pylsp", "rust_analyzer",
+    "bashls"
   }
 })
 local lspconfig = require("lspconfig")
@@ -154,6 +155,11 @@ lspconfig.jsonls.setup {
 }
 
 lspconfig.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig.bashls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

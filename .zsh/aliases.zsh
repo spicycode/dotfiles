@@ -1,9 +1,10 @@
 # Colorize output, add file type indicator, and put sizes in human readable format
-# alias ls='ls -GFh --color'
-alias ls='exa --group-directories-first --icons'
+alias ls='eza --group-directories-first'
+alias ll='eza --group-directories-first -l --git'
 # Same as above, but in long listing format
+# alias ls='ls -GFh --color'
 # alias ll='ls -GFhl --color'
-alias ll='exa --group-directories-first -l --icons --git'
+
 
 alias vim='nvim'
 alias code='code-insiders'

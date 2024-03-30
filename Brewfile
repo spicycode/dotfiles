@@ -31,10 +31,11 @@ brew "jansson"
 brew "tree-sitter"
 brew "emacs"
 brew "entr"
-brew "exa"
 brew "exercism"
 brew "exiftool"
+brew "eza"
 brew "fd"
+brew "librist"
 brew "opus"
 brew "ffmpeg"
 brew "fish"
@@ -86,6 +87,7 @@ brew "starship"
 brew "stylua"
 brew "subversion"
 brew "switchaudio-osx"
+brew "terminal-notifier"
 brew "tree"
 brew "universal-ctags"
 brew "vim"
@@ -132,6 +134,7 @@ mas "StreetPass for Mastodon", id: 6446224821
 mas "Structured", id: 1499198946
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
+mas "UTM", id: 1538878817
 mas "Vinegar", id: 1591303229
 mas "Wipr", id: 1320666476
 mas "Xcode", id: 497799835

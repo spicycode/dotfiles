@@ -29,14 +29,6 @@ local on_attach = function(client, bufnr)
     })
   end
 
-  vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertLeave', 'CursorHold', 'LspAttach' }, {
-    buffer = bufnr,
-    callback = vim.lsp.codelens.refresh,
-  })
-
-  -- trigger codelens refresh
-  vim.api.nvim_exec_autocmds('User', { pattern = 'LspAttached' })
-
   -- Disable semantic token provider so it doesn't mess with Treesitter
   client.server_capabilities.semanticTokensProvider = nil
 

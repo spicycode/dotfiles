@@ -13,4 +13,3 @@ require("config.lsp")
 require("config.cmp")
 require("config.keybindings")
 require("config.autocmds")
-

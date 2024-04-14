@@ -23,13 +23,13 @@ config.font = wezterm.font_with_fallback({
   "Apple Color Emoji",
 })
 
-config.font_size = 16
+config.font_size = 15
 config.max_fps = 120
 config.enable_wayland = false
 config.pane_focus_follows_mouse = false
 config.warn_about_missing_glyphs = false
 config.check_for_updates = true
-config.line_height = 1.5
+config.line_height = 1.25
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.audible_bell = "Disabled"

@@ -46,5 +46,3 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
 keymap("n", "K", require("hover").hover, { desc = "hover.nvim" })
 keymap("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 
--- Switch tab by index using vim.v.count
-keymap("n", "<leader>wt", require('wezterm').switch_tab.index)

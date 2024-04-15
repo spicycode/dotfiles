@@ -9,6 +9,46 @@ local colors = {
   green = "#66b032"
 }
 
+local function is_vim(pane)
+	local process_info = pane:get_foreground_process_info()
+	local process_name = process_info and process_info.name
+
+	return process_name == "nvim" or process_name == "vim"
+end
+
+local direction_keys = {
+	Left = "h",
+	Down = "j",
+	Up = "k",
+	Right = "l",
+	-- reverse lookup
+	h = "Left",
+	j = "Down",
+	k = "Up",
+	l = "Right",
+}
+
+local function split_nav(resize_or_move, key)
+	return {
+		key = key,
+		mods = resize_or_move == "resize" and "META" or "CTRL",
+		action = wezterm.action_callback(function(win, pane)
+			if is_vim(pane) then
+				-- pass the keys through to vim/nvim
+				win:perform_action({
+					SendKey = { key = key, mods = resize_or_move == "resize" and "META" or "CTRL" },
+				}, pane)
+			else
+				if resize_or_move == "resize" then
+					win:perform_action({ AdjustPaneSize = { direction_keys[key], 3 } }, pane)
+				else
+					win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
+				end
+			end
+		end),
+	}
+end
+
 -- This table will hold the configuration.
 local config = {}
 
@@ -59,6 +99,16 @@ config.front_end = "WebGpu"
 config.color_scheme = 'Catppuccin Mocha'
 
 config.keys = {
+	-- move between split panes
+	split_nav("move", "h"),
+	split_nav("move", "j"),
+	split_nav("move", "k"),
+	split_nav("move", "l"),
+	-- resize panes
+	split_nav("resize", "h"),
+	split_nav("resize", "j"),
+	split_nav("resize", "k"),
+	split_nav("resize", "l"),
   {
     mods = "ALT",
     key = [[\]],
@@ -153,34 +203,6 @@ config.hyperlink_rules = {
     format = "$0",
   },
 }
-
-local function is_vi_process(pane)
-  return pane:get_foreground_process_name():find("n?vim") ~= nil
-end
-
-local function conditional_activate_pane(window, pane, pane_direction, vim_direction)
-  if is_vi_process(pane) then
-    window:perform_action(wezterm.action.SendKey({ key = vim_direction, mods = "ALT" }), pane)
-  else
-    window:perform_action(wezterm.action.ActivatePaneDirection(pane_direction), pane)
-  end
-end
-
-wezterm.on("ActivatePaneDirection-right", function(window, pane)
-  conditional_activate_pane(window, pane, "Right", "l")
-end)
-
-wezterm.on("ActivatePaneDirection-left", function(window, pane)
-  conditional_activate_pane(window, pane, "Left", "h")
-end)
-
-wezterm.on("ActivatePaneDirection-up", function(window, pane)
-  conditional_activate_pane(window, pane, "Up", "k")
-end)
-
-wezterm.on("ActivatePaneDirection-down", function(window, pane)
-  conditional_activate_pane(window, pane, "Down", "j")
-end)
 
 local function get_process(tab)
   local process_icons = {
@@ -288,5 +310,6 @@ wezterm.on("update-right-status", function(window)
     { Text = date },
   })
 end)
+
 
 return config

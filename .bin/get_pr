@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Usage: get_pr [PROMPT]
+
+set -e
+
+[ "$*" == "-h" ] && cat "${0}" && exit 0
+
+PR_FROM_DIR="$(gh pr view --json url -q '.url' 2>/dev/null || true)"
+PR_FROM_PBPASTE="$(pbpaste | grep 'https://github.com/.\+/pull/\d\+' || true)"
+
+count=0
+
+[[ "${PR_FROM_DIR}" != "" ]] && count=$((count + 1))
+[[ "${PR_FROM_PBPASTE}" != "" ]] && count=$((count + 1))
+
+PROMPT="${1:-Enter PR URL:}"
+echo "${PROMPT}" >&2
+
+case "${count}" in
+	0)
+		printf '> ' >&2
+		read -r input
+
+		echo "${input}"
+		exit 0
+		;;
+
+	1)
+		default="${PR_FROM_PBPASTE}${PR_FROM_DIR}"
+		echo "or <CR> to use: '${default}'" >&2
+
+		printf '> ' >&2
+		read -r input
+
+		echo "${input:-${default}}"
+		exit 0
+		;;
+
+	2)
+		echo "or 1: '${PR_FROM_PBPASTE}'" >&2
+		echo "or 2: '${PR_FROM_DIR}'" >&2
+
+		printf '> ' >&2
+		read -r input
+
+		if [[ "${input}" == "1" ]]; then
+			echo "${PR_FROM_PBPASTE}"
+			exit 0
+		elif [[ "${input}" == "2" ]]; then
+			echo "${PR_FROM_DIR}"
+			exit 0
+		else
+			echo "${input}"
+			exit 0
+		fi
+		;;
+esac
+exit 1

@@ -89,9 +89,15 @@ function coauth() {
 }
 
 # From https://github.com/junegunn/fzf-git.sh
+# git checkout powered by fzf-git
 function gco() {
   local selected=$(_fzf_git_each_ref --no-multi)
   [ -n "$selected" ] && git checkout "$selected"
+}
+
+# git worktree switch powered by fzf-git
+function gswt() {
+  cd "$(_fzf_git_worktrees --no-multi)"
 }
 
 function start_wm() {

@@ -17,10 +17,26 @@ require("catppuccin").setup({
       warnings = { "underline" },
       information = { "underline" },
     },
+    inlay_hints = {
+      background = true,
+    },
   },
   lsp_saga = true,
   lsp_trouble = true,
-  treesitter = true
+  treesitter = true,
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    nvimtree = false,
+    treesitter = true,
+    notify = false,
+    octo = true,
+    telescope = {
+      enabled = true,
+    },
+    which_key = false,
+  },
+
 })
 
 vim.cmd.colorscheme "catppuccin-mocha"

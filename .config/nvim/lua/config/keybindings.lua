@@ -1,4 +1,6 @@
 local keymap = vim.keymap.set
+local ts_builtin = require('telescope.builtin')
+
 
 -- Telescope
 keymap("n", "<C-p>", ":Telescope find_files<CR>", { silent = true })
@@ -11,7 +13,8 @@ keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
 keymap("n", "<leader>co", "<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>", { noremap = true })
 
 -- pop open rg ready for search
-keymap("n", "<leader>f", ":Rg ")
+-- keymap("n", "<leader>f", ":Rg ")
+keymap("n", "<leader>f", ts_builtin.live_grep, {})
 
 -- Tab navigation
 keymap("n", "<leader>tp", ":tabprevious<CR>", { silent = true })

@@ -23,7 +23,9 @@ require("telescope").setup({
   },
   live_grep = {
     previewer = false,
-    theme = "dropdown"
+    layout_config = {
+      height = 0.70
+    }
   },
   extensions = {
     fzf = {

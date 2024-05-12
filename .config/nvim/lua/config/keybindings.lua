@@ -5,6 +5,7 @@ local ts_builtin = require("telescope.builtin")
 -- now the keymaps from plugins.lua plugin spec will be automatically loaded
 require("legendary").setup({
   keymaps = {
+    { "<leader>lh",  ":Legendary<CR>",              desc = "Show legendary command palette" },
     { "<leader>tp",  ":tabprevious<CR>",            desc = "Previous tab" },
     { "<leader>tn",  ":tabnext<CR>",                desc = "Next tab" },
     { "<leader>te",  ":tabedit<space>",             desc = "Open path in new tab" },

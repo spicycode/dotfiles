@@ -26,6 +26,16 @@ return require("lazy").setup({
     },
   },
 
+  {
+    'mrjones2014/legendary.nvim',
+    -- since legendary.nvim handles all your keymaps/commands,
+    -- its recommended to load legendary.nvim before other plugins
+    priority = 10000,
+    lazy = false,
+    -- sqlite is only needed if you want to use frecency sorting
+    dependencies = { 'kkharji/sqlite.lua' }
+  },
+
   -- Color themes
   { "catppuccin/nvim",                  name = "catppuccin" },
 
@@ -44,13 +54,52 @@ return require("lazy").setup({
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-  { "lewis6991/hover.nvim" },
-
   {
-    'mrcjkb/rustaceanvim',
-    version = '^4', -- Recommended
-    ft = { 'rust' },
+    "lewis6991/hover.nvim",
+    config = function()
+      require("hover").setup {
+        init = function()
+          -- Require providers
+          require("hover.providers.lsp")
+          -- require('hover.providers.gh')
+          -- require('hover.providers.gh_user')
+          -- require('hover.providers.jira')
+          -- require('hover.providers.dap')
+          -- require('hover.providers.man')
+          -- require('hover.providers.dictionary')
+        end,
+        preview_opts = {
+          border = 'single'
+        },
+        -- Whether the contents of a currently open hover window should be moved
+        -- to a :h preview-window when pressing the hover keymap.
+        preview_window = false,
+        title = true,
+        mouse_providers = {
+          'LSP'
+        },
+        mouse_delay = 1000
+      }
+      -- Enable mouse move events so we can bind to them for this
+      vim.o.mousemoveevent = true
+    end
   },
+
+  --   keys = {
+  --     {
+  --             "K",
+  --     function()
+  --       require("hover").hover
+  --     end,
+  --     desc = "Show hover documentation"
+  --     },
+  --     {
+  --             "gK",
+  --     function()
+  --             require("hover").hover_select
+  --     end,
+  --     desc = "Select hover documentation"
+  --     },
 
   -- SchemaStore support for jsonls
   { "b0o/schemastore.nvim" },
@@ -66,7 +115,14 @@ return require("lazy").setup({
           kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
         },
       })
-    end
+    end,
+    keys = {
+      { "gh",         "<cmd>Lspsaga lsp_finder<CR>",            desc = "Find symbol definition (lsp)" },
+      { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", "v",                                  desc = "Find code actions (lsp)" },
+      { "gr",         "<cmd>Lspsaga rename<CR>",                desc = "Rename (lsp)" },
+      { "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show line diagnostics (lsp)" },
+      { "<leader>o",  "<cmd>Lspsaga outline<CR>",               desc = "Show outline (lsp)" },
+    }
   },
   { "j-hui/fidget.nvim",                  tag = 'legacy' },
   { "hrsh7th/nvim-cmp" },
@@ -110,17 +166,36 @@ return require("lazy").setup({
   -- Search
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
-  { "nvim-telescope/telescope.nvim" },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<C-p>",      "<cmd>Telescope find_files<CR>", desc = "Find files" },
+      { "<C-]>",      "<cmd>Telescope tags<CR>",       desc = "Find tags" },
+      { "<leader>lb", "<cmd>Telescope buffers<CR>",    desc = "Find buffers" },
+      { "<leader>lt", "<cmd>Telescope help_tags<CR>",  desc = "Find help tags" },
+      { "<leader>lg", "<cmd>Telescope live_grep<cr>",  desc = "Live grep" },
+    }
+  },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   { "nvim-telescope/telescope-ui-select.nvim" },
   -- Extension for telescope coauthor support
-  { "cwebster2/github-coauthors.nvim" },
+  {
+    "cwebster2/github-coauthors.nvim",
+    keys = {
+      { "<leader>co", "<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>", desc = "Find git coauthor" }
+    }
+  },
   -- Highlights
   { "nvim-treesitter/playground" },
-  { "nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "jparise/vim-graphql" },
   { "folke/trouble.nvim" },
-  { "jremmen/vim-ripgrep" },
+  {
+    "jremmen/vim-ripgrep",
+    keys = {
+      { "<leader>f", ":Rg ", desc = "Find with ripgrep" }
+    }
+  },
   { "kyazdani42/nvim-web-devicons" },
   {
     "nvim-lualine/lualine.nvim",
@@ -128,7 +203,7 @@ return require("lazy").setup({
       "kyazdani42/nvim-web-devicons"
     }
   },
-  { "mcauley-penney/tidy.nvim", event = "BufWritePre" },
+  { "mcauley-penney/tidy.nvim",    event = "BufWritePre" },
   {
     "pwntester/octo.nvim",
     config = function()

@@ -1,51 +1,17 @@
 local keymap = vim.keymap.set
-local ts_builtin = require('telescope.builtin')
+local ts_builtin = require("telescope.builtin")
 
-
--- Telescope
-keymap("n", "<C-p>", ":Telescope find_files<CR>", { silent = true })
-keymap("n", "<C-]>", ":Telescope tags<CR>", { silent = true })
-keymap("n", "<leader>lb", ":Telescope buffers<CR>", { silent = true })
-keymap("n", "<leader>lt", ":Telescope help_tags<CR>", { silent = true })
-keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", { silent = true })
-
--- Bring up co-authors list, it inserts and adds a CR after
-keymap("n", "<leader>co", "<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>", { noremap = true })
-
--- pop open rg ready for search
--- keymap("n", "<leader>f", ":Rg ")
-keymap("n", "<leader>f", ts_builtin.live_grep, {})
-
--- Tab navigation
-keymap("n", "<leader>tp", ":tabprevious<CR>", { silent = true })
-keymap("n", "<leader>tn", ":tabnext<CR>", { silent = true })
-keymap("n", "<leader>te", ":tabedit<space>")
-
--- Close buffers
-keymap("n", "<leader>b", ":bd<CR>")
-
--- LSP
---
--- Lsp finder find the symbol definition implement reference
--- if there is no implement it will hide
--- when you use action in finder like open vsplit then you can
--- use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
-
--- Code action
-keymap({ "n", "v" }, "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { silent = true })
-
--- Rename
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
-
--- Show line diagnostics
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
-
--- Outline
-keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
-
--- Hover Doc
--- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-keymap("n", "K", require("hover").hover, { desc = "hover.nvim" })
-keymap("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-
+-- where you set up legendary.nvim
+-- now the keymaps from plugins.lua plugin spec will be automatically loaded
+require("legendary").setup({
+  keymaps = {
+    { "<leader>tp",  ":tabprevious<CR>",            desc = "Previous tab" },
+    { "<leader>tn",  ":tabnext<CR>",                desc = "Next tab" },
+    { "<leader>te",  ":tabedit<space>",             desc = "Open path in new tab" },
+    { "<leader>b",   ":bd<CR>",                     desc = "Delete current buffer" },
+    { "K",           require("hover").hover,        desc = "hover.nvim" },
+    { "gK",          require("hover").hover_select, desc = "hover.nvim (select)" },
+    { "<MouseMove>", require("hover").hover_mouse,  desc = "hover.nvim (mouse)" },
+  },
+  extensions = { lazy_nvim = true }
+})

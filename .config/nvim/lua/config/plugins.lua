@@ -44,7 +44,6 @@ return require("lazy").setup({
   { "tpope/vim-rsi" },
   { "tpope/vim-git" },
   { "tpope/vim-sensible" },
-  { "tpope/vim-commentary" },
 
   -- Color and Themes
   --

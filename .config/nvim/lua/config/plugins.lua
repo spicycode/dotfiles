@@ -117,7 +117,7 @@ return require("lazy").setup({
     end,
     keys = {
       { "gh",         "<cmd>Lspsaga lsp_finder<CR>",            desc = "Find symbol definition (lsp)" },
-      { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", "v",                                  desc = "Find code actions (lsp)" },
+      { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", "v",                                  desc = "Show code actions (lsp)" },
       { "gr",         "<cmd>Lspsaga rename<CR>",                desc = "Rename (lsp)" },
       { "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show line diagnostics (lsp)" },
       { "<leader>o",  "<cmd>Lspsaga outline<CR>",               desc = "Show outline (lsp)" },

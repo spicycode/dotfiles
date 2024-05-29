@@ -188,7 +188,9 @@ return require("lazy").setup({
   { "nvim-treesitter/playground" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "jparise/vim-graphql" },
-  { "folke/trouble.nvim" },
+  {
+    "folke/trouble.nvim",
+  },
   {
     "jremmen/vim-ripgrep",
     keys = {

@@ -222,6 +222,7 @@ return require("lazy").setup({
         desc = "Quickfix List (Trouble)",
       },
     },
+    opts = {},
   },
   {
     "jremmen/vim-ripgrep",

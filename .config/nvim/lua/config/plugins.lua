@@ -135,7 +135,6 @@ return require("lazy").setup({
   { "ckipp01/stylua-nvim" },
 
   -- Language Syntax/etc support
-  { "folke/neodev.nvim",                  opts = {} },
   { "vim-ruby/vim-ruby" },
   { "tpope/vim-rails" },
   { "gleam-lang/gleam.vim" },

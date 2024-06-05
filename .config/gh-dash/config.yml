@@ -1,0 +1,44 @@
+prSections:
+- title: My Pull Requests
+  filters: is:open assignee:@me
+- title: Needs My Review
+  filters: is:open review-requested:@me
+issuesSections:
+- title: My Issues
+  filters: is:open author:@me
+  layout:
+      creator:
+        hidden: true
+        # width: <number of columns>
+        # grow: <bool> this will make the column grow in size
+- title: Assigned
+  filters: is:open assignee:@me
+defaults:
+  preview:
+    open: false
+    width: 50
+  prsLimit: 100
+  issuesLimit: 100
+  view: prs
+  layout:
+    prs:
+      repo:
+        grow: true,
+        width: 20
+        hidden: false
+      creator:
+        grow: true,
+        width: 20
+        hidden: false
+    issues:
+      repo:
+        grow: true,
+        width: 20
+        hidden: false
+      creator:
+        grow: true,
+        width: 20
+        hidden: false
+keybindings:
+  prs: []
+repoPaths: {}

@@ -3,6 +3,8 @@ prSections:
   filters: is:open assignee:@me
 - title: Needs My Review
   filters: is:open review-requested:@me
+# - title: Team
+#   filters: is:open platform-health-engineers
 issuesSections:
 - title: My Issues
   filters: is:open author:@me
@@ -13,6 +15,8 @@ issuesSections:
         # grow: <bool> this will make the column grow in size
 - title: Assigned
   filters: is:open assignee:@me
+# - title: Team
+#   filters: is:open platform-health-engineers
 defaults:
   preview:
     open: false

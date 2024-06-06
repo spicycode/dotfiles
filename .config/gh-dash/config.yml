@@ -1,10 +1,10 @@
 prSections:
-- title: My Pull Requests
+- title: My PRs
   filters: is:open assignee:@me
-- title: Needs My Review
+- title: Needs review
   filters: is:open review-requested:@me
-# - title: Team
-#   filters: is:open platform-health-engineers
+- title: Involves me/team
+  filters: is:open involves:@me
 issuesSections:
 - title: My Issues
   filters: is:open author:@me
@@ -15,12 +15,12 @@ issuesSections:
         # grow: <bool> this will make the column grow in size
 - title: Assigned
   filters: is:open assignee:@me
-# - title: Team
-#   filters: is:open platform-health-engineers
+- title: Involves me/team
+  filters: is:open involves:@me
 defaults:
   preview:
     open: false
-    width: 50
+    width: 80
   prsLimit: 100
   issuesLimit: 100
   view: prs
@@ -46,3 +46,18 @@ defaults:
 keybindings:
   prs: []
 repoPaths: {}
+theme:
+  colors:
+    text:
+      primary: "#cdd6f4"
+      secondary: "#89b4fa"
+      inverted: "#11111b"
+      faint: "#bac2de"
+      warning: "#f38ba8"
+      success: "#a6e3a1"
+    background:
+      selected: "#313244"
+    border:
+      primary: "#89b4fa"
+      secondary: "#45475a"
+      faint: "#313244"

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Call get-app-id with a path to an app (like `get-app-id /Applications/Things.app` to get its bundle id)
+mdls -name kMDItemCFBundleIdentifier -r "$*"

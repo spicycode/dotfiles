@@ -5,11 +5,14 @@ tap "felixkratz/formulae"
 tap "ggozad/formulas"
 tap "github/bootstrap"
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazynpm"
 tap "koekeishiya/formulae"
 tap "lucaspickering/tap"
+tap "nikitabobko/tap"
 tap "shaunsingh/sfmono-nerd-font-ligaturized"
 tap "tidbyt/tidbyt"
 tap "universal-ctags/universal-ctags"
@@ -50,6 +53,7 @@ brew "git"
 brew "git-delta"
 brew "git-lfs"
 brew "gnupg"
+brew "go"
 brew "grc"
 brew "gron"
 brew "helix"
@@ -109,6 +113,7 @@ brew "felixkratz/formulae/sketchybar"
 brew "ggozad/formulas/oterm"
 brew "jesseduffield/lazynpm/lazynpm"
 cask "1password-cli"
+cask "aerospace"
 cask "amethyst"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
@@ -121,6 +126,7 @@ cask "kitty"
 cask "nzbget"
 cask "viscosity"
 cask "whichspace"
+cask "xnapper"
 cask "yacreader"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
@@ -128,6 +134,7 @@ mas "Brother iPrint&Scan", id: 1193539993
 mas "com.kagimacOS.Kagi-Search", id: 1622835804
 mas "Craft", id: 1487937127
 mas "GarageBand", id: 682658836
+mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
@@ -140,11 +147,9 @@ mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 1529448980
 mas "Sequel Ace", id: 1518036000
 mas "StreetPass for Mastodon", id: 6446224821
-mas "Structured", id: 1499198946
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "UTM", id: 1538878817
 mas "Vinegar", id: 1591303229
 mas "Wipr", id: 1320666476
 mas "World Clock", id: 956377119

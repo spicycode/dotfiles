@@ -61,24 +61,6 @@ function add_keys() {
   ssh-add -k
 }
 
-function homebrew() {
-  brew update && brew outdated && brew upgrade 
-}
-
-function update_software() {
-  echo "==> Upgrading gh extensions"
-  gh extension upgrade --all
-  echo ""
-
-  echo "==> Upgrading asdf plugins"
-  asdf plugin-update --all
-  echo ""
-
-  echo "==> Upgrading homebrew"
-  homebrew
-  echo ""
-}
-
 function icloud_drive() {
   cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
 }

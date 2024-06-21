@@ -153,7 +153,7 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-[[on-window-detected]]
-if.app-id = 'com.culturedcode.ThingsMac'
-run = ['move-node-to-workspace 2']
+# [[on-window-detected]]
+# if.app-id = 'com.culturedcode.ThingsMac'
+# run = ['move-node-to-workspace 2']
 

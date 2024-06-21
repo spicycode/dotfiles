@@ -58,6 +58,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.term = "wezterm"
+
 config.font = wezterm.font_with_fallback({
   "Liga SFMono Nerd Font",
   "Apple Color Emoji",

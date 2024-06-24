@@ -121,3 +121,7 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 vim.o.statuscolumn =
 '%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }%*'
+
+-- Default spelling to us english
+vim.opt.spelllang = 'en_us'
+

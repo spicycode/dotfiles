@@ -26,6 +26,9 @@ precmd() {
 # bun completions
 [ -s "/Users/spicycode/.bun/_bun" ] && source "/Users/spicycode/.bun/_bun"
 
+# OPAM
+[[ ! -r /Users/chad/.opam/opam-init/init.zsh ]] || source /Users/chad/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

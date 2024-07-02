@@ -48,6 +48,9 @@ cmp.setup({
   }, {
     { name = "buffer", keyword_length = 3 },
   }),
+  formatting = {
+    format = require("nvim-highlight-colors").format
+  },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won"t work anymore).

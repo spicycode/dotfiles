@@ -37,7 +37,7 @@ return require("lazy").setup({
   },
 
   -- Color themes
-  { "catppuccin/nvim",                  name = "catppuccin" },
+  { "catppuccin/nvim",   name = "catppuccin" },
 
   { "tpope/vim-vinegar" },
   { "tpope/vim-fugitive" },
@@ -48,7 +48,12 @@ return require("lazy").setup({
   -- Color and Themes
   --
   -- Highlight CSS Colors
-  { "norcalli/nvim-colorizer.lua" },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require('nvim-highlight-colors').setup({})
+    end
+  },
 
   -- LSP
   { "williamboman/mason.nvim" },

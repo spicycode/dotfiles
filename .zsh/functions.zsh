@@ -66,11 +66,6 @@ function icloud_drive() {
   cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
 }
 
-# Stolen from @rosston!
-function coauth() {
-  printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -5000 | awk '!visited[$0]++' | fzf --border=rounded)" | pbcopy
-}
-
 # From https://github.com/junegunn/fzf-git.sh
 # git checkout powered by fzf-git
 function gco() {
@@ -81,14 +76,4 @@ function gco() {
 # git worktree switch powered by fzf-git
 function gswt() {
   cd "$(_fzf_git_worktrees --no-multi)"
-}
-
-function start_wm() {
-  skhd --start-service
-  yabai --start-service
-}
-
-function stop_wm() {
-  skhd --stop-service
-  yabai --stop-service
 }

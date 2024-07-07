@@ -1,7 +1,9 @@
 tap "1password/tap"
+tap "d12frosted/emacs-plus"
 tap "ekvedaras/cask"
 tap "felixkratz/formulae"
 tap "ggozad/formulas"
+tap "github/bootstrap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazynpm"
@@ -24,6 +26,7 @@ brew "carthage"
 brew "chezmoi"
 brew "cmake"
 brew "cowsay"
+brew "darcs"
 brew "deno"
 brew "difftastic"
 brew "diskonaut"
@@ -31,7 +34,6 @@ brew "dotenv-linter"
 brew "gnutls"
 brew "jansson"
 brew "tree-sitter"
-brew "darcs"
 brew "emacs"
 brew "entr"
 brew "exercism"
@@ -53,9 +55,9 @@ brew "go"
 brew "grc"
 brew "gron"
 brew "helix"
-brew "hg"
 brew "htop"
 brew "hub"
+brew "jj"
 brew "jnv"
 brew "jq"
 brew "lazygit"
@@ -67,21 +69,24 @@ brew "mas"
 brew "openjdk"
 brew "maven"
 brew "mdcat"
+brew "mercurial"
 brew "most"
 brew "neofetch"
 brew "neomutt"
 brew "neovim"
-brew "pkg-config"
 brew "ollama"
 brew "opam"
 brew "tmux"
 brew "overmind"
 brew "parallel"
+brew "pkg-config"
 brew "procs"
 brew "pyenv"
 brew "python@3.9"
 brew "reattach-to-user-namespace"
+brew "redis"
 brew "ripgrep"
+brew "ruby@3.0"
 brew "semgrep"
 brew "shellcheck"
 brew "starship"
@@ -114,8 +119,10 @@ cask "font-sf-mono-for-powerline"
 cask "font-sf-mono-nerd-font-ligaturized"
 cask "hammerspoon"
 cask "kitty"
+cask "love"
 cask "nzbget"
 cask "viscosity"
+cask "visual-studio-code"
 cask "whichspace"
 cask "xnapper"
 cask "yacreader"
@@ -123,6 +130,7 @@ mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
 mas "com.kagimacOS.Kagi-Search", id: 1622835804
+mas "Copilot", id: 1447330651
 mas "Craft", id: 1487937127
 mas "GarageBand", id: 682658836
 mas "Hidden Bar", id: 1452453066
@@ -130,6 +138,7 @@ mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
+mas "Notion Web Clipper", id: 1559269364
 mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
@@ -137,6 +146,7 @@ mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 1529448980
 mas "Sequel Ace", id: 1518036000
+mas "Sink It for Reddit", id: 6449873635
 mas "StreetPass for Mastodon", id: 6446224821
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353

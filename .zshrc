@@ -17,20 +17,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
 source $HOME/.cargo/env
 
-precmd() {
-  if [[ -n "$TMUX" ]]; then
-    tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
-  fi
-}
-
-# bun completions
-[ -s "/Users/spicycode/.bun/_bun" ] && source "/Users/spicycode/.bun/_bun"
-
 # OPAM
 [[ ! -r /Users/chad/.opam/opam-init/init.zsh ]] || source /Users/chad/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 # eval fzf
 eval "$(fzf --zsh)"

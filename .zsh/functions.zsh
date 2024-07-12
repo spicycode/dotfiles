@@ -58,7 +58,9 @@ function sc {
   fi
 }
 
-function add_keys() {
+# Something is weird on work computer land with the agent
+function ssh_boot() {
+  eval `ssh-agent`
   ssh-add -k
 }
 
@@ -77,3 +79,5 @@ function gco() {
 function gswt() {
   cd "$(_fzf_git_worktrees --no-multi)"
 }
+
+

@@ -42,5 +42,14 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-# Bring in gh exports
-source ~/.github_pat
+
+if [ -d "$HOME/figma" ]; then
+  export ZSH_BIZ_TIME=true
+else
+  export ZSH_BIZ_TIME=false
+fi
+
+if [[ $ZSH_BIZ_TIME == false ]]; then
+  #Bring in gh exports
+  source ~/.github_pat
+fi

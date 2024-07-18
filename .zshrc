@@ -14,11 +14,22 @@ source ~/.zsh/fzf-git.sh
 # External files to source
 source /opt/homebrew/etc/grc.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
-source $HOME/.cargo/env
 
 # OPAM
 [[ ! -r /Users/chad/.opam/opam-init/init.zsh ]] || source /Users/chad/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # eval fzf
 eval "$(fzf --zsh)"
+
+if [[ $ZSH_BIZ_TIME == true ]]; then
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+  eval "$(rbenv init -)"
+  export RACK_ENV=development
+  export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+  export SSH_AUTH_SOCK=~/.ssh/ssh-agent.$HOSTNAME.sock
+  ssh-add -l 2>/dev/null >/dev/null
+  if [ $? -ge 2 ]; then
+    ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
+  fi
+fi

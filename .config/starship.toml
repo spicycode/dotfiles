@@ -12,6 +12,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+disabled = true
 
 [python]
 symbol = " "
@@ -21,11 +22,16 @@ symbol = " "
 
 [golang]
 symbol = "ﳑ "
+disabled = true
 
 [rust]
 symbol = " "
+disabled = true
 
 [docker_context]
+disabled = true
+
+[ruby]
 disabled = true
 
 [git_branch]

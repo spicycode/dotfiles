@@ -8,6 +8,35 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+local cmp_kinds = {
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
+  Copilot = '🤖 ',
+}
+
 cmp.setup({
   window = {
     completion = cmp.config.window.bordered(),
@@ -50,7 +79,23 @@ cmp.setup({
     { name = "buffer", keyword_length = 3 },
   }),
   formatting = {
-    format = require("nvim-highlight-colors").format
+    format = function(entry, item)
+      item.kind = (cmp_kinds[item.kind] or '') .. item.kind
+
+      -- return vim_item
+      local widths = {
+        abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
+        menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+      }
+
+      for key, width in pairs(widths) do
+        if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+          item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
+        end
+      end
+
+      return require("nvim-highlight-colors").format(entry, item)
+    end
   },
   experimental = {
     ghost_text = {

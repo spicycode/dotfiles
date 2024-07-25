@@ -41,3 +41,7 @@ require("catppuccin").setup({
 
 vim.cmd.colorscheme "catppuccin-mocha"
 vim.cmd.syntax = "on"
+
+-- Adding this so cmp-copilot will work with ghost text
+vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+

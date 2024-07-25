@@ -1,5 +1,6 @@
 -- Setup lazy.nvim package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -138,6 +139,25 @@ return require("lazy").setup({
   { "hrsh7th/cmp-nvim-lua" },
   { "hrsh7th/cmp-path" },
   { "ckipp01/stylua-nvim" },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
 
   -- Language Syntax/etc support
   { "vim-ruby/vim-ruby" },

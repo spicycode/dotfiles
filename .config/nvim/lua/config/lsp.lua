@@ -9,6 +9,11 @@ require("mason-lspconfig").setup({
 })
 local lspconfig = require("lspconfig")
 
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
+
 vim.g.cursorhold_updatetime = 100
 
 local on_attach = function(client, bufnr)

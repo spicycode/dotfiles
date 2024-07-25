@@ -1,6 +1,4 @@
 local cmp = require("cmp")
-local copilot_cmp = require("copilot_cmp")
-
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -45,7 +43,7 @@ cmp.setup({
     end),
   }),
   sources = cmp.config.sources({
-    { name = "copilot", group_index = 2 },
+    { name = "copilot",                group_index = 2 },
     { name = "nvim_lsp" },
     { name = "nvim_lsp_signature_help" },
   }, {
@@ -53,6 +51,11 @@ cmp.setup({
   }),
   formatting = {
     format = require("nvim-highlight-colors").format
+  },
+  experimental = {
+    ghost_text = {
+      hl_group = "CmpGhostText",
+    },
   },
 })
 
@@ -73,5 +76,3 @@ cmp.setup.cmdline(":", {
     { name = "cmdline" },
   }),
 })
-
-

@@ -32,4 +32,6 @@ if [[ $ZSH_BIZ_TIME == true ]]; then
   if [ $? -ge 2 ]; then
     ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
   fi
+else
+  source /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi

@@ -169,6 +169,11 @@ lspconfig.taplo.setup {
   on_attach = on_attach,
 }
 
+lspconfig.hls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
 require("hover").setup {
   init = function()
     -- Require providers

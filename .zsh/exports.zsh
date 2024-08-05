@@ -1,6 +1,7 @@
 export GOPATH=~/src/gopath
 export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
-export PATH=~/.cargo/bin:$PATH:/Applications/WezTerm.app/Contents/MacOS:~/.config/emacs/bin:$GOPATH/bin
+export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS:~/.config/emacs/bin:$GOPATH/bin
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
 # Setup terminal, and turn on colors
 export TERM=xterm-256color

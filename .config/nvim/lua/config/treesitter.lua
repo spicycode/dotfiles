@@ -4,7 +4,7 @@ require 'nvim-treesitter.configs'.setup {
     "c", "lua", "vim", "graphql", "markdown", "markdown_inline",
     "jsdoc", "python", "sql", "json", "typescript", "bash",
     "tsx", "dockerfile", "ruby", "gitcommit", "javascript",
-    "diff", "yaml", "rust"
+    "diff", "yaml", "rust", "html"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -1,8 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
-
--- local is_dark = wezterm.gui.get_appearance():find("Dark")
-local is_dark = true
+local appearance = require 'appearance'
 
 local colors = {
   peach = "#FFDAB9",
@@ -10,43 +8,43 @@ local colors = {
 }
 
 local function is_vim(pane)
-	local process_info = pane:get_foreground_process_info()
-	local process_name = process_info and process_info.name
+  local process_info = pane:get_foreground_process_info()
+  local process_name = process_info and process_info.name
 
-	return process_name == "nvim" or process_name == "vim"
+  return process_name == "nvim" or process_name == "vim"
 end
 
 local direction_keys = {
-	Left = "h",
-	Down = "j",
-	Up = "k",
-	Right = "l",
-	-- reverse lookup
-	h = "Left",
-	j = "Down",
-	k = "Up",
-	l = "Right",
+  Left = "h",
+  Down = "j",
+  Up = "k",
+  Right = "l",
+  -- reverse lookup
+  h = "Left",
+  j = "Down",
+  k = "Up",
+  l = "Right",
 }
 
 local function split_nav(resize_or_move, key)
-	return {
-		key = key,
-		mods = resize_or_move == "resize" and "META" or "CTRL",
-		action = wezterm.action_callback(function(win, pane)
-			if is_vim(pane) then
-				-- pass the keys through to vim/nvim
-				win:perform_action({
-					SendKey = { key = key, mods = resize_or_move == "resize" and "META" or "CTRL" },
-				}, pane)
-			else
-				if resize_or_move == "resize" then
-					win:perform_action({ AdjustPaneSize = { direction_keys[key], 3 } }, pane)
-				else
-					win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
-				end
-			end
-		end),
-	}
+  return {
+    key = key,
+    mods = resize_or_move == "resize" and "META" or "CTRL",
+    action = wezterm.action_callback(function(win, pane)
+      if is_vim(pane) then
+        -- pass the keys through to vim/nvim
+        win:perform_action({
+          SendKey = { key = key, mods = resize_or_move == "resize" and "META" or "CTRL" },
+        }, pane)
+      else
+        if resize_or_move == "resize" then
+          win:perform_action({ AdjustPaneSize = { direction_keys[key], 3 } }, pane)
+        else
+          win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
+        end
+      end
+    end),
+  }
 end
 
 -- This table will hold the configuration.
@@ -64,6 +62,11 @@ config.font = wezterm.font_with_fallback({
   "Liga SFMono Nerd Font",
   "Apple Color Emoji",
 })
+
+config.window_frame = {
+  font = wezterm.font({ family = 'Liga SFMono Nerd Font', weight = 'Bold' }),
+  font_size = 13,
+}
 
 config.font_size = 15
 config.max_fps = 120
@@ -86,12 +89,12 @@ config.initial_rows = 30
 
 config.inactive_pane_hsb = {
   saturation = 1.0,
-  brightness = is_dark and 0.85 or 0.95,
+  brightness = appearance.is_dark() and 0.85 or 0.95,
 }
 
 config.enable_scroll_bar = false
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
+-- config.tab_bar_at_bottom = false
+-- config.use_fancy_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.window_background_opacity = 1.0
 config.tab_max_width = 50
@@ -101,16 +104,16 @@ config.front_end = "WebGpu"
 config.color_scheme = 'Catppuccin Mocha'
 
 config.keys = {
-	-- move between split panes
-	split_nav("move", "h"),
-	split_nav("move", "j"),
-	split_nav("move", "k"),
-	split_nav("move", "l"),
-	-- resize panes
-	split_nav("resize", "h"),
-	split_nav("resize", "j"),
-	split_nav("resize", "k"),
-	split_nav("resize", "l"),
+  -- move between split panes
+  split_nav("move", "h"),
+  split_nav("move", "j"),
+  split_nav("move", "k"),
+  split_nav("move", "l"),
+  -- resize panes
+  split_nav("resize", "h"),
+  split_nav("resize", "j"),
+  split_nav("resize", "k"),
+  split_nav("resize", "l"),
   {
     mods = "ALT",
     key = [[\]],
@@ -298,20 +301,72 @@ wezterm.on("format-tab-title", function(tab)
   })
 end)
 
-wezterm.on("update-right-status", function(window)
-  local date = wezterm.strftime '%Y-%m-%d %H:%M '
+local function segments_for_right_status(window)
+  local hostname = wezterm.hostname()
 
-  -- local bat = ''
-  -- for _, b in ipairs(wezterm.battery_info()) do
-  --   bat = '🔋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
-  -- end
+  if hostname == 'chadhumphriessmacbookpro16inchnov2023m3max' then
+    -- Figma uses basic default hostnames, which are ugly/unusable, let's fix this here.
+    hostname = 'figma'
+  end
 
-  window:set_right_status(wezterm.format {
-    -- { Text = bat .. '   ' .. date },
-    { Attribute = { Intensity = "Half" } },
-    { Text = date },
-  })
+  return {
+    window:active_workspace(),
+    wezterm.strftime('%a %b %-d %H:%M'),
+    hostname,
+  }
+end
+
+wezterm.on('update-status', function(window, _)
+  local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+  local segments = segments_for_right_status(window)
+
+  local color_scheme = window:effective_config().resolved_palette
+  -- Note the use of wezterm.color.parse here, this returns
+  -- a Color object, which comes with functionality for lightening
+  -- or darkening the colour (amongst other things).
+  local bg = wezterm.color.parse(color_scheme.background)
+  local fg = color_scheme.foreground
+
+  -- Each powerline segment is going to be coloured progressively
+  -- darker/lighter depending on whether we're on a dark/light colour
+  -- scheme. Let's establish the "from" and "to" bounds of our gradient.
+  local gradient_to, gradient_from = bg
+  if appearance.is_dark() then
+    gradient_from = gradient_to:lighten(0.2)
+  else
+    gradient_from = gradient_to:darken(0.2)
+  end
+
+  -- Yes, WezTerm supports creating gradients, because why not?! Although
+  -- they'd usually be used for setting high fidelity gradients on your terminal's
+  -- background, we'll use them here to give us a sample of the powerline segment
+  -- colours we need.
+  local gradient = wezterm.color.gradient(
+    {
+      orientation = 'Horizontal',
+      colors = { gradient_from, gradient_to },
+    },
+    #segments -- only gives us as many colours as we have segments.
+  )
+
+  -- We'll build up the elements to send to wezterm.format in this table.
+  local elements = {}
+
+  for i, seg in ipairs(segments) do
+    local is_first = i == 1
+
+    if is_first then
+      table.insert(elements, { Background = { Color = 'none' } })
+    end
+    table.insert(elements, { Foreground = { Color = gradient[i] } })
+    table.insert(elements, { Text = SOLID_LEFT_ARROW })
+
+    table.insert(elements, { Foreground = { Color = fg } })
+    table.insert(elements, { Background = { Color = gradient[i] } })
+    table.insert(elements, { Text = ' ' .. seg .. ' ' })
+  end
+
+  window:set_right_status(wezterm.format(elements))
 end)
-
 
 return config

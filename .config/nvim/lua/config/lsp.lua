@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
     "gopls", "graphql", "lua_ls", "tsserver",
     "html", "jsonls", "marksman", "yamlls",
     "eslint", "pylsp", "rust_analyzer",
-    "bashls", "taplo"
+    "bashls", "taplo", "sorbet"
   }
 })
 local lspconfig = require("lspconfig")
@@ -170,6 +170,11 @@ lspconfig.taplo.setup {
 }
 
 lspconfig.hls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig.sorbet.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

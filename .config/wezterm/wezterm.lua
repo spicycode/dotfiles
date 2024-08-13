@@ -302,19 +302,9 @@ wezterm.on("format-tab-title", function(tab)
 end)
 
 local function segments_for_right_status(window)
-  local hostname = wezterm.hostname()
-
-  if string.find(hostname, 'umphries') then
-    -- Figma uses basic default hostnames, which are ugly/unusable, let's fix this here.
-    -- NOTE: They additionally periodically change from title case to lower case, so just doing 
-    --       a last name inclusion check.
-    hostname = 'figma'
-  end
-
   return {
     -- window:active_workspace(),
     wezterm.strftime('%a %b %-d %H:%M'),
-    hostname,
   }
 end
 

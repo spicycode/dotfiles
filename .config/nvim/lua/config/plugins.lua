@@ -69,7 +69,7 @@ return require("lazy").setup({
           require('hover.providers.gh')
           require('hover.providers.gh_user')
           -- require('hover.providers.jira')
-          -- require('hover.providers.dap')
+          require('hover.providers.dap')
           -- require('hover.providers.man')
           -- require('hover.providers.dictionary')
         end,
@@ -157,6 +157,9 @@ return require("lazy").setup({
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
 
+  { "theHamsta/nvim-dap-virtual-text" },
+  { "mfussenegger/nvim-dap" },
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
   {
     "lewis6991/gitsigns.nvim",
     config = function()

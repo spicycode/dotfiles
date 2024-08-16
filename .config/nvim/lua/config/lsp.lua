@@ -12,8 +12,6 @@ local lspconfig = require("lspconfig")
 vim.g.cursorhold_updatetime = 100
 
 local on_attach = function(client, bufnr)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]])
-
   if client.server_capabilities.document_highlight then
     vim.api.nvim_create_augroup('lsp_document_highlight', {
       clear = false

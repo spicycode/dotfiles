@@ -56,6 +56,11 @@ return require("lazy").setup({
     end
   },
 
+  -- Formatting
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
@@ -159,7 +164,7 @@ return require("lazy").setup({
 
   { "theHamsta/nvim-dap-virtual-text" },
   { "mfussenegger/nvim-dap" },
-  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+  { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
   {
     "lewis6991/gitsigns.nvim",
     config = function()

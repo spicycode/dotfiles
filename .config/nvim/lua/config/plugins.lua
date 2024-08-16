@@ -190,8 +190,8 @@ return require("lazy").setup({
     }
   },
   -- Highlights
-  { "nvim-treesitter/playground" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "omnisyle/nvim-hidesig" },
   { "jparise/vim-graphql" },
   {
     "folke/trouble.nvim",

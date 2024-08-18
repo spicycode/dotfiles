@@ -266,5 +266,35 @@ return require("lazy").setup({
       { "<C-k>", function() require("wezterm-move").move "k" end },
       { "<C-l>", function() require("wezterm-move").move "l" end },
     },
+  },
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    build = "make",
+    config = {
+      provider = "openai"
+    },
+    opts = {
+      -- add any opts here
+    },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      {
+        "grapp-dev/nui-components.nvim",
+        dependencies = {
+          "MunifTanjim/nui.nvim"
+        }
+      },
+      --- The below is optional, make sure to setup it properly if you have lazy=true
+      {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
   }
 })

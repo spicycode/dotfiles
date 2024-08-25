@@ -31,6 +31,9 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export HOMEBREW_NO_ENV_HINTS=true
 
+# ask homebrew to not display it's beta os warning paragraph(s).
+export HOMEBREW_DEVELOPER=1
+
 # Enable YJIT on whatevers fit to build
 export RUBY_CONFIGURE_OPTS=--enable-yjit
 export RUBY_YJIT_ENABLE=1
@@ -42,7 +45,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
 
 if [ -d "$HOME/figma" ]; then
   export ZSH_BIZ_TIME=true

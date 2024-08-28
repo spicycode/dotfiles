@@ -1,4 +1,4 @@
-autoload -U colors && colors 
+autoload -U colors && colors
 
 # Clear LSCOLORS
 unset LSCOLORS

@@ -16,7 +16,9 @@ source /opt/homebrew/etc/grc.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # OPAM
-[[ ! -r /Users/chad/.opam/opam-init/init.zsh ]] || source /Users/chad/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+[[ ! -r ~/.github_pat ]] || source ~/.github_pat  > /dev/null 2> /dev/null
 
 # eval fzf
 eval "$(fzf --zsh)"

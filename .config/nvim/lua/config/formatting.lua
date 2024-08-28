@@ -13,7 +13,11 @@ require("conform").setup({
     -- Conform will run the first available formatter
     javascript = { "prettierd", "prettier", stop_after_first = true },
 
-    cpp = { "clang-format" }
+    cpp = { "clang-format" },
+
+    sh = { "shfmt" },
+
+    zsh = { "shfmt" },
   },
 })
 

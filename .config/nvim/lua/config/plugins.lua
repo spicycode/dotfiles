@@ -42,6 +42,7 @@ return require("lazy").setup({
 
   { "tpope/vim-vinegar" },
   { "tpope/vim-fugitive" },
+  { "tpope/vim-rhubarb" },
   { "tpope/vim-rsi" },
   { "tpope/vim-git" },
   { "tpope/vim-sensible" },
@@ -272,6 +273,7 @@ return require("lazy").setup({
     event = "VeryLazy",
     build = "make",
     opts = {
+      provider = "openai",
       hints = {
         enabled = false
       }

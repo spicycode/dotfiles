@@ -1,6 +1,6 @@
 function zsh_recompile {
   autoload -U compinit
-  rm -f ~/.zcompdump
+  rm -f ~/.zcompdump*
   compinit t
 
   autoload -U zrecompile

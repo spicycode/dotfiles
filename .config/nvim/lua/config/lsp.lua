@@ -4,7 +4,8 @@ require("mason-lspconfig").setup({
     "gopls", "graphql", "lua_ls", "tsserver",
     "html", "jsonls", "marksman", "yamlls",
     "eslint", "pylsp", "rust_analyzer",
-    "bashls", "taplo", "sorbet", "clangd"
+    "bashls", "taplo", "sorbet", "clangd",
+    "lemminx", "terraformls"
   }
 })
 local lspconfig = require("lspconfig")
@@ -178,6 +179,17 @@ lspconfig.sorbet.setup {
 }
 
 lspconfig.clangd.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+-- GASP! XML LSP
+lspconfig.lemminx.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig.terraformls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

@@ -80,30 +80,19 @@ lspconfig.lua_ls.setup {
   },
 }
 
-lspconfig.tsserver.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
+-- All of the LSP servers I use that don't need anything but factory config.
+local lsp_servers_with_default_config = {
+  "tsserver", "graphql", "gopls", "ruby_lsp", "html", "marksman", "pylsp",
+  "html", "eslint", "jsonls", "rust_analyzer", "bashls", "taplo", "hls",
+  "sorbet", "clangd", "lemminx", "terraformls"
 }
 
-lspconfig.graphql.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.gopls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.ruby_lsp.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.html.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
+for _, lsp in ipairs(lsp_servers_with_default_config) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+end
 
 lspconfig.jsonls.setup {
   settings = {
@@ -112,16 +101,6 @@ lspconfig.jsonls.setup {
       validate = { enable = true },
     },
   },
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.marksman.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.pylsp.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
@@ -143,56 +122,6 @@ lspconfig.yamlls.setup {
   on_attach = on_attach
 }
 
-lspconfig.eslint.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.jsonls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-lspconfig.rust_analyzer.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-lspconfig.bashls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-lspconfig.taplo.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-lspconfig.hls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-lspconfig.sorbet.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-lspconfig.clangd.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
--- GASP! XML LSP
-lspconfig.lemminx.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-lspconfig.terraformls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
 
 require("hover").setup {
   init = function()

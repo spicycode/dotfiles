@@ -1,10 +1,4 @@
-# add in zsh-completions
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
 autoload -U compinit && compinit
 zmodload -i zsh/complist

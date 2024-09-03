@@ -4,4 +4,4 @@
 
 # Provide links to any relevant issues, articles or other resources
 
-# Co-authored-by: <name@github.com>
+# Co-authored-by: <name@figma.com>

@@ -274,10 +274,10 @@ return require("lazy").setup({
   {
     "letieu/wezterm-move.nvim",
     keys = { -- Lazy loading, don't need call setup() function
-      { "<C-h>", function() require("wezterm-move").move "h" end },
-      { "<C-j>", function() require("wezterm-move").move "j" end },
-      { "<C-k>", function() require("wezterm-move").move "k" end },
-      { "<C-l>", function() require("wezterm-move").move "l" end },
+      { "<C-h>", function() require("wezterm-move").move "h" end, desc = "Move left (wezterm)" },
+      { "<C-j>", function() require("wezterm-move").move "j" end, desc = "Move down (wezterm)"  },
+      { "<C-k>", function() require("wezterm-move").move "k" end, desc = "Move up (wezterm)"  },
+      { "<C-l>", function() require("wezterm-move").move "l" end, desc = "Move right (wezterm)"  },
     },
   },
   {

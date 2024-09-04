@@ -1,5 +1,5 @@
 -- Leader
-vim.g.mapleader = ',' -- make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.mapleader = "," -- make sure to set `mapleader` before lazy so your mappings are correct
 
 require("config.plugins")
 require("config.theming")

@@ -1,1 +1,1 @@
-require('tabby.tabline')
+require("tabby.tabline")

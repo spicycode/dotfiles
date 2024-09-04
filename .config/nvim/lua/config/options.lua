@@ -5,7 +5,7 @@ vim.opt.backup = false
 
 -- Enable undofile
 vim.opt.undofile = true
-vim.opt.undodir = home .. '/.config/nvim-undo' -- keep undo files out of the way
+vim.opt.undodir = home .. "/.config/nvim-undo" -- keep undo files out of the way
 
 -- shell-like autocomplete to unambiguous portion
 vim.opt.wildmode = "longest:full,full"
@@ -23,34 +23,34 @@ vim.opt.shiftround = false
 vim.opt.shiftwidth = 2
 
 -- ignore annoying swapfile messages
-vim.opt.shortmess = vim.opt.shortmess + 'A'
+vim.opt.shortmess = vim.opt.shortmess + "A"
 
 -- no splash screen
-vim.opt.shortmess = vim.opt.shortmess + 'I'
+vim.opt.shortmess = vim.opt.shortmess + "I"
 
 -- file-read message overwrites previous
-vim.opt.shortmess = vim.opt.shortmess + 'O'
+vim.opt.shortmess = vim.opt.shortmess + "O"
 
 -- truncate non-file messages in middle
-vim.opt.shortmess = vim.opt.shortmess + 'T'
+vim.opt.shortmess = vim.opt.shortmess + "T"
 
 -- don't echo "[w]"/"[written]" when writing
-vim.opt.shortmess = vim.opt.shortmess + 'W'
+vim.opt.shortmess = vim.opt.shortmess + "W"
 
 -- use abbreviations in messages eg. `[RO]` instead of `[readonly]`
-vim.opt.shortmess = vim.opt.shortmess + 'a'
+vim.opt.shortmess = vim.opt.shortmess + "a"
 
 -- completion messages
-vim.opt.shortmess = vim.opt.shortmess + 'c'
+vim.opt.shortmess = vim.opt.shortmess + "c"
 
 -- overwrite file-written messages
-vim.opt.shortmess = vim.opt.shortmess + 'o'
+vim.opt.shortmess = vim.opt.shortmess + "o"
 
 -- truncate file messages at start
-vim.opt.shortmess = vim.opt.shortmess + 't'
+vim.opt.shortmess = vim.opt.shortmess + "t"
 
 -- DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
-vim.opt.showbreak = '↳ '
+vim.opt.showbreak = "↳ "
 
 -- don't show extra info at end of command line
 vim.opt.showcmd = false
@@ -65,7 +65,7 @@ vim.opt.sidescrolloff = 3
 vim.opt.smarttab = true
 
 -- try to reuse windows/tabs when switching buffers
-vim.opt.switchbuf = 'usetab'
+vim.opt.switchbuf = "usetab"
 
 -- don't bother syntax highlighting long lines
 vim.opt.synmaxcol = 200
@@ -116,11 +116,10 @@ vim.opt.showmode = false
 -- show completion menu (for nvim-cmp)
 -- show menu even if there is only one candidate (for nvim-cmp)
 -- don't automatically select candidate (for nvim-cmp)
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.o.statuscolumn =
-'%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }%*'
+	'%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }%*'
 
 -- Default spelling to us english
-vim.opt.spelllang = 'en_us'
-
+vim.opt.spelllang = "en_us"

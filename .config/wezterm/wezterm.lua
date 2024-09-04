@@ -101,7 +101,15 @@ config.tab_max_width = 50
 config.hide_tab_bar_if_only_one_tab = false
 config.disable_default_key_bindings = false
 config.front_end = "WebGpu"
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Catppuccin Macchiato'
+
+config.mouse_bindings = {
+  {
+    event = { Down = { streak = 3, button = "Left" } },
+    action = wezterm.action.SelectTextAtMouseCursor("SemanticZone"),
+    mods = "NONE",
+  },
+}
 
 config.keys = {
   -- move between split panes

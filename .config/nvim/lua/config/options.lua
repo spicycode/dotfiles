@@ -70,9 +70,8 @@ vim.opt.switchbuf = 'usetab'
 -- don't bother syntax highlighting long lines
 vim.opt.synmaxcol = 200
 
--- Colorscheme
+-- Colors
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
 -- Numbers
 vim.opt.number = true
 vim.opt.numberwidth = 3

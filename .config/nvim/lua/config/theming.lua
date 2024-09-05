@@ -33,7 +33,6 @@ require("catppuccin").setup({
 		octo = true,
 		telescope = {
 			enabled = true,
-			style = "nvchad",
 		},
 		which_key = false,
 	},

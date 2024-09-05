@@ -16,8 +16,13 @@ local config = {
 			},
 			"mode",
 		},
-		lualine_b = { "filename", "branch" },
-		lualine_c = { "diagnostics" },
+		lualine_b = {
+			"filename",
+			"branch",
+		},
+		lualine_c = {
+			"diagnostics",
+		},
 
 		lualine_x = {},
 		lualine_y = { "filetype" },

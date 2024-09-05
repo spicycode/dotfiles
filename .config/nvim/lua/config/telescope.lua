@@ -1,4 +1,6 @@
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.setup({
 	defaults = {
 		layout_strategy = "flex",
 		layout_config = {
@@ -49,11 +51,11 @@ require("telescope").setup({
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require("telescope").load_extension("fzf")
+telescope.load_extension("fzf")
 
 -- To get ui-select loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require("telescope").load_extension("ui-select")
+telescope.load_extension("ui-select")
 
 -- Load github coauthors extension
-require("telescope").load_extension("githubcoauthors")
+telescope.load_extension("githubcoauthors")

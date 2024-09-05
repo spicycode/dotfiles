@@ -27,6 +27,8 @@ require("conform").setup({
 		sh = { "shfmt" },
 
 		zsh = { "shfmt" },
+
+		yaml = { "yamlfmt" },
 	},
 })
 

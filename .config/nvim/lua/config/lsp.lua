@@ -97,7 +97,7 @@ lspconfig.lua_ls.setup({
 
 -- All of the LSP servers I use that don't need anything but factory config.
 local lsp_servers_with_default_config = {
-	"tsserver",
+	"ts_ls",
 	"graphql",
 	"gopls",
 	"ruby_lsp",

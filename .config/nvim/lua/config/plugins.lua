@@ -314,6 +314,7 @@ return require("lazy").setup({
 			},
 		},
 	},
+	{ "rsreimer/codeowners.nvim" },
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",

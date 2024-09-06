@@ -275,6 +275,8 @@ return require("lazy").setup({
 		"pwntester/octo.nvim",
 		config = function()
 			require("octo").setup()
+			-- Enable markdown in octo.nvim
+			vim.treesitter.language.register("markdown", "octo")
 		end,
 		cmd = "Octo",
 	},

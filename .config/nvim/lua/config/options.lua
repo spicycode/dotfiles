@@ -123,3 +123,6 @@ vim.o.statuscolumn =
 
 -- Default spelling to us english
 vim.opt.spelllang = "en_us"
+
+-- Don't conceal things like double quotes in JSON
+vim.opt.conceallevel = 0

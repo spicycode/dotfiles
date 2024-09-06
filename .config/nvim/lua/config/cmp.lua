@@ -105,7 +105,6 @@ cmp.setup({
 		ghost_text = {
 			hl_group = "CmpGhostText",
 		},
-		ghos,
 	},
 })
 

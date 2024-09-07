@@ -20,14 +20,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [[ ! -r ~/.github_pat ]] || source ~/.github_pat  > /dev/null 2> /dev/null
 
-# Re-initialize compinit on the daily
-if [ "$(find ~/.zcompdump -mtime 1)" ] ; then
-    compinit
-fi
-compinit -C
-
 # eval fzf
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 if [[ $ZSH_BIZ_TIME == true ]]; then
   export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"

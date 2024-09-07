@@ -1,6 +1,12 @@
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-autoload -U compinit && compinit
+autoload -U compinit 
+
+# Re-initialize compinit on the daily
+if [ "$(find ~/.zcompdump -mtime 1)" ] ; then
+    compinit
+fi
+
 zmodload -i zsh/complist
 
 # man zshcontrib

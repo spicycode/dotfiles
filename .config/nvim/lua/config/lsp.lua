@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
 		"gopls",
 		"graphql",
 		"lua_ls",
-		"tsserver",
+		"ts_ls",
 		"html",
 		"jsonls",
 		"marksman",

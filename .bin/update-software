@@ -1,13 +1,22 @@
 #! /usr/bin/env bash
 
+# Check if a command exists
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 echo "==> Upgrading gh extensions"
 gh extension upgrade --all
 echo ""
 
 echo "==> Upgrading asdf plugins"
-asdf plugin-update --all
+if ! command_exists asdf; then
+  echo "Error: 'asdf' is not installed. Skipping update attempts."
+else
+  asdf plugin-update --all
+fi
 echo ""
 
 echo "==> Upgrading homebrew"
-brew update && brew outdated && brew upgrade 
+brew update && brew outdated && brew upgrade
 echo ""

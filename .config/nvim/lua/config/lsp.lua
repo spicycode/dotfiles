@@ -1,6 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		"bzl",
 		"gopls",
 		"graphql",
 		"lua_ls",
@@ -97,6 +98,7 @@ lspconfig.lua_ls.setup({
 
 -- All of the LSP servers I use that don't need anything but factory config.
 local lsp_servers_with_default_config = {
+	"bzl",
 	"ts_ls",
 	"graphql",
 	"gopls",

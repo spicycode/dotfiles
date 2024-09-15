@@ -40,6 +40,10 @@ return require("lazy").setup({
 
 	-- Color themes
 	{ "catppuccin/nvim", name = "catppuccin" },
+	{
+		"ferdinandrau/lavish.nvim",
+		priority = 1000,
+	},
 
 	{ "tpope/vim-vinegar" },
 	{ "tpope/vim-fugitive" },

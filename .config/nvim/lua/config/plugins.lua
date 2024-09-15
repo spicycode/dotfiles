@@ -192,8 +192,28 @@ return require("lazy").setup({
 			{ "<leader>lg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
 		},
 	},
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	{ "nvim-telescope/telescope-ui-select.nvim" },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
+		config = function()
+			require("telescope").load_extension("fzf")
+		end,
+	},
+	{
+		"nvim-telescope/telescope-ui-select.nvim",
+		config = function()
+			require("telescope").load_extension("ui-select")
+		end,
+	},
+	{
+		{
+			"matkrin/telescope-spell-errors.nvim",
+			config = function()
+				require("telescope").load_extension("spell_errors")
+			end,
+			dependencies = "nvim-telescope/telescope.nvim",
+		},
+	},
 	-- Extension for telescope coauthor support
 	{
 		"cwebster2/github-coauthors.nvim",
@@ -201,9 +221,12 @@ return require("lazy").setup({
 			{
 				"<leader>co",
 				"<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>",
-				desc = "Find git coauthor",
+				desc = "Find Co-Author from Git",
 			},
 		},
+		config = function()
+			require("telescope").load_extension("githubcoauthors")
+		end,
 	},
 	{
 		"HakonHarnes/img-clip.nvim",

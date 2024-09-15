@@ -48,14 +48,3 @@ telescope.setup({
 		},
 	},
 })
-
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-telescope.load_extension("fzf")
-
--- To get ui-select loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-telescope.load_extension("ui-select")
-
--- Load github coauthors extension
-telescope.load_extension("githubcoauthors")

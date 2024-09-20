@@ -101,7 +101,15 @@ config.tab_max_width = 50
 config.hide_tab_bar_if_only_one_tab = false
 config.disable_default_key_bindings = false
 config.front_end = "WebGpu"
-config.color_scheme = "Catppuccin Macchiato"
+
+local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+custom.background = "#0b0b12"
+
+config.color_schemes = {
+	["OLEDMacchiato"] = custom,
+}
+
+config.color_scheme = "OLEDMacchiato"
 
 config.mouse_bindings = {
 	{

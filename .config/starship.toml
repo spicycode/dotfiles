@@ -16,6 +16,7 @@ disabled = true
 
 [python]
 symbol = " "
+disabled = true
 
 [lua]
 symbol = " "
@@ -37,3 +38,6 @@ disabled = true
 [git_branch]
 symbol = " "
 format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[terraform]
+disabled = true

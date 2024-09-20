@@ -1,23 +1,23 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"bzl",
+		"bashls",
+		"clangd",
+		"eslint",
 		"gopls",
 		"graphql",
-		"lua_ls",
-		"ts_ls",
 		"html",
 		"jsonls",
-		"marksman",
-		"yamlls",
-		"eslint",
-		"pylsp",
-		"bashls",
-		"taplo",
-		"sorbet",
-		"clangd",
 		"lemminx",
+		"lua_ls",
+		"marksman",
+		"pylsp",
+		"sorbet",
+		"taplo",
 		"terraformls",
+		"ts_ls",
+		"yamlls",
+		"starpls",
 	},
 })
 local lspconfig = require("lspconfig")
@@ -97,7 +97,7 @@ lspconfig.lua_ls.setup({
 
 -- All of the LSP servers I use that don't need anything but factory config.
 local lsp_servers_with_default_config = {
-	"bzl",
+	"starpls",
 	"ts_ls",
 	"graphql",
 	"gopls",

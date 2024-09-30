@@ -57,3 +57,6 @@ require("nvim-treesitter.configs").setup({
 		delay = 200, -- update delay on CursorMoved and InsertLeave
 	},
 })
+
+-- Enable markdown inside of octo.nvim buffers
+vim.treesitter.language.register("markdown", "octo")

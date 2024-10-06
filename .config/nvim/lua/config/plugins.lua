@@ -370,4 +370,12 @@ return require("lazy").setup({
 			},
 		},
 	},
+	{
+		"nvchad/volt",
+		lazy = true,
+	},
+	{
+		"nvchad/menu",
+		lazy = true,
+	},
 })

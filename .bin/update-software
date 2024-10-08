@@ -20,3 +20,7 @@ echo ""
 echo "==> Upgrading homebrew"
 brew update && brew outdated && brew upgrade
 echo ""
+
+echo "===> Truncating lsp.log since it cannot auto-rotate"
+truncate -s 0 ~/.local/state/nvim/lsp.log
+echo ""

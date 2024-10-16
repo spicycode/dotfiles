@@ -28,7 +28,7 @@ require("conform").setup({
 
 		zsh = { "shfmt" },
 
-		yaml = { "yamlfmt" },
+		-- yaml = { "yamlfmt" },
 
 		terraform = { "terraform_fmt" },
 	},

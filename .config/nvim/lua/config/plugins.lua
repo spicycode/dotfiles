@@ -349,9 +349,9 @@ return require("lazy").setup({
 		event = "VeryLazy",
 		build = "make",
 		opts = {
-			provider = "openai",
+			provider = "claude",
 			hints = {
-				enabled = false,
+				enabled = true,
 			},
 			-- add any opts here
 		},

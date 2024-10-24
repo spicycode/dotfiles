@@ -47,6 +47,9 @@ export RUBY_YJIT_ENABLE=1
 
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
+# Enable node compile cache for newer Node revisions
+export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
+
 # catpuccin-mocha theme from https://github.com/catppuccin/fzf
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \

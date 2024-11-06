@@ -52,17 +52,14 @@ require("fidget").setup({
 	},
 })
 
-local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-local capabilities = cmp_nvim_lsp.default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-if has_cmp_nvim_lsp then
-	capabilities.textDocument.semanticHighlighting = true
-	capabilities.offsetEncoding = "utf-8"
-	capabilities.textDocument.foldingRange = {
-		dynamicRegistration = false,
-		lineFoldingOnly = true,
-	}
-end
+-- capabilities.textDocument.semanticHighlighting = true
+-- capabilities.offsetEncoding = "utf-8"
+-- capabilities.textDocument.foldingRange = {
+--   dynamicRegistration = false,
+--   lineFoldingOnly = true,
+-- }
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,

@@ -51,15 +51,12 @@ local capabilities = require("blink.cmp").get_lsp_capabilities(base_capabilities
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
-	cmd = cmd,
 	on_attach = on_attach,
 	settings = {
 		Lua = {
 			runtime = {
 				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
 				version = "LuaJIT",
-				-- Setup your lua path
-				path = runtime_path,
 			},
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
@@ -72,12 +69,48 @@ lspconfig.lua_ls.setup({
 					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
 				},
 			},
-			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {
+				-- Do not send telemetry data containing a randomized but unique identifier
 				enable = false,
 			},
 		},
 	},
+	on_init = function(client)
+		local join = vim.fs.joinpath
+		local path = client.workspace_folders[1].name
+
+		-- Don't do anything if there is project local config
+		if vim.uv.fs_stat(join(path, ".luarc.json")) or vim.uv.fs_stat(join(path, ".luarc.jsonc")) then
+			return
+		end
+
+		-- Apply neovim specific settings
+		local runtime_path = vim.split(package.path, ";")
+		table.insert(runtime_path, join("lua", "?.lua"))
+		table.insert(runtime_path, join("lua", "?", "init.lua"))
+
+		local nvim_settings = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using
+				version = "LuaJIT",
+				path = runtime_path,
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
+			workspace = {
+				checkThirdParty = false,
+				library = {
+					-- Make the server aware of Neovim runtime files
+					vim.env.VIMRUNTIME,
+					vim.fn.stdpath("config"),
+				},
+			},
+		}
+
+		client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, nvim_settings)
+	end,
 })
 
 -- All of the LSP servers I use that don't need anything but factory config.

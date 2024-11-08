@@ -336,7 +336,13 @@ return require("lazy").setup({
 					desc = "Quickfix List (Trouble)",
 				},
 			},
-			opts = {},
+			opts = {
+				modes = {
+					diagnostics = {
+						filter = { buf = 0 }, -- filter diagnostics to the current buffer
+					},
+				},
+			},
 		},
 		{
 			"jremmen/vim-ripgrep",

@@ -147,7 +147,35 @@ return require("lazy").setup({
 				{ "<leader>o", "<cmd>Lspsaga outline<CR>", desc = "Show outline (lsp)" },
 			},
 		},
-		{ "j-hui/fidget.nvim", tag = "legacy" },
+		{
+			"j-hui/fidget.nvim",
+
+			config = function()
+				require("fidget").setup({})
+			end,
+		},
+		{
+			"folke/lazydev.nvim",
+			ft = "lua", -- only load on lua files
+			opts = {
+				library = {
+					-- See the configuration section for more details
+					-- Load luvit types when the `vim.uv` word is found
+					{ path = "luvit-meta/library", words = { "vim%.uv" } },
+				},
+			},
+		},
+		{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+		{ -- optional cmp completion source for require statements and module annotations
+			"hrsh7th/nvim-cmp",
+			opts = function(_, opts)
+				opts.sources = opts.sources or {}
+				table.insert(opts.sources, {
+					name = "lazydev",
+					group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+				})
+			end,
+		},
 		{
 			"saghen/blink.cmp",
 			lazy = false, -- lazy loading handled internally
@@ -159,16 +187,25 @@ return require("lazy").setup({
 					use_nvim_cmp_as_default = true,
 				},
 				nerd_font_variant = "mono",
+				-- experimental auto-brackets support
+				accept = { auto_brackets = { enabled = true } },
+
+				-- experimental signature help support
+				trigger = { signature_help = { enabled = true } },
+
+				sources = {
+					-- add lazydev to your completion providers
+					completion = {
+						enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
+					},
+					providers = {
+						-- dont show LuaLS require statements when lazydev has items
+						lsp = { fallback_for = { "lazydev" } },
+						lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+					},
+				},
 			},
 		},
-		-- { "hrsh7th/nvim-cmp" },
-		-- { "hrsh7th/cmp-buffer" },
-		-- { "hrsh7th/cmp-cmdline" },
-		-- { "hrsh7th/cmp-nvim-lsp" },
-		-- { "hrsh7th/cmp-nvim-lsp-signature-help" },
-		-- { "petertriho/cmp-git" },
-		-- { "hrsh7th/cmp-nvim-lua" },
-		-- { "hrsh7th/cmp-path" },
 		{ "ckipp01/stylua-nvim" },
 		-- Language Syntax/etc support
 		{ "vim-ruby/vim-ruby" },

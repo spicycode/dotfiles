@@ -46,20 +46,8 @@ local on_attach = function(client, bufnr)
 	vim.wo.signcolumn = "yes"
 end
 
-require("fidget").setup({
-	window = {
-		blend = 0,
-	},
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
--- capabilities.textDocument.semanticHighlighting = true
--- capabilities.offsetEncoding = "utf-8"
--- capabilities.textDocument.foldingRange = {
---   dynamicRegistration = false,
---   lineFoldingOnly = true,
--- }
+local base_capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities(base_capabilities)
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,

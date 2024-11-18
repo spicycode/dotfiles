@@ -1,8 +1,6 @@
 require("conform").setup({
 	default_format_opts = {
 		timeout_ms = 3000,
-		async = false, -- not recommended to change
-		quiet = false, -- not recommended to change
 		lsp_format = "fallback", -- not recommended to change
 	},
 	format_on_save = function(bufnr)
@@ -13,9 +11,9 @@ require("conform").setup({
 		return { timeout_ms = 500, lsp_format = "fallback" }
 	end,
 	formatters_by_ft = {
-		-- Conform will run multiple formatters sequentially
-		-- You can customize some of the format options for the filetype (:help conform.format)
-		rust = { "rustfmt" },
+		go = { "goimports", "gofmt" },
+
+		rust = { "rustfmt", lsp_format = "fallback" },
 
 		lua = { "stylua" },
 
@@ -24,13 +22,19 @@ require("conform").setup({
 
 		cpp = { "clang-format" },
 
-		sh = { "shfmt" },
+		sh = { "shfmt", "beautysh" },
 
 		zsh = { "shfmt" },
 
 		-- yaml = { "yamlfmt" },
 
 		terraform = { "terraform_fmt" },
+
+		-- Use the "*" filetype to run formatters on all filetypes.
+		["*"] = { "codespell" },
+		-- Use the "_" filetype to run formatters on filetypes that don't
+		-- have other formatters configured.
+		["_"] = { "trim_whitespace" },
 	},
 })
 

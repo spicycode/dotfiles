@@ -1,17 +1,13 @@
 set -x GOPATH $HOME/src/gopath
 
-fish_add_path "/opt/homebrew/sbin" 
+fish_add_path "/opt/homebrew/sbin"
 fish_add_path --append "/opt/homebrew/bin"
 fish_add_path --append ~/.cargo/bin
 fish_add_path --append /Applications/WezTerm.app/Contents/MacOS
 fish_add_path --append ~/.dotfiles/bin
 fish_add_path --append $GOPATH/bin
 
-### Config settings 
-
-if type -q fd 
-  set -gx FZF_DEFAULT_COMMAND 'fd --type file --hidden --exclude .git'
-end
+### Config settings
 
 if type -q asdf
   source (brew --prefix asdf)"/libexec/asdf.fish"
@@ -22,10 +18,10 @@ if type -q nvim
 end
 
 ## Supresses fish's intro message
-set fish_greeting            
+set fish_greeting
 
-# "nvim" as manpager                    
-set -x MANPAGER "nvim +Man!" 
+# "nvim" as manpager
+set -x MANPAGER "nvim +Man!"
 
 ### Init stuff
 starship init fish | source

@@ -56,6 +56,15 @@ return require("lazy").setup({
 		{ "tpope/vim-git" },
 		{ "tpope/vim-sensible" },
 
+		{
+			"NeogitOrg/neogit",
+			dependencies = {
+				"nvim-lua/plenary.nvim", -- required
+				"sindrets/diffview.nvim", -- optional - Diff integration
+				"nvim-telescope/telescope.nvim", -- optional
+			},
+			config = true,
+		},
 		-- Color and Themes
 		--
 		-- Highlight CSS Colors

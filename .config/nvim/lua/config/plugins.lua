@@ -263,10 +263,10 @@ return require("lazy").setup({
 					stat_file = true, -- verify files exist on disk
 				},
 				previewers = {
+					-- builtin = false, -- this will disable previewer
 					builtin = {
 						-- With this change, the previewer will not add syntax highlighting to files larger than 100KB
 						syntax_limit_b = 1024 * 100, -- 100KB
-						hidden = true,
 					},
 				},
 				grep = {

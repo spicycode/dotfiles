@@ -40,3 +40,5 @@ if [[ $ZSH_BIZ_TIME == true ]]; then
 else
   source /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
+eval "$(rbenv init -)"
+export RACK_ENV=development

@@ -24,10 +24,13 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
 
 if [[ $ZSH_BIZ_TIME == true ]]; then
+  # Work config does an ultra naive approach to appending, and just repeatedly stacks these over and over at the end of the file.
+  # TODO: Completely separate `zshrc` for work to be friendly to work's approach, this is too sophesticated.
   export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
   export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
   eval "$(rbenv init -)"
   export RACK_ENV=development
+  eval "$(mise activate zsh)"
   export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
   export SSH_AUTH_SOCK=~/.ssh/ssh-agent.$HOSTNAME.sock
   ssh-add -l 2>/dev/null >/dev/null

@@ -61,7 +61,6 @@ return require("lazy").setup({
 			dependencies = {
 				"nvim-lua/plenary.nvim", -- required
 				"sindrets/diffview.nvim", -- optional - Diff integration
-				"nvim-telescope/telescope.nvim", -- optional
 			},
 			config = true,
 		},
@@ -176,39 +175,12 @@ return require("lazy").setup({
 		},
 		{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
 		{
-			"philosofonusus/ecolog.nvim",
-			lazy = false,
-			opts = {
-				integrations = {
-					-- WARNING: for both cmp integrations see readme section below
-					nvim_cmp = false, -- If you dont plan to use nvim_cmp set to false, enabled by default
-					-- If you are planning to use blink cmp uncomment this line
-					blink_cmp = true,
-					lspsaga = true,
-				},
-				-- Enables shelter mode for sensitive values
-				shelter = {
-					configuration = {
-						partial_mode = false, -- false by default, disables partial mode, for more control check out shelter partial mode
-						mask_char = "*", -- Character used for masking
-					},
-					modules = {
-						cmp = true, -- Mask values in completion
-						peek = false, -- Mask values in peek view
-						files = false, -- Mask values in files
-						telescope = false, -- Mask values in telescope
-					},
-				},
-				-- true by default, enables built-in types (database_url, url, etc.)
-				types = true,
-				path = vim.fn.getcwd(), -- Path to search for .env files
-				preferred_environment = "development", -- Optional: prioritize specific env files
-			},
-		},
-		{
 			"saghen/blink.cmp",
 			lazy = false, -- lazy loading handled internally
 			version = "v0.*", -- use a release tag to download pre-built binaries
+			-- !Important! Make sure you're using the latest release of LuaSnip
+			-- `main` does not work at the moment
+			dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 			opts = {
 				keymap = { preset = "super-tab" },
 
@@ -216,6 +188,22 @@ return require("lazy").setup({
 					use_nvim_cmp_as_default = true,
 				},
 				nerd_font_variant = "mono",
+
+				snippets = {
+					expand = function(snippet)
+						require("luasnip").lsp_expand(snippet)
+					end,
+					active = function(filter)
+						if filter and filter.direction then
+							return require("luasnip").jumpable(filter.direction)
+						end
+						return require("luasnip").in_snippet()
+					end,
+					jump = function(direction)
+						require("luasnip").jump(direction)
+					end,
+				},
+
 				-- experimental auto-brackets support
 				accept = { auto_brackets = { enabled = true } },
 
@@ -223,6 +211,8 @@ return require("lazy").setup({
 				trigger = { signature_help = { enabled = true } },
 
 				sources = {
+					default = { "lsp", "path", "luasnip", "buffer" },
+
 					-- add lazydev to your completion providers
 					completion = {
 						enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
@@ -231,7 +221,6 @@ return require("lazy").setup({
 						-- dont show LuaLS require statements when lazydev has items
 						lsp = { fallback_for = { "lazydev" } },
 						lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
-						ecolog = { name = "ecolog", module = "ecolog.integrations.cmp.blink_cmp" },
 					},
 				},
 			},
@@ -266,56 +255,54 @@ return require("lazy").setup({
 				require("gitsigns").setup()
 			end,
 		},
-
-		-- Search
-		{ "nvim-lua/popup.nvim" },
-		{ "nvim-lua/plenary.nvim" },
 		{
-			"nvim-telescope/telescope.nvim",
-			keys = {
-				{ "<C-p>", "<cmd>Telescope find_files<CR>", desc = "Find files" },
-				{ "<C-]>", "<cmd>Telescope tags<CR>", desc = "Find tags" },
-				{ "<leader>lb", "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
-				{ "<leader>lt", "<cmd>Telescope help_tags<CR>", desc = "Find help tags" },
-				{ "<leader>lg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+			"ibhagwan/fzf-lua",
+			opts = {
+				oldfiles = {
+					include_current_session = true,
+					stat_file = true, -- verify files exist on disk
+				},
+				previewers = {
+					builtin = {
+						-- With this change, the previewer will not add syntax highlighting to files larger than 100KB
+						syntax_limit_b = 1024 * 100, -- 100KB
+						hidden = true,
+					},
+				},
+				grep = {
+					rg_glob = true, -- enable glob parsing
+					glob_flag = "--iglob", -- case insensitive globs
+				},
+				keymap = {
+					fzf = {
+						-- use cltr-q to select all items and convert to quickfix list
+						["ctrl-q"] = "select-all+accept",
+					},
+				},
 			},
-		},
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "make",
-			config = function()
-				require("telescope").load_extension("fzf")
-			end,
-		},
-		{
-			"nvim-telescope/telescope-ui-select.nvim",
-			config = function()
-				require("telescope").load_extension("ui-select")
-			end,
-		},
-		{
-			{
-				"matkrin/telescope-spell-errors.nvim",
-				config = function()
-					require("telescope").load_extension("spell_errors")
-				end,
-				dependencies = "nvim-telescope/telescope.nvim",
+			keys = {
+				{ "<C-p>", "<cmd>FzfLua files<CR>", desc = "Find files" },
+				{ "<C-]>", "<cmd>FzfLua tags<CR>", desc = "Find tags" },
+				{ "<leader>lr", "<cmd>FzfLua oldfiles<CR>", desc = "Find recent files" },
+				{ "<leader>lb", "<cmd>FzfLua buffers<CR>", desc = "Find buffers" },
+				{ "<leader>lt", "<cmd>FzfLua helptags<CR>", desc = "Find help tags" },
+				{ "<leader>lg", "<cmd>FzfLua live_grep<cr>", desc = "Live grep" },
 			},
 		},
 		-- Extension for telescope coauthor support
-		{
-			"cwebster2/github-coauthors.nvim",
-			keys = {
-				{
-					"<leader>co",
-					"<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>",
-					desc = "Find Co-Author from Git",
-				},
-			},
-			config = function()
-				require("telescope").load_extension("githubcoauthors")
-			end,
-		},
+		-- {
+		-- 	"cwebster2/github-coauthors.nvim",
+		-- 	keys = {
+		-- 		{
+		-- 			"<leader>co",
+		-- 			"<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>",
+		-- 			desc = "Find Co-Author from Git",
+		-- 		},
+		-- 	},
+		-- 	config = function()
+		-- 		require("telescope").load_extension("githubcoauthors")
+		-- 	end,
+		-- },
 		{
 			"HakonHarnes/img-clip.nvim",
 			event = "VeryLazy",

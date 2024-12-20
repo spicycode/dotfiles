@@ -184,10 +184,10 @@ return require("lazy").setup({
 			opts = {
 				keymap = { preset = "super-tab" },
 
-				highlight = {
+				appearance = {
 					use_nvim_cmp_as_default = true,
+					nerd_font_variant = "mono",
 				},
-				nerd_font_variant = "mono",
 
 				snippets = {
 					expand = function(snippet)
@@ -204,23 +204,17 @@ return require("lazy").setup({
 					end,
 				},
 
-				-- experimental auto-brackets support
-				accept = { auto_brackets = { enabled = true } },
-
 				-- experimental signature help support
-				trigger = { signature_help = { enabled = true } },
+				signature = { enabled = true },
 
 				sources = {
-					default = { "lsp", "path", "luasnip", "buffer" },
-
-					-- add lazydev to your completion providers
-					completion = {
-						enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
-					},
+					default = { "lsp", "path", "luasnip", "snippets", "buffer", "lazydev" },
 					providers = {
-						-- dont show LuaLS require statements when lazydev has items
-						lsp = { fallback_for = { "lazydev" } },
-						lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+						lazydev = {
+							name = "LazyDev",
+							module = "lazydev.integrations.blink",
+							fallbacks = "lsp",
+						},
 					},
 				},
 			},

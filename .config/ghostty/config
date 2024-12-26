@@ -1,0 +1,9 @@
+theme = catppuccin-mocha
+background = #0b0b12
+
+font-family = "Liga SFMono Nerd Font",
+font-size = 13
+
+macos-titlebar-style = tabs
+
+

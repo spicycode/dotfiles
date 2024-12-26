@@ -177,16 +177,50 @@ return require("lazy").setup({
 		{
 			"saghen/blink.cmp",
 			lazy = false, -- lazy loading handled internally
-			version = "v0.*", -- use a release tag to download pre-built binaries
+			version = "*", -- use a release tag to download pre-built binaries
 			-- !Important! Make sure you're using the latest release of LuaSnip
 			-- `main` does not work at the moment
 			dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
+
 			opts = {
 				keymap = { preset = "super-tab" },
 
 				appearance = {
-					use_nvim_cmp_as_default = true,
+					use_nvim_cmp_as_default = false,
 					nerd_font_variant = "mono",
+				},
+
+				completion = {
+					accept = {
+						auto_brackets = {
+							enabled = true,
+							kind_resolution = {
+								enabled = true,
+								blocked_filetypes = { "typescriptreact", "javascriptreact", "vue" },
+							},
+							-- Asynchronously use semantic token to determine if brackets should be added
+							semantic_token_resolution = {
+								enabled = true,
+								blocked_filetypes = { "java" },
+								-- How long to wait for semantic tokens to return before assuming no brackets should be added
+								timeout_ms = 400,
+							},
+						},
+						-- Create an undo point when accepting a completion item
+						create_undo_point = true,
+					},
+
+					documentation = {
+						auto_show = true,
+						auto_show_delay_ms = 250,
+						treesitter_highlighting = true,
+						window = { border = "rounded" },
+					},
+
+					-- Displays a preview of the selected item on the current line
+					ghost_text = {
+						enabled = false,
+					},
 				},
 
 				snippets = {
@@ -213,7 +247,7 @@ return require("lazy").setup({
 						lazydev = {
 							name = "LazyDev",
 							module = "lazydev.integrations.blink",
-							fallbacks = "lsp",
+							fallbacks = { "lsp" },
 						},
 					},
 				},

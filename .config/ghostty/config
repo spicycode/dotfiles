@@ -1,5 +1,8 @@
 theme = catppuccin-mocha
+# Override background to make it match terminal
 background = #0b0b12
+
+window-colorspace = display-p3
 
 # font-family = "Fira Code Retina",
 font-family = "Liga SFMono Nerd Font",

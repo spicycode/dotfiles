@@ -1,9 +1,15 @@
 theme = catppuccin-mocha
 background = #0b0b12
 
+# font-family = "Fira Code Retina",
 font-family = "Liga SFMono Nerd Font",
-font-size = 13
+font-size = 15
 
 macos-titlebar-style = tabs
 
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
 
+
+keybind = global:shift+f2=toggle_quick_terminal
+quick-terminal-animation-duration = 0.1

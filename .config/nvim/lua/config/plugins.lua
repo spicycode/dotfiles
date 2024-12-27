@@ -182,6 +182,8 @@ return require("lazy").setup({
 			-- `main` does not work at the moment
 			dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 
+			build = "make install_jsregexp",
+
 			opts = {
 				keymap = { preset = "super-tab" },
 

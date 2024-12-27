@@ -1,0 +1,19 @@
+{
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0xc099",
+          "productName" : "G502 X",
+          "serialNumber" : "2071395B5346",
+          "vendorID" : "0x46d",
+          "category" : "mouse"
+        }
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+}

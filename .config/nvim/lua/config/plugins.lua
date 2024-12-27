@@ -103,10 +103,6 @@ return require("lazy").setup({
 					-- to a :h preview-window when pressing the hover keymap.
 					preview_window = false,
 					title = true,
-					mouse_providers = {
-						"LSP",
-					},
-					mouse_delay = 1000,
 				})
 				-- Enable mouse move events so we can bind to them for this
 				vim.o.mousemoveevent = true
@@ -260,7 +256,6 @@ return require("lazy").setup({
 		{ "vim-ruby/vim-ruby" },
 		{ "tpope/vim-rails" },
 		{ "gleam-lang/gleam.vim" },
-		{ "dmmulroy/ts-error-translator.nvim" },
 		{
 			"ray-x/go.nvim",
 			dependencies = { -- optional packages

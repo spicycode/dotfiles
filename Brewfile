@@ -2,11 +2,13 @@ tap "1password/tap"
 tap "d12frosted/emacs-plus"
 tap "ekvedaras/cask"
 tap "felixkratz/formulae"
+tap "fish-shell/fish-beta-4"
 tap "ggozad/formulas"
 tap "github/bootstrap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazynpm"
+tap "keith/formulae"
 tap "koekeishiya/formulae"
 tap "lucaspickering/tap"
 tap "nikitabobko/tap"
@@ -22,69 +24,69 @@ brew "aspell"
 brew "bat"
 brew "bchunk"
 brew "btop"
+brew "sqlite"
 brew "carthage"
-brew "chezmoi"
+brew "chafa"
+brew "clang-format"
 brew "cmake"
+brew "codespell"
 brew "cowsay"
-brew "darcs"
-brew "deno"
 brew "difftastic"
 brew "diskonaut"
 brew "dotenv-linter"
-brew "gnutls"
-brew "jansson"
-brew "tree-sitter"
-brew "emacs"
 brew "entr"
-brew "exercism"
 brew "exiftool"
 brew "eza"
 brew "fd"
+brew "gnutls"
 brew "librist"
 brew "opus"
 brew "ffmpeg"
-brew "fish"
 brew "fzf"
 brew "gh"
+brew "ghcup"
 brew "ghi"
 brew "git"
 brew "git-delta"
 brew "git-lfs"
 brew "gnupg"
+brew "go"
 brew "grc"
 brew "gron"
 brew "helix"
 brew "htop"
 brew "hub"
+brew "jansson"
 brew "jj"
 brew "jnv"
 brew "jq"
-brew "lazygit"
 brew "llm"
-brew "lnav"
 brew "luarocks"
 brew "macchina"
 brew "mas"
 brew "openjdk"
 brew "maven"
-brew "mdcat"
 brew "mercurial"
 brew "most"
 brew "neofetch"
 brew "neomutt"
+brew "tree-sitter"
 brew "neovim"
+brew "ninja"
 brew "ollama"
 brew "opam"
 brew "tmux"
 brew "overmind"
 brew "parallel"
-brew "pkg-config"
+brew "pkgconf"
+brew "pngpaste"
+brew "postgresql@17", restart_service: true, link: true
 brew "procs"
 brew "pyenv"
 brew "python@3.9"
 brew "reattach-to-user-namespace"
-brew "redis"
 brew "ripgrep"
+brew "ruby@3.0"
 brew "semgrep"
 brew "shellcheck"
 brew "starship"
@@ -92,72 +94,67 @@ brew "stylua"
 brew "subversion"
 brew "switchaudio-osx"
 brew "terminal-notifier"
-brew "tree"
+brew "terraform"
 brew "universal-ctags"
 brew "vim"
 brew "vimpager"
-brew "weechat"
+brew "viu"
 brew "wget"
+brew "wthrr"
 brew "youtube-dl"
-brew "yt-dlp"
-brew "zellij"
+brew "yt-dlp", link: false
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
-brew "felixkratz/formulae/sketchybar"
-brew "ggozad/formulas/oterm"
-brew "jesseduffield/lazynpm/lazynpm"
+brew "fish-shell/fish-beta-4/fish"
 cask "1password-cli"
 cask "aerospace"
-cask "amethyst"
 cask "font-fira-code"
-cask "font-jetbrains-mono"
-cask "font-monaspace"
 cask "font-sf-mono-for-powerline"
 cask "font-sf-mono-nerd-font-ligaturized"
-cask "hammerspoon"
-cask "kitty"
+cask "linearmouse"
 cask "love"
-cask "nzbget"
-cask "viscosity"
+cask "reminders-menubar"
+cask "shortcat"
 cask "visual-studio-code"
-cask "whichspace"
+cask "vlc"
 cask "xnapper"
 cask "yacreader"
-# mas "1Password for Safari", id: 1569813296
-# mas "Amphetamine", id: 937984704
-# mas "Brother iPrint&Scan", id: 1193539993
-# mas "com.kagimacOS.Kagi-Search", id: 1622835804
-# mas "Copilot", id: 1447330651
-# mas "Craft", id: 1487937127
-# mas "GarageBand", id: 682658836
-# mas "Hidden Bar", id: 1452453066
-# mas "iMovie", id: 408981434
-# mas "Ivory", id: 6444602274
-# mas "Keynote", id: 409183694
-# mas "Kindle", id: 302584613
-# mas "Notion Web Clipper", id: 1559269364
-# mas "Numbers", id: 409203825
-# mas "Okta Verify", id: 490179405
-# mas "Pages", id: 409201541
-# mas "Paprika Recipe Manager 3", id: 1303222628
-# mas "Pixelmator Pro", id: 1289583905
-# mas "Reeder", id: 1529448980
-# mas "Sequel Ace", id: 1518036000
-# mas "Sink It for Reddit", id: 6449873635
-# mas "StreetPass for Mastodon", id: 6446224821
-# mas "TestFlight", id: 899247664
-# mas "The Unarchiver", id: 425424353
-# mas "Things", id: 904280696
-# mas "Vinegar", id: 1591303229
-# mas "Wipr", id: 1320666476
-# mas "World Clock", id: 956377119
-# mas "Xcode", id: 497799835
-# mas "xScope", id: 889428659
+mas "1Password for Safari", id: 1569813296
+mas "Amphetamine", id: 937984704
+mas "Bear", id: 1091189122
+mas "Brother iPrint&Scan", id: 1193539993
+mas "com.kagimacOS.Kagi-Search", id: 1622835804
+mas "Copilot", id: 1447330651
+mas "GarageBand", id: 682658836
+mas "Hidden Bar", id: 1452453066
+mas "iMovie", id: 408981434
+mas "Ivory", id: 6444602274
+mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Pixelmator Pro", id: 1289583905
+mas "Reeder", id: 1529448980
+mas "Sequel Ace", id: 1518036000
+mas "Sink It for Reddit", id: 6449873635
+mas "Sleeve", id: 1606145041
+mas "StreetPass for Mastodon", id: 6446224821
+mas "Structured", id: 1499198946
+mas "Sweet Home 3D", id: 669289700
+mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
+mas "Things", id: 904280696
+mas "Vinegar", id: 1591303229
+mas "Wipr", id: 1320666476
+mas "World Clock", id: 956377119
+mas "Xcode", id: 497799835
+mas "xScope", id: 889428659
 vscode "arcticicestudio.nord-visual-studio-code"
+vscode "bazelbuild.vscode-bazel"
 vscode "catppuccin.catppuccin-vsc"
 vscode "catppuccin.catppuccin-vsc-icons"
-vscode "chdsbd.github-code-owners"
 vscode "christian-kohler.npm-intellisense"
 vscode "davidanson.vscode-markdownlint"
 vscode "davidbwaters.macos-modern-theme"
@@ -166,15 +163,18 @@ vscode "drcika.apc-extension"
 vscode "dsoloha.native-macos"
 vscode "ecmel.vscode-html-css"
 vscode "editorconfig.editorconfig"
+vscode "esbenp.prettier-vscode"
 vscode "github.codespaces"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "github.vscode-github-actions"
 vscode "golang.go"
+vscode "graphite.gti-vscode"
 vscode "graphql.vscode-graphql"
 vscode "graphql.vscode-graphql-syntax"
 vscode "hbenl.vscode-test-explorer"
+vscode "itarato.byesig"
 vscode "josevseb.google-java-format-for-vs-code"
 vscode "kumar-harsh.graphql-for-vscode"
 vscode "mikeburgh.xml-format"
@@ -184,10 +184,15 @@ vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode.test-adapter-converter"
 vscode "ms-vsliveshare.vsliveshare"
 vscode "naumovs.color-highlight"
+vscode "rebornix.ruby"
 vscode "redhat.java"
 vscode "redhat.vscode-xml"
+vscode "redhat.vscode-yaml"
 vscode "richie5um2.vscode-sort-json"
+vscode "rust-lang.rust-analyzer"
 vscode "shopify.ruby-lsp"
+vscode "sorbet.sorbet-vscode-extension"
 vscode "vscjava.vscode-maven"
 vscode "waderyan.babelrc"
+vscode "wingrunr21.vscode-ruby"
 vscode "yoavbls.pretty-ts-errors"

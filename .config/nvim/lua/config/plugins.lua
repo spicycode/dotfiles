@@ -176,10 +176,10 @@ return require("lazy").setup({
 			version = "*", -- use a release tag to download pre-built binaries
 			-- !Important! Make sure you're using the latest release of LuaSnip
 			-- `main` does not work at the moment
-			dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
+			dependencies = { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
 
-			build = "make install_jsregexp",
-
+			---@module 'blink.cmp'
+			---@type blink.cmp.Config
 			opts = {
 				keymap = { preset = "super-tab" },
 

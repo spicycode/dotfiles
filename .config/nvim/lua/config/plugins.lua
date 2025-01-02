@@ -481,28 +481,39 @@ return require("lazy").setup({
 			lazy = true,
 		},
 		{
-			"MagicDuck/grug-far.nvim",
-			opts = { headerMaxWidth = 80 },
-			keys = {
-				{
-					"\\",
-					function()
-						local grug = require("grug-far")
-						local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
-						grug.open({
-							transient = true,
-							prefills = {
-								filesFilter = ext and ext ~= "" and "*." .. ext or nil,
-							},
-						})
-					end,
-					mode = { "n", "v" },
-					desc = "Search and Replace",
+			"epwalsh/obsidian.nvim",
+			version = "*", -- recommended, use latest release instead of latest commit
+			lazy = true,
+			event = {
+				"BufReadPre " .. vim.fn.expand("~") .. "/obsidian/Vault/*.md",
+			},
+			dependencies = {
+				-- Required.
+				"nvim-lua/plenary.nvim",
+			},
+			opts = {
+				workspaces = {
+					{
+						name = "spicycode",
+						path = "~/obsidian/Vault",
+					},
+				},
+				daily_notes = {
+					-- Optional, if you keep daily notes in a separate directory.
+					folder = "daily-notes",
+					-- Optional, if you want to change the date format for the ID of daily notes.
+					date_format = "%Y-%m-%d",
+					-- Optional, if you want to change the date format of the default alias of daily notes.
+					alias_format = "%B %-d, %Y",
+					-- Optional, default tags to add to each new daily note created.
+					default_tags = { "daily-notes" },
+					-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+					template = "daily-note-template.md",
+				},
+				templates = {
+					folder = "_templates",
 				},
 			},
-			config = function()
-				require("grug-far").setup()
-			end,
 		},
 	},
 })

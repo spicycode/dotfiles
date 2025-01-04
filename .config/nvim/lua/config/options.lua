@@ -124,5 +124,10 @@ vim.o.statuscolumn =
 -- Default spelling to us english
 vim.opt.spelllang = "en_us"
 
--- Don't conceal things like double quotes in JSON
-vim.opt.conceallevel = 0
+if string.match(vim.fn.getcwd(), "obsidian/Vault$") then
+	-- obsidian.nvim likes conceal to be on.
+	vim.opt.conceallevel = 2
+else
+	-- Don't conceal things like double quotes in JSON
+	vim.opt.conceallevel = 0
+end

@@ -219,6 +219,10 @@ return require("lazy").setup({
 					ghost_text = {
 						enabled = false,
 					},
+
+					menu = {
+						draw = { columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } } },
+					},
 				},
 
 				snippets = {

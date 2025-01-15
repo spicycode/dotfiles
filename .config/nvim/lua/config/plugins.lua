@@ -225,26 +225,11 @@ return require("lazy").setup({
 					},
 				},
 
-				snippets = {
-					expand = function(snippet)
-						require("luasnip").lsp_expand(snippet)
-					end,
-					active = function(filter)
-						if filter and filter.direction then
-							return require("luasnip").jumpable(filter.direction)
-						end
-						return require("luasnip").in_snippet()
-					end,
-					jump = function(direction)
-						require("luasnip").jump(direction)
-					end,
-				},
-
 				-- experimental signature help support
 				signature = { enabled = true },
 
 				sources = {
-					default = { "lsp", "path", "luasnip", "snippets", "buffer", "lazydev" },
+					default = { "lsp", "path", "snippets", "buffer", "lazydev" },
 					providers = {
 						lazydev = {
 							name = "LazyDev",

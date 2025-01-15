@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "coc-css": ">=1.2.3",
-    "coc-html": ">=1.2.4",
-    "coc-json": ">=1.2.6",
-    "coc-pyright": ">=1.1.137",
-    "coc-tsserver": ">=1.4.12"
-  }
-}

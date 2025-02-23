@@ -38,5 +38,5 @@ if [[ $ZSH_BIZ_TIME == true ]]; then
     ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
   fi
 else
-  source /opt/homebrew/opt/asdf/libexec/asdf.sh
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi

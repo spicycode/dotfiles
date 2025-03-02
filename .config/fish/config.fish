@@ -10,14 +10,14 @@ fish_add_path --append $GOPATH/bin
 ### Config settings
 
 if type -q asdf
-  source (brew --prefix asdf)"/libexec/asdf.fish"
+  source /opt/homebrew/share/fish/vendor_completions.d/asdf.fish
 end
 
 if type -q nvim
   set -gx EDITOR 'nvim'
 end
 
-## Supresses fish's intro message
+## Suppresses fish's intro message
 set fish_greeting
 
 # "nvim" as manpager

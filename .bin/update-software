@@ -13,7 +13,7 @@ echo "==> Upgrading asdf plugins"
 if ! command_exists asdf; then
   echo "Error: 'asdf' is not installed. Skipping update attempts."
 else
-  asdf plugin-update --all
+  asdf plugin update --all
 fi
 echo ""
 

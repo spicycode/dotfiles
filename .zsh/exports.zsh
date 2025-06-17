@@ -62,3 +62,5 @@ if [[ $ZSH_BIZ_TIME == false ]]; then
   #Bring in gh exports
   source ~/.github_pat
 fi
+
+export XDG_CONFIG_HOME=~/.config

@@ -37,6 +37,6 @@ if [[ $ZSH_BIZ_TIME == true ]]; then
   if [ $? -ge 2 ]; then
     ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
   fi
-else
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
+
+eval "$(mise activate zsh)"

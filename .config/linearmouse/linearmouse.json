@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1-beta.1",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1-beta.2",
   "schemes" : [
     {
       "buttons" : {
@@ -12,6 +12,11 @@
           "productName" : "G502 X",
           "serialNumber" : "2071395B5346",
           "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1.01
         }
       }
     },
@@ -26,6 +31,12 @@
           "productName" : "MX Master 3S M",
           "serialNumber" : "3F0E38C4",
           "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "horizontal" : 1.38,
+          "vertical" : 1.82
         }
       }
     }

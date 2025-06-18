@@ -14,7 +14,7 @@ quick-terminal-animation-duration = 0.1
 
 font-family = "Liga SFMono Nerd Font",
 font-style = Regular
-font-size = 14
+font-size = 15
 
 macos-option-as-alt = true
 window-colorspace = display-p3

@@ -9,14 +9,6 @@ echo "==> Upgrading gh extensions"
 gh extension upgrade --all
 echo ""
 
-echo "==> Upgrading asdf plugins"
-if ! command_exists asdf; then
-  echo "Error: 'asdf' is not installed. Skipping update attempts."
-else
-  asdf plugin update --all
-fi
-echo ""
-
 echo "==> Upgrading homebrew"
 brew update && brew outdated && brew upgrade
 echo ""

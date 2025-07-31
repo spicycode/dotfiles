@@ -41,9 +41,6 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
-	-- Disable semantic token provider so it doesn't mess with Treesitter
-	client.server_capabilities.semanticTokensProvider = nil
-
 	vim.wo.signcolumn = "yes"
 end
 

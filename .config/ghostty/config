@@ -18,3 +18,4 @@ font-size = 15
 
 macos-option-as-alt = true
 window-colorspace = display-p3
+keybind = shift+enter=text:\n

@@ -296,23 +296,23 @@ return require("lazy").setup({
 				{ "<leader>lr", "<cmd>FzfLua oldfiles<CR>", desc = "Find recent files" },
 				{ "<leader>lb", "<cmd>FzfLua buffers<CR>", desc = "Find buffers" },
 				{ "<leader>lt", "<cmd>FzfLua helptags<CR>", desc = "Find help tags" },
-				{ "<leader>lg", "<cmd>FzfLua live_grep<cr>", desc = "Live grep" },
+				{ "<leader>lg", "<cmd>FzfLua live_grep<CR>", desc = "Live grep" },
 			},
 		},
-		-- Extension for telescope coauthor support
-		-- {
-		-- 	"cwebster2/github-coauthors.nvim",
-		-- 	keys = {
-		-- 		{
-		-- 			"<leader>co",
-		-- 			"<CMD>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>",
-		-- 			desc = "Find Co-Author from Git",
-		-- 		},
-		-- 	},
-		-- 	config = function()
-		-- 		require("telescope").load_extension("githubcoauthors")
-		-- 	end,
-		-- },
+		{
+			"2kabhishek/co-author.nvim",
+			keys = {
+				{
+					"<leader>co",
+					"<cmd>CoAuthor<CR>",
+					desc = "Find Git CoAuthor",
+				},
+			},
+			dependencies = {
+				"folke/snacks.nvim",
+			},
+			cmd = { "CoAuthor" },
+		},
 		{
 			"HakonHarnes/img-clip.nvim",
 			event = "VeryLazy",
@@ -432,31 +432,40 @@ return require("lazy").setup({
 		},
 		{ "amilsil/codewho" },
 		{
-			"yetone/avante.nvim",
-			event = "VeryLazy",
-			build = "make",
-			opts = {
-				provider = "claude",
-				hints = {
-					enabled = true,
-				},
-				-- add any opts here
-			},
+			"greggh/claude-code.nvim",
 			dependencies = {
-				"nvim-tree/nvim-web-devicons",
-				"stevearc/dressing.nvim",
-				"nvim-lua/plenary.nvim",
-				"MunifTanjim/nui.nvim",
-				--- The below is optional, make sure to setup it properly if you have lazy=true
-				{
-					"MeanderingProgrammer/render-markdown.nvim",
-					opts = {
-						file_types = { "Avante" },
-					},
-					ft = { "Avante" },
-				},
+				"nvim-lua/plenary.nvim", -- Required for git operations
 			},
+			config = function()
+				require("claude-code").setup()
+			end,
 		},
+		-- {
+		-- 	"yetone/avante.nvim",
+		-- 	event = "VeryLazy",
+		-- 	build = "make",
+		-- 	opts = {
+		-- 		provider = "claude",
+		-- 		hints = {
+		-- 			enabled = true,
+		-- 		},
+		-- 		-- add any opts here
+		-- 	},
+		-- 	dependencies = {
+		-- 		"nvim-tree/nvim-web-devicons",
+		-- 		"stevearc/dressing.nvim",
+		-- 		"nvim-lua/plenary.nvim",
+		-- 		"MunifTanjim/nui.nvim",
+		-- 		--- The below is optional, make sure to setup it properly if you have lazy=true
+		-- 		{
+		-- 			"MeanderingProgrammer/render-markdown.nvim",
+		-- 			opts = {
+		-- 				file_types = { "Avante" },
+		-- 			},
+		-- 			ft = { "Avante" },
+		-- 		},
+		-- 	},
+		-- },
 		{
 			"nvchad/volt",
 			lazy = true,

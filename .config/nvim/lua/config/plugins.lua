@@ -440,32 +440,6 @@ return require("lazy").setup({
 				require("claude-code").setup()
 			end,
 		},
-		-- {
-		-- 	"yetone/avante.nvim",
-		-- 	event = "VeryLazy",
-		-- 	build = "make",
-		-- 	opts = {
-		-- 		provider = "claude",
-		-- 		hints = {
-		-- 			enabled = true,
-		-- 		},
-		-- 		-- add any opts here
-		-- 	},
-		-- 	dependencies = {
-		-- 		"nvim-tree/nvim-web-devicons",
-		-- 		"stevearc/dressing.nvim",
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"MunifTanjim/nui.nvim",
-		-- 		--- The below is optional, make sure to setup it properly if you have lazy=true
-		-- 		{
-		-- 			"MeanderingProgrammer/render-markdown.nvim",
-		-- 			opts = {
-		-- 				file_types = { "Avante" },
-		-- 			},
-		-- 			ft = { "Avante" },
-		-- 		},
-		-- 	},
-		-- },
 		{
 			"nvchad/volt",
 			lazy = true,
@@ -473,41 +447,6 @@ return require("lazy").setup({
 		{
 			"nvchad/menu",
 			lazy = true,
-		},
-		{
-			"epwalsh/obsidian.nvim",
-			version = "*", -- recommended, use latest release instead of latest commit
-			lazy = true,
-			event = {
-				"BufReadPre " .. vim.fn.expand("~") .. "/obsidian/Vault/*.md",
-			},
-			dependencies = {
-				-- Required.
-				"nvim-lua/plenary.nvim",
-			},
-			opts = {
-				workspaces = {
-					{
-						name = "spicycode",
-						path = "~/obsidian/Vault",
-					},
-				},
-				daily_notes = {
-					-- Optional, if you keep daily notes in a separate directory.
-					folder = "daily-notes",
-					-- Optional, if you want to change the date format for the ID of daily notes.
-					date_format = "%Y-%m-%d",
-					-- Optional, if you want to change the date format of the default alias of daily notes.
-					alias_format = "%B %-d, %Y",
-					-- Optional, default tags to add to each new daily note created.
-					default_tags = { "daily-notes" },
-					-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-					template = "daily-note-template.md",
-				},
-				templates = {
-					folder = "_templates",
-				},
-			},
 		},
 	},
 })

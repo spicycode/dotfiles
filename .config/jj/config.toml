@@ -1,0 +1,58 @@
+[fsmonitor]
+backend = "watchman"
+watchman.register-snapshot-trigger = true
+
+[colors]
+me = { fg = "yellow" }
+ellipsis = { fg = "bright black", bold = true }
+
+[ui]
+default-command = "log"
+show-cryptographic-signatures = true
+pager = "delta"
+
+[user]
+name = "Chad Humphries"
+email = "chad@humphries.sh"
+
+# override user.email if the repository is located under ~/oss
+[[--scope]]
+--when.repositories = ["~/figma"]
+[--scope.user]
+email = "chumphries@figma.com"
+
+[revsets]
+log = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
+
+[git]
+git_push_bookmark = "spicycode/jj-"
+
+[aliases]
+push = ["util", "exec", "--", "bash", "-c", """
+#!/usr/bin/env bash
+set -euo pipefail
+jj bookmark set $@
+jj git push
+""", ""]
+
+pull = ["util", "exec", "--", "bash", "-c", """
+#!/usr/bin/env bash
+set -euo pipefail
+jj git fetch
+jj rebase --skip-emptied -b @ -d $@
+""", ""]
+
+tug = ["bookmark", "move", "--from", "streams(@-)", "--to", "@-"]
+
+clean = ["abandon", "--retain-bookmarks", "--restore-descendants", "bloat()"]
+s = ["status"]
+l = ["log", "--limit", "10"]
+ll = ["log", "--limit", "20"]
+lll = ["log", "--limit", "30"]
+lr = ["log", "-r", "remote_bookmarks(remote=origin)..@"]
+r = ["rebase"]
+n = ["new"]
+nb = ["new", "-B", "@", "--no-edit"]
+d = ["describe"]
+db = ["describe", "-r", "@-"]
+

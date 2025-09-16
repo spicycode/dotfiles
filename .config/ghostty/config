@@ -4,17 +4,17 @@ background = #0b0b12
 
 window-colorspace = display-p3
 
-# font-family = "Fira Code Retina",
-# font-family = "Liga SFMono Nerd Font",
-# font-size = 15
 
 macos-titlebar-style = tabs
 keybind = global:shift+f2=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
 
-font-family = "Liga SFMono Nerd Font",
+font-family = "Fira Code Retina",
+# font-family = "Liga SFMono Nerd Font",
+# font-size = 15
+#font-family = "Liga SFMono Nerd Font",
 font-style = Regular
-font-size = 15
+font-size = 14
 
 macos-option-as-alt = true
 window-colorspace = display-p3

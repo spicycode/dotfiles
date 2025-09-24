@@ -21,7 +21,6 @@ require("mason-lspconfig").setup({
 		"vale_ls",
 	},
 })
-local lspconfig = require("lspconfig")
 
 vim.g.cursorhold_updatetime = 100
 
@@ -47,7 +46,7 @@ end
 local base_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = require("blink.cmp").get_lsp_capabilities(base_capabilities)
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
@@ -135,13 +134,13 @@ local lsp_servers_with_default_config = {
 }
 
 for _, lsp in ipairs(lsp_servers_with_default_config) do
-	lspconfig[lsp].setup({
+	vim.lsp.config(lsp, {
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
 end
 
-lspconfig.jsonls.setup({
+vim.lsp.config("jsonls", {
 	settings = {
 		json = {
 			schemas = require("schemastore").json.schemas(),
@@ -152,7 +151,7 @@ lspconfig.jsonls.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.yamlls.setup({
+vim.lsp.config("yamlls", {
 	settings = {
 		yaml = {
 			schemaStore = {

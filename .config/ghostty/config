@@ -19,3 +19,9 @@ font-size = 14
 macos-option-as-alt = true
 window-colorspace = display-p3
 keybind = shift+enter=text:\n
+
+# custom-shader = ~/.config/ghostty/shaders/scanline.glsl
+# custom-shader = ~/.config/ghostty/shaders/pixels.glsl
+# custom-shader = ~/.config/ghostty/shaders/retro-terminal.glsl
+# custom-shader = ~/.config/ghostty/shaders/cursor_blaze.glsl
+# custom-shader-animation = true

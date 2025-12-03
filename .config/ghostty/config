@@ -1,23 +1,28 @@
-theme = catppuccin-mocha
-# Override background to make it match terminal
-background = #0b0b12
+theme = "light:Ayu Light,dark:catppuccin-mocha"
 
 window-colorspace = display-p3
-
 
 macos-titlebar-style = tabs
 keybind = global:shift+f2=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
 
 font-family = "Fira Code Retina",
-# font-family = "Liga SFMono Nerd Font",
-# font-size = 15
-#font-family = "Liga SFMono Nerd Font",
 font-style = Regular
 font-size = 14
+font-thicken = true
+
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
 
 macos-option-as-alt = true
 window-colorspace = display-p3
+
+auto-update = download
+auto-update-channel = stable
+
+shell-integration-features=ssh-env,ssh-terminfo
+
 # keybind = shift+enter=text:\n
 
 # custom-shader = ~/.config/ghostty/shaders/scanline.glsl

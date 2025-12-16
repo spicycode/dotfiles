@@ -6,7 +6,7 @@ macos-titlebar-style = tabs
 keybind = global:shift+f2=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
 
-font-family = "Fira Code Retina",
+font-family = "Berkeley Mono",
 font-style = Regular
 font-size = 14
 font-thicken = true

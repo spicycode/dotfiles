@@ -15,7 +15,7 @@ require("mason-lspconfig").setup({
 		"sorbet",
 		"taplo",
 		"terraformls",
-		"ts_ls",
+		"tsgo",
 		"yamlls",
 		"starpls",
 		"vale_ls",
@@ -114,7 +114,7 @@ vim.lsp.config("lua_ls", {
 local lsp_servers_with_default_config = {
 	"vale_ls",
 	"starpls",
-	"ts_ls",
+	"tsgo",
 	"graphql",
 	"gopls",
 	"ruby_lsp",

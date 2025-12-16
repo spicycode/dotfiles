@@ -1,4 +1,4 @@
-theme = "light:Ayu Light,dark:catppuccin-mocha"
+theme = "catppuccin-mocha"
 
 window-colorspace = display-p3
 

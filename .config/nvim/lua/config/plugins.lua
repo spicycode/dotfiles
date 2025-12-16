@@ -448,21 +448,21 @@ return require("lazy").setup({
 			"nvchad/menu",
 			lazy = true,
 		},
-		{
-			"f-person/auto-dark-mode.nvim",
-			dependencies = { "kepano/flexoki-neovim" },
-			event = "VeryLazy",
-			lazy = true,
-			config = function()
-				require("auto-dark-mode").setup({
-					set_light_mode = function()
-						vim.cmd("colorscheme catppuccin-latte")
-					end,
-					set_dark_mode = function()
-						vim.cmd("colorscheme catppuccin-macchiato")
-					end,
-				})
-			end,
-		},
+		-- {
+		-- 	"f-person/auto-dark-mode.nvim",
+		-- 	dependencies = { "kepano/flexoki-neovim" },
+		-- 	event = "VeryLazy",
+		-- 	lazy = true,
+		-- 	config = function()
+		-- 		require("auto-dark-mode").setup({
+		-- 			set_light_mode = function()
+		-- 				vim.cmd("colorscheme catppuccin-latte")
+		-- 			end,
+		-- 			set_dark_mode = function()
+		-- 				vim.cmd("colorscheme catppuccin-macchiato")
+		-- 			end,
+		-- 		})
+		-- 	end,
+		-- },
 	},
 })

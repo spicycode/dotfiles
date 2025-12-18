@@ -96,7 +96,7 @@ require("catppuccin").setup({
 })
 
 vim.opt.background = "dark"
--- vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("catppuccin-mocha")
 vim.cmd.syntax = "on"
 
 -- Adding this so cmp-copilot will work with ghost text

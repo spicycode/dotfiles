@@ -7,9 +7,6 @@ require("legendary").setup({
 		{ "<leader>tn", ":tabnext<CR>", desc = "Next tab" },
 		{ "<leader>te", ":tabedit<space>", desc = "Open path in new tab" },
 		{ "<leader>b", ":bd<CR>", desc = "Delete current buffer" },
-		{ "K", require("hover").hover, desc = "hover.nvim" },
-		{ "gK", require("hover").hover_select, desc = "hover.nvim (select)" },
-		{ "<MouseMove>", require("hover").hover_mouse, desc = "hover.nvim (mouse)" },
 	},
 	extensions = { lazy_nvim = true, nvim_tree = true },
 })

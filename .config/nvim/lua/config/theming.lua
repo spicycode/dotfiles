@@ -64,6 +64,9 @@ require("catppuccin").setup({
 		end,
 	},
 	color_overrides = {
+		mocha = {
+			base = "#000000",
+		},
 		macchiato = {
 			rosewater = "#F5B8AB",
 			flamingo = "#F29D9D",

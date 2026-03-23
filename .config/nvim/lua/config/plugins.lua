@@ -203,7 +203,6 @@ return require("lazy").setup({
 			dependencies = { -- optional packages
 				"ray-x/guihua.lua",
 				"neovim/nvim-lspconfig",
-				"nvim-treesitter/nvim-treesitter",
 			},
 			config = function()
 				require("go").setup()
@@ -285,8 +284,20 @@ return require("lazy").setup({
 		-- Highlights
 		{
 			"nvim-treesitter/nvim-treesitter",
-			lazy = false,
-			build = ":TSUpdate",
+			branch = "main",
+			init = function()
+				vim.g.loaded_nvim_treesitter = 1
+			end,
+		},
+
+		{
+			"lewis6991/ts-install.nvim",
+			-- OPTIONAL
+			config = function()
+				require("ts-install").setup({
+					auto_install = true,
+				})
+			end,
 		},
 		-- { "sle-c/nvim-hidesig" },
 		{ "jparise/vim-graphql" },
@@ -358,39 +369,6 @@ return require("lazy").setup({
 		-- Tab Bar
 		{ "nanozuki/tabby.nvim" },
 		{ "nicwest/vim-camelsnek" },
-		{
-			"letieu/wezterm-move.nvim",
-			keys = { -- Lazy loading, don't need call setup() function
-				{
-					"<C-h>",
-					function()
-						require("wezterm-move").move("h")
-					end,
-					desc = "Move left (wezterm)",
-				},
-				{
-					"<C-j>",
-					function()
-						require("wezterm-move").move("j")
-					end,
-					desc = "Move down (wezterm)",
-				},
-				{
-					"<C-k>",
-					function()
-						require("wezterm-move").move("k")
-					end,
-					desc = "Move up (wezterm)",
-				},
-				{
-					"<C-l>",
-					function()
-						require("wezterm-move").move("l")
-					end,
-					desc = "Move right (wezterm)",
-				},
-			},
-		},
 		{ "amilsil/codewho" },
 		{
 			"greggh/claude-code.nvim",

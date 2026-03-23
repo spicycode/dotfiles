@@ -1,7 +1,7 @@
 local config = {
 	options = {
 		icons_enabled = true,
-		theme = "catppuccin",
+		theme = "catppuccin-mocha",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},

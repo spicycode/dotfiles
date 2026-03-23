@@ -285,6 +285,8 @@ return require("lazy").setup({
 		{
 			"nvim-treesitter/nvim-treesitter",
 			branch = "main",
+			lazy = false,
+			build = ":TSUpdate",
 			init = function()
 				vim.g.loaded_nvim_treesitter = 1
 			end,

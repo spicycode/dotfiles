@@ -12,7 +12,6 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"marksman",
 		"pylsp",
-		"sorbet",
 		"taplo",
 		"terraformls",
 		"tsgo",

@@ -1,7 +1,6 @@
 -- Setup lazy.nvim package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
----@diagnostic disable-next-line: undefined-field
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -43,7 +42,7 @@ return require("lazy").setup({
 		},
 
 		-- Color themes
-		{ "catppuccin/nvim", name = "catppuccin" },
+		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 		{ "tpope/vim-vinegar" },
 		{ "tpope/vim-fugitive" },
@@ -134,8 +133,6 @@ return require("lazy").setup({
 			-- `main` does not work at the moment
 			dependencies = { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
 
-			---@module 'blink.cmp'
-			---@type blink.cmp.Config
 			opts = {
 				keymap = { preset = "super-tab" },
 
@@ -286,7 +283,11 @@ return require("lazy").setup({
 			},
 		},
 		-- Highlights
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+		{
+			"nvim-treesitter/nvim-treesitter",
+			lazy = false,
+			build = ":TSUpdate",
+		},
 		-- { "sle-c/nvim-hidesig" },
 		{ "jparise/vim-graphql" },
 		{

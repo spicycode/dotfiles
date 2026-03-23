@@ -1,6 +1,25 @@
+# For options arch has a good list
+# https://man.archlinux.org/man/readline.3#Key_Bindings
+
+# If set to On, readline displays possible completions using
+# different colors to indicate their file type. The color
+# definitions are taken from the value of the LS_COLORS
+# environment variable.
 set colored-stats on
+
+# If set to On, when listing completions, readline displays the
+# common prefix of the set of possible completions using a
+# different color. The color definitions are taken from the
+# value of the LS_COLORS environment variable. If there is a
+# color definition in $LS_COLORS for the custom suffix
+# “readline-colored-completion-prefix”, readline uses this
+# color for the common prefix instead of its default.
 set colored-completion-prefix on
 
+# If set to On, and completion-ignore-case is enabled, readline
+# treats hyphens (-) and underscores (_) as equivalent when
+# performing case-insensitive filename matching and completion.
+set completion-map-case on
 
 # Keybindings
 

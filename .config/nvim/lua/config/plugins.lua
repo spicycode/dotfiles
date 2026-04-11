@@ -198,12 +198,9 @@ return require("lazy").setup({
 		{ "vim-ruby/vim-ruby" },
 		{ "tpope/vim-rails" },
 		{ "gleam-lang/gleam.vim" },
+		{ "ray-x/guihua.lua" },
 		{
 			"ray-x/go.nvim",
-			dependencies = { -- optional packages
-				"ray-x/guihua.lua",
-				"neovim/nvim-lspconfig",
-			},
 			config = function()
 				require("go").setup()
 			end,

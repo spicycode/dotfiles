@@ -6,7 +6,6 @@ vim.opt.backup = false
 -- Enable undofile
 vim.opt.undofile = true
 vim.opt.undodir = home .. "/.config/nvim-undo" -- keep undo files out of the way
-
 -- shell-like autocomplete to unambiguous portion
 vim.opt.wildmode = "longest:full,full"
 

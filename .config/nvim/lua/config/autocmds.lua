@@ -18,8 +18,3 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 	group = quickfix_grp,
 })
-
--- augroup quickfix
---     autocmd!
---     autocmd FileType qf setlocal wrap
--- augroup END

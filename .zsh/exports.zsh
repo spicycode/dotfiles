@@ -6,6 +6,8 @@ else
   export ZSH_BIZ_TIME=false
 fi
 
+# I can't believe we're here
+export DO_NOT_TRACK=true
 export GOBIN=$GOPATH/bin
 
 export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH

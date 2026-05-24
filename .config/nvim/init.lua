@@ -1,14 +1,33 @@
--- Leader
-vim.g.mapleader = "," -- make sure to set `mapleader` before lazy so your mappings are correct
+-- Before anything;
+local nvim_start_time = vim.uv.hrtime()
 
-require("config.plugins")
-require("config.theming")
-require("config.options")
-require("config.plugins")
-require("config.finder")
-require("config.statusline")
-require("config.tabline")
-require("config.lsp")
-require("config.formatting")
-require("config.keybindings")
-require("config.autocmds")
+-- Experimental Lua module loader.
+vim.loader.enable()
+
+-- States for this Neovim config.
+_G.Config = {
+	nvim_start_time = nvim_start_time,
+	called = {},
+
+	-- treesitter
+	use_treesitter_parser = true,
+	use_nvim_treesitter = true,
+	use_arborist = false, -- experiment
+
+	-- diffing
+	use_diffview = false,
+	use_codediff = true,
+}
+function _G.Config.add(spec)
+	require("merge")(_G.Config, spec)
+end
+
+vim.g.mapleader = "," -- use comma for <Leader>
+vim.g.maplocalleader = " "
+
+require("options")
+require("keymaps")
+
+-- Experimental: ui2 message/cmdline redesign (:h ui2)
+-- Avoids "Press ENTER" prompts, highlights cmdline, pager as buffer.
+require("vim._core.ui2").enable()

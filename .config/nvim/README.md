@@ -1,0 +1,158 @@
+# nvim config
+
+Fork of nvim-fredrik to try out very different config approach
+
+## Usage
+
+## Structure
+
+```
+nvim/
+  init.lua                    requires core modules
+  lua/                        libraries called by init.lua and plugins
+  plugin/                     plugins, often deferred to load on VimEnter
+    lang/                     per-language plugins, filetypes, editor settings, autocmds
+  ftplugin/                   (unused; use plugin/lang instead)
+  lsp/                        (unused; nvim-lspconfig provides base configs)
+  after/
+    lsp/                      overrides for nvim-lspconfig base configs
+```
+
+## Architecture
+
+The `init.lua` defines `_G.Config` (for global states), `vim.opt` options, some
+keymaps and custom behaviors.
+
+Core plugin files (`plugin/*.lua`) own all tool configuration inline — LSP
+servers, formatters, linters, completion sources, DAP adapters, neotest
+adapters, etc.
+
+Language files (`plugin/lang/*.lua`) handle language-specific concerns that
+don't fit in the core plugins: per-filetype editor settings (`vim.opt_local` via
+`FileType` autocmds), extra `vim.pack.add()` calls, custom filetypes,
+SchemaStore loading, build hooks, and autocmds.
+
+[Original blog post from fredrikaverpil](https://fredrikaverpil.github.io/blog/2026/04/15/from-lazy.nvim-to-vim.pack/)
+
+### Plugin file layout
+
+Every plugin strives to lazy-load (except when they cannot). Helper functions
+are available in the `lazyload` module.
+
+```lua
+-- Deferred setup (VimEnter)
+require("lazyload").on_vim_enter(function()
+  vim.api.nvim_create_autocmd("PackChanged", { ... })
+
+  vim.pack.add(...)
+
+  require("plugin").setup({ ... })
+
+  vim.keymap.set( ... )
+end)
+```
+
+- `on_vim_enter(fn)`: defer to `VimEnter`, then run the function async
+- `on_override(fn)`: defer to after all `VimEnter` callbacks (for `.nvim.lua`
+  overrides)
+- `call_once(fn)`: call the function only once
+
+### Cross-plugin data sharing
+
+Plugin files can pass data to each other through `_G.Config`, but it requires
+them to be lazyloaded. Write to `_G.Config` at the **top level** of the file
+(outside the `on_vim_enter` block), and read it inside the receiving plugin's
+lazyload block:
+
+```lua
+-- plugin/producer.lua
+Config.some_data = { "foo", "bar" }
+
+require("lazyload").on_vim_enter(function()
+  -- plugin logic
+end)
+```
+
+```lua
+-- plugin/consumer.lua
+require("lazyload").on_vim_enter(function()
+  local some_data = Config.some_data or {}
+  -- plugin logic
+end)
+```
+
+Top-level assignments execute when Neovim sources `plugin/` files (before any
+`VimEnter` callback runs), so the data is always available by the time lazyload
+blocks fire.
+
+### Build hooks
+
+Plugins that need a build step after install or update use the `PackChanged`
+autocmd. Hooks must be registered **before** the `vim.pack.add()` call so they
+fire on first bootstrap:
+
+```lua
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    if ev.data.spec.name == "nvim-treesitter" then
+      vim.cmd("TSUpdate")
+    end
+  end,
+})
+```
+
+## Per-project overrides
+
+Place a `.nvim.lua` in the the `$cwd` or above it. It runs at step 7c of
+[initialization](https://neovim.io/doc/user/starting/#_initialization) —
+**before** `plugin/` files (`:h exrc`).
+
+Example:
+
+```lua
+-- ~/code/work/.nvim.lua
+require("lazyload").on_override(function()
+    -- Override markdown formatter
+    require("conform").formatters_by_ft.markdown = { "mdformat" }
+    require("conform").formatters.mdformat = {
+        prepend_args = { "--number", "--wrap", "80" },
+    }
+
+    -- Override gopls settings
+    vim.lsp.config.gopls.settings = {
+        gopls = {
+            analyses = {
+                ST1000 = false,
+                ST1020 = false,
+                ST1021 = false,
+            },
+        },
+    }
+end)
+```
+
+> [!NOTE]
+>
+> Overrides run after all `on_vim_enter` callbacks (including async ones), so
+> they can patch any plugin state set up during `VimEnter`.
+
+## Plugin management
+
+Use the `:Pack` TUI or the built-in commands:
+
+- **Install**: `vim.pack.add()` in each file. New plugins install on first
+  launch.
+- **Update**: `:lua vim.pack.update()` — review in confirmation buffer, `:w` to
+  apply.
+- **Lockfile**: `nvim-pack-lock.json` — commit to VCS for reproducible installs.
+
+## Adding new language support
+
+1. Add the LSP server to `plugin/lsp.lua`
+2. Add Mason tools to `plugin/mason.lua`
+3. Add formatters to `plugin/conform.lua`
+4. Add linters to `plugin/lint.lua`
+5. `plugin/lang/<ft>.lua` — editor settings (`vim.opt_local` via `FileType`
+   autocmd), plugins, filetypes, autocmds
+6. _(optional)_ `after/lsp/<server>.lua` — override base config from
+   nvim-lspconfig

@@ -43,6 +43,7 @@ require("lazyload").on_vim_enter(function()
 		"nil-ls",
 		"prettier",
 		"protolint",
+		"ruby_lsp",
 		"ruff",
 		"rust-analyzer",
 		"shellcheck",

@@ -12,6 +12,7 @@ require("lazyload").on_vim_enter(function()
 		markdown = { "markdownlint" },
 		proto = { "protolint" },
 		python = { "mypy" },
+		ruby = { "ruby" },
 		sh = { "shellcheck" },
 		terraform = { "terraform_validate", "tflint" },
 		tf = { "terraform_validate", "tflint" },

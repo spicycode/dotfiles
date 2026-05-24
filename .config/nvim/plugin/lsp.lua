@@ -19,7 +19,7 @@ require("lazyload").on_vim_enter(function()
 		"jsonls",
 		"lua_ls",
 		"nil_ls",
-		"ruby-lsp",
+		"ruby_lsp",
 		"ruff",
 		"rust_analyzer",
 		"superhtml",

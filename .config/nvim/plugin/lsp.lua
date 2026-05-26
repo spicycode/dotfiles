@@ -14,6 +14,7 @@ require("lazyload").on_vim_enter(function()
 		"basedpyright",
 		"buf_ls",
 		"dockerls",
+		"gleam",
 		"gopls",
 		"graphql",
 		"jsonls",

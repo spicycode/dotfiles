@@ -77,7 +77,7 @@ singleWindowAspectRatio = "none"
 [quakeTerminal]
 animationDuration = 0.2
 autoHide = false
-enabled = true
+enabled = false
 heightPercent = 50.0
 monitorMode = "focusedWindow"
 opacity = 1.0

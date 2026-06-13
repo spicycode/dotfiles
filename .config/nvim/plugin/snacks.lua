@@ -141,8 +141,7 @@ local exclude = {
 	".pocket/tools",
 }
 
--- Misc
-vim.keymap.set("n", "<leader><leader>", function()
+local snacks_file_picker = function()
 	Snacks.picker.smart({
 		layout = { hidden = { "preview" } },
 		multi = { "buffers", "files" },
@@ -151,15 +150,11 @@ vim.keymap.set("n", "<leader><leader>", function()
 		exclude = exclude,
 		formatters = { file = { truncate = 100 } },
 	})
-end, { desc = "Files" })
-vim.keymap.set("n", "<leader>/", function()
-	Snacks.picker.grep({
-		layout = { hidden = { "preview" } },
-		hidden = true,
-		ignored = true,
-		exclude = exclude,
-	})
-end, { desc = "Grep" })
+end
+
+-- Misc
+vim.keymap.set("n", "<leader><leader>", snacks_file_picker, { desc = "Grep" })
+
 vim.keymap.set("n", "<leader>:", function()
 	Snacks.picker.command_history()
 end, { desc = "Command History" })

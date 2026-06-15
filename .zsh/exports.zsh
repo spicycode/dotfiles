@@ -1,18 +1,10 @@
-if [ -d "$HOME/figma" ]; then
-  export GOPATH=~/figma/gopath
-  export ZSH_BIZ_TIME=true
-else
-  export GOPATH=~/src/gopath
-  export ZSH_BIZ_TIME=false
-fi
+export XDG_CONFIG_HOME=~/.config
 
-# I can't believe we're here
-export DO_NOT_TRACK=true
+export GOPATH=~/src/gopath
 export GOBIN=$GOPATH/bin
 
-export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/share/npm/bin:$PATH
-export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS:~/.config/emacs/bin:$GOPATH/bin:~/.local/bin
-export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+#export PATH=~/.bin:/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
+export PATH=~/.bin/:$GOPATH/bin:~/.local/bin:$PATH
 
 # Setup terminal, and turn on colors
 export TERM=xterm-256color
@@ -25,14 +17,9 @@ export TIME_STYLE=long-iso
 export GREP_COLOR='3;33'
 
 export LESS='--ignore-case --raw-control-chars'
-export EDITOR='nvim'
-
-export HOMEBREW_NO_ANALYTICS=1
 
 # Silence direnv
 export DIRENV_LOG_FORMAT=
-
-export PKG_CONFIG_PATH="$HOMEBREW_PATH/opt/pkg-config"
 
 # Enable erl/iex history in Erlang 20
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -41,15 +28,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export HOMEBREW_NO_ENV_HINTS=true
-
+export HOMEBREW_NO_ANALYTICS=1
 # ask homebrew to not display it's beta os warning paragraph(s).
 export HOMEBREW_DEVELOPER=1
-
-# Enable YJIT on whatevers fit to build
-export RUBY_CONFIGURE_OPTS=--enable-yjit
-export RUBY_YJIT_ENABLE=1
-
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # Enable node compile cache for newer Node revisions
 export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
@@ -60,9 +41,5 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-if [[ $ZSH_BIZ_TIME == false ]]; then
-  #Bring in gh exports
-  source ~/.github_pat
-fi
 
-export XDG_CONFIG_HOME=~/.config
+export EDITOR='nvim'

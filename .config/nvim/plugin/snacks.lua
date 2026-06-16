@@ -153,7 +153,10 @@ local snacks_file_picker = function()
 end
 
 -- Misc
-vim.keymap.set("n", "<leader><leader>", snacks_file_picker, { desc = "Grep" })
+vim.keymap.set("n", "<leader><leader>", snacks_file_picker, { desc = "Find files" })
+vim.keymap.set("n", "<leader>rg", function()
+	Snacks.picker.grep()
+end, { desc = "Grep" })
 
 vim.keymap.set("n", "<leader>:", function()
 	Snacks.picker.command_history()

@@ -39,7 +39,7 @@ end
 for _, key in ipairs({ "<S-h>", "<leader>bp", "[b" }) do
 	vim.keymap.set("n", key, "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 end
-vim.keymap.set("n", "<leader>bq", "<cmd>bd %<cr>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bd %<cr>", { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>bo", function()
 	local visible = {}
 	for _, win in pairs(vim.api.nvim_list_wins()) do

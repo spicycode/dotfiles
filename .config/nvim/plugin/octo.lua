@@ -5,8 +5,4 @@ require("lazyload").on_vim_enter(function()
 	require("octo").setup()
 	-- Enable markdown in octo.nvim
 	vim.treesitter.language.register("markdown", "octo")
-	-- {
-	-- 	"pwntester/octo.nvim",
-	-- 	cmd = "Octo",
-	-- }
 end)

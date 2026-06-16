@@ -25,6 +25,7 @@
   "mypy": "2.1.0",
   "prettier": "3.8.4",
   "protolint": "v0.56.4",
+  "ruby-lsp": "0.26.9",
   "ruff": "0.15.17",
   "rust-analyzer": "2026-06-08",
   "shellcheck": "v0.11.0",

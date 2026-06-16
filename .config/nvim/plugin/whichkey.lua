@@ -21,7 +21,8 @@ require("lazyload").on_vim_enter(function()
 	})
 
 	require("which-key").add({
-		{ "<leader><tab>", group = "tab" },
+		{ "<leader>t", group = "tab" },
+		{ "<leader>l", group = "find or list" },
 		{ "<leader>a", group = "ai" },
 		{ "<leader>c", group = "code" },
 		{ "<leader>d", group = "debug" },
@@ -33,7 +34,7 @@ require("lazyload").on_vim_enter(function()
 		{ "<leader>gh", group = "hunks" },
 		{ "<leader>r", group = "run" },
 		{ "<leader>s", group = "search" },
-		{ "<leader>t", group = "test" },
+		{ "<leader><tab>", group = "test" },
 		{ "<leader>u", group = "ui" },
 		{ "<leader>x", group = "diagnostics/quickfix" },
 		{ "<leader>w", group = "windows", proxy = "<C-w>" },

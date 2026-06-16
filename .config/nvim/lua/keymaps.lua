@@ -63,12 +63,11 @@ vim.keymap.set("n", "<leader>bY", function()
 end, { desc = "Yank buffer filepath (absolute)" })
 
 -- Tabs
-vim.keymap.set("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "New Tab", silent = true })
-vim.keymap.set("n", "<leader><tab>q", "<cmd>tabclose<cr>", { desc = "Close Tab", silent = true })
-vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab", silent = true })
-vim.keymap.set("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab", silent = true })
-vim.keymap.set("n", "[<tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab", silent = true })
-vim.keymap.set("n", "]<tab>", "<cmd>tabnext<cr>", { desc = "Next Tab", silent = true })
+
+vim.keymap.set("n", "<leader>te", ":tabedit<space>", { desc = "Edit in Tab", silent = true })
+vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<cr>", { desc = "Close Tab", silent = true })
+vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Previous Tab", silent = true })
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "Next Tab", silent = true })
 
 -- Clear search with <esc>
 vim.keymap.set({ "n", "i" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })

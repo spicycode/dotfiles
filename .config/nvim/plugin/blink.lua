@@ -2,6 +2,7 @@ require("lazyload").on_vim_enter(function()
 	vim.pack.add({
 		{ src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("1.*") },
 		{ src = "https://github.com/rafamadriz/friendly-snippets" },
+		{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 	})
 
 	local default_sources = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev", "markdown" }
@@ -50,7 +51,46 @@ require("lazyload").on_vim_enter(function()
 		cmdline = {
 			enabled = true,
 			completion = {
-				menu = { auto_show = true },
+				menu = {
+					auto_show = true,
+					draw = {
+						components = {
+							-- customize the drawing of kind icons
+							kind_icon = {
+								text = function(ctx)
+									-- default kind icon
+									local icon = ctx.kind_icon
+									-- if LSP source, check for color derived from documentation
+									if ctx.item.source_name == "LSP" then
+										local color_item = require("nvim-highlight-colors").format(
+											ctx.item.documentation,
+											{ kind = ctx.kind }
+										)
+										if color_item and color_item.abbr ~= "" then
+											icon = color_item.abbr
+										end
+									end
+									return icon .. ctx.icon_gap
+								end,
+								highlight = function(ctx)
+									-- default highlight group
+									local highlight = "BlinkCmpKind" .. ctx.kind
+									-- if LSP source, check for color derived from documentation
+									if ctx.item.source_name == "LSP" then
+										local color_item = require("nvim-highlight-colors").format(
+											ctx.item.documentation,
+											{ kind = ctx.kind }
+										)
+										if color_item and color_item.abbr_hl_group then
+											highlight = color_item.abbr_hl_group
+										end
+									end
+									return highlight
+								end,
+							},
+						},
+					},
+				},
 				ghost_text = { enabled = true },
 				list = {
 					selection = {

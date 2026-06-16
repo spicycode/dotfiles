@@ -63,7 +63,8 @@ vim.opt.foldlevelstart = 99
 vim.opt.completeopt = "menuone,noselect"
 
 -- Clipboard
-vim.opt.clipboard = "unnamedplus"
+-- Below is unified clipboard
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Scroll
 vim.opt.scrolloff = 4

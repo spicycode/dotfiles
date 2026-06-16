@@ -146,7 +146,7 @@ local snacks_file_picker = function()
 		layout = { hidden = { "preview" } },
 		multi = { "buffers", "files" },
 		hidden = true,
-		ignored = true,
+		ignored = false,
 		exclude = exclude,
 		formatters = { file = { truncate = 100 } },
 	})

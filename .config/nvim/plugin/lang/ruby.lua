@@ -1,4 +1,13 @@
 require("lazyload").on_vim_enter(function()
+	vim.api.nvim_create_autocmd("User", {
+		pattern = "OilEnter",
+		callback = function()
+			if vim.fn["RailsDetect"](vim.fn.getcwd()) then
+				vim.fn["rails#buffer_setup"]()
+			end
+		end,
+	})
+
 	vim.api.nvim_create_autocmd("FileType", {
 		group = vim.api.nvim_create_augroup("ruby-opts", { clear = true }),
 		pattern = "ruby",
@@ -6,8 +15,7 @@ require("lazyload").on_vim_enter(function()
 	})
 
 	vim.pack.add({
-		{ src = "https://github.com/folke/lazydev.nvim", version = vim.version.range("*") },
-		{ src = "https://github.com/Bilal2453/luvit-meta" }, -- vim.uv typings
-		{ src = "https://github.com/jbyuki/one-small-step-for-vimkind" }, -- Lua DAP adapter
+		{ src = "https://github.com/vim-ruby/vim-ruby" },
+		{ src = "https://github.com/tpope/vim-rails" },
 	})
 end)

@@ -288,6 +288,10 @@
       "rev": "b0a5c76f86ea214ade36ab0b811e730c3f0add67",
       "src": "https://github.com/tpope/vim-rails"
     },
+    "vim-rsi": {
+      "rev": "45540637ead22f011e8215f1c90142e49d946a54",
+      "src": "https://github.com/tpope/vim-rsi"
+    },
     "vim-ruby": {
       "rev": "bf3a5994ce63796db7b1b04aea92772271f387aa",
       "src": "https://github.com/vim-ruby/vim-ruby"

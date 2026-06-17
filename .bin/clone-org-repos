@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+gh repo list $ORGNAME --limit 1000 | while read -r repo _; do
+  gh repo clone "$repo" "$repo"
+done

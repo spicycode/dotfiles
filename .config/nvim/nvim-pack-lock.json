@@ -30,18 +30,9 @@
       "src": "https://github.com/Saghen/blink.indent",
       "version": ">=0.0.0"
     },
-    "bufferline.nvim": {
-      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
-      "src": "https://github.com/akinsho/bufferline.nvim",
-      "version": ">=0.0.0"
-    },
     "cmd.nvim": {
       "rev": "7b790d24e1908b0d623d93324bcb56e6d3b0e333",
       "src": "https://github.com/y3owk1n/cmd.nvim"
-    },
-    "code_runner.nvim": {
-      "rev": "faeea87f6038307eabbe1d1ea97ab6b1d6fd33b5",
-      "src": "https://github.com/CRAG666/code_runner.nvim"
     },
     "codediff.nvim": {
       "rev": "29b06f37251f2e010f53a0892573b2ec03d165e2",

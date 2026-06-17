@@ -250,10 +250,6 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim",
       "version": ">=0.0.0"
     },
-    "showkeys": {
-      "rev": "cb0a50296f11f1e585acffba8c253b9e8afc1f84",
-      "src": "https://github.com/nvzone/showkeys"
-    },
     "sidekick.nvim": {
       "rev": "53a2d3afa61e5fd2e17b270b5fa72e5493808304",
       "src": "https://github.com/folke/sidekick.nvim",

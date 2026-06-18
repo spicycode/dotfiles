@@ -31,3 +31,7 @@ accessible_prompter: disabled
 spinner: enabled
 
 telemetry: disabled
+
+extensions:
+  slack:
+    team: workbrew

@@ -84,6 +84,10 @@
       "src": "https://github.com/chrishrb/gx.nvim",
       "version": ">=0.0.0"
     },
+    "jj.nvim": {
+      "rev": "cffc74128a80398469085e01ff2e4001e330b800",
+      "src": "https://github.com/NicolasGB/jj.nvim"
+    },
     "lazydev.nvim": {
       "rev": "01bc2aacd51cf9021eb19d048e70ce3dd09f7f93",
       "src": "https://github.com/folke/lazydev.nvim",

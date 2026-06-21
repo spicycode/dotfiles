@@ -6,6 +6,9 @@ quick-terminal-animation-duration = 0.1
 
 background = #000000
 
+# NOTE: workaround for https://github.com/ghostty-org/ghostty/discussions/12708
+cursor-color = cell-foreground
+
 font-family = "Berkeley Mono",
 font-style = Regular
 font-size = 16
@@ -22,11 +25,3 @@ auto-update = download
 auto-update-channel = stable
 
 shell-integration-features=ssh-env,ssh-terminfo
-
-# keybind = shift+enter=text:\n
-
-# custom-shader = ~/.config/ghostty/shaders/scanline.glsl
-# custom-shader = ~/.config/ghostty/shaders/pixels.glsl
-# custom-shader = ~/.config/ghostty/shaders/retro-terminal.glsl
-# custom-shader = ~/.config/ghostty/shaders/cursor_blaze.glsl
-# custom-shader-animation = true

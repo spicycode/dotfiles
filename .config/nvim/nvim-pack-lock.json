@@ -26,6 +26,11 @@
       "src": "https://github.com/Saghen/blink.indent",
       "version": ">=0.0.0"
     },
+    "catppuccin": {
+      "rev": "605b4603797de970e9f3a4238c199c850da03186",
+      "src": "https://github.com/catppuccin/nvim",
+      "version": ">=0.0.0"
+    },
     "cmd.nvim": {
       "rev": "7b790d24e1908b0d623d93324bcb56e6d3b0e333",
       "src": "https://github.com/y3owk1n/cmd.nvim"
@@ -121,6 +126,10 @@
       "src": "https://github.com/nvim-neotest/neotest",
       "version": ">=0.0.0"
     },
+    "neotest-golang": {
+      "rev": "f0ba097d4af098c036aac24cd647480d0d301ad2",
+      "src": "https://github.com/fredrikaverpil/neotest-golang"
+    },
     "neotest-plenary": {
       "rev": "3523adcf9ffaad1911960c5813b0136c1b63a2ec",
       "src": "https://github.com/nvim-neotest/neotest-plenary"
@@ -128,6 +137,10 @@
     "neotest-python": {
       "rev": "e6df4f1892f6137f58135917db24d1655937d831",
       "src": "https://github.com/nvim-neotest/neotest-python"
+    },
+    "neotest-rspec": {
+      "rev": "7629f8c2837becb72090fbafce58506bb56a00f0",
+      "src": "https://github.com/olimorris/neotest-rspec"
     },
     "neotest-zig": {
       "rev": "de63f3b9a182d374d2e71cf44385326682ec90e7",

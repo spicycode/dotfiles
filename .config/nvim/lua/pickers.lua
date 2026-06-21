@@ -77,10 +77,17 @@ function M.pull_requests(opts)
 
       if not pr_cache[cache_key] then
         local result = vim
-          .system(
-            { "gh", "pr", "list", "--state", gh_state, "--limit", "200", "--json", "number,title,body,isDraft,state" },
-            { text = true }
-          )
+          .system({
+            "gh",
+            "pr",
+            "list",
+            "--state",
+            gh_state,
+            "--limit",
+            "200",
+            "--json",
+            "number,title,body,isDraft,state",
+          }, { text = true })
           :wait()
         if result.code ~= 0 then
           vim.notify("gh pr list failed: " .. (result.stderr or ""), vim.log.levels.ERROR)

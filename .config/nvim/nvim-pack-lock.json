@@ -61,6 +61,10 @@
       "src": "https://github.com/fang2hou/go-impl.nvim",
       "version": ">=0.0.0"
     },
+    "godoc.nvim": {
+      "rev": "54a7c3b14f6391a299b94db7c18d3a9ee1e31bde",
+      "src": "https://github.com/fredrikaverpil/godoc.nvim"
+    },
     "goplements.nvim": {
       "rev": "1750ace64d42efcbc1ce36eef848a3cea5f88c79",
       "src": "https://github.com/maxandron/goplements.nvim"
@@ -96,11 +100,6 @@
     "mason-lock.nvim": {
       "rev": "b75e2de585637a61b2fb818dc33dad7863b7b0c4",
       "src": "https://github.com/zapling/mason-lock.nvim"
-    },
-    "mason-lspconfig.nvim": {
-      "rev": "a5671269a1ddfa7790cdf97c14e600e269da550f",
-      "src": "https://github.com/mason-org/mason-lspconfig.nvim",
-      "version": ">=0.0.0"
     },
     "mason.nvim": {
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",

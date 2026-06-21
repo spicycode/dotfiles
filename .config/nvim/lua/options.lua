@@ -40,13 +40,13 @@ vim.opt.linebreak = true
 vim.opt.smoothscroll = true
 vim.opt.listchars = "tab:▸ ,trail:·,nbsp:␣,extends:❯,precedes:❮"
 vim.opt.fillchars = {
-	foldopen = "",
-	foldclose = "",
-	fold = " ",
-	foldsep = " ",
-	foldinner = " ",
-	diff = "╱",
-	eob = " ",
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  foldinner = " ",
+  diff = "╱",
+  eob = " ",
 }
 vim.opt.statuscolumn = "%C %s%=%l "
 
@@ -82,6 +82,6 @@ vim.opt.timeoutlen = 300
 
 -- Titlestring (Ghostty)
 if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
-	vim.opt.title = true
-	vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')}"
+  vim.opt.title = true
+  vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')}"
 end

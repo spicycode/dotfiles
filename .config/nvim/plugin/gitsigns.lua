@@ -43,7 +43,6 @@ require("lazyload").on_vim_enter(function()
   end, { desc = "Change base to default branch" })
 
   vim.keymap.set("n", "<leader>ght", function()
-    require("gitsigns").toggle_deleted()
     require("gitsigns").toggle_linehl()
     require("gitsigns").toggle_word_diff()
   end, { desc = "Toggle inline diff" })

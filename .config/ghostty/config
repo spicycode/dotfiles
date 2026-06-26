@@ -22,6 +22,6 @@ macos-option-as-alt = true
 window-colorspace = display-p3
 
 auto-update = download
-auto-update-channel = stable
+auto-update-channel = tip
 
 shell-integration-features=ssh-env,ssh-terminfo

@@ -15,7 +15,7 @@ require("lazyload").on_vim_enter(function()
     ruby = { "ruby" },
     terraform = { "terraform_validate", "tflint" },
     tf = { "terraform_validate", "tflint" },
-    yaml = { "yamllint" },
+    -- yaml = { "yamllint" },
   }
 
   lint.linters.markdownlint.args = {

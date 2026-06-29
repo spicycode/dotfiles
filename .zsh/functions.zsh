@@ -42,26 +42,6 @@ function extract {
   fi
 }
 
-function ss {
-  if [ -e script/server ]; then
-    script/server $@
-  elif [ -e mix.exs ]; then
-    iex -S mix phx.server $@
-  else
-    bin/rails server $@
-  fi
-}
-
-function sc {
-  if [ -e mix.exs ]; then
-    iex -S mix
-  elif [ -e script/console ]; then
-    script/console $@
-  else
-    script/rails console $@
-  fi
-}
-
 # Something is weird on work computer land with the agent
 function ssh_boot() {
   eval $(ssh-agent)

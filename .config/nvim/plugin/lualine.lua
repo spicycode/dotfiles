@@ -2,12 +2,15 @@ require("lazyload").on_vim_enter(
   function()
     vim.pack.add({
       { src = "https://github.com/nvim-lualine/lualine.nvim" },
+      { src = "https://github.com/abosnjakovic/nyan.nvim" },
     })
 
     local function folder()
       local cwd = vim.fn.getcwd()
       return cwd:match("([^/]+)$")
     end
+
+    require("nyan").setup({ renderer = "nyan" })
 
     require("lualine").setup({
       options = {
@@ -24,6 +27,7 @@ require("lazyload").on_vim_enter(
           { "filename", path = 1, padding = { left = 0, right = 1 } },
         },
         lualine_x = {
+          { require("nyan").get, cond = require("nyan").should_display },
           {
             function()
               return require("dap").status()

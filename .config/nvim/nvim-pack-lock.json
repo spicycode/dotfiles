@@ -35,11 +35,6 @@
       "rev": "7b790d24e1908b0d623d93324bcb56e6d3b0e333",
       "src": "https://github.com/y3owk1n/cmd.nvim"
     },
-    "codediff.nvim": {
-      "rev": "7608f3b436ce1f84a4888f75e53079caa981a2e9",
-      "src": "https://github.com/esmuellert/codediff.nvim",
-      "version": ">=0.0.0"
-    },
     "conform.nvim": {
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -84,10 +79,6 @@
       "src": "https://github.com/chrishrb/gx.nvim",
       "version": ">=0.0.0"
     },
-    "jj.nvim": {
-      "rev": "cffc74128a80398469085e01ff2e4001e330b800",
-      "src": "https://github.com/NicolasGB/jj.nvim"
-    },
     "lazydev.nvim": {
       "rev": "01bc2aacd51cf9021eb19d048e70ce3dd09f7f93",
       "src": "https://github.com/folke/lazydev.nvim",
@@ -109,10 +100,6 @@
     "mason-lock.nvim": {
       "rev": "b75e2de585637a61b2fb818dc33dad7863b7b0c4",
       "src": "https://github.com/zapling/mason-lock.nvim"
-    },
-    "mason-lspconfig.nvim": {
-      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
-      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
@@ -150,18 +137,9 @@
       "rev": "7629f8c2837becb72090fbafce58506bb56a00f0",
       "src": "https://github.com/olimorris/neotest-rspec"
     },
-    "neotest-zig": {
-      "rev": "de63f3b9a182d374d2e71cf44385326682ec90e7",
-      "src": "https://github.com/lawrence-laz/neotest-zig"
-    },
     "nui.nvim": {
       "rev": "f535005e6ad1016383f24e39559833759453564e",
       "src": "https://github.com/MunifTanjim/nui.nvim",
-      "version": ">=0.0.0"
-    },
-    "nvim": {
-      "rev": "605b4603797de970e9f3a4238c199c850da03186",
-      "src": "https://github.com/catppuccin/nvim",
       "version": ">=0.0.0"
     },
     "nvim-dap": {
@@ -214,6 +192,10 @@
     "nvim-treesitter-context": {
       "rev": "b311b30818951d01f7b4bf650521b868b3fece16",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
+    },
+    "nyan.nvim": {
+      "rev": "47b21c59d7d085ab0fe523dccc145a53ca5c0583",
+      "src": "https://github.com/abosnjakovic/nyan.nvim"
     },
     "obsidian.nvim": {
       "rev": "2a8af7bd141123c7911fd0956ad986f29fe5bf12",

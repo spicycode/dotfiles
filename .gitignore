@@ -5,7 +5,7 @@
 *.zwc
 .config/nvim/.init.vim-rplugin~
 .config/nvim/tags
-.config/hub
+.config/hunk
 .config/heroku
 .config/configstore
 .config/NuGet/

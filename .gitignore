@@ -10,6 +10,7 @@
 .config/configstore
 .config/NuGet/
 .config/stetic/
+.config/raycast-x
 .config/xbuild/
 .config/yarn/
 .config/iTerm2

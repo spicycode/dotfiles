@@ -3,12 +3,14 @@
 .emacs.d/elpa
 .DS_Store
 *.zwc
+.bin/slk
 .config/nvim/.init.vim-rplugin~
 .config/nvim/tags
 .config/hunk
 .config/heroku
 .config/configstore
 .config/NuGet/
+.config/slk/
 .config/stetic/
 .config/raycast-x
 .config/xbuild/

@@ -137,6 +137,7 @@ end, { desc = "LSP Symbols (workspace)" })
 
 -- Search
 vim.keymap.set("n", "<leader>lf", snacks_file_picker, { desc = "Files" })
+vim.keymap.set("n", "<C-p>", snacks_file_picker, { desc = "Files" })
 
 vim.keymap.set("n", "<leader>lg", function()
   Snacks.picker.grep()

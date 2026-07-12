@@ -24,7 +24,7 @@ require("lazyload").on_vim_enter(function()
       json5 = { "biome" },
       jsonc = { "biome" },
       lua = { "stylua" },
-      markdown = { "rumdl" },
+      markdown = { "markdownlint" },
       proto = { "buf" },
       sh = { "shfmt" },
       terraform = { "terraform_fmt" },

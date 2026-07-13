@@ -9,6 +9,7 @@ vim.pack.add({
 require("oil").setup({
   keymaps = {
     ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+    ["<C-p>"] = false,
     ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
     ["q"] = { "actions.close", mode = "n" },
   },

@@ -24,4 +24,6 @@ window-colorspace = display-p3
 auto-update = download
 auto-update-channel = tip
 
+window-save-state = always
+
 shell-integration-features=ssh-env,ssh-terminfo

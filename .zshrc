@@ -1,4 +1,3 @@
-fpath=($fpath "/Users/spicycode/.zfunctions")
 source ~/.zsh/colors.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/exports.zsh

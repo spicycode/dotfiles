@@ -69,6 +69,7 @@ vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<cr>", { desc = "Close Tab", sil
 vim.keymap.set("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Previous Tab", silent = true })
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "Next Tab", silent = true })
 
+vim.keymap.set("n", "<leader>f", ":Rg ", { desc = "Find with Ripgrep" })
 -- Clear search with <esc>
 vim.keymap.set({ "n", "i" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
@@ -80,22 +81,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right" })
 
 -- Lists
-local qf = require("quickfix")
-qf.setup()
 vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 vim.keymap.set("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
-vim.keymap.set("n", "<leader>xc", function()
-  vim.fn.setloclist(0, {})
-end, { desc = "Clear location list" })
-vim.keymap.set("n", "<leader>xC", function()
-  vim.fn.setqflist({})
-end, { desc = "Clear quickfix list" })
-vim.keymap.set("n", "<leader>xx", function()
-  qf.toggle_loclist()
-end, { desc = "Toggle buffer diagnostics (location list)", silent = true })
-vim.keymap.set("n", "<leader>xX", function()
-  qf.toggle_qflist()
-end, { desc = "Toggle workspace diagnostics (quickfix list)", silent = true })
 vim.keymap.set("n", "[q", function()
   pcall(vim.cmd.cprev)
 end, { desc = "Previous quickfix" })
@@ -123,26 +110,6 @@ end, { desc = "Next Warning", silent = true })
 vim.keymap.set("n", "[w", function()
   vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.WARN })
 end, { desc = "Prev Warning", silent = true })
-
--- Shada
-vim.keymap.set("n", "<leader>us", function()
-  local stdpath = vim.fn.stdpath("state")
-  local files_removed = 0
-  local shada_file = stdpath .. "/shada/main.shada"
-  if vim.fn.filereadable(shada_file) == 1 then
-    vim.fn.delete(shada_file)
-    files_removed = files_removed + 1
-  end
-  for _, file in ipairs(vim.fn.glob(stdpath .. "/shada/main.shada.tmp.*", false, true)) do
-    vim.fn.delete(file)
-    files_removed = files_removed + 1
-  end
-  if files_removed > 0 then
-    vim.notify("Removed " .. files_removed .. " shada file(s)", vim.log.levels.INFO)
-  else
-    vim.notify("No shada files found to remove", vim.log.levels.WARN)
-  end
-end, { desc = "Remove shada files", silent = true })
 
 -- Folding
 vim.keymap.set("v", "zf", function()

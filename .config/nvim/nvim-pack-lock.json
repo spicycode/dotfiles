@@ -202,6 +202,10 @@
       "src": "https://github.com/nvim-neotest/nvim-nio",
       "version": ">=0.0.0"
     },
+    "nvim-rg": {
+      "rev": "52651d1bdaa1166e43d09ba44cc2df67d475cf4e",
+      "src": "https://github.com/duane9/nvim-rg"
+    },
     "nvim-rip-substitute": {
       "rev": "5aafa8e31971d2fb1dbb207f1ecd3b12b1ba0f88",
       "src": "https://github.com/chrisgrieser/nvim-rip-substitute"
@@ -251,6 +255,11 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "quicker.nvim": {
+      "rev": "4a6883cb13fe097a20a046eb55f6dffd239276e3",
+      "src": "https://github.com/stevearc/quicker.nvim",
+      "version": ">=0.0.0"
     },
     "render-markdown.nvim": {
       "rev": "f422cb5c6855f150e2ddcfaf44e7157b98b34f6a",

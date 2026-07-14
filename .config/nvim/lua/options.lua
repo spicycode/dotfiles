@@ -85,3 +85,6 @@ if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
   vim.opt.title = true
   vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')}"
 end
+
+-- Don't map keys in rg
+vim.g.rg_map_keys = 0

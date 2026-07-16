@@ -1,3 +1,5 @@
 catppuccin/fish
 jorgebucaran/fisher
 patrickf1/fzf.fish
+junegunn/fzf-git.sh
+tsub/fish-fzf-git-recent-branch

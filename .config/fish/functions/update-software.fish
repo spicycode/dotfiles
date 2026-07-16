@@ -3,13 +3,6 @@ function update-software
   gh extension upgrade --all
   echo ""
 
-  if type -q asdf
-    echo "==> Upgrading asdf plugins"
-    asdf plugin-update --all
-    source (brew --prefix asdf)"/libexec/asdf.fish"
-    echo ""
-  end
-
   echo "==> Upgrading homebrew"
   brew update && brew outdated && brew upgrade
   echo ""
